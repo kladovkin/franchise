@@ -15,7 +15,6 @@
 *:after
   box-sizing: inherit
 
-
 html
   box-sizing: border-box
   font-family: Lato, sans-serif
@@ -50,7 +49,26 @@ article
   position: relative
   width: 100%
 
+  +lte_ipad
+    padding: 0 rem(16px)
+
+  +laptop
+    padding: 0 scale-between(30px, 45px, 1024px, 1280px)
+
   +gte_laptop
     max-width: 1100px
     margin: 0 auto
-    padding: 0 30px
+
+  +gte_desktop
+    padding: 0 45px
+
+h1
+  font-weight: 900
+
+  +lte_ipad
+    font-size: rem(24px)
+    line-height: rem(32px)
+
+  +gte_laptop
+    font-size: 44px
+    line-height: 52px

@@ -1,0 +1,2 @@
+@function scale-between($from_px, $to_px, $resolution_from, $resolution_to)
+  @return calc(#{$from_px} + #{($to_px - $from_px) / #{$resolution_to - $resolution_from}} * (100vw - #{$resolution_from}))
