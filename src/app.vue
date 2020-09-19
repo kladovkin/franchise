@@ -10,8 +10,8 @@ export default {
   components: {
     Landing
   }
-}
+};
 </script>
 
-<style>
+<style scoped lang='sass'>
 </style>

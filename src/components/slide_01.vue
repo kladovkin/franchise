@@ -10,5 +10,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang='sass'>
+article
+  background: #f44f0c
 </style>

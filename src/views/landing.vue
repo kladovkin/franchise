@@ -45,5 +45,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang='sass'>
+section
+
+/deep/ article
+  &:not(.fullwidth)
+    max-width: 1100px
 </style>
