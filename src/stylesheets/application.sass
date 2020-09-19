@@ -1,9 +1,18 @@
 @import 'node_modules/reset-css/sass/reset'
+@import ./mixins/font_face.scss
+
+// 'Lato:300,400,500,700,900'
++font-face('lato', '../assets/fonts/lato/Lato-Light', 300, $exts: eot woff woff2 ttf);
++font-face('lato', '../assets/fonts/lato/Lato-Regular', 400, $exts: eot woff woff2 ttf);
++font-face('lato', '../assets/fonts/lato/Lato-Medium', 500, $exts: eot woff woff2 ttf);
++font-face('lato', '../assets/fonts/lato/Lato-Bold', 700, $exts: eot woff woff2 ttf);
++font-face('lato', '../assets/fonts/lato/Lato-Black', 900, $exts: eot woff woff2 ttf);
 
 *,
 *:before,
 *:after
   box-sizing: inherit
+
 
 html
   box-sizing: border-box
