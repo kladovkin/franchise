@@ -21,7 +21,6 @@ extends:
 
 plugins:
   - vue
-  - graphql
 
 rules:
   quotes:
