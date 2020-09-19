@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <article>
     Комиссия управляющей компании
-  </div>
+  </article>
 </template>
 
 <script>

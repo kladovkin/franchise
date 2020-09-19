@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <article>
     Кейсы
-  </div>
+  </article>
 </template>
 
 <script>

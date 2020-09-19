@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <article>
     Self Storage — новый подход к бизнесу в сфере недвижимости
-  </div>
+  </article>
 </template>
 
 <script>

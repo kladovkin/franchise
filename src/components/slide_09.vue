@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <article>
     Остались вопросы?
-  </div>
+  </article>
 </template>
 
 <script>

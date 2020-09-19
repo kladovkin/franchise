@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <article>
     Контакты
-  </div>
+  </article>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <article>
     Кладовкин — технологический лидер российского рынка Self Storage
-  </div>
+  </article>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <article>
     Организуем эффективный бизнес Self Storage с помощью IT-технологий
-  </div>
+  </article>
 </template>
 
 <script>

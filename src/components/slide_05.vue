@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <article>
     Мы работаем с юридическими лицами и ИП — собственниками помещений от 100 м²
-  </div>
+  </article>
 </template>
 
 <script>

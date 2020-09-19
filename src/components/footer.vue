@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <article>
     Футер
-  </div>
+  </article>
 </template>
 
 <script>

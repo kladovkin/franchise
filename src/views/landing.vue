@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <Slide01 />
     <Slide02 />
     <Slide03 />
@@ -11,7 +11,7 @@
     <Slide09 />
     <Slide10 />
     <Footer />
-  </div>
+  </section>
 </template>
 
 <script>

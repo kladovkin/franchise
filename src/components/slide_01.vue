@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <article>
     Технологичный бизнес на вашей территории
-  </div>
+  </article>
 </template>
 
 <script>
