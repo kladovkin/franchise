@@ -39,14 +39,14 @@ export default {
   +laptop
     background-position-x: scale-between(400px, 660px, 1024px, 1280px)
 
-  +desktop
+  // +desktop
     background-position-x: scale-between(660px, 741px, 1280px, 1440px)
 
   +desktop_hd
-    background-position-x: scale-between(741px, 982px, 1440px, 1920px)
+    background-position-x: scale-between(660px, 1119px, 1280px, 1920px)
 
   +uhd
-    background-position-x: scale-between(982px, 1440px, 1920px, 2520px)
+    background-position-x: scale-between(1119px, 1440px, 1920px, 2520px)
 
   &:before
     background: #f44f0c
