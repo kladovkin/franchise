@@ -6,6 +6,10 @@
         <div class='texts'>
           <h1>Технологичный бизнес на вашей территории</h1>
           <p>Станьте партнером и зарабатывайте на&nbsp;своей недвижимости</p>
+          <div class='lock'>
+            <p class='first'>Включи</p>
+            <p class='second'>свой бизнес</p>
+          </div>
         </div>
         <div class='collapsed'>
           <div class='start' />
@@ -38,9 +42,6 @@ export default {
 
   +laptop
     background-position-x: scale-between(400px, 660px, 1024px, 1280px)
-
-  // +desktop
-    background-position-x: scale-between(660px, 741px, 1280px, 1440px)
 
   +desktop_hd
     background-position-x: scale-between(660px, 1119px, 1280px, 1920px)
@@ -76,6 +77,7 @@ article
   +gte_laptop
     display: flex
     min-height: 600px
+    position: relative
 
     &:before
       content: ''
@@ -120,6 +122,38 @@ article
       +gte_laptop
         font-size: 24px
         line-height: 28px
+
+  .lock
+    align-items: center
+    background-image: url(../assets/slide_01/lock.svg)
+    background-repeat: no-repeat
+    background-size: contain
+    border-radius: 127px
+    cursor: pointer
+    display: flex
+    flex-direction: column
+    height: 127px
+    justify-content: center
+    position: absolute
+    right: -142px
+    top: 50%
+    transform: translateY(-50%)
+    user-select: none
+    width: 127px
+
+    +lte_ipad
+      display: none
+
+    p.first
+      font-size: 16px
+      font-weight: 900
+      line-height: 18px
+      margin-top: 20px
+
+    p.second
+      font-weight: 400
+      font-size: 10px
+      line-height: 18px
 
   .collapsed
     display: flex
