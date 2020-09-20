@@ -174,7 +174,7 @@ article
       +laptop_hd
         transition: opacity 0.75s ease-in 0.4s
 
-      +hd
+      +gte_hd
         transition: opacity 1s ease-in 0.5s
 
     .start
@@ -212,7 +212,7 @@ article
       +laptop_hd
         transition: left 1.15s ease-out, opacity 1s ease-in 0.15s
 
-      +hd
+      +gte_hd
         transition: left 1s ease-out, opacity 0.85s ease-in 0.15s
 
       +lte_ipad
