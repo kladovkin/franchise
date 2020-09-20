@@ -182,12 +182,14 @@ article
       width: 78px
 
     .middle
-      background-repeat-x: repeat
       background-image: url(../assets/slide_01/collapsed-middle-desktop.svg)
+      background-repeat-x: repeat
       flex-grow: 1
+      margin-left: -1px
 
     .end
       background-image: url(../assets/slide_01/collapsed-end-desktop.svg)
+      margin-left: -1px
       width: 42px
 
     .lock
