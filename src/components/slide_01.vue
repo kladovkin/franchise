@@ -37,13 +37,16 @@ export default {
     background-image: url(../assets/slide_01/background_right.png)
 
   +laptop
-    background-position-x: scale-between(400px, 579px, 1024px, 1200px)
+    background-position-x: scale-between(400px, 660px, 1024px, 1280px)
 
   +desktop
-    background-position-x: scale-between(578px, 701px, 1200px, 1440px)
+    background-position-x: scale-between(660px, 741px, 1280px, 1440px)
 
-  +gte_hd
-    background-position-x: scale-between(701px, 942px, 1440px, 1920px)
+  +desktop_hd
+    background-position-x: scale-between(741px, 982px, 1440px, 1920px)
+
+  +uhd
+    background-position-x: scale-between(982px, 1440px, 1920px, 2520px)
 
   &:before
     background: #f44f0c
@@ -145,10 +148,13 @@ article
       width: 42px
 
       +laptop
-        margin-right: scale-between(123px, 156px, 1024px, 1200px)
+        margin-right: scale-between(123px, 156px, 1024px, 1280px)
 
-      +gte_desktop
-        margin-right: 156px
+      +desktop_hd
+        margin-right: scale-between(156px, 19px, 1280px, 1920px)
+
+      +uhd
+        margin-right: 19px
 
 .logo
   background-image: url(../assets/slide_01/logo.svg)
