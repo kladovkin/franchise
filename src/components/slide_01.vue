@@ -3,7 +3,7 @@
     <article>
       <router-link to='/' class='logo' />
       <div class='outer' :class='{ "is-expanded": isExpanded }'>
-        <div class='texts'>
+        <div class='content'>
           <h1>Технологичный бизнес на вашей территории</h1>
           <p>Станьте партнером и зарабатывайте на&nbsp;своей недвижимости</p>
           <div class='lock' @click='expand'>
@@ -97,12 +97,7 @@ article
       z-index: 1
       pointer-events: none
 
-  &.is-expanded
-    .texts
-      +gte_laptop
-        background-image: url(../assets/slide_01/background_left_expanded-desktop.svg)
-
-  .texts
+  .content
     +gte_laptop
       background: #f44f0c
       padding-top: 200px
@@ -127,6 +122,19 @@ article
       +gte_laptop
         font-size: 24px
         line-height: 28px
+
+    &:after
+      +gte_laptop
+        background-image: url(../assets/slide_01/expanded_half_ellipse-desktop.svg)
+        background-repeat: no-repeat
+        background-size: contain
+        content: ''
+        height: 100%
+        pointer-events: none
+        position: absolute
+        right: -177px
+        top: 0
+        width: 177px
 
   .lock
     align-items: center
