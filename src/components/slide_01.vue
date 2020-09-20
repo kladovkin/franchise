@@ -146,16 +146,23 @@ article
 
       .lock
         opacity: 0
-
-        +laptop_hd
-          left: calc(100% - #{$lock-size})
-        +hd
-          left: 100%
+        left: 100%
 
   .collapsed
     display: flex
     flex-grow: 1
     position: relative
+
+    +laptop_desktop
+      max-width: scale-between(306px, 425px, 1024px, 1440px)
+
+    +gte_hd
+      max-width: 425px
+
+    // 429px
+
+    // 306px
+    // 425px
 
     .start,
     .middle,
@@ -179,21 +186,9 @@ article
       background-image: url(../assets/slide_01/collapsed-middle-desktop.svg)
       flex-grow: 1
 
-      +laptop_desktop
-        max-width: scale-between(186px, 305px, 1024px, 1440px)
-
-      +gte_hd
-        max-width: 305px
-
     .end
       background-image: url(../assets/slide_01/collapsed-end-desktop.svg)
-      $width: 42px
-
-      +laptop
-        width: scale-between(123px + $width, 181px + $width, 1024px, 1280px)
-
-      +gte_desktop
-        width: 181px + $width
+      width: 42px
 
     .lock
       align-items: center
