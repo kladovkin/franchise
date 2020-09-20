@@ -5,7 +5,7 @@
       <div class='outer' :class='{ "is-expanded": isExpanded }'>
         <div class='content'>
           <h1>Технологичный бизнес на вашей территории</h1>
-          <p>Станьте партнером и зарабатывайте на&nbsp;своей недвижимости</p>
+          <p>Станьте партнером и зарабатывайте на&nbsp;своей&nbsp;недвижимости</p>
         </div>
         <div class='collapsed'>
           <div class='lock' @click='expand'>
@@ -46,13 +46,13 @@ export default {
     background-image: url(../assets/slide_01/background_right.png)
 
   +laptop
-    background-position-x: scale-between(400px, 660px, 1024px, 1280px)
+    background-position-x: scale-between(400px, 571px, 1024px, 1280px)
 
   +desktop_hd
-    background-position-x: scale-between(660px, 1119px, 1280px, 1920px)
+    background-position-x: scale-between(571px, 925px, 1280px, 1920px)
 
   +uhd
-    background-position-x: scale-between(1119px, 1440px, 1920px, 2520px)
+    background-position-x: scale-between(925px, 1224px, 1920px, 2520px)
 
   &:before
     background: #f44f0c
@@ -102,7 +102,7 @@ article
       background: #f44f0c
       padding-top: 200px
       position: relative
-      width: 63.6%
+      max-width: 565px
 
     h1
       +lte_ipad
@@ -136,6 +136,7 @@ article
         top: 0
         width: 177px
 
+  $lock-size: 127px
   &.is-expanded
     .collapsed
       .start,
@@ -144,8 +145,12 @@ article
         opacity: 0
 
       .lock
-        left: 100%
         opacity: 0
+
+        +laptop_hd
+          left: calc(100% - #{$lock-size})
+        +hd
+          left: 100%
 
   .collapsed
     display: flex
@@ -158,7 +163,12 @@ article
       background-position: left
       background-repeat: no-repeat
       pointer-events: none
-      transition: opacity 1s ease-in 0.5s
+
+      +laptop_hd
+        transition: opacity 0.75s ease-in 0.4s
+
+      +hd
+        transition: opacity 1s ease-in 0.5s
 
     .start
       background-image: url(../assets/slide_01/collapsed-start-desktop.svg)
@@ -169,38 +179,46 @@ article
       background-image: url(../assets/slide_01/collapsed-middle-desktop.svg)
       flex-grow: 1
 
+      +laptop_desktop
+        max-width: scale-between(186px, 305px, 1024px, 1440px)
+
+      +gte_hd
+        max-width: 305px
+
     .end
       background-image: url(../assets/slide_01/collapsed-end-desktop.svg)
-      width: 42px
+      $width: 42px
 
       +laptop
-        margin-right: scale-between(123px, 156px, 1024px, 1280px)
+        width: scale-between(123px + $width, 181px + $width, 1024px, 1280px)
 
-      +desktop_hd
-        margin-right: scale-between(156px, 19px, 1280px, 1920px)
-
-      +uhd
-        margin-right: 19px
+      +gte_desktop
+        width: 181px + $width
 
     .lock
       align-items: center
       background-image: url(../assets/slide_01/lock.svg)
       background-repeat: no-repeat
       background-size: contain
-      border-radius: 127px
+      border-radius: $lock-size
       cursor: pointer
       display: flex
       flex-direction: column
-      height: 127px
+      height: $lock-size
       justify-content: center
       position: absolute
       left: 15px
       top: 50%
       transform: translateY(-50%)
-      transition: left 1.5s ease-out, opacity 1.25s ease-in 0.25s
       user-select: none
-      width: 127px
+      width: $lock-size
       -webkit-tap-highlight-color: transparent
+
+      +laptop_hd
+        transition: left 1.15s ease-out, opacity 1s ease-in 0.15s
+
+      +hd
+        transition: left 1s ease-out, opacity 0.85s ease-in 0.15s
 
       +lte_ipad
         display: none
