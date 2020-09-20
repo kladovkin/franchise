@@ -1,12 +1,15 @@
 <template>
   <article>
     <router-link to='/' class='logo' />
-    <div class="fc" :class='{ "is-expanded": isExpanded }'>
-      <div class="f-left">
+    <div class='outer' :class='{ "is-expanded": isExpanded }'>
+      <div class='texts'>
         <h1>Технологичный бизнес на вашей территории</h1>
         <p>Станьте партнером и зарабатывайте на&nbsp;своей недвижимости</p>
       </div>
-      <div class="f-right">
+      <div class='collapsed'>
+        <div class='start' />
+        <div class='middle' />
+        <div class='end' />
       </div>
     </div>
   </article>
@@ -37,7 +40,7 @@ article
     background: rgba(#f44f0c, 0.75)
     /* background: #f44f0c */
 
-.fc
+.outer
   +gte_laptop
     background-image: url(../assets/slide_01/background_circles-desktop.svg)
     background-repeat: no-repeat
@@ -46,16 +49,13 @@ article
     min-height: 600px
 
   &.is-expanded
-    .f-left
+    .texts
       +gte_laptop
         background-image: url(../assets/slide_01/background_left_expanded-desktop.svg)
 
-  .f-left
+  .texts
     +gte_laptop
       padding-top: 200px
-      background-position: right
-      background-repeat: no-repeat
-      background-image: url(../assets/slide_01/background_left_collapsed-desktop.svg)
       background-size: contain
       width: 63.6%
 
@@ -78,13 +78,37 @@ article
         font-size: 24px
         line-height: 28px
 
+  .collapsed
+    display: flex
+    flex-grow: 1
+
+    .start
+      background-position: right
+      background-repeat: no-repeat
+      background-image: url(../assets/slide_01/collapsed-start-desktop.svg)
+      background-position: left
+      width: 78px
+
+    .middle
+      background-position: right
+      background-repeat: no-repeat
+      background-image: url(../assets/slide_01/collapsed-middle-desktop.svg)
+      background-position: left
+      flex-grow: 1
+
+    .end
+      background-position: right
+      background-repeat: no-repeat
+      background-image: url(../assets/slide_01/collapsed-end-desktop.svg)
+      background-position: left
+      width: 42px
+
   .f-right
     +gte_laptop
       background: #fff
-      /* background-image: url(../assets/slide_01/background_left_ellipse-desktop.svg) */
-      /* background-position: right                                                    */
-      /* background-repeat: no-repeat                                                  */
-      /* background-size: contain                                                      */
+      background-image: url(../assets/slide_01/background_right-desktop.png)
+      background-repeat: no-repeat
+      background-size: cover
       width: 36.4%
 
 .logo
