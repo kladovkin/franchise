@@ -28,8 +28,30 @@ export default {
 
 <style scoped lang='sass'>
 .background
-  background: rgba(#f44f0c, 0.75)
-  /* background: #f44f0c */
+  position: relative
+  background-repeat: no-repeat
+  background-size: contain
+  background-position: right
+
+  +gte_laptop
+    background-image: url(../assets/slide_01/background_right.png)
+
+  +laptop
+    background-position-x: scale-between(400px, 579px, 1024px, 1200px)
+
+  +desktop
+    background-position-x: scale-between(578px, 701px, 1200px, 1440px)
+
+  +gte_hd
+    background-position-x: scale-between(701px, 942px, 1440px, 1920px)
+
+  &:before
+    position: absolute
+    z-index: -1
+    background: #f44f0c
+    width: 100%
+    height: 100%
+    content: ''
 
 article
   color: #fff
@@ -60,8 +82,9 @@ article
 
   .texts
     +gte_laptop
-      padding-top: 200px
       background-size: contain
+      background: #f44f0c
+      padding-top: 200px
       width: 63.6%
 
     h1
@@ -114,15 +137,6 @@ article
 
       +gte_desktop
         margin-right: 156px
-
-
-  .f-right
-    +gte_laptop
-      background: #fff
-      background-image: url(../assets/slide_01/background_right-desktop.png)
-      background-repeat: no-repeat
-      background-size: cover
-      width: 36.4%
 
 .logo
   background-image: url(../assets/slide_01/logo.svg)
