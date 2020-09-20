@@ -6,12 +6,12 @@
         <div class='content'>
           <h1>Технологичный бизнес на вашей территории</h1>
           <p>Станьте партнером и зарабатывайте на&nbsp;своей недвижимости</p>
+        </div>
+        <div class='collapsed'>
           <div class='lock' @click='expand'>
             <p class='first'>Включи</p>
             <p class='second'>свой бизнес</p>
           </div>
-        </div>
-        <div class='collapsed'>
           <div class='start' />
           <div class='middle' />
           <div class='end' />
@@ -136,67 +136,41 @@ article
         top: 0
         width: 177px
 
-  .lock
-    align-items: center
-    background-image: url(../assets/slide_01/lock.svg)
-    background-repeat: no-repeat
-    background-size: contain
-    border-radius: 127px
-    cursor: pointer
-    display: flex
-    flex-direction: column
-    height: 127px
-    justify-content: center
-    position: absolute
-    right: -142px
-    top: 50%
-    transform: translateY(-50%)
-    user-select: none
-    width: 127px
-
-    +lte_ipad
-      display: none
-
-    p.first
-      font-size: 16px
-      font-weight: 900
-      line-height: 18px
-      margin-top: 20px
-
-    p.second
-      font-weight: 400
-      font-size: 10px
-      line-height: 18px
-
   &.is-expanded
     .collapsed
-      opacity: 0
+      .start,
+      .middle,
+      .end
+        opacity: 0
+
+      .lock
+        left: 100%
+        opacity: 0
 
   .collapsed
     display: flex
     flex-grow: 1
-    transition: opacity 1s ease-in
+    position: relative
+
+    .start,
+    .middle,
+    .end
+      background-position: left
+      background-repeat: no-repeat
+      pointer-events: none
+      transition: opacity 1s ease-in 0.5s
 
     .start
-      background-position: right
-      background-repeat: no-repeat
       background-image: url(../assets/slide_01/collapsed-start-desktop.svg)
-      background-position: left
       width: 78px
 
     .middle
-      background-position: right
-      background-repeat-y: no-repeat
       background-repeat-x: repeat
       background-image: url(../assets/slide_01/collapsed-middle-desktop.svg)
-      background-position: left
       flex-grow: 1
 
     .end
-      background-position: right
-      background-repeat: no-repeat
       background-image: url(../assets/slide_01/collapsed-end-desktop.svg)
-      background-position: left
       width: 42px
 
       +laptop
@@ -207,6 +181,40 @@ article
 
       +uhd
         margin-right: 19px
+
+    .lock
+      align-items: center
+      background-image: url(../assets/slide_01/lock.svg)
+      background-repeat: no-repeat
+      background-size: contain
+      border-radius: 127px
+      cursor: pointer
+      display: flex
+      flex-direction: column
+      height: 127px
+      justify-content: center
+      position: absolute
+      left: 15px
+      top: 50%
+      transform: translateY(-50%)
+      transition: left 1.5s ease-out, opacity 1.25s ease-in 0.25s
+      user-select: none
+      width: 127px
+      -webkit-tap-highlight-color: transparent
+
+      +lte_ipad
+        display: none
+
+      p.first
+        font-size: 16px
+        font-weight: 900
+        line-height: 18px
+        margin-top: 20px
+
+      p.second
+        font-weight: 400
+        font-size: 10px
+        line-height: 18px
 
 .logo
   background-image: url(../assets/slide_01/logo.svg)
