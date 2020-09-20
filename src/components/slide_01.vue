@@ -1,18 +1,20 @@
 <template>
-  <article>
-    <router-link to='/' class='logo' />
-    <div class='outer' :class='{ "is-expanded": isExpanded }'>
-      <div class='texts'>
-        <h1>Технологичный бизнес на вашей территории</h1>
-        <p>Станьте партнером и зарабатывайте на&nbsp;своей недвижимости</p>
+  <div class='background'>
+    <article>
+      <router-link to='/' class='logo' />
+      <div class='outer' :class='{ "is-expanded": isExpanded }'>
+        <div class='texts'>
+          <h1>Технологичный бизнес на вашей территории</h1>
+          <p>Станьте партнером и зарабатывайте на&nbsp;своей недвижимости</p>
+        </div>
+        <div class='collapsed'>
+          <div class='start' />
+          <div class='middle' />
+          <div class='end' />
+        </div>
       </div>
-      <div class='collapsed'>
-        <div class='start' />
-        <div class='middle' />
-        <div class='end' />
-      </div>
-    </div>
-  </article>
+    </article>
+  </div>
 </template>
 
 <script>
@@ -25,6 +27,10 @@ export default {
 </script>
 
 <style scoped lang='sass'>
+.background
+  background: rgba(#f44f0c, 0.75)
+  /* background: #f44f0c */
+
 article
   color: #fff
 
@@ -37,8 +43,7 @@ article
     min-height: rem(313px)
 
   +gte_laptop
-    background: rgba(#f44f0c, 0.75)
-    /* background: #f44f0c */
+    padding-right: 0
 
 .outer
   +gte_laptop
@@ -91,7 +96,8 @@ article
 
     .middle
       background-position: right
-      background-repeat: no-repeat
+      background-repeat-y: no-repeat
+      background-repeat-x: repeat
       background-image: url(../assets/slide_01/collapsed-middle-desktop.svg)
       background-position: left
       flex-grow: 1
@@ -102,6 +108,13 @@ article
       background-image: url(../assets/slide_01/collapsed-end-desktop.svg)
       background-position: left
       width: 42px
+
+      +laptop
+        margin-right: scale-between(123px, 156px, 1024px, 1200px)
+
+      +gte_desktop
+        margin-right: 156px
+
 
   .f-right
     +gte_laptop
