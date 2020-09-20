@@ -46,12 +46,14 @@ export default {
     background-position-x: scale-between(701px, 942px, 1440px, 1920px)
 
   &:before
-    position: absolute
-    z-index: -1
     background: #f44f0c
-    width: 100%
-    height: 100%
     content: ''
+    height: 100%
+    left: 0
+    position: absolute
+    top: 0
+    width: 100%
+    z-index: -1
 
 article
   color: #fff
@@ -69,11 +71,21 @@ article
 
 .outer
   +gte_laptop
-    background-image: url(../assets/slide_01/background_circles-desktop.svg)
-    background-repeat: no-repeat
-    background-size: contain
     display: flex
     min-height: 600px
+
+    &:before
+      content: ''
+      background-image: url(../assets/slide_01/background_circles-desktop.svg)
+      background-repeat: no-repeat
+      background-size: contain
+      height: 100%
+      left: 0
+      position: absolute
+      top: 0
+      width: 100%
+      z-index: 1
+      pointer-events: none
 
   &.is-expanded
     .texts
@@ -82,9 +94,9 @@ article
 
   .texts
     +gte_laptop
-      background-size: contain
       background: #f44f0c
       padding-top: 200px
+      position: relative
       width: 63.6%
 
     h1
