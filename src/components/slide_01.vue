@@ -1,7 +1,7 @@
 <template>
   <article>
     <router-link to='/' class='logo' />
-    <div class="fc">
+    <div class="fc" :class='{ "is-expanded": isExpanded }'>
       <div class="f-left">
         <h1>Технологичный бизнес на вашей территории</h1>
         <p>Станьте партнером и зарабатывайте на&nbsp;своей недвижимости</p>
@@ -14,7 +14,10 @@
 
 <script>
 export default {
-  name: 'Slide1'
+  name: 'Slide1',
+  data: () => ({
+    isExpanded: false
+  })
 };
 </script>
 
@@ -31,18 +34,28 @@ article
     min-height: rem(313px)
 
   +gte_laptop
+    background: rgba(#f44f0c, 0.75)
     /* background: #f44f0c */
-    padding-top: 200px
-    min-height: 600px
 
 .fc
   +gte_laptop
+    background-image: url(../assets/slide_01/background_circles-desktop.svg)
+    background-repeat: no-repeat
+    background-size: contain
     display: flex
+    min-height: 600px
+
+  &.is-expanded
+    .f-left
+      +gte_laptop
+        background-image: url(../assets/slide_01/background_left_expanded-desktop.svg)
 
   .f-left
     +gte_laptop
-      background-image: url(../assets/slide_01/background_left-desktop.svg)
+      padding-top: 200px
+      background-position: right
       background-repeat: no-repeat
+      background-image: url(../assets/slide_01/background_left_collapsed-desktop.svg)
       background-size: contain
       width: 63.6%
 
@@ -64,6 +77,15 @@ article
       +gte_laptop
         font-size: 24px
         line-height: 28px
+
+  .f-right
+    +gte_laptop
+      background: #fff
+      /* background-image: url(../assets/slide_01/background_left_ellipse-desktop.svg) */
+      /* background-position: right                                                    */
+      /* background-repeat: no-repeat                                                  */
+      /* background-size: contain                                                      */
+      width: 36.4%
 
 .logo
   background-image: url(../assets/slide_01/logo.svg)
