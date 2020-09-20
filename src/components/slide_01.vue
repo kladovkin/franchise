@@ -6,7 +6,7 @@
         <div class='texts'>
           <h1>Технологичный бизнес на вашей территории</h1>
           <p>Станьте партнером и зарабатывайте на&nbsp;своей недвижимости</p>
-          <div class='lock'>
+          <div class='lock' @click='expand'>
             <p class='first'>Включи</p>
             <p class='second'>свой бизнес</p>
           </div>
@@ -26,7 +26,12 @@ export default {
   name: 'Slide1',
   data: () => ({
     isExpanded: false
-  })
+  }),
+  methods: {
+    expand() {
+      this.isExpanded = true;
+    }
+  }
 };
 </script>
 
@@ -155,9 +160,14 @@ article
       font-size: 10px
       line-height: 18px
 
+  &.is-expanded
+    .collapsed
+      opacity: 0
+
   .collapsed
     display: flex
     flex-grow: 1
+    transition: opacity 1s ease-in
 
     .start
       background-position: right
