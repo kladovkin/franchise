@@ -1,5 +1,5 @@
 <template>
-  <div class='background' :class='{ "is-expanded": isExpanded }'>
+  <div class='background' :class='{ "is-opened": isOpened }'>
     <article>
       <router-link to='/' class='logo' />
       <div class='outer'>
@@ -8,7 +8,7 @@
           <p>Станьте партнером и зарабатывайте на&nbsp;своей&nbsp;недвижимости</p>
         </div>
         <div class='collapsed'>
-          <div class='lock' @click='expand'>
+          <div class='lock' @click='open'>
             <p class='first'>Включи</p>
             <p class='second'>свой бизнес</p>
           </div>
@@ -28,11 +28,11 @@
 export default {
   name: 'Slide1',
   data: () => ({
-    isExpanded: false
+    isOpened: false
   }),
   methods: {
-    expand() {
-      this.isExpanded = true;
+    open() {
+      this.isOpened = true;
     }
   }
 };
@@ -58,6 +58,7 @@ export default {
   +uhd
     background-position-x: scale-between(925px, 1224px, 1920px, 2520px)
 
+  // red background
   &:before
     background: #f44f0c
     content: ''
@@ -67,6 +68,9 @@ export default {
     top: 0
     width: 100%
     z-index: -1
+
+  // shade for image under opened lock
+  &:after
 
 article
   color: #fff
@@ -146,7 +150,7 @@ article
     flex-grow: 1
     position: relative
 
-    .is-expanded &
+    .is-opened &
       &:before
         opacity: 0
 
