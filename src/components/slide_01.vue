@@ -4,7 +4,7 @@
       <router-link to='/' class='logo' />
       <div class='outer' :class='{ "is-expanded": isExpanded }'>
         <div class='content'>
-          <h1>Технологичный бизнес на вашей территории</h1>
+          <h1>Технологичный бизнес на&nbsp;вашей территории</h1>
           <p>Станьте партнером и зарабатывайте на&nbsp;своей&nbsp;недвижимости</p>
         </div>
         <div class='collapsed'>
@@ -82,6 +82,7 @@ article
   +gte_laptop
     display: flex
     min-height: 600px
+    overflow: hidden // to prevent .collapsed:before overflow
     position: relative
 
     &:before
