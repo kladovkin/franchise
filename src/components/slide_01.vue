@@ -237,7 +237,7 @@ article
 
     .middle
       background-image: url(../assets/slide_01/collapsed-middle-desktop.svg)
-      background-repeat-x: repeat
+      background-repeat: repeat-x
       flex-grow: 1
       margin-left: -1px // NOTE: fix browser glitches
 
