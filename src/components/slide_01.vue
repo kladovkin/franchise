@@ -1,8 +1,8 @@
 <template>
-  <div class='background'>
+  <div class='background' :class='{ "is-expanded": isExpanded }'>
     <article>
       <router-link to='/' class='logo' />
-      <div class='outer' :class='{ "is-expanded": isExpanded }'>
+      <div class='outer'>
         <div class='content'>
           <h1>Технологичный бизнес на&nbsp;вашей территории</h1>
           <p>Станьте партнером и зарабатывайте на&nbsp;своей&nbsp;недвижимости</p>
@@ -44,6 +44,7 @@ export default {
   background-repeat: no-repeat
   background-size: contain
   background-position: right
+  overflow: hidden // to prevent .collapsed:before overflow
 
   +gte_laptop
     background-image: url(../assets/slide_01/background_right.png)
@@ -85,7 +86,6 @@ article
   +gte_laptop
     display: flex
     min-height: 600px
-    overflow: hidden // to prevent .collapsed:before overflow
     position: relative
 
     &:before
@@ -141,9 +141,12 @@ article
         width: 177px
         z-index: 1
 
-  $lock-size: 127px
-  &.is-expanded
-    .collapsed
+  .collapsed
+    display: flex
+    flex-grow: 1
+    position: relative
+
+    .is-expanded &
       &:before
         opacity: 0
 
@@ -159,11 +162,6 @@ article
       .yield
         opacity: 1
         margin-top : 0
-
-  .collapsed
-    display: flex
-    flex-grow: 1
-    position: relative
 
     +laptop_desktop
       max-width: scale-between(306px, 425px, 1024px, 1440px)
@@ -216,6 +214,7 @@ article
       margin-left: -1px // NOTE: fix browser glitches
       width: 42px
 
+    $lock-size: 127px
     .lock
       align-items: center
       background-image: url(../assets/slide_01/lock.svg)
@@ -262,6 +261,7 @@ article
       transform: translateY(-50%)
       margin-top: 35px
       z-index: 2
+      pointer-events: none
 
       +laptop
         left: scale-between(68px, 156px, 1024px, 1280px)
