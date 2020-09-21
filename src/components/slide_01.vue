@@ -160,8 +160,9 @@ article
         left: 100%
 
       .yield
-        opacity: 1
         margin-top : 0
+        opacity: 1
+        pointer-events: auto
 
     +laptop_desktop
       max-width: scale-between(306px, 425px, 1024px, 1440px)
@@ -255,13 +256,13 @@ article
         line-height: 18px
 
     .yield
+      margin-top: 35px
       opacity: 0
+      pointer-events: none
       position: absolute
       top: 50%
       transform: translateY(-50%)
-      margin-top: 35px
       z-index: 2
-      pointer-events: none
 
       +laptop
         left: scale-between(68px, 156px, 1024px, 1280px)
