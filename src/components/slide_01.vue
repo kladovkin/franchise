@@ -156,6 +156,10 @@ article
         opacity: 0
         left: 100%
 
+      .yield
+        opacity: 1
+        margin-top : 0
+
   .collapsed
     display: flex
     flex-grow: 1
@@ -252,17 +256,25 @@ article
         line-height: 18px
 
     .yield
+      opacity: 0
       position: absolute
-      z-index: 2
       top: 50%
       transform: translateY(-50%)
+      margin-top: 35px
+      z-index: 2
 
       +laptop
-        margin-top: scale-between(-20px, 0px, 1024px, 1280px)
         left: scale-between(68px, 156px, 1024px, 1280px)
+        transition: opacity 0.75s ease 0.85s, margin-top 0.75s ease 0.85s
 
-      +gte_desktop
-        left: 156px
+      +desktop_hd
+        left: scale-between(156px, 290px, 1280px, 1920px)
+
+      +gte_hd
+        transition: opacity 1s ease 1.1s, margin-top 1s ease 1.1s
+
+      +uhd
+        left: 290px
 
       &:before
         background-image: url(../assets/slide_01/yield-desktop.svg)
@@ -275,6 +287,7 @@ article
         margin-bottom: 12px
 
         +laptop
+          margin-top: scale-between(-20px, 0px, 1024px, 1280px)
           width: scale-between(380px, 456px, 1024px, 1280px)
 
         +gte_desktop
@@ -298,6 +311,7 @@ article
   background-repeat: no-repeat
   background-size: contain
   position: absolute
+  z-index: 1
 
   +lte_ipad
     height: rem(52px)
