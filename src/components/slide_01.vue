@@ -12,6 +12,9 @@
             <p class='first'>Включи</p>
             <p class='second'>свой бизнес</p>
           </div>
+          <div class='yield'>
+            <p>Ставка доходности с Кладовкин</p>
+          </div>
           <div class='start' />
           <div class='middle' />
           <div class='end' />
@@ -126,7 +129,7 @@ article
 
     &:after
       +gte_laptop
-        background-image: url(../assets/slide_01/expanded_half_ellipse-desktop.svg)
+        background-image: url(../assets/slide_01/expanded-half_ellipse-desktop.svg)
         background-repeat: no-repeat
         background-size: contain
         content: ''
@@ -247,6 +250,48 @@ article
         font-weight: 400
         font-size: 10px
         line-height: 18px
+
+    .yield
+      position: absolute
+      z-index: 2
+      top: 50%
+      transform: translateY(-50%)
+
+      +laptop
+        margin-top: scale-between(-20px, 0px, 1024px, 1280px)
+        left: scale-between(68px, 156px, 1024px, 1280px)
+
+      +gte_desktop
+        left: 156px
+
+      &:before
+        background-image: url(../assets/slide_01/yield-desktop.svg)
+        background-position: bottom
+        background-repeat: no-repeat
+        background-size: contain
+        content: ''
+        display: block
+        height: 182px
+        margin-bottom: 12px
+
+        +laptop
+          width: scale-between(380px, 456px, 1024px, 1280px)
+
+        +gte_desktop
+          width: 456px
+
+      p
+        letter-spacing: -0.01em
+
+        +lte_ipad
+          font-weight: 500
+          font-size: rem(14px)
+          line-height: rem(14px)
+
+        +gte_laptop
+          font-size: 18px
+          font-weight: bold
+          line-height: 23px
 
 .logo
   background-image: url(../assets/slide_01/logo.svg)
