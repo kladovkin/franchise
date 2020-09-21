@@ -132,13 +132,17 @@ article
         height: 100%
         pointer-events: none
         position: absolute
-        right: -177px
+        right: -176px
         top: 0
         width: 177px
+        z-index: 1
 
   $lock-size: 127px
   &.is-expanded
     .collapsed
+      &:before
+        opacity: 0
+
       .start,
       .middle,
       .end
@@ -159,10 +163,20 @@ article
     +gte_hd
       max-width: 425px
 
-    // 429px
+    &:before
+      background: linear-gradient(45deg, #fff, rgba(#fff, 0.3))
+      content: ''
+      height: 100%
+      left: 1px
+      pointer-events: none
+      position: absolute
+      width: calc(100% - 2px)
 
-    // 306px
-    // 425px
+      +laptop_hd
+        transition: opacity 0.75s ease-in 0.4s
+
+      +gte_hd
+        transition: opacity 1s ease-in 0.5s
 
     .start,
     .middle,
@@ -170,6 +184,8 @@ article
       background-position: left
       background-repeat: no-repeat
       pointer-events: none
+      position: relative
+      z-index: 1
 
       +laptop_hd
         transition: opacity 0.75s ease-in 0.4s
@@ -185,11 +201,11 @@ article
       background-image: url(../assets/slide_01/collapsed-middle-desktop.svg)
       background-repeat-x: repeat
       flex-grow: 1
-      margin-left: -1px
+      margin-left: -1px // NOTE: fix browser glitches
 
     .end
       background-image: url(../assets/slide_01/collapsed-end-desktop.svg)
-      margin-left: -1px
+      margin-left: -1px // NOTE: fix browser glitches
       width: 42px
 
     .lock
