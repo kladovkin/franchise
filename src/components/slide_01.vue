@@ -167,7 +167,7 @@ article
       background: linear-gradient(to right, #fff, rgba(#fff, 0))
       content: ''
       height: 100%
-      left: 1px
+      left: 0
       pointer-events: none
       position: absolute
       width: 200%
