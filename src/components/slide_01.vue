@@ -71,6 +71,32 @@ export default {
 
   // shade for image under opened lock
   &:after
+    background: rgba(#000, 0.2)
+    height: 600px
+    opacity: 0
+    pointer-events: none
+    position: absolute
+    top: 0
+    width: 1024px
+
+    +laptop
+      left: scale-between(400px, 571px, 1024px, 1280px)
+      transition: opacity 0.75s ease 0.85s
+
+    +gte_laptop
+      content: ''
+
+    +desktop_hd
+      left: scale-between(571px, 925px, 1280px, 1920px)
+
+    +gte_hd
+      transition: opacity 1s ease 1.1s
+
+    +uhd
+      left: scale-between(925px, 1224px, 1920px, 2520px)
+
+  &.is-opened:after
+    opacity: 1
 
 article
   color: #fff
@@ -102,7 +128,7 @@ article
       position: absolute
       top: 0
       width: 100%
-      z-index: 1
+      z-index: 2
       pointer-events: none
 
   .content
@@ -111,6 +137,7 @@ article
       padding-top: 200px
       position: relative
       max-width: 565px
+      z-index: 1
 
     h1
       +lte_ipad
@@ -143,7 +170,7 @@ article
         right: -176px
         top: 0
         width: 177px
-        z-index: 1
+        z-index: 2
 
   .collapsed
     display: flex
@@ -196,7 +223,7 @@ article
       background-repeat: no-repeat
       pointer-events: none
       position: relative
-      z-index: 1
+      z-index: 2
 
       +laptop_hd
         transition: opacity 0.75s ease-in 0.4s
@@ -316,7 +343,7 @@ article
   background-repeat: no-repeat
   background-size: contain
   position: absolute
-  z-index: 1
+  z-index: 2
 
   +lte_ipad
     height: rem(52px)
