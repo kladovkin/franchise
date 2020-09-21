@@ -164,13 +164,13 @@ article
       max-width: 425px
 
     &:before
-      background: linear-gradient(45deg, #fff, rgba(#fff, 0.3))
+      background: linear-gradient(to right, #fff, rgba(#fff, 0))
       content: ''
       height: 100%
       left: 1px
       pointer-events: none
       position: absolute
-      width: calc(100% - 2px)
+      width: 200%
 
       +laptop_hd
         transition: opacity 0.75s ease-in 0.4s
