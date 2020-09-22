@@ -20,6 +20,7 @@
           <div class='end' />
         </div>
       </div>
+      <div class='button' @click='alert("not implemented")'>Оставить заявку</div>
     </article>
   </div>
 </template>
@@ -43,11 +44,15 @@ export default {
   position: relative
   background-repeat: no-repeat
   background-size: contain
-  background-position: right
   overflow: hidden // to prevent .collapsed:before overflow
+
+  +lte_ipad
+    background-image: url(../assets/slide_01/background_bottom.png)
+    background-position: bottom
 
   +gte_laptop
     background-image: url(../assets/slide_01/background_right.png)
+    background-position: right
 
   +laptop
     background-position-x: scale-between(400px, 571px, 1024px, 1280px)
@@ -73,8 +78,8 @@ export default {
   // shade for image under opened lock
   &:after
     background: rgba(#000, 0.2)
+    content: ''
     height: 600px
-    opacity: 0
     pointer-events: none
     position: absolute
     top: 0
@@ -85,7 +90,7 @@ export default {
       transition: opacity 0.75s ease 0.85s
 
     +gte_laptop
-      content: ''
+      opacity: 0
 
     +desktop_hd
       left: scale-between(571px, 925px, 1280px, 1920px)
@@ -103,15 +108,40 @@ article
   color: #fff
 
   +lte_ipad
-    text-align: center
-    padding-top: rem(110px)
     background-image: url(../assets/slide_01/background_upper-mobile.svg)
     background-repeat: no-repeat
     background-size: contain
-    min-height: rem(313px)
+    padding-bottom: rem(82px)
+    padding-top: rem(110px)
+    text-align: center
+    z-index: 1
 
   +gte_laptop
     padding-right: 0
+
+.logo
+  background-image: url(../assets/slide_01/logo.svg)
+  background-repeat: no-repeat
+  background-size: contain
+  position: absolute
+  z-index: 2
+
+  +lte_ipad
+    height: rem(52px)
+    left: rem(16px)
+    top: rem(14px)
+    width: rem(198px)
+
+  +laptop
+    left: scale-between(31px, 47px, 1024px, 1280px)
+
+  +gte_laptop
+    height: 53px
+    top: 42px
+    width: 200px
+
+  +gte_desktop
+    left: 47px
 
 .outer
   +gte_laptop
@@ -133,12 +163,16 @@ article
       pointer-events: none
 
   .content
+    position: relative
+    z-index: 1
+
+    +lte_ipad
+      margin-bottom: rem(150px)
+
     +gte_laptop
       background: #f44f0c
       padding-top: 200px
-      position: relative
       max-width: 565px
-      z-index: 1
 
     h1
       +lte_ipad
@@ -174,9 +208,11 @@ article
         z-index: 2
 
   .collapsed
-    display: flex
-    flex-grow: 1
     position: relative
+
+    +gte_laptop
+      display: flex
+      flex-grow: 1
 
     .is-opened &
       &:before
@@ -203,13 +239,14 @@ article
       max-width: 425px
 
     &:before
-      background: linear-gradient(to right, #fff, rgba(#fff, 0))
-      content: ''
-      height: 100%
-      left: 0
-      pointer-events: none
-      position: absolute
-      width: 200%
+      +gte_laptop
+        background: linear-gradient(to right, #fff, rgba(#fff, 0))
+        content: ''
+        height: 100%
+        left: 0
+        pointer-events: none
+        position: absolute
+        width: 200%
 
       +laptop_hd
         transition: opacity 0.75s ease-in 0.4s
@@ -288,13 +325,20 @@ article
         line-height: 18px
 
     .yield
-      margin-top: 35px
-      opacity: 0
-      pointer-events: none
-      position: absolute
-      top: 50%
-      transform: translateY(-50%)
-      z-index: 2
+      +lte_ipad
+        align-items: center
+        display: flex
+        flex-direction: column
+        margin-bottom: rem(53px)
+
+      +gte_laptop
+        margin-top: 35px
+        opacity: 0
+        pointer-events: none
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        z-index: 2
 
       +laptop
         left: scale-between(68px, 156px, 1024px, 1280px)
@@ -310,14 +354,24 @@ article
         left: 290px
 
       &:before
-        background-image: url(../assets/slide_01/yield-desktop.svg)
-        background-position: bottom
-        background-repeat: no-repeat
-        background-size: contain
         content: ''
         display: block
-        height: 182px
-        margin-bottom: 12px
+
+        +lte_ipad
+          background-image: url(../assets/slide_01/yield-mobile.svg)
+          background-repeat: no-repeat
+          background-size: contain
+          width: rem(185px)
+          height: rem(88px)
+          margin-bottom: rem(18px)
+
+        +gte_laptop
+          background-image: url(../assets/slide_01/yield-desktop.svg)
+          background-position: bottom
+          background-repeat: no-repeat
+          background-size: contain
+          height: 182px
+          margin-bottom: 12px
 
         +laptop
           margin-top: scale-between(-20px, 0px, 1024px, 1280px)
@@ -339,27 +393,6 @@ article
           font-weight: bold
           line-height: 23px
 
-.logo
-  background-image: url(../assets/slide_01/logo.svg)
-  background-repeat: no-repeat
-  background-size: contain
-  position: absolute
-  z-index: 2
-
-  +lte_ipad
-    height: rem(52px)
-    left: rem(16px)
-    top: rem(14px)
-    width: rem(198px)
-
-  +laptop
-    left: scale-between(31px, 47px, 1024px, 1280px)
-
-  +gte_laptop
-    height: 53px
-    top: 42px
-    width: 200px
-
-  +gte_desktop
-    left: 47px
+.button
+  +button_white
 </style>
