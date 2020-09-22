@@ -60,14 +60,15 @@ export default {
 
   // red background
   &:before
-    background: #f44f0c
-    content: ''
-    height: 100%
-    left: 0
-    position: absolute
-    top: 0
-    width: 100%
-    z-index: -1
+    +gte_laptop
+      background: #f44f0c
+      content: ''
+      height: 100%
+      left: 0
+      position: absolute
+      top: 0
+      width: 100%
+      z-index: -1
 
   // shade for image under opened lock
   &:after
