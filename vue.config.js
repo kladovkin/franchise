@@ -8,5 +8,10 @@ module.exports = {
         additionalData: '@import "@/stylesheets/globals.sass";'
       }
     }
+  },
+  devServer: {
+    host: 'localhost',
+    allowedHosts: ['localhost'],
+    port: 8090
   }
 };
