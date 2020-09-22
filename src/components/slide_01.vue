@@ -4,7 +4,7 @@
       <router-link to='/' class='logo' />
       <div class='outer'>
         <div class='content'>
-          <h1>Технологичный бизнес на&nbsp;вашей территории</h1>
+          <h1>Технологичный бизнес на&nbsp;вашей&nbsp;территории</h1>
           <p>Станьте партнером и зарабатывайте на&nbsp;своей&nbsp;недвижимости</p>
         </div>
         <div class='collapsed'>
@@ -82,18 +82,22 @@ export default {
   &:after
     background: rgba(#000, 0.2)
     content: ''
-    height: 600px
     pointer-events: none
     position: absolute
     top: 0
-    width: 1024px
+
+    +lte_ipad
+      height: 100%
+      width: 100%
 
     +laptop
       left: scale-between(400px, 571px, 1024px, 1280px)
       transition: opacity 0.75s ease 0.85s
 
     +gte_laptop
+      height: 600px
       opacity: 0
+      width: 1024px
 
     +desktop_hd
       left: scale-between(571px, 925px, 1280px, 1920px)
