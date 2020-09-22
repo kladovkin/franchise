@@ -286,23 +286,21 @@ article
 
     $lock-size: 127px
     .lock
+      -webkit-tap-highlight-color: transparent
       align-items: center
-      background-image: url(../assets/slide_01/lock.svg)
-      background-repeat: no-repeat
-      background-size: contain
       border-radius: $lock-size
       cursor: pointer
       display: flex
       flex-direction: column
       height: $lock-size
       justify-content: center
-      position: absolute
       left: 15px
+      overflow: hidden
+      position: absolute
       top: 50%
       transform: translateY(-50%)
       user-select: none
       width: $lock-size
-      -webkit-tap-highlight-color: transparent
 
       +laptop_hd
         transition: left 1.15s ease-out, opacity 1s ease-in 0.15s
@@ -312,6 +310,32 @@ article
 
       +lte_ipad
         display: none
+
+      &:before,
+      &:after
+        content: ''
+        height: 100%
+        left: 0
+        pointer-events: none
+        position: absolute
+        top: 0
+        width: 100%
+
+      &:before
+        background-image: url(../assets/slide_01/lock.svg)
+        background-repeat: no-repeat
+        background-size: contain
+
+      &:after
+        z-index: -1
+        background-color: #f44f0c
+        transition: background-color 0.25s
+
+      &:hover:after
+        background-color: #fa7912
+
+      &:active:after
+        background-color: #df4c10
 
       p.first
         font-size: 16px
