@@ -20,7 +20,7 @@
           <div class='end' />
         </div>
       </div>
-      <div class='button' @click='alert("not implemented")'>Оставить заявку</div>
+      <div class='button' @click='click'>Оставить заявку</div>
     </article>
   </div>
 </template>
@@ -34,6 +34,9 @@ export default {
   methods: {
     open() {
       this.isOpened = true;
+    },
+    click() {
+      alert('not implemented');
     }
   }
 };
