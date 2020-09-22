@@ -6,6 +6,11 @@
     <div class='note'>
       Ставки доходности основных сегментов арендной недвижимости в России:
     </div>
+    <img
+      class='girl'
+      loading='lazy'
+      src='../assets/slide_02/girl.png'
+    />
   </article>
 </template>
 
@@ -49,4 +54,8 @@ h2
     line-height: 23px
     max-width: 406px
     margin: 0 auto
+
+img.girl
+  position: absolute
+  bottom: 0
 </style>
