@@ -14,6 +14,12 @@
         <li>Растущий рынок</li>
       </ul>
     </div>
+
+    <div class='finale'>
+      <strong>Self Storage — это склады, оборудованные боксами</strong>
+      для хранения вещей или товаров физическими или юридическими лицами
+    </div>
+
     <img
       class='girl'
       loading='lazy'
@@ -86,6 +92,7 @@ h2
 .list-wrapper
   display: flex
   justify-content: center
+
 ul
   color: #4b4b4b
 
@@ -123,6 +130,22 @@ ul
         height: 40px
         margin-right: 54px
         width: 40px
+
+.finale
+  font-weight: 300
+  letter-spacing: -0.01em
+
+  +lte_ipad
+    color: #6c6c6c
+    font-size: rem(14px)
+    line-height: rem(18px)
+
+  +gte_laptop
+    color: #a5a5a5
+    font-size: 16px
+    line-height: 21px
+    margin: 0 auto
+    max-width: 341px
 
 img.girl
   position: absolute
