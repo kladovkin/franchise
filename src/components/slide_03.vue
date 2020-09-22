@@ -11,4 +11,9 @@ export default {
 </script>
 
 <style scoped lang='sass'>
+article
+  background: #5096ff
+
+  +gte_laptop
+    height: 660px
 </style>
