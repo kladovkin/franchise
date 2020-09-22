@@ -419,4 +419,20 @@ article
 
 .button
   +button_white
+
+  +gte_laptop
+    margin-top: -160px
+    position: absolute
+    width: 255px
+    z-index: 2
+    opacity: 0
+
+    .is-opened &
+      opacity: 1
+      margin-top: -170px
+
+  +laptop
+    transition: opacity 0.75s ease-in 0.85s, margin-top 0.5s ease-in 0.85s
+  +gte_hd
+    transition: opacity 1s ease-in 1.1s, margin-top 0.5s ease-in 1.1s
 </style>
