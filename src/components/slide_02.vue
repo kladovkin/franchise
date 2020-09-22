@@ -6,6 +6,14 @@
     <div class='note'>
       Ставки доходности основных сегментов арендной недвижимости в России:
     </div>
+    <div class='list-wrapper'>
+      <ul>
+        <li>Большее количество арендаторов</li>
+        <li>Повышенная арендная ставка</li>
+        <li>Постоянная заполненность склада</li>
+        <li>Растущий рынок</li>
+      </ul>
+    </div>
     <img
       class='girl'
       loading='lazy'
@@ -66,13 +74,55 @@ h2
   +lte_ipad
     font-size: rem(14px)
     line-height: rem(18px)
+    margin-bottom: rem(42px)
 
   +gte_laptop
     font-size: 18px
     font-weight: 300
     line-height: 23px
     max-width: 406px
-    margin: 0 auto
+    margin: 0 auto 68px
+
+.list-wrapper
+  display: flex
+  justify-content: center
+ul
+  color: #4b4b4b
+
+  +lte_ipad
+    font-size: rem(14px)
+    line-height: rem(18px)
+
+  +gte_laptop
+    font-size: 16px
+    font-weight: 300
+    line-height: 30px
+
+  li
+    display: flex
+    align-items: center
+
+    +lte_ipad
+      margin-bottom: rem(8px)
+
+    +gte_laptop
+      margin-bottom: 21px
+
+    &:before
+      content: ''
+      background-image: url(../assets/slide_02/checkmark.svg)
+      background-repeat: no-repeat
+      background-size: contain
+
+      +lte_ipad
+        height: rem(24px)
+        margin-right: rem(27px)
+        width: rem(24px)
+
+      +gte_laptop
+        height: 40px
+        margin-right: 54px
+        width: 40px
 
 img.girl
   position: absolute
