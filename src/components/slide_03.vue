@@ -26,12 +26,12 @@
             <div class='label final'>Площадь&nbsp;складов</div>
           </div>
         </div>
+        <img
+          class='content'
+          loading='lazy'
+          src='../assets/slide_03/content.png'
+        />
       </div>
-      <img
-        class='content'
-        loading='lazy'
-        src='../assets/slide_03/content.png'
-      />
     </article>
   </div>
 </template>
@@ -140,5 +140,15 @@ h2
           font-size: 18px
           line-height: 23px
 
-  img.content
+img.content
+  position: absolute
+  margin-top: -225px
+  margin-left: 589px
+  z-index: 1
+
+  /* +laptop             */
+  /*   right: -265px     */
+  /*   margin-top: -46px */
+
+  /* right: -77px; */
 </style>
