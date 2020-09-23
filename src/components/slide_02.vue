@@ -138,7 +138,6 @@ ul
 
   +gte_laptop
     font-size: 16px
-    font-weight: 300
     line-height: 30px
 
   li
@@ -174,10 +173,16 @@ ul
     margin-bottom: rem(28px)
     margin-top: rem(-22px)
 
+  +laptop
+    margin-right: scale-between(32px, 45px, 1024px, 1280px)
+
+  +desktop
+    margin-right: scale-between(45px, 0px, 1280px, 1440px)
+
   +gte_laptop
-    position: absolute
-    right: 0
-    bottom: 0
+    justify-content: flex-end
+    margin-bottom: 55px
+    margin-top: -228px
 
   .column
     align-items: center
