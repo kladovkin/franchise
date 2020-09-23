@@ -31,22 +31,16 @@ html
 
 section
 
-article
+article,
+.container
+  +default_padding_right
+  +default_padding_left
   position: relative
   width: 100%
-
-  +lte_ipad
-    padding: 0 rem(16px)
-
-  +laptop
-    padding: 0 scale-between(30px, 45px, 1024px, 1280px)
 
   +gte_laptop
     max-width: 1280px
     margin: 0 auto
-
-  +gte_desktop
-    padding: 0 45px
 
 h1
   font-weight: 900
