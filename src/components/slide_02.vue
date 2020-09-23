@@ -37,6 +37,11 @@
         <div class='label'>Склады</div>
       </div>
       <div class='column column-5'>
+        <img
+          class='crown'
+          loading='lazy'
+          src='../assets/slide_02/crown.png'
+        />
         <div class='percent'>18%</div>
         <div class='bar' />
         <div class='label'>Self&nbsp;Storage</div>
@@ -64,6 +69,10 @@ export default {
 
 <style scoped lang='sass'>
 article
+  +lte_ipad
+    padding-top: rem(80px)
+    padding-bottom: rem(80px)
+
   +gte_laptop
     padding: 0
     height: 983px
@@ -92,7 +101,6 @@ h2
   text-align: center
 
   +lte_ipad
-    padding-top: rem(80px)
     margin-bottom: rem(12px)
 
   +gte_laptop
@@ -162,6 +170,9 @@ ul
 .graph
   display: flex
 
+  +lte_ipad
+    margin-bottom: 28px
+
   +gte_laptop
     position: absolute
     right: 0
@@ -185,6 +196,14 @@ ul
 
     +gte_laptop
       width: 95px
+
+  .crown
+    +lte_ipad
+      margin-bottom: rem(10px)
+      max-width: rem(46px)
+
+    +gte_laptop
+      margin-bottom: 21px
 
   .percent
     color: #5096ff
