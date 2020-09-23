@@ -15,6 +15,34 @@
       </ul>
     </div>
 
+    <div class='graph'>
+      <div class='column column-1'>
+        <div class='percent'>4%</div>
+        <div class='bar' />
+        <div class='label'>Жильё</div>
+      </div>
+      <div class='column column-2'>
+        <div class='percent'>8%</div>
+        <div class='bar' />
+        <div class='label'>Офисы</div>
+      </div>
+      <div class='column column-3'>
+        <div class='percent'>11%</div>
+        <div class='bar' />
+        <div class='label'>Стрит&nbsp;ритейл</div>
+      </div>
+      <div class='column column-4'>
+        <div class='percent'>12%</div>
+        <div class='bar' />
+        <div class='label'>Склады</div>
+      </div>
+      <div class='column column-5'>
+        <div class='percent'>18%</div>
+        <div class='bar' />
+        <div class='label'>Self&nbsp;Storage</div>
+      </div>
+    </div>
+
     <div class='finale'>
       <strong>Self Storage — это склады, оборудованные боксами</strong>
       для хранения вещей или товаров физическими или юридическими лицами
@@ -130,6 +158,103 @@ ul
         height: 40px
         margin-right: 54px
         width: 40px
+
+.graph
+  display: flex
+
+  +gte_laptop
+    position: absolute
+    right: 0
+    bottom: 0
+
+  .column
+    align-items: center
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+
+    &:not(:last-child)
+      +lte_ipad
+        margin-right: rem(9px)
+
+      +gte_laptop
+        margin-right: 16px
+
+    +lte_ipad
+      width: rem(51px)
+
+    +gte_laptop
+      width: 95px
+
+  .percent
+    color: #5096ff
+    font-weight: 700
+    line-height: 1
+    text-align: center
+
+    +lte_ipad
+      font-size: rem(10px)
+      margin-bottom: rem(5px)
+
+    +gte_laptop
+      font-size: 20px
+      margin-bottom: 7px
+
+  .bar
+    background: #5096ff
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2)
+    width: 100%
+
+    +lte_ipad
+      border-radius: 10px 10px 0px 0px
+      margin-bottom: rem(9px)
+
+    +gte_laptop
+      border-radius: 20px 20px 0px 0px
+      margin-bottom: 21px
+
+  .column-1 .bar
+    +lte_ipad
+      height: rem(23px)
+    +gte_laptop
+      height: 43px
+
+  .column-2 .bar
+    +lte_ipad
+      height: rem(44px)
+    +gte_laptop
+      height: 82px
+
+  .column-3 .bar
+    +lte_ipad
+      height: rem(70px)
+    +gte_laptop
+      height: 130px
+
+  .column-4 .bar
+    +lte_ipad
+      height: rem(83px)
+    +gte_laptop
+      height: 155px
+
+  .column-5 .bar
+    background: #f44f0c
+    +lte_ipad
+      height: rem(128px)
+    +gte_laptop
+      height: 241px
+
+  .label
+    color: #6c6c6c
+    line-height: 1
+
+    +lte_ipad
+      font-size: rem(9px)
+      font-weight: 500
+
+    +gte_laptop
+      font-size: 13px
+      font-weight: 700
 
 .finale
   font-weight: 300
