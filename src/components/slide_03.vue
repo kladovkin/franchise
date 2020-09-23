@@ -45,7 +45,9 @@ export default {
 <style scoped lang='sass'>
 .background
   background: #5096ff
-  overflow: hidden
+
+  +gte_laptop
+    overflow: hidden
 
 article
   display: flex
@@ -89,14 +91,14 @@ h2
   +gte_laptop
     padding: 52px 0 46px 48px
 
-  &:after
-    content: ''
-    background: #fff
-    position: absolute
-    right: -99999px
-    width: 99999px
-    height: 100%
-    top: 0
+    &:after
+      content: ''
+      background: #fff
+      position: absolute
+      right: -99999px
+      width: 99999px
+      height: 100%
+      top: 0
 
   .line
     display: flex
@@ -142,9 +144,16 @@ h2
 
 img.content
   position: absolute
-  margin-top: -225px
-  margin-left: 589px
   z-index: 1
+
+  +lte_ipad
+    max-width: rem(266px)
+    margin-left: rem(-20px)
+    margin-top: rem(135px)
+
+  +gte_laptop
+    margin-top: -225px
+    margin-left: 589px
 
   /* +laptop             */
   /*   right: -265px     */
