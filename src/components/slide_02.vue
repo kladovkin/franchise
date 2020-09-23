@@ -171,7 +171,8 @@ ul
   display: flex
 
   +lte_ipad
-    margin-bottom: 28px
+    margin-bottom: rem(28px)
+    margin-top: rem(-22px)
 
   +gte_laptop
     position: absolute
