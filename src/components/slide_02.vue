@@ -151,10 +151,11 @@ ul
       margin-bottom: 21px
 
     &:before
-      content: ''
-      background-image: url(../assets/slide_02/checkmark.svg)
+      background-image: url(../assets/checkmark.svg)
       background-repeat: no-repeat
       background-size: contain
+      content: ''
+      flex-shrink: 0
 
       +lte_ipad
         height: rem(24px)

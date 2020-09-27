@@ -79,6 +79,7 @@ article
 
   +gte_laptop
     padding-top: 125px
+    padding-bottom: 151px
 
   &:before
     background-repeat: no-repeat
@@ -192,6 +193,31 @@ h2
     margin-bottom: 84px
 
 ul li
+  position: relative
+
+  +lte_ipad
+    padding-left: rem(48px)
+
+  +gte_laptop
+    padding-left: 84px
+
+  &:before
+    content: ''
+    background-image: url(../assets/checkmark.svg)
+    background-repeat: no-repeat
+    background-size: contain
+    position: absolute
+    left: 0
+
+    +lte_ipad
+      height: rem(24px)
+      width: rem(24px)
+
+    +gte_laptop
+      top: rem(-7px)
+      height: 40px
+      width: 40px
+
   &:not(:last-child)
     +lte_ipad
       margin-bottom: rem(24px)
@@ -219,6 +245,7 @@ ul li
   p
     color: #6c6c6c
     letter-spacing: -0.01em
+    max-width: 386px
 
     +lte_ipad
       font-size: rem(12px)
