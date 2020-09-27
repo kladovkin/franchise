@@ -76,6 +76,7 @@ export default {
 article
   +lte_ipad
     padding-top: rem(185px)
+    padding-bottom: rem(424px)
 
   +gte_laptop
     padding-top: 125px
@@ -106,6 +107,32 @@ article
 
     +gte_desktop
       margin-left: 62px
+
+  &:after
+    background-repeat: no-repeat
+    background-size: contain
+    content: ''
+    position: absolute
+    background-image: url(../assets/slide_04/circle_red.svg)
+    /* pointer-events: none */
+
+    +lte_ipad
+      left: rem(76px)
+      bottom: rem(70px)
+      width: rem(330px)
+      height: rem(330px)
+
+    +gte_laptop
+      right: 0
+      bottom: 100px
+
+    +laptop_desktop
+      width: scale-between(500px, 652px, 1024px, 1280px)
+      height: scale-between(500px, 652px, 1024px, 1280px)
+
+    +gte_desktop
+      width: 652px
+      height: 652px
 
 .switchers
   align-items: center
