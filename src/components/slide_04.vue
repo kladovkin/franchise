@@ -46,6 +46,11 @@
           <div>Сквозная веб-аналитика</div>
         </li>
       </ul>
+      <img
+        class='laptop'
+        loading='lazy'
+        src='../assets/slide_04/laptop.png'
+      />
     </div>
   </article>
 </template>
@@ -109,12 +114,12 @@ article
       margin-left: 62px
 
   &:after
+    background-image: url(../assets/slide_04/circle_red.svg)
     background-repeat: no-repeat
     background-size: contain
     content: ''
+    pointer-events: none
     position: absolute
-    background-image: url(../assets/slide_04/circle_red.svg)
-    /* pointer-events: none */
 
     +lte_ipad
       left: rem(76px)
@@ -286,4 +291,15 @@ ul li
 
     span
       font-weight: 300
+
+
+.laptop
+  position: absolute
+
+  +laptop
+    width: 505px
+    right: 30px
+    bottom: 165px
+    z-index: 1
+
 </style>
