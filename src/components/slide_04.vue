@@ -50,6 +50,23 @@ article
   +gte_laptop
     padding-top: 125px
 
+  &:before
+    +gte_laptop
+      background-image: url(../assets/slide_04/circles.svg)
+      background-repeat: no-repeat
+      background-size: contain
+      content: ''
+      height: 104px
+      margin-top: 152px
+      position: absolute
+      width: 105px
+
+    +laptop
+      margin-left: scale-between(0px, 62px, 1024px, 1280px)
+
+    +gte_desktop
+      margin-left: 62px
+
 .switchers
   align-items: center
   background: #f4f4f4
@@ -113,9 +130,12 @@ article
 
 h2
   color: #4b4b4b
+  text-align: center
+
+  +lte_ipad
+    margin-bottom: rem(12px)
 
   +gte_laptop
-    margin: 0 auto
+    margin: 0 auto 21px
     max-width: 796px
-    text-align: center
 </style>

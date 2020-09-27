@@ -154,10 +154,4 @@ img.content
   +gte_laptop
     margin-top: -225px
     margin-left: 589px
-
-  /* +laptop             */
-  /*   right: -265px     */
-  /*   margin-top: -46px */
-
-  /* right: -77px; */
 </style>
