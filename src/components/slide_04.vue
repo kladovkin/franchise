@@ -44,6 +44,9 @@ export default {
 
 <style scoped lang='sass'>
 article
+  +lte_ipad
+    padding-top: rem(185px)
+
   +gte_laptop
     padding-top: 125px
 
