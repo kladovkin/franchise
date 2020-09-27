@@ -51,14 +51,23 @@ article
     padding-top: 125px
 
   &:before
+    background-repeat: no-repeat
+    background-size: contain
+    content: ''
+    position: absolute
+    z-index: -1
+
+    +lte_ipad
+      background-image: url(../assets/slide_04/circles-mobile.svg)
+      height: rem(124px)
+      left: 0
+      margin-top: rem(-26px)
+      width: rem(105px)
+
     +gte_laptop
       background-image: url(../assets/slide_04/circles-desktop.svg)
-      background-repeat: no-repeat
-      background-size: contain
-      content: ''
       height: 104px
       margin-top: 152px
-      position: absolute
       width: 105px
 
     +laptop
