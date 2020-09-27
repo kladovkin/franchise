@@ -123,14 +123,15 @@ article
       height: rem(330px)
 
     +gte_laptop
-      right: 0
       bottom: 100px
 
     +laptop_desktop
+      right: scale-between(-182px, -237px, 1024px, 1280px)
       width: scale-between(500px, 652px, 1024px, 1280px)
       height: scale-between(500px, 652px, 1024px, 1280px)
 
     +gte_desktop
+      right: -237px
       width: 652px
       height: 652px
 
@@ -217,7 +218,8 @@ h2
   +gte_laptop
     font-size: 18px
     line-height: 23px
-    margin-bottom: 84px
+    margin: 0 auto 84px
+    max-width: 350px
 
 ul li
   position: relative
