@@ -11,4 +11,7 @@ export default {
 </script>
 
 <style scoped lang='sass'>
+article
+  background: #e7f6da
+  height: 600px
 </style>
