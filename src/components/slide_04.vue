@@ -16,7 +16,37 @@
         Арендаторам
       </div>
     </div>
-    <h2>Организуем эффективный бизнес Self Storage с помощью IT-технологий</h2>
+    <div v-if='isOwner' class='slide'>
+      <h2>Организуем эффективный бизнес Self Storage с помощью IT-технологий</h2>
+      <div class='note'>
+        Полная автоматизация бизнес-процессов для собственника
+      </div>
+      <ul>
+        <li>
+          <div>Автоматизированные процессы управления</div>
+          <p>Автоматизированные процессы управления</p>
+        </li>
+        <li>
+          <div>Личный кабинет собственника</div>
+          <p>
+            С доступом к ежедневным аналитическим отчетам и ключевым
+            показателям эффективности (<span>EBITDA</span>, <span>LTV</span>,
+            <span>IRR</span> и др.)
+          </p>
+        </li>
+        <li>
+          <div>Личный кабинет сотрудника</div>
+          <p>
+            С системой функциональных обязанностей
+            и должностных инструкций, способной подсказать сотруднику
+            его следующий шаг
+          </p>
+        </li>
+        <li>
+          <div>Сквозная веб-аналитика</div>
+        </li>
+      </ul>
+    </div>
   </article>
 </template>
 
@@ -145,4 +175,59 @@ h2
   +gte_laptop
     margin: 0 auto 21px
     max-width: 796px
+
+.note
+  color: #6c6c6c
+  letter-spacing: -0.01em
+  text-align: center
+
+  +lte_ipad
+    font-size: rem(14px)
+    line-height: rem(18px)
+    margin-bottom: rem(40px)
+
+  +gte_laptop
+    font-size: 18px
+    line-height: 23px
+    margin-bottom: 84px
+
+ul li
+  &:not(:last-child)
+    +lte_ipad
+      margin-bottom: rem(24px)
+
+    +gte_laptop
+      margin-bottom: 38px
+
+  div
+    font-weight: 900
+    letter-spacing: -0.01em
+
+    +lte_ipad
+      color: #4b4b4b
+      font-size: rem(14px)
+      line-height: rem(18px)
+
+    +gte_laptop
+      color: #333333
+      font-size: 18px
+      line-height: 23px
+
+    &:not(:last-child)
+      margin-bottom: rem(8px)
+
+  p
+    color: #6c6c6c
+    letter-spacing: -0.01em
+
+    +lte_ipad
+      font-size: rem(12px)
+      line-height: rem(18px)
+
+    +gte_laptop
+      font-size: 16px
+      line-height: 23px
+
+    span
+      font-weight: 300
 </style>
