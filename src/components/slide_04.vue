@@ -52,7 +52,7 @@ article
 
   &:before
     +gte_laptop
-      background-image: url(../assets/slide_04/circles.svg)
+      background-image: url(../assets/slide_04/circles-desktop.svg)
       background-repeat: no-repeat
       background-size: contain
       content: ''
@@ -88,17 +88,21 @@ article
     width: 350px
 
   .switcher
+    -webkit-tap-highlight-color: transparent
     align-items: center
     background-color: transparent
     border-radius: 40px
     color: #939393
     display: flex
-    flex-grow: 1
     height: 100%
     justify-content: center
     text-align: center
     transition: box-shadow 0.25s, color 0.25s, background-color 0.25s
     user-select: none
+    width: 50%
+
+    +lte_ipad
+      font-size: 12px
 
     +gte_laptop
       font-size: 16px
@@ -108,12 +112,6 @@ article
       box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25)
       color: #FFF
       font-weight: 700
-
-      +lte_ipad
-        font-size: 12px
-
-      +gte_laptop
-        font-size: 16px
 
     &:not(.is-active)
       cursor: pointer
