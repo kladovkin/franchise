@@ -1,17 +1,17 @@
 <template>
   <article>
-    <div class='tabs'>
+    <div class='switchers'>
       <div
-        class='tab'
+        class='switcher'
         :class='{ "is-active": isOwner }'
-        @click='() => switchTab("owner")'
+        @click='() => switchswitcher("owner")'
       >
         Собственникам
       </div>
       <div
-        class='tab'
+        class='switcher'
         :class='{ "is-active": isTenant }'
-        @click='() => switchTab("tenant")'
+        @click='() => switchswitcher("tenant")'
       >
         Арендаторам
       </div>
@@ -24,19 +24,19 @@
 export default {
   name: 'Slide4',
   data: () => ({
-    tab: 'owner'
+    switcher: 'owner'
   }),
   computed: {
     isOwner() {
-      return this.tab === 'owner';
+      return this.switcher === 'owner';
     },
     isTenant() {
-      return this.tab === 'tenant';
+      return this.switcher === 'tenant';
     }
   },
   methods: {
-    switchTab(tab) {
-      this.tab = tab;
+    switchswitcher(switcher) {
+      this.switcher = switcher;
     }
   }
 };
@@ -47,7 +47,7 @@ article
   +gte_laptop
     padding-top: 125px
 
-.tabs
+.switchers
   align-items: center
   background: #f4f4f4
   border-radius: 40px
@@ -57,29 +57,34 @@ article
 
   +lte_ipad
     height: rem(48px)
-    width: rem(288px)
+    margin-bottom: rem(40px)
     padding: rem(4px)
+    width: rem(288px)
 
   +gte_laptop
     height: 65px
-    width: 350px
+    margin-bottom: 52px
     padding: 5px
+    width: 350px
 
-  .tab
-    flex-grow: 1
-    text-align: center
+  .switcher
+    align-items: center
+    background-color: transparent
+    border-radius: 40px
     color: #939393
     display: flex
-    align-items: center
-    justify-content: center
+    flex-grow: 1
     height: 100%
+    justify-content: center
+    text-align: center
+    transition: box-shadow 0.25s, color 0.25s, background-color 0.25s
+    user-select: none
 
     +gte_laptop
       font-size: 16px
 
     &.is-active
-      background: #f44f0c
-      border-radius: 40px
+      background-color: #f44f0c
       box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25)
       color: #FFF
       font-weight: 700
@@ -91,7 +96,17 @@ article
         font-size: 16px
 
     &:not(.is-active)
-    cursor: pointer
+      cursor: pointer
+
+      +gte_laptop
+        &:hover
+          color: #f44f0c
+
+    &:active
+      background-color: #5096ff
+      box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25)
+      color: #fff !important
+      font-weight: 700
 
 h2
   color: #4b4b4b
