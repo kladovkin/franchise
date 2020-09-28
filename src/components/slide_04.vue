@@ -85,6 +85,11 @@
             <p>Вызов грузового такси при необходимости</p>
           </li>
         </ul>
+        <img
+          class='ipad'
+          loading='lazy'
+          src='../assets/slide_04/ipad.png'
+        />
       </div>
     </article>
   </div>
@@ -293,6 +298,17 @@ h2
       width: 1081px
       right: -324px
 
+  .ipad
+    /* pointer-events: none */
+    position: absolute
+    z-index: 1
+
+    +lte_ipad
+      bottom: rem(45px)
+      left: rem(-39px)
+      transform: scaleX(-1)
+      width: rem(393px)
+
   ul li
     position: relative
 
@@ -363,18 +379,23 @@ h2
       max-width: 386px
 
   &-tenant ul li
-    display: flex
-    align-items: center
-    min-height: 58px
+    +gte_laptop
+      align-items: center
+      display: flex
+      min-height: 58px
 
-    &:not(:last-child)
-      margin-bottom: 21px
+      &:not(:last-child)
+        margin-bottom: 21px
 
-    &:before
-      top: 50%
-      transform: translateY(-50%)
+      &:before
+        top: 50%
+        transform: translateY(-50%)
 
     p
+      +lte_ipad
+        font-size: rem(14px)
+        line-height: rem(18px)
+
       +gte_laptop
         max-width: 271px
 </style>
