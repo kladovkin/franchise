@@ -17,7 +17,7 @@
           Арендаторам
         </div>
       </div>
-      <div v-if='isOwner' class='slide'>
+      <div v-if='isOwner' class='slide slide-owner'>
         <h2>Организуем эффективный бизнес Self Storage с помощью IT-технологий</h2>
         <div class='note'>
           Полная автоматизация бизнес-процессов для собственника
@@ -55,6 +55,36 @@
           loading='lazy'
           src='../assets/slide_04/laptop.png'
         />
+      </div>
+      <div v-if='isTenant' class='slide slide-tenant'>
+        <h2>
+          <span>Кладовкин</span> &mdash; технологический лидер российского
+          рынка Self Storage
+        </h2>
+        <div class='note'>Лучший клиентский опыт для&nbsp;арендатора</div>
+        <ul>
+          <li>
+            <p>Поиск ближайшего склада на карте</p>
+          </li>
+          <li>
+            <p>Выбор бокса нужного размера</p>
+          </li>
+          <li>
+            <p>Заключение и расторжение договора аренды онлайн</p>
+          </li>
+          <li>
+            <p>Оплата счета наиболее удобным&nbsp;способом</p>
+          </li>
+          <li>
+            <p>Доступ к складу и парковке по приложению или пин-коду</p>
+          </li>
+          <li>
+            <p>Отслеживание баланса и&nbsp;контроль&nbsp;задолженности</p>
+          </li>
+          <li>
+            <p>Вызов грузового такси при необходимости</p>
+          </li>
+        </ul>
       </div>
     </article>
   </div>
@@ -205,77 +235,19 @@ h2
     font-size: 18px
     line-height: 23px
     margin: 0 auto 84px
-    max-width: 350px
-
-ul li
-  position: relative
-
-  +lte_ipad
-    padding-left: rem(48px)
-
-  +gte_laptop
-    padding-left: 84px
-
-  &:before
-    content: ''
-    background-image: url(../assets/checkmark.svg)
-    background-repeat: no-repeat
-    background-size: contain
-    position: absolute
-    left: 0
-
-    +lte_ipad
-      height: rem(24px)
-      width: rem(24px)
-
-    +gte_laptop
-      top: rem(-7px)
-      height: 40px
-      width: 40px
-
-  &:not(:last-child)
-    +lte_ipad
-      margin-bottom: rem(24px)
-
-    +gte_laptop
-      margin-bottom: 38px
-
-  div
-    font-weight: 900
-    letter-spacing: 0.01em
-
-    +lte_ipad
-      color: #4b4b4b
-      font-size: rem(14px)
-      line-height: rem(18px)
-
-    +gte_laptop
-      color: #333333
-      font-size: 18px
-      line-height: 23px
-
-    &:not(:last-child)
-      margin-bottom: rem(8px)
-
-  p
-    color: #6c6c6c
-    letter-spacing: -0.01em
-    max-width: 386px
-
-    +lte_ipad
-      font-size: rem(12px)
-      line-height: rem(18px)
-
-    +gte_laptop
-      font-size: 16px
-      line-height: 23px
-
-    span
-      font-weight: 300
+    max-width: 340px
 
 .slide
-  &:after
+  +gte_laptop
+    position: relative
+
+  &-owner:before
     background-image: url(../assets/slide_04/circle_red.svg)
+
+  &-tenant:before
+    background-image: url(../assets/slide_04/circle_blue.svg)
+
+  &:before
     background-repeat: no-repeat
     background-size: contain
     content: ''
@@ -287,9 +259,6 @@ ul li
       bottom: rem(70px)
       width: rem(330px)
       height: rem(330px)
-
-    +gte_laptop
-      position: relative
 
     +laptop
       height: scale-between(500px, 652px, 1024px, 1280px)
@@ -323,4 +292,89 @@ ul li
       top: 82px
       width: 1081px
       right: -324px
+
+  ul li
+    position: relative
+
+    +lte_ipad
+      padding-left: rem(48px)
+
+    +gte_laptop
+      padding-left: 84px
+
+    &:before
+      content: ''
+      background-image: url(../assets/checkmark.svg)
+      background-repeat: no-repeat
+      background-size: contain
+      position: absolute
+      left: 0
+
+      +lte_ipad
+        height: rem(24px)
+        width: rem(24px)
+
+      +gte_laptop
+        top: rem(-7px)
+        height: 40px
+        width: 40px
+
+    &:not(:last-child)
+      +lte_ipad
+        margin-bottom: rem(24px)
+
+      +gte_laptop
+        margin-bottom: 38px
+
+    div
+      font-weight: 900
+      letter-spacing: 0.01em
+
+      +lte_ipad
+        color: #4b4b4b
+        font-size: rem(14px)
+        line-height: rem(18px)
+
+      +gte_laptop
+        color: #333333
+        font-size: 18px
+        line-height: 23px
+
+      &:not(:last-child)
+        margin-bottom: rem(8px)
+
+    p
+      color: #6c6c6c
+      letter-spacing: -0.01em
+
+      +lte_ipad
+        font-size: rem(12px)
+        line-height: rem(18px)
+
+      +gte_laptop
+        font-size: 16px
+        line-height: 23px
+
+      span
+        font-weight: 300
+
+  &-owner ul li p
+    +gte_laptop
+      max-width: 386px
+
+  &-tenant ul li
+    display: flex
+    align-items: center
+    min-height: 58px
+
+    &:not(:last-child)
+      margin-bottom: 21px
+
+    &:before
+      top: 50%
+      transform: translateY(-50%)
+
+    p
+      +gte_laptop
+        max-width: 271px
 </style>
