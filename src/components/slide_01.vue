@@ -20,14 +20,21 @@
           <div class='end' />
         </div>
       </div>
-      <div class='button' @click='click'>Оставить заявку</div>
+      <Button
+        text='Оставить заявку'
+        type='white'
+        @click='lead'
+      />
     </article>
   </div>
 </template>
 
 <script>
+import Button from '@/components/button';
+
 export default {
   name: 'Slide1',
+  components: { Button },
   data: () => ({
     isOpened: false
   }),
@@ -35,7 +42,7 @@ export default {
     open() {
       this.isOpened = true;
     },
-    click() {
+    lead() {
       alert('not implemented');
     }
   }
@@ -425,8 +432,6 @@ article
           line-height: 23px
 
 .button
-  +button_white
-
   +gte_laptop
     margin-top: -160px
     position: absolute

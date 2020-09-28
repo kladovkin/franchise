@@ -18,12 +18,21 @@
         </div>
       </div>
     </div>
+    <Button type='red' text='Узнать больше' @click='lead'/>
   </article>
 </template>
 
 <script>
+import Button from '@/components/button';
+
 export default {
-  name: 'Slide5'
+  name: 'Slide5',
+  components: { Button },
+  methods: {
+    lead() {
+      alert('not implemented');
+    }
+  }
 };
 </script>
 
@@ -95,4 +104,8 @@ h2
       @each $icon in type-1, type-2, type-3, type-4, type-5, type-6
         .#{$icon}:before
           background-image: url(../assets/slide_05/#{$icon}.svg)
+
+.button
+  +gte_laptop
+    max-width: 255px
 </style>
