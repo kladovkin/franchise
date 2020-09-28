@@ -74,25 +74,23 @@ h2
       width: 354px
 
       &:not(:last-child)
-        margin-right: 39px
+        margin-right: 30px
 
       div
         color: #fff
         font-size: 16px
         font-weight: 800
         line-height: 23px
-        padding-left: 90px
-        position: relative
+        display: flex
+        align-items: center
 
         &:before
           background-repeat: no-repeat
           background-size: contain
-          position: absolute
-          left: 0
-          top: 0
           content: ''
           width: 50px
           height: 50px
+          margin-right: 40px
 
       @each $icon in type-1, type-2, type-3, type-4, type-5, type-6
         .#{$icon}:before
