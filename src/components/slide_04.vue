@@ -309,6 +309,17 @@ h2
       transform: scaleX(-1)
       width: rem(393px)
 
+    +gte_laptop
+      top: 62px
+
+    +laptop
+      right: scale-between(-64px, 18px, 1024px, 1280px)
+      width: scale-between(700px, 775px, 1024px, 1280px)
+
+    +gte_desktop
+      right: 18px
+      width: 775px
+
   ul li
     position: relative
 
