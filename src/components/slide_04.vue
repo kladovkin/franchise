@@ -274,8 +274,6 @@ ul li
       font-weight: 300
 
 .slide
-  position: relative
-
   &:after
     background-image: url(../assets/slide_04/circle_red.svg)
     background-repeat: no-repeat
@@ -290,30 +288,39 @@ ul li
       width: rem(330px)
       height: rem(330px)
 
+    +gte_laptop
+      position: relative
+
     +laptop
-      right: scale-between(-182px, -237px, 1024px, 1280px)
-      width: scale-between(500px, 652px, 1024px, 1280px)
       height: scale-between(500px, 652px, 1024px, 1280px)
+      right: scale-between(-182px, -237px, 1024px, 1280px)
       top: scale-between(222px, 122px, 1024px, 1280px)
+      width: scale-between(500px, 652px, 1024px, 1280px)
 
     +gte_desktop
-      top: 122px
-      right: -237px
-      width: 652px
       height: 652px
+      right: -237px
+      top: 122px
+      width: 652px
 
-.laptop
-  pointer-events: none
-  position: absolute
-  z-index: 1
+  .laptop
+    pointer-events: none
+    position: absolute
+    z-index: 1
 
-  +laptop_desktop
-    top: scale-between(136px, 82px, 1024px, 1440px)
-    width: scale-between(793px, 1081px, 1024px, 1440px)
-    right: scale-between(-180px, -324px, 1024px, 1440px)
+    +lte_ipad
+      bottom: rem(70px)
+      height: rem(300px)
+      right: rem(-82px)
+      width: rem(460px)
 
-  +gte_hd
-    top: 82px
-    width: 1081px
-    right: -324px
+    +laptop_desktop
+      right: scale-between(-180px, -324px, 1024px, 1440px)
+      top: scale-between(136px, 82px, 1024px, 1440px)
+      width: scale-between(793px, 1081px, 1024px, 1440px)
+
+    +gte_hd
+      top: 82px
+      width: 1081px
+      right: -324px
 </style>
