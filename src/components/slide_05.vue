@@ -107,5 +107,6 @@ h2
 
 .button
   +gte_laptop
+    margin-bottom: 46px
     max-width: 255px
 </style>
