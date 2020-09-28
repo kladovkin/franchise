@@ -7,7 +7,7 @@
           :class='{ "is-active": isOwner }'
           @click='() => switchswitcher("owner")'
         >
-          Собственникам
+          Владельцам
         </div>
         <div
           class='switcher'
@@ -25,7 +25,10 @@
         <ul>
           <li>
             <div>Автоматизированные процессы управления</div>
-            <p>Автоматизированные процессы управления</p>
+            <p>
+              Склад может полноценно функционировать без постоянного
+              присутствия персонала: охраны, менеджеров и администраторов
+            </p>
           </li>
           <li>
             <div>Личный кабинет собственника</div>
@@ -92,11 +95,6 @@ article
     padding-top: 125px
     padding-bottom: 151px
 
-  // @media screen and (min-width: 1024px) and (max-width: 1200px)
-    overflow: hidden
-
-  // overflow: hidden
-
   &:before
     background-repeat: no-repeat
     background-size: contain
@@ -122,46 +120,6 @@ article
 
     +gte_desktop
       margin-left: 62px
-
-  &:after
-    background-image: url(../assets/slide_04/circle_red.svg)
-    background-repeat: no-repeat
-    background-size: contain
-    content: ''
-    pointer-events: none
-    position: absolute
-
-    +lte_ipad
-      left: rem(76px)
-      bottom: rem(70px)
-      width: rem(330px)
-      height: rem(330px)
-
-    +laptop
-      right: scale-between(-182px, -237px, 1024px, 1280px)
-      width: scale-between(500px, 652px, 1024px, 1280px)
-      height: scale-between(500px, 652px, 1024px, 1280px)
-      bottom: scale-between(100px, -10px, 1024px, 1280px)
-
-    +gte_desktop
-      bottom: -10px
-      right: -237px
-      width: 652px
-      height: 652px
-
-.laptop
-  position: absolute
-  z-index: 1
-
-  +laptop_desktop
-    top: scale-between(321px, 265px, 1024px, 1440px)
-    width: scale-between(793px, 1081px, 1024px, 1440px)
-    right: scale-between(-148px, -250px, 1024px, 1440px)
-
-  +gte_hd
-    top: 265px
-    width: 1081px
-    right: -250px
 
 .switchers
   align-items: center
@@ -284,7 +242,7 @@ ul li
 
   div
     font-weight: 900
-    letter-spacing: -0.01em
+    letter-spacing: 0.01em
 
     +lte_ipad
       color: #4b4b4b
@@ -314,4 +272,48 @@ ul li
 
     span
       font-weight: 300
+
+.slide
+  position: relative
+
+  &:after
+    background-image: url(../assets/slide_04/circle_red.svg)
+    background-repeat: no-repeat
+    background-size: contain
+    content: ''
+    pointer-events: none
+    position: absolute
+
+    +lte_ipad
+      left: rem(76px)
+      bottom: rem(70px)
+      width: rem(330px)
+      height: rem(330px)
+
+    +laptop
+      right: scale-between(-182px, -237px, 1024px, 1280px)
+      width: scale-between(500px, 652px, 1024px, 1280px)
+      height: scale-between(500px, 652px, 1024px, 1280px)
+      top: scale-between(222px, 122px, 1024px, 1280px)
+
+    +gte_desktop
+      top: 122px
+      right: -237px
+      width: 652px
+      height: 652px
+
+.laptop
+  pointer-events: none
+  position: absolute
+  z-index: 1
+
+  +laptop_desktop
+    top: scale-between(136px, 82px, 1024px, 1440px)
+    width: scale-between(793px, 1081px, 1024px, 1440px)
+    right: scale-between(-180px, -324px, 1024px, 1440px)
+
+  +gte_hd
+    top: 82px
+    width: 1081px
+    right: -324px
 </style>
