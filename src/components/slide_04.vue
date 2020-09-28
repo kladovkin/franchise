@@ -1,58 +1,60 @@
 <template>
-  <article>
-    <div class='switchers'>
-      <div
-        class='switcher'
-        :class='{ "is-active": isOwner }'
-        @click='() => switchswitcher("owner")'
-      >
-        Собственникам
+  <div class='background'>
+    <article>
+      <div class='switchers'>
+        <div
+          class='switcher'
+          :class='{ "is-active": isOwner }'
+          @click='() => switchswitcher("owner")'
+        >
+          Собственникам
+        </div>
+        <div
+          class='switcher'
+          :class='{ "is-active": isTenant }'
+          @click='() => switchswitcher("tenant")'
+        >
+          Арендаторам
+        </div>
       </div>
-      <div
-        class='switcher'
-        :class='{ "is-active": isTenant }'
-        @click='() => switchswitcher("tenant")'
-      >
-        Арендаторам
+      <div v-if='isOwner' class='slide'>
+        <h2>Организуем эффективный бизнес Self Storage с помощью IT-технологий</h2>
+        <div class='note'>
+          Полная автоматизация бизнес-процессов для собственника
+        </div>
+        <ul>
+          <li>
+            <div>Автоматизированные процессы управления</div>
+            <p>Автоматизированные процессы управления</p>
+          </li>
+          <li>
+            <div>Личный кабинет собственника</div>
+            <p>
+              С доступом к ежедневным аналитическим отчетам и ключевым
+              показателям эффективности (<span>EBITDA</span>, <span>LTV</span>,
+              <span>IRR</span> и др.)
+            </p>
+          </li>
+          <li>
+            <div>Личный кабинет сотрудника</div>
+            <p>
+              С системой функциональных обязанностей
+              и должностных инструкций, способной подсказать сотруднику
+              его следующий шаг
+            </p>
+          </li>
+          <li>
+            <div>Сквозная веб-аналитика</div>
+          </li>
+        </ul>
+        <img
+          class='laptop'
+          loading='lazy'
+          src='../assets/slide_04/laptop.png'
+        />
       </div>
-    </div>
-    <div v-if='isOwner' class='slide'>
-      <h2>Организуем эффективный бизнес Self Storage с помощью IT-технологий</h2>
-      <div class='note'>
-        Полная автоматизация бизнес-процессов для собственника
-      </div>
-      <ul>
-        <li>
-          <div>Автоматизированные процессы управления</div>
-          <p>Автоматизированные процессы управления</p>
-        </li>
-        <li>
-          <div>Личный кабинет собственника</div>
-          <p>
-            С доступом к ежедневным аналитическим отчетам и ключевым
-            показателям эффективности (<span>EBITDA</span>, <span>LTV</span>,
-            <span>IRR</span> и др.)
-          </p>
-        </li>
-        <li>
-          <div>Личный кабинет сотрудника</div>
-          <p>
-            С системой функциональных обязанностей
-            и должностных инструкций, способной подсказать сотруднику
-            его следующий шаг
-          </p>
-        </li>
-        <li>
-          <div>Сквозная веб-аналитика</div>
-        </li>
-      </ul>
-      <img
-        class='laptop'
-        loading='lazy'
-        src='../assets/slide_04/laptop.png'
-      />
-    </div>
-  </article>
+    </article>
+  </div>
 </template>
 
 <script>
@@ -78,6 +80,9 @@ export default {
 </script>
 
 <style scoped lang='sass'>
+.background
+  overflow: hidden
+
 article
   +lte_ipad
     padding-top: rem(185px)
@@ -86,6 +91,11 @@ article
   +gte_laptop
     padding-top: 125px
     padding-bottom: 151px
+
+  // @media screen and (min-width: 1024px) and (max-width: 1200px)
+    overflow: hidden
+
+  // overflow: hidden
 
   &:before
     background-repeat: no-repeat
@@ -127,18 +137,31 @@ article
       width: rem(330px)
       height: rem(330px)
 
-    +gte_laptop
-      bottom: 100px
-
-    +laptop_desktop
+    +laptop
       right: scale-between(-182px, -237px, 1024px, 1280px)
       width: scale-between(500px, 652px, 1024px, 1280px)
       height: scale-between(500px, 652px, 1024px, 1280px)
+      bottom: scale-between(100px, -10px, 1024px, 1280px)
 
     +gte_desktop
+      bottom: -10px
       right: -237px
       width: 652px
       height: 652px
+
+.laptop
+  position: absolute
+  z-index: 1
+
+  +laptop_desktop
+    top: scale-between(321px, 265px, 1024px, 1440px)
+    width: scale-between(793px, 1081px, 1024px, 1440px)
+    right: scale-between(-148px, -250px, 1024px, 1440px)
+
+  +gte_hd
+    top: 265px
+    width: 1081px
+    right: -250px
 
 .switchers
   align-items: center
@@ -291,15 +314,4 @@ ul li
 
     span
       font-weight: 300
-
-
-.laptop
-  position: absolute
-
-  +laptop
-    width: 505px
-    right: 30px
-    bottom: 165px
-    z-index: 1
-
 </style>
