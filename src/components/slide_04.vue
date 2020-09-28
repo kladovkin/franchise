@@ -1,5 +1,5 @@
 <template>
-  <div class='background'>
+  <div class='background-cutter'>
     <article>
       <div class='switchers'>
         <div
@@ -118,8 +118,11 @@ export default {
 </script>
 
 <style scoped lang='sass'>
-.background
+.background-cutter
   overflow: hidden
+
+  +gte_laptop
+    min-height: 1146px
 
 article
   +lte_ipad
@@ -313,11 +316,13 @@ h2
       top: 62px
 
     +laptop
-      right: scale-between(-64px, 18px, 1024px, 1280px)
+      right: scale-between(-64px, -146px, 1024px, 1280px)
+      margin-top: scale-between(0, -34px, 1024px, 1280px)
       width: scale-between(700px, 775px, 1024px, 1280px)
 
     +gte_desktop
-      right: 18px
+      right: -146px
+      margin-top: -34px
       width: 775px
 
   ul li
@@ -389,24 +394,28 @@ h2
     +gte_laptop
       max-width: 386px
 
-  &-tenant ul li
+  &-tenant ul
     +gte_laptop
-      align-items: center
-      display: flex
-      min-height: 58px
+      margin-top: -16px
 
-      &:not(:last-child)
-        margin-bottom: 21px
-
-      &:before
-        top: 50%
-        transform: translateY(-50%)
-
-    p
-      +lte_ipad
-        font-size: rem(14px)
-        line-height: rem(18px)
-
+    li
       +gte_laptop
-        max-width: 271px
-</style>
+        align-items: center
+        display: flex
+        min-height: 58px
+
+        &:not(:last-child)
+          margin-bottom: 21px
+
+        &:before
+          top: 50%
+          transform: translateY(-50%)
+
+      p
+        +lte_ipad
+          font-size: rem(14px)
+          line-height: rem(18px)
+
+        +gte_laptop
+          max-width: 271px
+  </style>
