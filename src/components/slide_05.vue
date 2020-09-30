@@ -55,12 +55,14 @@ export default {
 
 article
   +lte_ipad
+    margin-bottom: rem(80px)
     padding-left: 0
     padding-right: 0
 
   +gte_laptop
-    padding-top: 29px
+    margin-bottom: 100px
     padding-bottom: 76px
+    padding-top: 29px
 
   &:before
     +gte_laptop
