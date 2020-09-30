@@ -60,6 +60,20 @@
           </p>
         </div>
       </div>
+      <div class='entry'>
+        <div class='circle top logo' />
+        <div class='info'>
+          <b>Открытие склада и поддержание бизнеса</b>
+          <p class='final-bold'>Возьмем все управление на себя:</p>
+          <p class='list'>
+            &ndash; маркетинг и рекламу<br>
+            &ndash; службу заботы о клиентах 24/7<br>
+            &ndash; техническое обслуживание<br>
+            &ndash; управление персоналом<br>
+            &ndash; круглосуточное<br>&nbsp;&nbsp;&nbsp;видеонаблюдение<br>
+          </p>
+        </div>
+      </div>
     </div>
   </article>
 </template>
@@ -170,6 +184,17 @@ h2
         font-size: 16px
         font-weight: 300
         line-height: 23px
+
+      &.final-bold
+        font-weight: 800
+        color: inherit
+
+        +lte_ipad
+          margin-top: rem(8px)
+          margin-bottom: rem(12px)
+
+      &.list
+        white-space: nowrap
 
       &:not(:last-child)
         +lte_ipad
