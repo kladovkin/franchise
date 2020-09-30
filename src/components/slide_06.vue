@@ -60,7 +60,7 @@
           </p>
         </div>
       </div>
-      <div class='entry'>
+      <div class='entry final'>
         <div class='circle top logo' />
         <div class='info'>
           <b>Открытие склада и поддержание бизнеса</b>
@@ -73,6 +73,11 @@
             &ndash; круглосуточное<br>&nbsp;&nbsp;&nbsp;видеонаблюдение<br>
           </p>
         </div>
+        <img
+          class='background'
+          loading='lazy'
+          src='../assets/slide_06/background_final.png'
+        />
       </div>
     </div>
   </article>
@@ -235,4 +240,15 @@ h2
 
         +gte_laptop
           font-weight: normal
+
+  &.final
+    +lte_ipad
+      position: relative
+      padding-bottom: rem(248px)
+
+    .background
+      +lte_ipad
+        max-width: 100%
+        bottom: 0
+        position: absolute
 </style>
