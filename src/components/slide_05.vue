@@ -52,6 +52,27 @@ article
     padding-top: 29px
     padding-bottom: 76px
 
+  &:before
+    +gte_laptop
+      content: ''
+      position: absolute
+      background-image: url(../assets/slide_05/skate.png)
+      background-repeat: no-repeat
+      background-size: contain
+      z-index: 1
+
+    +laptop
+      width: scale-between(352px, 438px, 1024px, 1280px)
+      height: scale-between(342px, 426px, 1024px, 1280px)
+      right: scale-between(-65px, 0px, 1024px, 1280px)
+      top: scale-between(66px, 0px, 1024px, 1280px)
+
+    +gte_desktop
+      width: 438px
+      height: 426px
+      top: 0
+      right: 0
+
 h2
   +lte_ipad
     margin-bottom: rem(40px)
