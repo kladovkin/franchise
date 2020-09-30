@@ -1,25 +1,32 @@
 <template>
-  <article>
-    <h2>
-      Мы работаем с юридическими лицами и ИП &mdash; собственниками
-      помещений от 100 м²
-    </h2>
-    <div class='details'>
-      <div class='cc-2'>
-        <div class='c-column'>
-          <div class='type-1'>Отдельно стоящее<br>складское помещение</div>
-          <div class='type-2'>Складское помещение<br>в жилом доме</div>
-          <div class='type-3'>Здания<br>бывших АТС</div>
-        </div>
-        <div class='c-column'>
-          <div class='type-4'>Подвальные<br>помещения</div>
-          <div class='type-5'>Подземный паркинг<br>торгового центра</div>
-          <div class='type-6'>Другие<br>помещения</div>
+  <div class='background-cutter'>
+    <article>
+      <h2>
+        Мы работаем с юридическими лицами и ИП &mdash; собственниками
+        помещений от 100 м²
+      </h2>
+      <div class='details'>
+        <div class='cc-2'>
+          <div class='c-column'>
+            <div class='type-1'>Отдельно стоящее<br>складское помещение</div>
+            <div class='type-2'>Складское помещение<br>в жилом доме</div>
+            <div class='type-3'>Здания<br>бывших АТС</div>
+          </div>
+          <div class='c-column'>
+            <div class='type-4'>Подвальные<br>помещения</div>
+            <div class='type-5'>Подземный паркинг<br>торгового центра</div>
+            <div class='type-6'>Другие<br>помещения</div>
+          </div>
         </div>
       </div>
-    </div>
-    <Button type='red' text='Узнать больше' @click='lead'/>
-  </article>
+      <Button type='red' text='Узнать больше' @click='lead'/>
+      <img
+        class='background'
+        loading='lazy'
+        src='../assets/slide_05/background.png'
+      />
+    </article>
+  </div>
 </template>
 
 <script>
@@ -37,9 +44,13 @@ export default {
 </script>
 
 <style scoped lang='sass'>
+.background-cutter
+  overflow: hidden
+
 article
   +gte_laptop
     padding-top: 29px
+    padding-bottom: 76px
 
 h2
   +lte_ipad
@@ -107,6 +118,17 @@ h2
 
 .button
   +gte_laptop
-    margin-bottom: 46px
     max-width: 255px
+
+.background
+  position: absolute
+  bottom: 0
+  z-index: -1
+  transform: translateX(50%)
+
+  @media screen and (min-width: 1024px) and (max-width: 1200px)
+    right: scale-between(81px, 242px, 1024px, 1200px)
+
+  @media screen and (min-width: 1201px)
+    right: 242px
 </style>
