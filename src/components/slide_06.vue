@@ -105,8 +105,8 @@ h2
     z-index: -1
 
     +lte_ipad
-      background-image: url(../assets/slide_06/background_line-mobile.svg)
-      height: rem(703px)
+      background: #f6f5fe
+      height: rem(845px)
       left: rem(35px)
       top: rem(42px)
       width: rem(16px)
