@@ -5,79 +5,91 @@
       <span>за&nbsp;2&nbsp;месяца</span>
     </h2>
     <div class='area'>
-      <div class='entry entry-1'>
-        <div class='circle'>2 дня</div>
-        <div class='info'>
-          <b>Сбор предварительной информации о помещении</b>
-          <p>и расчет технико-экономических показателей склада</p>
-        </div>
-      </div>
-      <div class='entry entry-2'>
-        <div class='circle'>2 дня</div>
-        <div class='info'>
-          <b>Подготовка документов</b>
-          <p>и заключение договора</p>
-          <div>
-            <b>0 рублей</b>
-            <p>концессионный взнос</p>
+      <div class='entry-wrapper-1'>
+        <div class='entry entry-1'>
+          <div class='circle'>2 дня</div>
+          <div class='info'>
+            <b>Сбор предварительной информации о&nbsp;помещении</b>
+            <p>и расчет технико-экономических показателей&nbsp;склада</p>
           </div>
         </div>
       </div>
-      <div class='entry entry-3'>
-        <div class='circle top'>7 дней</div>
-        <div class='info'>
-          <b>Разработка и согласование дизайн-проекта</b>
-          <p>
-            Сбор предварительной информации о помещениии, расчет
-            технико-экономических показателей склада
-          </p>
-        </div>
-      </div>
-      <div class='entry entry-4'>
-        <div class='circle'>45 дней</div>
-        <div class='info'>
-          <b>Изготовление, поставка и монтаж оборудования</b>
-          <p>
-            Изготовим и произведем поставку оборудования собственной
-            разработки с гарантией качества и сроков оснащения
-          </p>
-          <div>
-            <b>7000 руб./м²</b>
-            <p>переоборудование помещения</p>
+      <div class='entry-wrapper-2'>
+        <div class='entry entry-2'>
+          <div class='circle'>2 дня</div>
+          <div class='info'>
+            <b>Подготовка документов</b>
+            <p>и заключение договора</p>
+            <div>
+              <b>0 рублей</b>
+              <p>концессионный взнос</p>
+            </div>
           </div>
         </div>
       </div>
-      <div class='entry entry-5'>
-        <div class='circle top'>7 дней</div>
-        <div class='info'>
-          <b>
-            Пуско-наладочные работы охранной системы, интеграция с IT-платформой
-          </b>
-          <p>
-            Служба монтажа быстро и качественно установит и настроит
-            оборудование, систему контроля и управления доступом и
-            обеспечит интеграцию склада с сайтом
-          </p>
+      <div class='entry-wrapper-3'>
+        <div class='entry entry-3'>
+          <div class='circle top'>7 дней</div>
+          <div class='info'>
+            <b>Разработка и согласование дизайн-проекта</b>
+            <p>
+              Сбор предварительной информации о помещениии, расчет
+              технико-экономических показателей склада
+            </p>
+          </div>
         </div>
       </div>
-      <div class='entry final'>
-        <div class='circle top logo' />
-        <div class='info'>
-          <b>Открытие склада и поддержание бизнеса</b>
-          <p class='final-bold'>Возьмем все управление на себя:</p>
-          <p class='list'>
-            &ndash; маркетинг и рекламу<br>
-            &ndash; службу заботы о клиентах 24/7<br>
-            &ndash; техническое обслуживание<br>
-            &ndash; управление персоналом<br>
-            &ndash; круглосуточное<br>&nbsp;&nbsp;&nbsp;видеонаблюдение<br>
-          </p>
+      <div class='entry-wrapper-4'>
+        <div class='entry entry-4'>
+          <div class='circle'>45 дней</div>
+          <div class='info'>
+            <b>Изготовление, поставка и монтаж оборудования</b>
+            <p>
+              Изготовим и произведем поставку оборудования собственной
+              разработки с гарантией качества и сроков оснащения
+            </p>
+            <div>
+              <b>7000 руб./м²</b>
+              <p>переоборудование помещения</p>
+            </div>
+          </div>
         </div>
-        <img
-          class='background'
-          loading='lazy'
-          src='../assets/slide_06/background_final.png'
-        />
+      </div>
+      <div class='entry-wrapper-5'>
+        <div class='entry entry-5'>
+          <div class='circle top'>7 дней</div>
+          <div class='info'>
+            <b>
+              Пуско-наладочные работы охранной системы, интеграция с IT-платформой
+            </b>
+            <p>
+              Служба монтажа быстро и качественно установит и настроит
+              оборудование, систему контроля и управления доступом и
+              обеспечит интеграцию склада с сайтом
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class='entry-wrapper-6'>
+        <div class='entry entry-6'>
+          <div class='circle top logo' />
+          <div class='info'>
+            <b>Открытие склада и поддержание бизнеса</b>
+            <p class='final-bold'>Возьмем все управление на себя:</p>
+            <p class='list'>
+              &ndash; маркетинг и рекламу<br>
+              &ndash; службу заботы о клиентах 24/7<br>
+              &ndash; техническое обслуживание<br>
+              &ndash; управление персоналом<br>
+              &ndash; круглосуточное<br>&nbsp;&nbsp;&nbsp;видеонаблюдение<br>
+            </p>
+          </div>
+          <img
+            class='background'
+            loading='lazy'
+            src='../assets/slide_06/background_final.png'
+          />
+        </div>
       </div>
     </div>
   </article>
@@ -136,18 +148,23 @@ h2
 .entry
   display: flex
 
-  &:first-child
-    align-items: center
-
-    +gte_laptop
-      flex-direction: row-reverse
-
   +lte_ipad
     color: #4b4b4b
     margin-bottom: 40px
 
   +gte_laptop
     color: #333
+
+    &.entry-1
+      align-items: center
+      flex-direction: row-reverse
+
+      .info
+        max-width: 300px
+
+    &.entry-2,
+    &.entry-4
+      align-items: flex-end
 
   .circle
     align-items: center
@@ -183,6 +200,9 @@ h2
       background-image: url(../assets/slide_06/circle_logo.svg)
 
   .info
+    +gte_laptop
+      max-width: 350px
+
     b
       display: block
       font-weight: 800
@@ -195,6 +215,7 @@ h2
       +gte_laptop
         font-size: 18px
         line-height: 23px
+        margin-bottom: rem(4px)
 
     p
       +lte_ipad
@@ -238,6 +259,8 @@ h2
 
       +gte_laptop
         height: rem(95px)
+        margin-left: rem(-80px)
+        padding-left: rem(80px)
 
       b
         color: #fff
@@ -259,7 +282,7 @@ h2
         +gte_laptop
           font-weight: normal
 
-  &.final
+  &.entry-6
     +lte_ipad
       position: relative
       padding-bottom: rem(248px)
