@@ -297,43 +297,82 @@ h2
       align-items: flex-end
 
 .entry-wrapper
-  @media screen and (min-width: 1024px) and (max-width: 1200px)
-    &-1
+  position: relative
+  display: flex
+  align-items: center
+
+  &:before
+    content: ''
+    background-repeat: no-repeat
+    background-size: contain
+    position: absolute
+
+  &-1
+    justify-content: flex-end
+
+    @media screen and (min-width: 1024px) and (max-width: 1200px)
       height: scale-between(279px, 341px, 1024px, 1200px)
       margin-bottom: scale-between(61px, -62px, 1024px, 1200px)
-    &-2
+
+      &:before
+        height: scale-between(279px, 341px, 1024px, 1200px)
+        width: scale-between(451px, 491px, 1024px, 1200px)
+        left: scale-between(-68px, -32px, 1024px, 1200px)
+
+    @media screen and (min-width: 1200px)
+      height: 341px
+      margin-bottom: -62px
+
+      &:before
+        height: 341px
+        left: -32px
+        width: 491px
+
+    &:before
+      background-image: url(../assets/slide_06/entry_wrapper_1_background.png)
+
+  &-2
+    @media screen and (min-width: 1024px) and (max-width: 1200px)
       height: scale-between(409px, 531px, 1024px, 1200px)
       margin-bottom: scale-between(157px, 110px, 1024px, 1200px)
-    &-3
+
+    @media screen and (min-width: 1200px)
+      height: 531px
+      margin-bottom: 110px
+
+  &-3
+    @media screen and (min-width: 1024px) and (max-width: 1200px)
       height: scale-between(215px, 247px, 1024px, 1200px)
       margin-bottom: scale-between(205px, 70px, 1024px, 1200px)
-    &-4
+
+    @media screen and (min-width: 1200px)
+      height: 247px
+      margin-bottom: 70px
+
+  &-4
+    @media screen and (min-width: 1024px) and (max-width: 1200px)
       height: scale-between(297px, 435px, 1024px, 1200px)
       margin-bottom: scale-between(42px, 23px, 1024px, 1200px)
-    &-5
+
+    @media screen and (min-width: 1200px)
+      height: 435px
+      margin-bottom: 23px
+
+  &-5
+    @media screen and (min-width: 1024px) and (max-width: 1200px)
       height: 585px
       margin-bottom: scale-between(80px, 54px, 1024px, 1200px)
-    &-6
+
+    @media screen and (min-width: 1200px)
+      height: 585px
+      margin-bottom: 54px
+
+  &-6
+    @media screen and (min-width: 1024px) and (max-width: 1200px)
       height: scale-between(283px, 380px, 1024px, 1200px)
       margin-bottom: scale-between(96px, 190px, 1024px, 1200px)
 
-  @media screen and (min-width: 1200px)
-    &-1
-      height: 341px
-      margin-bottom: -62px
-    &-2
-      height: 531px
-      margin-bottom: 110px
-    &-3
-      height: 247px
-      margin-bottom: 70px
-    &-4
-      height: 435px
-      margin-bottom: 23px
-    &-5
-      height: 585px
-      margin-bottom: 54px
-    &-6
+    @media screen and (min-width: 1200px)
       height: 380px
       margin-bottom: 190px
 </style>
