@@ -133,11 +133,11 @@ h2
       top: rem(42px)
       width: rem(16px)
 
-    @media screen and (min-width: 1024px) and (max-width: 1200px)
+    +laptop
       background-size: #{scale-between(821px, 958px, 1024px, 1200px)} 2913px
       top: scale-between(122px, 180px, 1024px, 1200px)
 
-    @media screen and (min-width: 1200px)
+    +gte_desktop
       top: 180px
 
     +gte_laptop
@@ -187,6 +187,7 @@ h2
       font-size: 30px
       height: 160px
       line-height: 23px
+      margin-right: 28px
       width: 160px
 
     &.logo
@@ -252,8 +253,8 @@ h2
 
       +gte_laptop
         height: rem(95px)
-        margin-left: rem(-80px)
-        padding-left: rem(80px)
+        margin-left: rem(-108px)
+        padding-left: rem(108px)
 
       b
         color: #fff
@@ -298,6 +299,12 @@ h2
         div
           width: 369px
 
+    +laptop
+      margin-top: scale-between(-81px, 101px, 1024px, 1200px)
+
+    +gte_desktop
+      margin-top: 101px
+
   &-3,
   &-5
     +gte_laptop
@@ -333,7 +340,7 @@ h2
   &-1
     justify-content: flex-end
 
-    @media screen and (min-width: 1024px) and (max-width: 1200px)
+    +laptop
       height: scale-between(279px, 341px, 1024px, 1200px)
       margin-bottom: scale-between(61px, -62px, 1024px, 1200px)
 
@@ -342,7 +349,7 @@ h2
         width: scale-between(451px, 491px, 1024px, 1200px)
         left: scale-between(-68px, -32px, 1024px, 1200px)
 
-    @media screen and (min-width: 1200px)
+    +gte_desktop
       height: 341px
       margin-bottom: -62px
 
@@ -355,47 +362,47 @@ h2
       background-image: url(../assets/slide_06/entry_wrapper_1_background.png)
 
   &-2
-    @media screen and (min-width: 1024px) and (max-width: 1200px)
+    +laptop
       height: scale-between(409px, 531px, 1024px, 1200px)
       margin-bottom: scale-between(157px, 110px, 1024px, 1200px)
 
-    @media screen and (min-width: 1200px)
+    +gte_desktop
       height: 531px
       margin-bottom: 110px
 
   &-3
-    @media screen and (min-width: 1024px) and (max-width: 1200px)
+    +laptop
       height: scale-between(215px, 247px, 1024px, 1200px)
       margin-bottom: scale-between(205px, 70px, 1024px, 1200px)
 
-    @media screen and (min-width: 1200px)
+    +gte_desktop
       height: 247px
       margin-bottom: 70px
 
   &-4
-    @media screen and (min-width: 1024px) and (max-width: 1200px)
+    +laptop
       height: scale-between(297px, 435px, 1024px, 1200px)
       margin-bottom: scale-between(42px, 23px, 1024px, 1200px)
 
-    @media screen and (min-width: 1200px)
+    +gte_desktop
       height: 435px
       margin-bottom: 23px
 
   &-5
-    @media screen and (min-width: 1024px) and (max-width: 1200px)
+    +laptop
       height: 585px
       margin-bottom: scale-between(80px, 54px, 1024px, 1200px)
 
-    @media screen and (min-width: 1200px)
+    +gte_desktop
       height: 585px
       margin-bottom: 54px
 
   &-6
-    @media screen and (min-width: 1024px) and (max-width: 1200px)
+    +laptop
       height: scale-between(283px, 380px, 1024px, 1200px)
       margin-bottom: scale-between(96px, 190px, 1024px, 1200px)
 
-    @media screen and (min-width: 1200px)
+    +gte_desktop
       height: 380px
       margin-bottom: 190px
 </style>
