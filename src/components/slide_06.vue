@@ -102,10 +102,11 @@ h2
 .area
   position: relative
 
+  +gte_laptop
+    height: 2913px
+
   &:before
-    background-repeat: no-repeat
     content: ''
-    background-size: contain
     position: absolute
     z-index: -1
 
@@ -115,6 +116,19 @@ h2
       left: rem(35px)
       top: rem(42px)
       width: rem(16px)
+
+    @media screen and (min-width: 1024px) and (max-width: 1200px)
+      background-size: #{scale-between(821px, 958px, 1024px, 1200px)} 2913px
+
+    +gte_laptop
+      background-image: url(../assets/slide_06/background_line-desktop.svg)
+      background-repeat: no-repeat
+      background-size: contain
+      height: 2913px
+      left: 50%
+      top: 80px
+      transform: translateX(-50%)
+      width: 958px
 
 .entry
   display: flex
@@ -135,7 +149,6 @@ h2
   .circle
     align-items: center
     align-self: flex-end
-    background-image: url(../assets/slide_06/circle.svg)
     background-repeat: no-repeat
     background-size: contain
     display: flex
@@ -149,6 +162,7 @@ h2
       align-self: flex-start
 
     +lte_ipad
+      background-image: url(../assets/slide_06/circle-mobile.svg)
       font-size: rem(14px)
       height: rem(85px)
       line-height: rem(16px)
@@ -156,13 +170,14 @@ h2
       width: rem(85px)
 
     +gte_laptop
+      background-image: url(../assets/slide_06/circle-desktop.svg)
       font-size: 30px
       height: 160px
       line-height: 23px
       width: 160px
 
     &.logo
-      background-image: url(../assets/slide_06/circle-logo.svg)
+      background-image: url(../assets/slide_06/circle_logo.svg)
 
   .info
     b
@@ -251,4 +266,8 @@ h2
         max-width: 100%
         bottom: 0
         position: absolute
+
+      // +laptop
+      // +gte_desktop
+        max-width:
 </style>
