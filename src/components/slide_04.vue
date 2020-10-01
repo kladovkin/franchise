@@ -270,7 +270,7 @@ h2
 
     +laptop
       height: scale-laptop(500px, 652px)
-      right: scale-between(-182px, -237px, 1024px, 1200px)
+      right: scale-laptop(-182px, -237px)
       top: scale-laptop(222px, 122px)
       width: scale-laptop(500px, 652px)
 
@@ -316,7 +316,7 @@ h2
       top: 62px
 
     +laptop
-      right: scale-between(-64px, -146px, 1024px, 1200px)
+      right: scale-laptop(-64px, -146px)
       margin-top: scale-between(0, -34px, 1024px, 1200px)
       width: scale-laptop(700px, 775px)
 

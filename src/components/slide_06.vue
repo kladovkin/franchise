@@ -300,7 +300,7 @@ h2
           width: 369px
 
     +laptop
-      margin-top: scale-between(-81px, 101px, 1024px, 1200px)
+      margin-top: scale-laptop(-81px, 101px)
 
     +gte_desktop
       margin-top: 101px
@@ -342,12 +342,12 @@ h2
 
     +laptop
       height: scale-laptop(279px, 341px)
-      margin-bottom: scale-between(61px, -62px, 1024px, 1200px)
+      margin-bottom: scale-laptop(61px, -62px)
 
       &:before
         height: scale-laptop(279px, 341px)
         width: scale-laptop(451px, 491px)
-        left: scale-between(-68px, -32px, 1024px, 1200px)
+        left: scale-laptop(-68px, -32px)
 
     +gte_desktop
       height: 341px
@@ -359,16 +359,31 @@ h2
         width: 491px
 
     &:before
-      background-image: url(../assets/slide_06/entry_wrapper_1_background.png)
+      background-image: url(../assets/slide_06/entry_wrapper_1.png)
 
   &-2
     +laptop
       height: scale-laptop(409px, 531px)
       margin-bottom: scale-laptop(157px, 110px)
 
+      &:before
+        height: scale-laptop(407px, 531px)
+        right: scale-laptop(-111px, -162px)
+        width: scale-laptop(533px, 682px)
+        top: scale-laptop(-30px, 10px)
+
     +gte_desktop
       height: 531px
       margin-bottom: 110px
+
+      &:before
+        height: 531px
+        right: -162px
+        width: 682px
+        top: 10px
+
+    &:before
+      background-image: url(../assets/slide_06/entry_wrapper_2.png)
 
   &-3
     +laptop

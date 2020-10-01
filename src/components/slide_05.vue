@@ -76,7 +76,7 @@ article
     +laptop
       width: scale-laptop(352px, 438px)
       height: scale-laptop(342px, 426px)
-      right: scale-between(-65px, 0px, 1024px, 1200px)
+      right: scale-laptop(-65px, 0px)
       top: scale-laptop(66px, 0px)
 
     +gte_desktop

@@ -307,7 +307,7 @@ img.girl
 
   +laptop
     width: scale-laptop(390px, 516px)
-    left: scale-between(-85px, -185px, 1024px, 1200px)
+    left: scale-laptop(-85px, -185px)
 
   +gte_desktop
     left: -185px

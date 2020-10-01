@@ -412,7 +412,7 @@ article
           margin-bottom: 12px
 
         +laptop
-          margin-top: scale-between(-20px, 0px, 1024px, 1200px)
+          margin-top: scale-laptop(-20px, 0px)
           width: scale-laptop(380px, 456px)
 
         +gte_desktop
