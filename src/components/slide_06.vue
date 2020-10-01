@@ -131,10 +131,10 @@ h2
 
     @media screen and (min-width: 1024px) and (max-width: 1200px)
       background-size: #{scale-between(821px, 958px, 1024px, 1200px)} 2913px
-      top: scale-between(65px, 85px, 1024px, 1200px)
+      top: scale-between(122px, 180px, 1024px, 1200px)
 
     @media screen and (min-width: 1200px)
-      top: 85px
+      top: 180px
 
     +gte_laptop
       background-image: url(../assets/slide_06/background_line-desktop.svg)
@@ -271,8 +271,41 @@ h2
         +gte_laptop
           font-weight: normal
 
-  +lte_ipad
-    &-6
+  &-1
+    +gte_laptop
+      align-items: center
+      flex-direction: row-reverse
+
+      .info
+        max-width: 300px
+        margin-right: 60px
+
+  &-2
+    +gte_laptop
+      align-items: flex-end
+
+      .info
+        b
+          margin-bottom: 3px
+
+        p
+          margin-bottom: 30px
+
+        div
+          width: 369px
+
+  &-3,
+  &-5
+    +gte_laptop
+      align-items: center
+      flex-direction: row-reverse
+
+  &-4
+    +gte_laptop
+      align-items: flex-end
+
+  &-6
+    +lte_ipad
       position: relative
       padding-bottom: rem(248px)
 
@@ -281,20 +314,6 @@ h2
         max-width: 100%
         bottom: 0
         position: absolute
-
-  +gte_laptop
-    &-1,
-    &-3,
-    &-5
-      align-items: center
-      flex-direction: row-reverse
-
-      .info
-        max-width: 300px
-
-    &-2,
-    &-4
-      align-items: flex-end
 
 .entry-wrapper
   position: relative
