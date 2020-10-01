@@ -104,12 +104,16 @@ export default {
 <style scoped lang='sass'>
 h2
   text-align: center
+
   +lte_ipad
     margin-bottom: 54px
 
   +gte_laptop
     max-width: 727px
     margin: 0 auto 82px
+
+  span
+    display: block
 
 .area
   position: relative

@@ -154,7 +154,7 @@ article
       width: 105px
 
     +laptop
-      margin-left: scale-between(0px, 62px, 1024px, 1280px)
+      margin-left: scale-between(0px, 62px, 1024px, 1200px)
 
     +gte_desktop
       margin-left: 62px
@@ -269,10 +269,10 @@ h2
       height: rem(330px)
 
     +laptop
-      height: scale-between(500px, 652px, 1024px, 1280px)
-      right: scale-between(-182px, -237px, 1024px, 1280px)
-      top: scale-between(222px, 122px, 1024px, 1280px)
-      width: scale-between(500px, 652px, 1024px, 1280px)
+      height: scale-between(500px, 652px, 1024px, 1200px)
+      right: scale-between(-182px, -237px, 1024px, 1200px)
+      top: scale-between(222px, 122px, 1024px, 1200px)
+      width: scale-between(500px, 652px, 1024px, 1200px)
 
     +gte_desktop
       height: 652px
@@ -316,9 +316,9 @@ h2
       top: 62px
 
     +laptop
-      right: scale-between(-64px, -146px, 1024px, 1280px)
-      margin-top: scale-between(0, -34px, 1024px, 1280px)
-      width: scale-between(700px, 775px, 1024px, 1280px)
+      right: scale-between(-64px, -146px, 1024px, 1200px)
+      margin-top: scale-between(0, -34px, 1024px, 1200px)
+      width: scale-between(700px, 775px, 1024px, 1200px)
 
     +gte_desktop
       right: -146px

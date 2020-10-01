@@ -80,8 +80,8 @@ article
   &:before
     +laptop
       // 82.5%
-      width: scale-between(550px, 645px, 1024px, 1280px)
-      height: scale-between(550px, 645px, 1024px, 1280px)
+      width: scale-between(550px, 645px, 1024px, 1200px)
+      height: scale-between(550px, 645px, 1024px, 1200px)
 
     +gte_laptop
       background-image: url(../assets/slide_02/background-desktop.svg)
@@ -175,10 +175,10 @@ ul
     margin-top: rem(-22px)
 
   +laptop
-    margin-right: scale-between(32px, 45px, 1024px, 1280px)
+    margin-right: scale-between(32px, 45px, 1024px, 1200px)
 
   +desktop
-    margin-right: scale-between(45px, 0px, 1280px, 1440px)
+    margin-right: scale-between(45px, 0px, 1200px, 1440px)
 
   +gte_laptop
     justify-content: flex-end
@@ -306,8 +306,8 @@ img.girl
     display: none
 
   +laptop
-    width: scale-between(390px, 516px, 1024px, 1280px)
-    left: scale-between(-85px, -185px, 1024px, 1280px)
+    width: scale-between(390px, 516px, 1024px, 1200px)
+    left: scale-between(-85px, -185px, 1024px, 1200px)
 
   +gte_desktop
     left: -185px

@@ -74,10 +74,10 @@ article
       z-index: 1
 
     +laptop
-      width: scale-between(352px, 438px, 1024px, 1280px)
-      height: scale-between(342px, 426px, 1024px, 1280px)
-      right: scale-between(-65px, 0px, 1024px, 1280px)
-      top: scale-between(66px, 0px, 1024px, 1280px)
+      width: scale-between(352px, 438px, 1024px, 1200px)
+      height: scale-between(342px, 426px, 1024px, 1200px)
+      right: scale-between(-65px, 0px, 1024px, 1200px)
+      top: scale-between(66px, 0px, 1024px, 1200px)
 
     +gte_desktop
       width: 438px
