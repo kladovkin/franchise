@@ -220,7 +220,6 @@ h2
       +gte_laptop
         color: #4B4B4B
         font-size: 16px
-        font-weight: 300
         line-height: 23px
 
       &.final-bold
