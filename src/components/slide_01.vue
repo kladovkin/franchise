@@ -1,7 +1,7 @@
 <template>
   <div class='background' :class='{ "is-opened": isOpened }'>
     <article>
-      <router-link to='/' class='logo' />
+      <a class='logo' href='https://kladovkin.ru' />
       <div class='outer'>
         <div class='content'>
           <h1>Технологичный бизнес на&nbsp;вашей&nbsp;территории</h1>
