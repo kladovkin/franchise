@@ -5,7 +5,7 @@
       <span>за&nbsp;2&nbsp;месяца</span>
     </h2>
     <div class='area'>
-      <div class='entry-wrapper-1'>
+      <div class='entry-wrapper entry-wrapper-1'>
         <div class='entry entry-1'>
           <div class='circle'>2 дня</div>
           <div class='info'>
@@ -14,7 +14,7 @@
           </div>
         </div>
       </div>
-      <div class='entry-wrapper-2'>
+      <div class='entry-wrapper entry-wrapper-2'>
         <div class='entry entry-2'>
           <div class='circle'>2 дня</div>
           <div class='info'>
@@ -27,7 +27,7 @@
           </div>
         </div>
       </div>
-      <div class='entry-wrapper-3'>
+      <div class='entry-wrapper entry-wrapper-3'>
         <div class='entry entry-3'>
           <div class='circle top'>7 дней</div>
           <div class='info'>
@@ -39,7 +39,7 @@
           </div>
         </div>
       </div>
-      <div class='entry-wrapper-4'>
+      <div class='entry-wrapper entry-wrapper-4'>
         <div class='entry entry-4'>
           <div class='circle'>45 дней</div>
           <div class='info'>
@@ -55,7 +55,7 @@
           </div>
         </div>
       </div>
-      <div class='entry-wrapper-5'>
+      <div class='entry-wrapper entry-wrapper-5'>
         <div class='entry entry-5'>
           <div class='circle top'>7 дней</div>
           <div class='info'>
@@ -70,7 +70,7 @@
           </div>
         </div>
       </div>
-      <div class='entry-wrapper-6'>
+      <div class='entry-wrapper entry-wrapper-6'>
         <div class='entry entry-6'>
           <div class='circle top logo' />
           <div class='info'>
@@ -154,17 +154,6 @@ h2
 
   +gte_laptop
     color: #333
-
-    &.entry-1
-      align-items: center
-      flex-direction: row-reverse
-
-      .info
-        max-width: 300px
-
-    &.entry-2,
-    &.entry-4
-      align-items: flex-end
 
   .circle
     align-items: center
@@ -282,8 +271,8 @@ h2
         +gte_laptop
           font-weight: normal
 
-  &.entry-6
-    +lte_ipad
+  +lte_ipad
+    &-6
       position: relative
       padding-bottom: rem(248px)
 
@@ -293,7 +282,58 @@ h2
         bottom: 0
         position: absolute
 
-      // +laptop
-      // +gte_desktop
-        max-width:
+  +gte_laptop
+    &-1,
+    &-3,
+    &-5
+      align-items: center
+      flex-direction: row-reverse
+
+      .info
+        max-width: 300px
+
+    &-2,
+    &-4
+      align-items: flex-end
+
+  .entry-wrapper
+    @media screen and (min-width: 1024px) and (max-width: 1200px)
+      &-1
+        height: scale-between(279px, 341px, 1024px, 1200px)
+        margin-bottom: scale-between(61px, -62px, 1024px, 1200px)
+      &-2
+        height: scale-between(409px, 531px, 1024px, 1200px)
+        margin-bottom: scale-between(157px, 110px, 1024px, 1200px)
+      &-3
+        height: scale-between(215px, 247px, 1024px, 1200px)
+        margin-bottom: scale-between(205px, 70px, 1024px, 1200px)
+      &-4
+        height: scale-between(297px, 435px, 1024px, 1200px)
+        margin-bottom: scale-between(42px, 23px, 1024px, 1200px)
+      &-5
+        height: 585px
+        margin-bottom: scale-between(80px, 54px, 1024px, 1200px)
+      &-6
+        height: scale-between(283px, 380px, 1024px, 1200px)
+        margin-bottom: scale-between(96px, 190px, 1024px, 1200px)
+
+    @media screen and (min-width: 1200px)
+      &-1
+        height: 341px
+        margin-bottom: -62px
+      &-2
+        height: 531px
+        margin-bottom: 110px
+      &-3
+        height: 247px
+        margin-bottom: 70px
+      &-4
+        height: 435px
+        margin-bottom: 23px
+      &-5
+        height: 585px
+        margin-bottom: 54px
+      &-6
+        height: 380px
+        margin-bottom: 190px
 </style>
