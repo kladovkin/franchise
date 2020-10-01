@@ -65,7 +65,7 @@ export default {
     background-position: right
 
   +laptop
-    background-position-x: scale-between(400px, 571px, 1024px, 1200px)
+    background-position-x: scale-laptop(400px, 571px)
 
   +desktop_hd
     background-position-x: scale-between(571px, 925px, 1200px, 1920px)
@@ -98,7 +98,7 @@ export default {
       width: 100%
 
     +laptop
-      left: scale-between(400px, 571px, 1024px, 1200px)
+      left: scale-laptop(400px, 571px)
       transition: opacity 0.75s ease 0.85s
 
     +gte_laptop
@@ -147,7 +147,7 @@ article
     width: rem(198px)
 
   +laptop
-    left: scale-between(31px, 47px, 1024px, 1200px)
+    left: scale-laptop(31px, 47px)
 
   +gte_laptop
     height: 53px
@@ -379,7 +379,7 @@ article
         z-index: 2
 
       +laptop
-        left: scale-between(68px, 156px, 1024px, 1200px)
+        left: scale-laptop(68px, 156px)
         transition: opacity 0.75s ease 0.85s, margin-top 0.75s ease 0.85s
 
       +desktop_hd
@@ -413,7 +413,7 @@ article
 
         +laptop
           margin-top: scale-between(-20px, 0px, 1024px, 1200px)
-          width: scale-between(380px, 456px, 1024px, 1200px)
+          width: scale-laptop(380px, 456px)
 
         +gte_desktop
           width: 456px

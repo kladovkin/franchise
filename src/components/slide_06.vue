@@ -134,8 +134,8 @@ h2
       width: rem(16px)
 
     +laptop
-      background-size: #{scale-between(821px, 958px, 1024px, 1200px)} 2913px
-      top: scale-between(122px, 180px, 1024px, 1200px)
+      background-size: #{scale-laptop(821px, 958px)} 2913px
+      top: scale-laptop(122px, 180px)
 
     +gte_desktop
       top: 180px
@@ -341,12 +341,12 @@ h2
     justify-content: flex-end
 
     +laptop
-      height: scale-between(279px, 341px, 1024px, 1200px)
+      height: scale-laptop(279px, 341px)
       margin-bottom: scale-between(61px, -62px, 1024px, 1200px)
 
       &:before
-        height: scale-between(279px, 341px, 1024px, 1200px)
-        width: scale-between(451px, 491px, 1024px, 1200px)
+        height: scale-laptop(279px, 341px)
+        width: scale-laptop(451px, 491px)
         left: scale-between(-68px, -32px, 1024px, 1200px)
 
     +gte_desktop
@@ -363,8 +363,8 @@ h2
 
   &-2
     +laptop
-      height: scale-between(409px, 531px, 1024px, 1200px)
-      margin-bottom: scale-between(157px, 110px, 1024px, 1200px)
+      height: scale-laptop(409px, 531px)
+      margin-bottom: scale-laptop(157px, 110px)
 
     +gte_desktop
       height: 531px
@@ -372,8 +372,8 @@ h2
 
   &-3
     +laptop
-      height: scale-between(215px, 247px, 1024px, 1200px)
-      margin-bottom: scale-between(205px, 70px, 1024px, 1200px)
+      height: scale-laptop(215px, 247px)
+      margin-bottom: scale-laptop(205px, 70px)
 
     +gte_desktop
       height: 247px
@@ -381,8 +381,8 @@ h2
 
   &-4
     +laptop
-      height: scale-between(297px, 435px, 1024px, 1200px)
-      margin-bottom: scale-between(42px, 23px, 1024px, 1200px)
+      height: scale-laptop(297px, 435px)
+      margin-bottom: scale-laptop(42px, 23px)
 
     +gte_desktop
       height: 435px
@@ -391,7 +391,7 @@ h2
   &-5
     +laptop
       height: 585px
-      margin-bottom: scale-between(80px, 54px, 1024px, 1200px)
+      margin-bottom: scale-laptop(80px, 54px)
 
     +gte_desktop
       height: 585px
@@ -399,8 +399,8 @@ h2
 
   &-6
     +laptop
-      height: scale-between(283px, 380px, 1024px, 1200px)
-      margin-bottom: scale-between(96px, 190px, 1024px, 1200px)
+      height: scale-laptop(283px, 380px)
+      margin-bottom: scale-laptop(96px, 190px)
 
     +gte_desktop
       height: 380px

@@ -74,10 +74,10 @@ article
       z-index: 1
 
     +laptop
-      width: scale-between(352px, 438px, 1024px, 1200px)
-      height: scale-between(342px, 426px, 1024px, 1200px)
+      width: scale-laptop(352px, 438px)
+      height: scale-laptop(342px, 426px)
       right: scale-between(-65px, 0px, 1024px, 1200px)
-      top: scale-between(66px, 0px, 1024px, 1200px)
+      top: scale-laptop(66px, 0px)
 
     +gte_desktop
       width: 438px
@@ -207,7 +207,7 @@ h2
       bottom: 0
 
     @media screen and (min-width: 1024px) and (max-width: 1200px)
-      right: scale-between(81px, 242px, 1024px, 1200px)
+      right: scale-laptop(81px, 242px)
 
     @media screen and (min-width: 1201px)
       right: 242px
