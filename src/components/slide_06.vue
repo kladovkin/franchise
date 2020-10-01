@@ -5,14 +5,14 @@
       <span>за&nbsp;2&nbsp;месяца</span>
     </h2>
     <div class='area'>
-      <div class='entry'>
+      <div class='entry entry-1'>
         <div class='circle'>2 дня</div>
         <div class='info'>
           <b>Сбор предварительной информации о помещении</b>
           <p>и расчет технико-экономических показателей склада</p>
         </div>
       </div>
-      <div class='entry'>
+      <div class='entry entry-2'>
         <div class='circle'>2 дня</div>
         <div class='info'>
           <b>Подготовка документов</b>
@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-      <div class='entry'>
+      <div class='entry entry-3'>
         <div class='circle top'>7 дней</div>
         <div class='info'>
           <b>Разработка и согласование дизайн-проекта</b>
@@ -33,7 +33,7 @@
           </p>
         </div>
       </div>
-      <div class='entry'>
+      <div class='entry entry-4'>
         <div class='circle'>45 дней</div>
         <div class='info'>
           <b>Изготовление, поставка и монтаж оборудования</b>
@@ -47,7 +47,7 @@
           </div>
         </div>
       </div>
-      <div class='entry'>
+      <div class='entry entry-5'>
         <div class='circle top'>7 дней</div>
         <div class='info'>
           <b>
@@ -119,6 +119,10 @@ h2
 
     @media screen and (min-width: 1024px) and (max-width: 1200px)
       background-size: #{scale-between(821px, 958px, 1024px, 1200px)} 2913px
+      top: scale-between(65px, 85px, 1024px, 1200px)
+
+    @media screen and (min-width: 1200px)
+      top: 85px
 
     +gte_laptop
       background-image: url(../assets/slide_06/background_line-desktop.svg)
@@ -126,7 +130,6 @@ h2
       background-size: contain
       height: 2913px
       left: 50%
-      top: 80px
       transform: translateX(-50%)
       width: 958px
 
