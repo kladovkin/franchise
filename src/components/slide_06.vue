@@ -144,8 +144,8 @@ h2
     content: ''
     position: absolute
     z-index: -1
-    z-index: 2
-    pointer-events: none
+    // z-index: 2
+    // pointer-events: none
 
     +lte_ipad
       background: #f6f5fe
