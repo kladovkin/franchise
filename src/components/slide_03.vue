@@ -77,13 +77,13 @@ h2
 
 .details
   background: #fff
-  box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.05)
   border-radius: rem(40px) 0px 0px rem(40px)
-  flex-grow: 1
-  position: relative
+  box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.05)
   display: flex
   flex-direction: column
+  flex-grow: 1
   justify-content: space-between
+  position: relative
 
   +lte_ipad
     padding: rem(22px) 0 rem(22px) rem(51px)
@@ -92,13 +92,14 @@ h2
     padding: 52px 0 46px 48px
 
     &:after
-      content: ''
       background: #fff
+      box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.05)
+      content: ''
+      height: 100%
       position: absolute
       right: -99999px
-      width: 99999px
-      height: 100%
       top: 0
+      width: 99999px
 
   .line
     display: flex
