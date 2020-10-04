@@ -129,7 +129,9 @@ h2
   +gte_laptop
     height: 2913px
     margin: 0 auto
-    width: #{958px + 160px}
+
+  +gte_desktop
+    width: 994px
 
   &:before
     content: ''
@@ -146,7 +148,7 @@ h2
 
     +laptop
       background-size: #{scale-laptop(821px, 958px)} 2913px
-      top: scale-laptop(112px, 175px)
+      top: scale-laptop(108px, 175px)
 
     +gte_desktop
       top: 175px
@@ -203,6 +205,9 @@ h2
 
     &.logo
       background-image: url(../assets/slide_06/circle_logo.svg)
+
+      +gte_laptop
+        align-self: center
 
   .info
     +gte_laptop
@@ -313,7 +318,7 @@ h2
           width: 369px
 
     +laptop
-      margin-top: scale-laptop(-62px, 56px)
+      margin-top: scale-laptop(-66px, 56px)
 
     +gte_desktop
       margin-top: 56px
@@ -327,7 +332,7 @@ h2
         margin-right: 0
 
     +laptop
-      margin-top: scale-laptop(-213px, -162px)
+      margin-top: scale-laptop(-225px, -162px)
 
     +gte_desktop
       margin-top: -162px
@@ -337,7 +342,7 @@ h2
       align-items: flex-end
 
     +laptop
-      margin-top: scale-laptop(-325px, -168px)
+      margin-top: scale-laptop(-332px, -168px)
 
     +gte_desktop
       margin-top: -168px
@@ -351,7 +356,7 @@ h2
         margin-right: 0
 
     +laptop
-      margin-top: scale-laptop(-426px, -373px)
+      margin-top: scale-laptop(-435px, -373px)
 
     +gte_desktop
       margin-top: -373px
@@ -361,11 +366,29 @@ h2
       position: relative
       padding-bottom: rem(248px)
 
+    +gte_laptop
+
+    +laptop
+      margin-top: scale-laptop(-587px, -373px)
+      margin-left: -14px
+
+    +gte_desktop
+      margin-top: -373px
+
     .background
       +lte_ipad
         max-width: 100%
         bottom: 0
         position: absolute
+
+      +laptop
+        width: scale-laptop(464px, 540px)
+        position: absolute
+        right: -87px
+        margin-top: -57px
+
+      +gte_desktop
+        width: 540px
 
 .entry-wrapper
   position: relative
