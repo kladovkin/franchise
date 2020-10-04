@@ -382,14 +382,13 @@ h2
       align-items: flex-end
 
       .info
-        max-width: 350px
-
         & > b
           margin-bottom: 13px
           max-width: 230px
 
         & > p
           margin-bottom: 37px
+          max-width: 350px
 
         & > div
           width: 462px
@@ -408,11 +407,20 @@ h2
       .circle
         margin-right: 0
 
+      .info
+        max-width: 360px
+
     +laptop
       margin-top: scale-laptop(-435px, 6px)
 
+      .info
+        margin-right: scale-laptop(32px, 20px)
+
     +gte_desktop
       margin-top: 6px
+
+      .info
+        margin-right: 20px
 
   &-6
     +lte_ipad
@@ -573,9 +581,25 @@ h2
       height: 585px
       margin-bottom: scale-laptop(80px, 54px)
 
+      &:before
+        height: scale-laptop(445px, 575px)
+        left: scale-laptop(-147px, -184px)
+        width: scale-laptop(445px, 575px)
+        top: scale-laptop(-158px, 33px)
+
     +gte_desktop
       height: 585px
       margin-bottom: 54px
+
+      &:before
+        height: 575px
+        left: -184px
+        width: 575px
+        top: 33px
+
+    &:before
+      +gte_laptop
+        background-image: url(../assets/slide_06/entry_wrapper_5.png)
 
   &-6
     +laptop
