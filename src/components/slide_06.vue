@@ -30,6 +30,10 @@
         </div>
         <div class='entry-wrapper entry-wrapper-3'>
           <div class='entry entry-3'>
+            <img
+              src='../assets/slide_06/entry_wrapper_3.png'
+              class='design-project'
+            />
             <div class='circle top'>7 дней</div>
             <div class='info'>
               <b>Разработка и согласование дизайн-проекта</b>
@@ -133,8 +137,9 @@ h2
   &:before
     content: ''
     position: absolute
-    z-index: 2
-    // z-index: -1
+    // z-index: 2
+    z-index: -1
+    pointer-events: none
 
     +lte_ipad
       background: #f6f5fe
@@ -146,7 +151,7 @@ h2
     +gte_laptop
       background-image: url(../assets/slide_06/background_line-desktop.svg)
       background-repeat: no-repeat
-      //background-size: contain
+      background-size: cover
       left: 50%
       transform: translateX(-50%)
 
@@ -156,12 +161,12 @@ h2
       // top: scale-laptop(108px, 167px)
       width: scale-laptop(964px, 1096px)
       height: scale-laptop(2587px, 2913px)
-      //top: scale-laptop(108px, 167px)
+      top: scale-laptop(108px, 145px)
       top: 100px
 
     +gte_desktop
       background-size: 1096px 2913px
-      top: 146px
+      top: 145px
       width: 1096px
       height: 2913px
 
@@ -302,12 +307,15 @@ h2
       .info
         max-width: 250px
 
+        b
+          margin-bottom: 5px
+
     .info
       +laptop
-        margin-right: scale-laptop(60px, 40px)
+        margin-right: scale-laptop(60px, 111px)
 
       +gte_desktop
-        margin-right: 40px
+        margin-right: 111px
 
   &-2
     +gte_laptop
@@ -324,12 +332,16 @@ h2
           width: 369px
 
     +laptop
-      margin-top: scale-laptop(-66px, 20px)
+      margin-top: scale-laptop(-80px, 107px)
 
     +gte_desktop
-      margin-top: 20px
+      margin-top: 107px
 
   &-3
+    +lte_ipad
+      .design-project
+        display: none
+
     +gte_laptop
       align-items: center
       flex-direction: row-reverse
@@ -345,26 +357,26 @@ h2
           margin-bottom: 16px
 
     +laptop
-      margin-top: scale-laptop(-225px, -197px)
+      margin-top: scale-laptop(-233px, -4px)
 
       .info
-        margin-right: scale-laptop(29px, 41px)
+        margin-right: scale-laptop(41px, 29px)
 
     +gte_desktop
-      margin-top: -197px
+      margin-top: -4px
 
       .info
-        margin-right: 41px
+        margin-right: 29px
 
   &-4
     +gte_laptop
       align-items: flex-end
 
     +laptop
-      margin-top: scale-laptop(-332px, -204px)
+      margin-top: scale-laptop(-290px, 160px)
 
     +gte_desktop
-      margin-top: -204px
+      margin-top: 160px
 
   &-5
     +gte_laptop
@@ -375,10 +387,10 @@ h2
         margin-right: 0
 
     +laptop
-      margin-top: scale-laptop(-435px, -411px)
+      margin-top: scale-laptop(-435px, 6px)
 
     +gte_desktop
-      margin-top: -411px
+      margin-top: 6px
 
   &-6
     +lte_ipad
@@ -388,11 +400,11 @@ h2
     +gte_laptop
 
     +laptop
-      margin-top: scale-laptop(-587px, -373px)
+      margin-top: scale-laptop(-587px, -73px)
       margin-left: -14px
 
     +gte_desktop
-      margin-top: -601px
+      margin-top: -73px
 
     .background
       +lte_ipad
@@ -434,7 +446,7 @@ h2
       &:before
         height: scale-laptop(279px, 341px)
         width: scale-laptop(451px, 491px)
-        left: scale-laptop(-68px, -90px)
+        left: scale-laptop(-68px, -35px)
 
     +gte_desktop
       height: 341px
@@ -442,7 +454,7 @@ h2
 
       &:before
         height: 341px
-        left: -90px
+        left: -35px
         width: 491px
 
     &:before
@@ -458,7 +470,7 @@ h2
         height: scale-laptop(407px, 531px)
         right: scale-laptop(-111px, -162px)
         width: scale-laptop(533px, 682px)
-        top: scale-laptop(-44px, -16px)
+        top: scale-laptop(-44px, 33px)
 
     +gte_desktop
       height: 531px
@@ -468,7 +480,7 @@ h2
         height: 531px
         right: -162px
         width: 682px
-        top: -16px
+        top: 33px
 
     &:before
       +gte_laptop
@@ -482,24 +494,21 @@ h2
       height: scale-laptop(215px, 247px)
       margin-bottom: scale-laptop(205px, 70px)
 
-      &:before
+      .design-project
         height: scale-laptop(215px, 247px)
         width: scale-laptop(384px, 443px)
-        top: scale-laptop(-113px, -99px)
 
     +gte_desktop
       height: 247px
       margin-bottom: 70px
 
-      &:before
+      .design-project
         height: 247px
         width: 443px
-        top: -99px
 
-    &:before
-      +gte_laptop
-        background-image: url(../assets/slide_06/entry_wrapper_3.png)
-        left: 0
+    .design-project
+      position: absolute
+      left: 0
 
   &-4
     +laptop
