@@ -148,10 +148,10 @@ h2
 
     +laptop
       background-size: #{scale-laptop(821px, 958px)} 2913px
-      top: scale-laptop(108px, 175px)
+      top: scale-laptop(108px, 167px)
 
     +gte_desktop
-      top: 175px
+      top: 152px
 
     +gte_laptop
       background-image: url(../assets/slide_06/background_line-desktop.svg)
@@ -318,10 +318,10 @@ h2
           width: 369px
 
     +laptop
-      margin-top: scale-laptop(-66px, 56px)
+      margin-top: scale-laptop(-66px, 20px)
 
     +gte_desktop
-      margin-top: 56px
+      margin-top: 20px
 
   &-3
     +gte_laptop
@@ -332,10 +332,10 @@ h2
         margin-right: 0
 
     +laptop
-      margin-top: scale-laptop(-225px, -162px)
+      margin-top: scale-laptop(-225px, -197px)
 
     +gte_desktop
-      margin-top: -162px
+      margin-top: -197px
 
   &-4
     +gte_laptop
@@ -434,7 +434,7 @@ h2
         height: scale-laptop(407px, 531px)
         right: scale-laptop(-111px, -162px)
         width: scale-laptop(533px, 682px)
-        top: scale-laptop(-44px, 5px)
+        top: scale-laptop(-44px, -16px)
 
     +gte_desktop
       height: 531px
@@ -444,7 +444,7 @@ h2
         height: 531px
         right: -162px
         width: 682px
-        top: -5px
+        top: -16px
 
     &:before
       background-image: url(../assets/slide_06/entry_wrapper_2.png)
