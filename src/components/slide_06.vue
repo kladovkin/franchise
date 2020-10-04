@@ -31,8 +31,9 @@
         <div class='entry-wrapper entry-wrapper-3'>
           <div class='entry entry-3'>
             <img
-              src='../assets/slide_06/entry_wrapper_3.png'
+              src='../assets/slide_06/design_project.png'
               class='design-project'
+              @click='enlarge'
             />
             <div class='circle top'>7 дней</div>
             <div class='info'>
@@ -48,7 +49,7 @@
           <div class='entry entry-4'>
             <div class='circle'>45 дней</div>
             <div class='info'>
-              <b>Изготовление, поставка и монтаж оборудования</b>
+              <b>Изготовление, поставка и&nbsp;монтаж оборудования</b>
               <p>
                 Изготовим и произведем поставку оборудования собственной
                 разработки с гарантией качества и сроков оснащения
@@ -103,7 +104,12 @@
 
 <script>
 export default {
-  name: 'Slide6'
+  name: 'Slide6',
+  methods: {
+    enlarge() {
+      alert('not implemented');
+    }
+  }
 };
 </script>
 
@@ -137,8 +143,8 @@ h2
   &:before
     content: ''
     position: absolute
-    // z-index: 2
     z-index: -1
+    z-index: 2
     pointer-events: none
 
     +lte_ipad
@@ -307,7 +313,7 @@ h2
       .info
         max-width: 250px
 
-        b
+        & > b
           margin-bottom: 5px
 
     .info
@@ -322,13 +328,13 @@ h2
       align-items: flex-end
 
       .info
-        b
+        & > b
           margin-bottom: 3px
 
-        p
+        & > p
           margin-bottom: 30px
 
-        div
+        & > div
           width: 369px
 
     +laptop
@@ -346,13 +352,16 @@ h2
       align-items: center
       flex-direction: row-reverse
 
+      .design-project
+        cursor: pointer
+
       .circle
         margin-right: 0
 
       .info
         max-width: 350px
 
-        b
+        & > b
           max-width: 300px
           margin-bottom: 16px
 
@@ -372,11 +381,24 @@ h2
     +gte_laptop
       align-items: flex-end
 
+      .info
+        max-width: 350px
+
+        & > b
+          margin-bottom: 13px
+          max-width: 230px
+
+        & > p
+          margin-bottom: 37px
+
+        & > div
+          width: 462px
+
     +laptop
-      margin-top: scale-laptop(-290px, 160px)
+      margin-top: scale-laptop(-381px, 61px)
 
     +gte_desktop
-      margin-top: 160px
+      margin-top: 61px
 
   &-5
     +gte_laptop
@@ -515,9 +537,33 @@ h2
       height: scale-laptop(297px, 435px)
       margin-bottom: scale-laptop(42px, 23px)
 
+      &:before
+        height: scale-laptop(297px, 337px)
+        right: scale-laptop(-53px, -46px)
+        top: scale-laptop(-127px, 82px)
+        width: scale-laptop(446px, 506px)
+
     +gte_desktop
       height: 435px
       margin-bottom: 23px
+
+    +desktop
+      &:before
+        height: scale-between(337px, 435px, 1200px, 1440px)
+        width: scale-between(506px, 652px, 1200px, 1440px)
+        right: scale-between(-46px, -403px, 1200px, 1440px)
+        top: scale-between(82px, 50px, 1200px, 1440px)
+
+    +gte_hd
+      &:before
+        height: 435px
+        right: -403px
+        top: 50px
+        width: 652px
+
+    &:before
+      +gte_laptop
+        background-image: url(../assets/slide_06/entry_wrapper_4.png)
 
   &-5
     +gte_laptop
