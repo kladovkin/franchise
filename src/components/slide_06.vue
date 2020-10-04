@@ -133,12 +133,15 @@ h2
 .area
   position: relative
 
+  +gte_laptop
+    margin: 0 auto
+
   +laptop
     max-width: 100%
+    height: scale-laptop(2587px, 2913px)
 
-  +gte_laptop
+  +gte_desktop
     height: 2913px
-    margin: 0 auto
 
   &:before
     content: ''
