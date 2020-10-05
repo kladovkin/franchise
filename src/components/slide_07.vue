@@ -11,6 +11,29 @@
           <span>первоначальных</span>
           <span>инвестиций (РР)</span>
         </div>
+        <ul>
+          <li>
+            <b>10 %</b>
+            <div>
+              <span>валовой выручки</span>
+              <span>на управление складом</span>
+            </div>
+          </li>
+          <li>
+            <b>5 %</b>
+            <div>
+              <span>валовой выручки</span>
+              <span>на мракетинговые услуги</span>
+            </div>
+          </li>
+          <li>
+            <b>5 %</b>
+            <div>
+              <span>валовой выручки</span>
+              <span>на услуги IT</span>
+            </div>
+          </li>
+        </ul>
       </article>
     </div>
   </div>
@@ -23,9 +46,11 @@ export default {
 </script>
 
 <style scoped lang='sass'>
+$mobile-circle-radius: 117px
 .outer
   +laptop
     margin-top: scale-laptop(-167px, -23px)
+    padding-top: rem($mobile-circle-radius)
 
   +gte_desktop
     margin-top: -23px
@@ -34,7 +59,7 @@ h2
   text-align: center
 
   +lte_ipad
-    margin-bottom: rem(40px)
+    margin-bottom: rem($mobile-circle-radius + 40px)
 
   +gte_laptop
     margin-bottom: 45px
@@ -44,21 +69,72 @@ h2
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.05)
 
 article
+  +lte_ipad
+    padding-bottom: rem(40px)
+
   +gte_laptop
     height: 223px
 
+  ul
+    color: #fff
+    display: flex
+
+    +lte_ipad
+      flex-direction: column
+      padding-top: rem($mobile-circle-radius + 8px)
+
+    li
+      display: flex
+
+      +lte_ipad
+        &:not(:last-child)
+          margin-bottom: rem(24px)
+
+      +gte_laptop
+        flex-direction: column
+
+      b
+        font-weight: 900
+
+        +lte_ipad
+          font-size: rem(30px)
+          line-height: rem(30px)
+          width: rem(85px)
+          margin-right: rem(16px)
+
+        +gte_laptop
+          font-size: 50px
+          line-height: 35px
+          margin-bottom: 11px
+
+      div
+        display: flex
+        flex-direction: column
+
+      span
+        font-size: 14px
+        line-height: 18px
+
 .circle
   align-items: center
+  background-repeat: no-repeat
+  background-size: contain
   display: flex
   flex-direction: column
   justify-content: center
   position: absolute
   z-index: 1
 
+  +lte_ipad
+    background-image: url(../assets/slide_07/circle-mobile.svg)
+    height: rem(218px)
+    left: 50%
+    transform: translateX(-50%)
+    width: rem(218px)
+    margin-top: rem(-$mobile-circle-radius)
+
   +gte_laptop
     background-image: url(../assets/slide_07/circle-desktop.svg)
-    background-repeat: no-repeat
-    background-size: cover
 
   +laptop
     height: scale-laptop(310px, 367px)

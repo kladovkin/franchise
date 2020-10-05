@@ -184,7 +184,7 @@ h2
 
   +lte_ipad
     color: #4b4b4b
-    margin-bottom: 40px
+    margin-bottom: rem(80px)
 
   +gte_laptop
     color: #333
