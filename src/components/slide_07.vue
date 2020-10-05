@@ -49,8 +49,7 @@ export default {
 $mobile-circle-radius: 117px
 .outer
   +laptop
-    margin-top: scale-laptop(-282px, -23px)
-    padding-top: rem($mobile-circle-radius)
+    margin-top: scale-laptop(-167px, -23px)
 
   +gte_desktop
     margin-top: -23px

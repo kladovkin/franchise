@@ -117,6 +117,10 @@ export default {
 .background-cutter
   overflow: hidden
 
+article
+  +lte_ipad
+    margin-bottom: rem(80px)
+
 h2
   text-align: center
 
@@ -165,7 +169,7 @@ h2
     +laptop
       width: scale-laptop(964px, 1096px)
       height: scale-laptop(2587px, 2913px)
-      top: scale-laptop(108px, 145px)
+      top: scale-laptop(108px, 130px) // it is intentionally 15px less than on desktop
 
     +gte_desktop
       background-size: 1096px 2913px
@@ -179,6 +183,9 @@ h2
   +lte_ipad
     color: #4b4b4b
     margin-bottom: rem(40px)
+
+    .entry-wrapper:last-child &
+      margin-bottom: 0
 
   +gte_laptop
     color: #333
@@ -423,8 +430,6 @@ h2
     +lte_ipad
       position: relative
       padding-bottom: rem(248px)
-
-    +gte_laptop
 
     +laptop
       margin-top: scale-laptop(-587px, -73px)
