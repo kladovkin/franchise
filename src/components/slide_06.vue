@@ -152,7 +152,7 @@ h2
 
     +lte_ipad
       background: #f6f5fe
-      height: rem(845px)
+      height: rem(840px)
       left: rem(35px)
       top: rem(42px)
       width: rem(16px)
@@ -184,7 +184,7 @@ h2
 
   +lte_ipad
     color: #4b4b4b
-    margin-bottom: rem(80px)
+    margin-bottom: rem(40px)
 
   +gte_laptop
     color: #333
