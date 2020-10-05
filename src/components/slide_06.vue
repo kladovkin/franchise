@@ -147,8 +147,6 @@ h2
     content: ''
     position: absolute
     z-index: -1
-    // z-index: 2
-    // pointer-events: none
 
     +lte_ipad
       background: #f6f5fe
@@ -165,13 +163,9 @@ h2
       transform: translateX(-50%)
 
     +laptop
-      // background-size: #{scale-laptop(821px, 958px)} 2913px
-      // background-size: #{scale-laptop(821px, 1096px)} 2913px
-      // top: scale-laptop(108px, 167px)
       width: scale-laptop(964px, 1096px)
       height: scale-laptop(2587px, 2913px)
       top: scale-laptop(108px, 145px)
-      top: 100px
 
     +gte_desktop
       background-size: 1096px 2913px
