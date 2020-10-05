@@ -607,9 +607,7 @@ h2
   &-6
     +laptop
       height: scale-laptop(283px, 380px)
-      margin-bottom: scale-laptop(96px, 190px)
 
     +gte_desktop
       height: 380px
-      margin-bottom: 190px
 </style>
