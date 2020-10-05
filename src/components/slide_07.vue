@@ -63,6 +63,13 @@ h2
 
   +gte_laptop
     margin-bottom: 45px
+    width: 500px
+
+  +laptop
+    margin-left: scale-laptop(270px, 334px)
+
+  +gte_desktop
+    margin-left: 334px
 
 .background
   background: #5096FF
@@ -83,8 +90,22 @@ article
       flex-direction: column
       padding-top: rem($mobile-circle-radius + 8px)
 
+    +gte_laptop
+      justify-content: center
+      align-items: center
+      height: 100%
+
+    +laptop
+      margin-left: scale-laptop(270px, 334px)
+      width: scale-laptop(635px, 728px)
+
+    +gte_desktop
+      margin-left: 334px
+      width: 728px
+
     li
       display: flex
+      flex-shrink: 0
 
       +lte_ipad
         &:not(:last-child)
@@ -92,6 +113,13 @@ article
 
       +gte_laptop
         flex-direction: column
+
+      &:not(:last-child)
+        +laptop
+          margin-right: scale-laptop(41px, 86px)
+
+        +gte_desktop
+          margin-right: 86px
 
       b
         font-weight: 900
@@ -112,8 +140,13 @@ article
         flex-direction: column
 
       span
-        font-size: 14px
-        line-height: 18px
+        +lte_ipad
+          font-size: rem(14px)
+          line-height: rem(18px)
+
+        +gte_laptop
+          font-size: 18px
+          line-height: 23px
 
 .circle
   align-items: center
