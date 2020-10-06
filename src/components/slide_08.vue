@@ -1,26 +1,28 @@
 <template>
   <article>
-    <div class='content-container'>
-      <h2>Кейсы</h2>
-      <div class='text'>
-        <div><b>Площадь:</b> 165 м²</div>
-        <div><b>Расположение:</b> ул. Маршала Жукова, 76-2</div>
-        <div><b>Дата запуска проекта:</b> май 2019 г.</div>
-        <div><b>Инвестиции в переоборудование помещения:</b>&nbsp;1&nbsp;155&nbsp;000&nbsp;руб.</div>
-        <div><b>Средняя арендная ставка:</b> 1 800 руб./м²</div>
-        <div><b>Заполняемость:</b> 99%</div>
-        <div><b>Срок окупаемости:</b> 17 месяцев</div>
-        <div><b>IRR:</b> 105%</div>
+    <div class='cases'>
+      <div class='content-container'>
+        <h2>Кейсы</h2>
+        <div class='text'>
+          <div><b>Площадь:</b> 165 м²</div>
+          <div><b>Расположение:</b> ул. Маршала Жукова, 76-2</div>
+          <div><b>Дата запуска проекта:</b> май 2019 г.</div>
+          <div><b>Инвестиции в переоборудование помещения:</b>&nbsp;1&nbsp;155&nbsp;000&nbsp;руб.</div>
+          <div><b>Средняя арендная ставка:</b> 1 800 руб./м²</div>
+          <div><b>Заполняемость:</b> 99%</div>
+          <div><b>Срок окупаемости:</b> 17 месяцев</div>
+          <div><b>IRR:</b> 105%</div>
+        </div>
+        <div class='dots' />
       </div>
-      <div class='dots' />
-    </div>
-    <div class='slider-container'>
-      <img
-        class='laptop'
-        loading='lazy'
-        src='../assets/slide_08/case_1.png'
-      />
-      <div class='dots' />
+      <div class='slider-container'>
+        <img
+          class='laptop'
+          loading='lazy'
+          src='../assets/slide_08/case_1.png'
+        />
+        <div class='dots' />
+      </div>
     </div>
   </article>
 </template>
@@ -36,8 +38,6 @@ article
   overflow: hidden
 
   +gte_laptop
-    align-items: center
-    display: flex
     margin-bottom: 70px
     padding-top: 67px
 
@@ -60,6 +60,11 @@ article
       transform: translateX(-50%)
       width: 144px
 
+  .cases
+    +gte_laptop
+      align-items: center
+      display: flex
+
   .content-container
     +lte_ipad
       padding-top: rem(52px)
@@ -73,7 +78,8 @@ article
 
       +lte_ipad
         font-size: rem(14px)
-        line-height: rem(18px)
+        line-height: rem(21px)
+        margin-bottom: rem(23px)
 
       +gte_laptop
         font-size: 18px
@@ -97,14 +103,22 @@ article
 
   .slider-container
     position: relative
+    display: flex
+    align-items: center
+
+    +lte_ipad
+      height: rem(288px)
+      width: rem(288px)
 
     +gte_laptop
       margin-left: auto
 
     +laptop
+      height: scale-laptop(514px, 635px)
       width: scale-laptop(514px, 635px)
 
     +gte_desktop
+      height: 635px
       width: 635px
 
     &:before
@@ -115,6 +129,7 @@ article
       height: 100%
       position: absolute
       width: 100%
+      z-index: -1
 
     img
       max-width: 100%
