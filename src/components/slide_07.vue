@@ -48,6 +48,12 @@ export default {
 <style scoped lang='sass'>
 $mobile-circle-radius: 117px
 .outer
+  +lte_ipad
+    margin-bottom: rem(26px)
+
+  +gte_laptop
+    margin-bottom: 82px
+
   +laptop
     margin-top: scale-laptop(-167px, -23px)
 
