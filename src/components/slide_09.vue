@@ -23,7 +23,6 @@ article
 h2
   +lte_ipad
     margin-bottom: rem(12px)
-    text-align: center
 
   +gte_laptop
     margin-bottom: rem(16px)

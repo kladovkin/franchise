@@ -61,13 +61,12 @@ $mobile-circle-radius: 117px
     margin-top: -23px
 
 h2
-  text-align: center
-
   +lte_ipad
     margin-bottom: rem($mobile-circle-radius + 40px)
 
   +gte_laptop
     margin-bottom: 45px
+    text-align: center
     width: 500px
 
   +laptop

@@ -98,15 +98,14 @@ article
       height: 645px
 
 h2
-  text-align: center
-
   +lte_ipad
     margin-bottom: rem(12px)
 
   +gte_laptop
+    margin: 0 auto 22px
     max-width: 540px
     padding-top: 118px
-    margin: 0 auto 22px
+    text-align: center
 
 .note
   color: #6c6c6c

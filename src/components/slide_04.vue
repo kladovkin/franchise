@@ -220,7 +220,6 @@ article
 
 h2
   color: #4b4b4b
-  text-align: center
 
   +lte_ipad
     margin-bottom: rem(12px)
@@ -228,6 +227,7 @@ h2
   +gte_laptop
     margin: 0 auto 21px
     max-width: 796px
+    text-align: center
 
 .note
   color: #6c6c6c

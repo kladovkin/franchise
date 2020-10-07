@@ -68,7 +68,6 @@ h2
   color: #fff
 
   +lte_ipad
-    text-align: center
     margin-bottom: rem(24px)
 
   +gte_laptop
