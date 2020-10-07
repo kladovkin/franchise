@@ -9,14 +9,11 @@ module.exports = {
       }
     }
   },
-  transpileDependencies: [
-    'delay'
-  ],
   devServer: {
     host: 'localhost',
     allowedHosts: ['localhost'],
     port: 8090
-  },
+  }
   // uncomment to debug es-check errors
   // chainWebpack: config => {
   //   config.optimization.minimize(false);
@@ -28,7 +25,7 @@ module.exports = {
   //       // array of file patterns in glob style
   //       'js/*.js'
   //     ],
-  // 
+  //
   //     // [optional] default: es5
   //     esVersion: 'es5'
   //   }

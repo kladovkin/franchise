@@ -10,8 +10,6 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "delay": "^4.4.0",
-    "es-check": "^5.1.1",
     "reset-css": "^5.0.1",
     "throttle-debounce": "^2.3.0",
     "vue": "3.0.0",
