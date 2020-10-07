@@ -35,6 +35,7 @@
       </div>
     </div>
     <div class='submit'>
+      <div v-if='isError' class='error mobile'>*Обязательное поле для заполения</div>
       <Button type='red' text='Отправить запрос' @click='submit' />
       <div class='privacy'>
         Нажимая «Отправить запрос», вы подтверждаете свое согласие на обработку
@@ -47,6 +48,7 @@
         </a>
       </div>
     </div>
+    <div v-if='isError' class='error desktop'>*Обязательное поле для заполения</div>
   </article>
 </template>
 
@@ -66,6 +68,13 @@ export default {
   components: {
     Button,
     Input
+  },
+  computed: {
+    isError() {
+      return this.isValidated && (
+        !this.client || !this.email || !this.phone
+      );
+    }
   },
   methods: {
     submit() {
@@ -208,4 +217,25 @@ h2
 
         &:hover
           text-decoration: underline
+
+.error
+  color: #f00
+  letter-spacing: -0.01em
+
+  +lte_ipad
+    font-size: 13px
+    line-height: 18px
+    margin-top: rem(-4px)
+    margin-bottom: rem(16px)
+
+    &.desktop
+      display: none
+
+  +gte_laptop
+    font-size: 14px
+    line-height: 20px
+    margin-top: 14px
+
+    &.mobile
+      display: none
 </style>
