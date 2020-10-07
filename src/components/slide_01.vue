@@ -20,11 +20,13 @@
           <div class='end' />
         </div>
       </div>
-      <Button
-        text='Оставить заявку'
-        type='white'
-        @click='lead'
-      />
+      <a href='#slide_02' class='navigation'>
+        <Button
+          text='Оставить заявку'
+          type='white'
+          @click='lead'
+        />
+      </a>
     </article>
   </div>
 </template>
@@ -43,7 +45,7 @@ export default {
       this.isOpened = true;
     },
     lead() {
-      alert('not implemented');
+      // alert('not implemented');
     }
   }
 };
@@ -447,4 +449,7 @@ article
     transition: opacity 0.75s ease-in 0.85s, margin-top 0.5s ease-in 0.85s
   +gte_hd
     transition: opacity 1s ease-in 1.1s, margin-top 0.5s ease-in 1.1s
+
+a.navigation
+  text-decoration: none
 </style>

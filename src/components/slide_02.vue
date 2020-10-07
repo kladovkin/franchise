@@ -1,5 +1,6 @@
 <template>
   <article>
+    <a name='slide_02' />
     <h2>
       <span>Self Storage</span> &mdash; новый подход к бизнесу в сфере недвижимости
     </h2>

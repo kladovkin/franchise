@@ -29,7 +29,9 @@
         </div>
       </div>
       <div class='container'>
-        <Button type='red' text='Узнать больше' @click='lead'/>
+        <a href='#slide_09' class='navigation'>
+          <Button type='red' text='Узнать больше' @click='lead'/>
+        </a>
       </div>
     </article>
   </div>
@@ -43,7 +45,7 @@ export default {
   components: { Button },
   methods: {
     lead() {
-      alert('not implemented');
+      // alert('not implemented');
     }
   }
 };
@@ -210,4 +212,7 @@ h2
 
     @media screen and (min-width: 1201px)
       right: 242px
+
+a.navigation
+  text-decoration: none
 </style>
