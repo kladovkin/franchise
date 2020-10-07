@@ -60,6 +60,7 @@ article
     content: ''
     position: absolute
     top: 0
+    z-index: -1
 
     +lte_ipad
       background-image: url(../assets/slide_09/circles-mobile.svg)
@@ -109,4 +110,28 @@ h2
       position: absolute
       width: 226px
       margin: -46px 0 0 77px
+
+.cc-form
+  +lte_ipad
+    margin-bottom: rem(24px)
+
+  +gte_laptop
+    display: flex
+    margin-bottom: 26px
+
+  .c-left
+    +lte_ipad
+      margin-bottom: rem(12px)
+
+    +gte_laptop
+      flex-shrink: 0
+      margin-right: 32px
+      width: 350px
+
+  .c-right
+    +gte_laptop
+      flex-grow: 1
+
+      /deep/ textarea
+        height: 257px
 </style>

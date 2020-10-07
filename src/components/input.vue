@@ -5,23 +5,22 @@
       <textarea
         v-if='isTextarea'
         ref='textarea'
-        :class='[color, {
+        :class='{
           "is-error": isError,
-        }]'
-        :value='inputValue'
+        }'
+        :value='value'
         :placeholder='placeholder'
         :autofocus='isAutofocus'
-        :type='type'
         @input='inputChange($event.target.value)'
         @keyup.esc='cancel'
       />
       <input
         v-else
         ref='input'
-        :class='[color, {
+        :class='{
           "is-error": isError,
-        }]'
-        :value='inputValue'
+        }'
+        :value='value'
         :placeholder='placeholder'
         :autofocus='isAutofocus'
         :type='type'
@@ -64,12 +63,6 @@ export default {
     isTemporarilyDisabledAfterDragWasFinished: false
   }),
   computed: {
-    inputValue() {
-      if (this.value == null) {
-        return this.text;
-      }
-      return this.tmpValue != null ? this.tmpValue : this.value;
-    },
     isTextarea() {
       return this.type === 'textarea';
     }
@@ -106,6 +99,60 @@ export default {
 </script>
 
 <style scoped lang='sass'>
+.input
+  background: #fbfbfb
+  border-radius: 10px
+  box-shadow: inset 0px 4px 15px rgba(0, 0, 0, 0.05)
+  display: flex
+  width: 100%
+
+  &:not(:last-child)
+    +lte_ipad
+      margin-bottom: 12px
+
+    +gte_laptop
+      margin-bottom: 26px
+
+  label
+    width: 100%
+
+  input,
+  textarea
+    background: transparent
+    border: none
+    font-size: 16px
+    letter-spacing: -0.01em
+    width: 100%
+
+    +lte_ipad
+      min-height: rem(48px)
+
+    +gte_laptop
+      min-height: 69px
+
+    +lte_ipad
+      line-height: rem(20px)
+
+    +gte_laptop
+      line-height: 23px
+
+    &::placeholder
+      color: #6c6c6c
+
+  input
+    +lte_ipad
+      padding: rem(14px) rem(18px)
+
+    +gte_laptop
+      padding: 21px 34px
+
+  textarea
+    +lte_ipad
+      padding: rem(14px) rem(16px)
+
+    +gte_laptop
+      padding: 21px 24px
+
 // .input
 //   padding-bottom: rem(10px)
 //
