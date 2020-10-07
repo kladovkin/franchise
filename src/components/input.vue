@@ -6,7 +6,7 @@
         v-if='isTextarea'
         ref='textarea'
         :class='{
-          "is-error": isError,
+          "jis-error": isError,
         }'
         :value='value'
         :placeholder='placeholder'
@@ -119,7 +119,9 @@ export default {
   input,
   textarea
     background: transparent
-    border: none
+    border-radius: 10px
+    border: 2px solid transparent
+    font-family: inherit
     font-size: 16px
     letter-spacing: -0.01em
     width: 100%
@@ -138,6 +140,13 @@ export default {
 
     &::placeholder
       color: #6c6c6c
+
+    &.is-error
+      color: #f00
+      border-color: #f00
+
+      &::placeholder
+        color: #f00
 
   input
     +lte_ipad

@@ -7,16 +7,22 @@
         <Input
           placeholder='Имя и Фамилия'
           name='client'
+          v-model='client'
+          :is-error='isValidated && !client'
         />
         <Input
           placeholder='E-mail'
           name='email'
           type='email'
+          v-model='email'
+          :is-error='isValidated && !email'
         />
         <Input
           placeholder='Мобильный телефон'
           name='phone'
           type='tel'
+          v-model='phone'
+          :is-error='isValidated && !phone'
         />
       </div>
       <div class='c-right'>
@@ -24,13 +30,28 @@
           placeholder='Сообщение'
           name='payload'
           type='textarea'
+          v-model='payload'
         />
+      </div>
+    </div>
+    <div class='submit'>
+      <Button type='red' text='Отправить запрос' @click='submit' />
+      <div class='privacy'>
+        Нажимая «Отправить запрос», вы подтверждаете свое согласие на обработку
+        и хранение ваших персональных данных в соответствии с
+        <a
+          href='https://kladovkin.ru/selfstorage/privacy/'
+          target='_blank'
+        >
+          политикой обработки персональных данных
+        </a>
       </div>
     </div>
   </article>
 </template>
 
 <script>
+import Button from '@/components/button';
 import Input from '@/components/input';
 
 export default {
@@ -39,9 +60,18 @@ export default {
     client: '',
     phone: '',
     email: '',
-    payload: ''
+    payload: '',
+    isValidated: false
   }),
-  components: { Input }
+  components: {
+    Button,
+    Input
+  },
+  methods: {
+    submit() {
+      this.isValidated = true;
+    }
+  }
 };
 </script>
 
@@ -53,6 +83,7 @@ article
 
   +gte_laptop
     padding-top: 96px
+    padding-bottom: 6px
 
   &:before
     background-repeat: no-repeat
@@ -134,4 +165,47 @@ h2
 
       /deep/ textarea
         height: 257px
+
+.submit
+  +gte_laptop
+    display: flex
+    align-items: center
+
+  .button
+    +lte_ipad
+      margin-bottom: rem(24px)
+
+    +gte_laptop
+      width: 350px
+      margin-right: 29px
+
+  .privacy
+    letter-spacing: -0.01em
+
+    +lte_ipad
+      font-size: 12px
+      line-height: 18px
+      text-align: center
+      color: #6C6C6C
+
+    +gte_laptop
+      font-size: 14px
+      line-height: 20px
+      color: #a5a5a5
+
+    a
+      text-decoration: none
+
+      +lte_ipad
+        color: #f44f0c
+
+        &:active
+          text-decoration: underline
+
+      +gte_laptop
+        font-weight: 800
+        color: inherit
+
+        &:hover
+          text-decoration: underline
 </style>
