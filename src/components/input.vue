@@ -8,7 +8,7 @@
         :class='{
           "jis-error": isError,
         }'
-        :value='value'
+        :value='modelValue'
         :placeholder='placeholder'
         :autofocus='isAutofocus'
         @input='inputChange($event.target.value)'
