@@ -20,7 +20,7 @@
         :class='{
           "is-error": isError,
         }'
-        :value='value'
+        :value='modelValue'
         :placeholder='placeholder'
         :autofocus='isAutofocus'
         :type='type'
@@ -38,7 +38,7 @@ export default {
   name: 'AppInput',
   props: {
     label: { type: String, required: false, default: undefined },
-    value: { type: [Number, String], required: false, default: undefined },
+    modelValue: { type: [Number, String], required: false, default: undefined },
     placeholder: { type: String, required: false, default: undefined },
     isAutofocus: { type: Boolean, required: false, default: undefined },
     type: {
@@ -89,7 +89,7 @@ export default {
       return this.$emit('cancel');
     },
     emitChange(value) {
-      this.$emit('input', value);
+      this.$emit('update:modelValue', value);
     },
     focus() {
       (this.$refs.input || this.$refs.textarea).focus();
@@ -147,6 +147,10 @@ export default {
 
       &::placeholder
         color: #f00
+
+    &:focus
+      outline: none
+      border-color: #285ec5
 
   input
     +lte_ipad
