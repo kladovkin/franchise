@@ -16,11 +16,13 @@
         <div class='dots' />
       </div>
       <div class='slider-container'>
-        <img
-          class='laptop'
-          loading='lazy'
-          src='../assets/slide_08/case_1.png'
-        />
+        <div class='inner'>
+          <img
+            class='laptop'
+            loading='lazy'
+            src='../assets/slide_08/case_1.png'
+          />
+        </div>
         <div class='dots' />
       </div>
     </div>
@@ -102,43 +104,40 @@ article
         margin-top: 45px
 
   .slider-container
-    position: relative
-    display: flex
-    align-items: center
+    .inner
+      position: relative
+      display: flex
+      align-items: center
 
-    +lte_ipad
-      height: rem(288px)
-      width: rem(288px)
+      +lte_ipad
+        height: rem(288px)
+        width: rem(288px)
 
-    +gte_laptop
-      margin-left: auto
+      +gte_laptop
+        margin-left: auto
 
-    +laptop
-      height: scale-laptop(514px, 635px)
-      width: scale-laptop(514px, 635px)
+      +laptop
+        height: scale-laptop(514px, 635px)
+        width: scale-laptop(514px, 635px)
 
-    +gte_desktop
-      height: 635px
-      width: 635px
+      +gte_desktop
+        height: 635px
+        width: 635px
 
-    &:before
-      background-image: url(../assets/slide_08/circle_red.svg)
-      background-repeat: no-repeat
-      background-size: contain
-      content: ''
-      height: 100%
-      position: absolute
-      width: 100%
-      z-index: -1
+      &:before
+        background-image: url(../assets/slide_08/circle_red.svg)
+        background-repeat: no-repeat
+        background-size: contain
+        content: ''
+        height: 100%
+        position: absolute
+        width: 100%
+        z-index: -1
 
     img
       max-width: 100%
 
     .dots
-      // NOTE: remove when more cases are added
-      &:empty
-        display: none
-
       +lte_ipad
         margin-top: rem(40px)
 
