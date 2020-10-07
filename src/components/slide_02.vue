@@ -297,6 +297,9 @@ ul
     margin: 0 auto
     max-width: 341px
 
+  strong
+    font-weight: 700
+
 img.girl
   position: absolute
   bottom: 0
