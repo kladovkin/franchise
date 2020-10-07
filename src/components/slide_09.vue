@@ -2,12 +2,46 @@
   <article>
     <h2>Остались вопросы?</h2>
     <div class='note'>Оставьте свои контакты и мы с вами свяжемся</div>
+    <div class='cc-form'>
+      <div class='c-left'>
+        <Input
+          placeholder='Имя и Фамилия'
+          name='client'
+        />
+        <Input
+          placeholder='E-mail'
+          name='email'
+          type='email'
+        />
+        <Input
+          placeholder='Мобильный телефон'
+          name='phone'
+          type='tel'
+        />
+      </div>
+      <div class='c-right'>
+        <Input
+          placeholder='Сообщение'
+          name='payload'
+          type='textarea'
+        />
+      </div>
+    </div>
   </article>
 </template>
 
 <script>
+import Input from '@/components/input';
+
 export default {
-  name: 'Slide9'
+  name: 'Slide9',
+  data: () => ({
+    client: '',
+    phone: '',
+    email: '',
+    payload: ''
+  }),
+  components: { Input }
 };
 </script>
 
