@@ -94,10 +94,12 @@ export default {
 
 <style scoped lang='sass'>
 article
-  +lte_ipad
-    padding: 0
+  padding: 0
 
 h2
+  +default_padding_left
+  +default_padding_right
+
   +lte_ipad
     text-align: left
     margin-bottom: rem(40px)
@@ -108,9 +110,11 @@ h2
 .popup
   background: #fff
   box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.25)
+  +default_margin_left
 
   +lte_ipad
     padding: rem(24px) rem(24px) rem(24px) rem(16px)
+    margin: 0
 
   +gte_laptop
     border-radius: 25px
