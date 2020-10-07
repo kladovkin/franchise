@@ -1,6 +1,8 @@
 <template>
   <article>
     <h2>Контакты</h2>
+    <div class='popup'>
+    </div>
   </article>
   <div ref='map' class='map' />
 </template>
@@ -15,7 +17,7 @@ export default {
       .load('https://api-maps.yandex.ru/2.1/?lang=ru_RU')
       .then(maps => {
         const map = new maps.Map(this.$refs.map, {
-          center: [55.7540471, 37.620405],
+          center: [55.754, 37.27],
           zoom: 10,
           controls: []
         });
@@ -39,15 +41,32 @@ export default {
 
 <style scoped lang='sass'>
 h2
-  +default_padding_right
-  +default_padding_left
-
   +lte_ipad
     text-align: left
     margin-bottom: rem(40px)
 
   +gte_laptop
     margin-bottom: 45px
+
+.popup
+  background: #fff
+  box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.25)
+
+  +lte_ipad
+
+  +gte_laptop
+    border-radius: 25px
+    margin-top: 77px
+    position: absolute
+    z-index: 1
+
+  +laptop
+    width: scale-laptop(538px, 636px)
+    height: scale-laptop(345px, 409px)
+
+  +gte_desktop
+    width: 636px
+    height: 409px
 
 .map
   +lte_ipad
