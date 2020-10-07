@@ -9,6 +9,9 @@ module.exports = {
       }
     }
   },
+  transpileDependencies: [
+    'delay'
+  ],
   devServer: {
     host: 'localhost',
     allowedHosts: ['localhost'],
