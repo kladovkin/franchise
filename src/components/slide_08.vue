@@ -50,11 +50,12 @@ article
     content: ''
     position: absolute
     top: 0
+    z-index: -1
 
     +lte_ipad
       height: rem(117px)
-      right: rem(-20px)
-      width: rem(179px)
+      right: rem(-36px)
+      width: rem(170px)
 
     +gte_laptop
       height: 109px
@@ -147,6 +148,7 @@ article
 h2
   +lte_ipad
     margin-bottom: rem(50px)
+    text-align: left
 
   +gte_laptop
     margin-bottom: 41px
