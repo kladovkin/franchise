@@ -20,6 +20,30 @@ article
   +gte_laptop
     padding-top: 96px
 
+  &:before
+    background-repeat: no-repeat
+    background-size: contain
+    content: ''
+    position: absolute
+    top: 0
+
+    +lte_ipad
+      background-image: url(../assets/slide_09/circles-mobile.svg)
+      height: rem(207px)
+      left: 0
+      width: rem(127px)
+
+    +gte_laptop
+      background-image: url(../assets/slide_09/circles-desktop.svg)
+      height: 239px
+      width: 622px
+
+    +laptop
+      left: scale-laptop(305px, 405px)
+
+    +gte_desktop
+      left: 405px
+
 h2
   +lte_ipad
     margin-bottom: rem(12px)
@@ -50,4 +74,5 @@ h2
       height: 62px
       position: absolute
       width: 226px
+      margin: -46px 0 0 77px
 </style>
