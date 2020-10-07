@@ -9,20 +9,20 @@
         />
 
         <div class='info'>
-          <div>
-            <span>Основатель</span>
-            <span><b>Карпушин Михаил</b></span>
+          <div class='name'>
+            <div>Основатель</div>
+            <div><b>Карпушин Михаил</b></div>
           </div>
 
-          <div>
-            <span>
+          <div class='contacts'>
+            <div>
               <a href='mailto:m.karpushin@kladovkin.ru'>
                 m.karpushin@kladovkin.ru
               </a>
-            </span>
-            <span>
+            </div>
+            <div>
               <a href='tel:+7-916-305-22-05'>+7-916-305-22-05</a>
-            </span>
+            </div>
           </div>
         </div>
       </div>
@@ -34,20 +34,20 @@
         />
 
         <div class='info'>
-          <div>
-            <span>Руководитель отдела франчайзинга</span>
-            <span><b>Никитина Наталья</b></span>
+          <div class='name'>
+            <div>Руководитель отдела франчайзинга</div>
+            <div><b>Никитина Наталья</b></div>
           </div>
 
-          <div>
-            <span>
+          <div class='contacts'>
+            <div>
               <a href='mailto:n.nikitina@kladovkin.ru'>
                 n.nikitina@kladovkin.ru
               </a>
-            </span>
-            <span>
+            </div>
+            <div>
               <a href='tel:+7-495-181-55-45'>+7-495-181-55-45</a>
-            </span>
+            </div>
           </div>
         </div>
       </div>
@@ -110,7 +110,7 @@ h2
   box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.25)
 
   +lte_ipad
-    padding: rem(24px) rem(45px) rem(24px) rem(16px)
+    padding: rem(24px) rem(24px) rem(24px) rem(16px)
 
   +gte_laptop
     border-radius: 25px
@@ -130,12 +130,25 @@ h2
     align-items: center
 
     &:first-child
-      margin-bottom: 23px
+      +lte_ipad
+        margin-bottom: rem(28px)
+
+      +gte_laptop
+        margin-bottom: 23px
 
     &:not(:first-child)
-      margin-bottom: 33px
+      +lte_ipad
+        margin-bottom: rem(23px)
+
+      +gte_laptop
+        margin-bottom: 33px
 
     img
+      +lte_ipad
+        width: rem(85px)
+        height: rem(85px)
+        margin-right: rem(16px)
+
       +gte_laptop
         width: 120px
         height: 120px
@@ -149,25 +162,36 @@ h2
     .info
       display: flex
       flex-direction: column
+      letter-spacing: -0.01em
+
+      +lte_ipad
+        color: #4b4b4b
+        font-size: rem(14px)
+        line-height: rem(20px)
 
       +gte_laptop
         color: #6c6c6c
         font-size: 16px
         font-weight: 300
         height: 100px
-        letter-spacing: -0.01em
         line-height: 20px
 
       b
-        color: #333
+        +lte_ipad
+          font-weight: 900
+          font-size: 16px
+          line-height: 20px
+          letter-spacing: -0.01em
+          color: #4b4b4b
+
+        +gte_laptop
+          color: #333
 
       a
         color: inherit
         text-decoration: none
 
         +lte_ipad
-          color: #f2642b
-
           &:active
             text-decoration: underline
 
@@ -175,12 +199,18 @@ h2
           &:hover
             text-decoration: underline
 
-      & > div
-        &:first-child
+      .name
+        +lte_ipad
+          margin-bottom: rem(8px)
+
+        +gte_laptop
           margin-bottom: auto
 
-        & > span
-          display: block
+        & > div:first-child
+          +lte_ipad
+            color: #6c6c6c
+            font-size: rem(10px)
+            line-height: rem(16px)
 
   .address
     font-weight: 300
