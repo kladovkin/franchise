@@ -108,11 +108,11 @@ export default {
       opacity: 0
       width: 1024px
 
+    +gte_desktop
+      transition: opacity 1s ease 1.1s
+
     +desktop_hd
       left: scale-between(571px, 925px, 1200px, 1920px)
-
-    +gte_hd
-      transition: opacity 1s ease 1.1s
 
     +uhd
       left: scale-between(925px, 1224px, 1920px, 2520px)
@@ -384,11 +384,11 @@ article
         left: scale-laptop(68px, 156px)
         transition: opacity 0.75s ease 0.85s, margin-top 0.75s ease 0.85s
 
+      +gte_desktop
+        transition: opacity 1s ease 1.1s, margin-top 1s ease 1.1s
+
       +desktop_hd
         left: scale-between(156px, 290px, 1200px, 1920px)
-
-      +gte_hd
-        transition: opacity 1s ease 1.1s, margin-top 1s ease 1.1s
 
       +uhd
         left: 290px
@@ -447,7 +447,7 @@ article
 
   +laptop
     transition: opacity 0.75s ease-in 0.85s, margin-top 0.5s ease-in 0.85s
-  +gte_hd
+  +gte_desktop
     transition: opacity 1s ease-in 1.1s, margin-top 0.5s ease-in 1.1s
 
 a.navigation
