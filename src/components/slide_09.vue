@@ -28,9 +28,9 @@
       <div class='c-right'>
         <Input
           placeholder='Сообщение'
-          name='payload'
+          name='comment'
           type='textarea'
-          v-model='payload'
+          v-model='comment'
         />
       </div>
     </div>
@@ -53,6 +53,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 import Button from '@/components/button';
 import Input from '@/components/input';
 
@@ -62,14 +64,20 @@ export default {
     client: '',
     phone: '',
     email: '',
-    payload: '',
-    isValidated: false
+    comment: '',
+    isValidated: false,
+    isSubmitted: false
   }),
   components: {
     Button,
     Input
   },
   computed: {
+    url() {
+      return process.env.NODE_ENV === 'development' ?
+        'http://ms.local/selfstorage/leads/' :
+        'https://http://kladovkin.ru//selfstorage/leads/';
+    },
     isError() {
       return this.isValidated && (
         !this.client || !this.email || !this.phone
@@ -78,7 +86,21 @@ export default {
   },
   methods: {
     submit() {
+      console.log(this.client);
       this.isValidated = true;
+
+      if (!this.isError) {
+        this.isSubmitted = true;
+        axios.post(this.url, {
+          crm_lead: {
+            phone: this.phone,
+            client: this.client,
+            email: this.email,
+            lead_type: 'franchise',
+            rent_note: this.comment
+          }
+        });
+      }
     }
   }
 };
