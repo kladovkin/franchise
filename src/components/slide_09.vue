@@ -1,6 +1,5 @@
 <template>
-  <article>
-    <a name='slide_09' />
+  <article id='slide_09'>
     <h2>Остались вопросы?</h2>
     <div class='note'>Оставьте свои контакты и мы с вами свяжемся</div>
     <div v-if='isSubmitted' class='success-container'>

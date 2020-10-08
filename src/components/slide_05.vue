@@ -29,9 +29,7 @@
         </div>
       </div>
       <div class='container'>
-        <a href='#slide_09' class='navigation'>
-          <Button type='red' text='Узнать больше' @click='lead'/>
-        </a>
+        <Button type='red' text='Узнать больше' @click='lead'/>
       </div>
     </article>
   </div>
@@ -39,13 +37,17 @@
 
 <script>
 import Button from '@/components/button';
+import SweetScroll from '@/utils/sweet_scroll';
 
 export default {
   name: 'Slide5',
   components: { Button },
   methods: {
-    lead() {
-      // alert('not implemented');
+    async lead() {
+      (await SweetScroll.asyncInstance()).toElement(
+        document.getElementById('slide_09'),
+        { duration: 450 }
+      );
     }
   }
 };
