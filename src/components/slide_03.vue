@@ -1,5 +1,5 @@
 <template>
-  <div class='background'>
+  <div class='background' id='slide_03'>
     <article>
       <h2>
         Кладовкин &mdash; технологический лидер российского

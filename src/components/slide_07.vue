@@ -1,5 +1,5 @@
 <template>
-  <div class='outer'>
+  <div class='outer' id='slide_07'>
     <div class='container'>
       <h2>Комиссия&nbsp;управляющей компании</h2>
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class='background-cutter'>
+  <div class='background-cutter' id='slide_06'>
     <article>
       <h2>
         Станьте партнером и откройте автоматизированный бизнес под ключ

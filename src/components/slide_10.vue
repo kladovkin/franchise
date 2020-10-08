@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article id='slide_10'>
     <h2>Контакты</h2>
     <div class='popup'>
       <div class='person'>

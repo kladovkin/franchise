@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article id='slide_08'>
     <div class='cases'>
       <div class='content-container'>
         <h2>Кейсы</h2>

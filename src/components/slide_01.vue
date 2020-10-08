@@ -1,5 +1,5 @@
 <template>
-  <div class='background' :class='{ "is-opened": isOpened }'>
+  <div class='background' :class='{ "is-opened": isOpened }' id='slide_01'>
     <article>
       <a class='logo' href='https://kladovkin.ru' />
       <div class='outer'>
