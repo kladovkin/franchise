@@ -270,6 +270,7 @@ h2
       font-size: 14px
       line-height: 20px
       margin-top: 14px
+      position: absolute
 
       &.mobile
         display: none
