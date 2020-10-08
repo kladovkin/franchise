@@ -106,8 +106,14 @@
 export default {
   name: 'Slide6',
   methods: {
-    enlarge() {
-      alert('not implemented');
+    async enlarge() {
+      // const { default: SimpleLightbox } = await import(
+      //   /* webpackChunkName: "lightbox" */ 'simple-lightbox'
+      // );
+      //
+      // SimpleLightbox.open({
+      //   items: ['demo/images/1big.jpg']
+      // });
     }
   }
 };
