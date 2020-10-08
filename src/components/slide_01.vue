@@ -20,19 +20,18 @@
           <div class='end' />
         </div>
       </div>
-      <a href='#slide_02' class='navigation'>
-        <Button
-          text='Оставить заявку'
-          type='white'
-          @click='lead'
-        />
-      </a>
+      <Button
+        text='Оставить заявку'
+        type='white'
+        @click='lead'
+      />
     </article>
   </div>
 </template>
 
 <script>
 import Button from '@/components/button';
+import SweetScroll from '@/utils/sweet_scroll';
 
 export default {
   name: 'Slide1',
@@ -44,8 +43,10 @@ export default {
     open() {
       this.isOpened = true;
     },
-    lead() {
-      // alert('not implemented');
+    async lead() {
+      (await SweetScroll.asyncInstance()).toElement(
+        document.getElementById('slide_02'), { duration: 450 }
+      );
     }
   }
 };
