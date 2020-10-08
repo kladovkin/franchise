@@ -178,7 +178,7 @@ h2
     margin-bottom: 42px
 
     &:after
-      background-image: url(../assets/slide_09/logo.svg)
+      background-image: url(../assets/logo.svg)
       background-repeat: no-repeat
       background-size: contain
       content: ''
