@@ -87,7 +87,7 @@ export default {
     url() {
       return process.env.NODE_ENV === 'development' ?
         'http://ms.local/selfstorage/leads/' :
-        'https://http://kladovkin.ru//selfstorage/leads/';
+        'https://kladovkin.ru/selfstorage/leads/';
     },
     isError() {
       return this.isValidated && (
