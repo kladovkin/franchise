@@ -69,16 +69,34 @@ footer
   +gte_laptop
     width: rem(242px)
 
-ul a
-  letter-spacing: -0.01em
-
+ul
   +lte_ipad
-    color: #4b4b4b
-    font-size: rem(12px)
-    line-height: rem(16px)
+    +fcolumn(2, rem(30px), rem(17px), 'li')
 
   +gte_laptop
-    color: #333333
-    font-size: 16px
-    line-height: 23px
-</style>
+    +fcolumn(4, 30px, 36px, 'li')
+    max-height: 177px
+    flex-direction: column
+
+  li
+    a
+      -webkit-tap-highlight-color: transparent
+      letter-spacing: -0.01em
+      text-decoration: none
+
+      +lte_ipad
+        color: #4b4b4b
+        font-size: rem(12px)
+        line-height: rem(16px)
+
+        &:active
+          color: #f44f0c
+
+      +gte_laptop
+        color: #333333
+        font-size: 16px
+        line-height: 23px
+
+        &:hover
+          color: #f44f0c
+    </style>
