@@ -21,7 +21,7 @@
         </div>
       </div>
       <Button
-        text='Оставить заявку'
+        text='Узнать больше'
         type='white'
         @click='lead'
       />
