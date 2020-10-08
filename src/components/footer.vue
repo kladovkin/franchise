@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class='container'>
     <img
       class='logo'
       loading='lazy'
@@ -61,8 +61,6 @@ export default {
 
 <style scoped lang='sass'>
 footer
-  +default_padding_left
-  +default_padding_right
   +lte_ipad
     padding-bottom: rem(24px)
     padding-top: rem(40px)
