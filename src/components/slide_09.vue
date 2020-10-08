@@ -66,6 +66,7 @@
 
 <script>
 import axios from 'axios';
+import IsMobileJS from 'ismobilejs';
 
 import Button from '@/components/button';
 import Input from '@/components/input';
@@ -94,11 +95,16 @@ export default {
       return this.isValidated && (
         !this.client || !this.email || !this.phone
       );
+    },
+    isMobile() {
+      return document.documentElement.clientWidth < 1024 || (
+        IsMobileJS(window.navigator.userAgent).any &&
+          document.documentElement.clientWidth <= 1023
+      );
     }
   },
   methods: {
     submit() {
-      console.log(this.client);
       this.isValidated = true;
 
       if (!this.isError) {
