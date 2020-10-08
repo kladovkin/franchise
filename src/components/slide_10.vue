@@ -62,6 +62,7 @@
 
 <script>
 import ymaps from 'ymaps';
+import IsMobileJS from 'ismobilejs';
 
 export default {
   name: 'Slide10',
@@ -70,24 +71,38 @@ export default {
       .load('https://api-maps.yandex.ru/2.1/?lang=ru_RU')
       .then(maps => {
         const map = new maps.Map(this.$refs.map, {
-          center: [55.754, 37.27],
+          center: this.mapCenter,
           zoom: 10,
           controls: []
         });
 
         const marker = new window.ymaps.Placemark(
           [55.866516, 37.480508],
-          {
-          },
+          { },
           {
             iconLayout: 'default#imageWithContent',
             iconImageHref: '/marker.svg',
-            iconImageSize: [74, 95],
-            iconImageOffset: [-37, -95]
+            ...this.iconOptions
           }
         );
         map.geoObjects.add(marker);
       });
+  },
+  computed: {
+    isMobile() {
+      return document.documentElement.clientWidth < 1024 || (
+        IsMobileJS(window.navigator.userAgent).any &&
+          document.documentElement.clientWidth <= 1023
+      );
+    },
+    mapCenter() {
+      return this.isMobile ? [55.85, 37.57] : [55.754, 37.27];
+    },
+    iconOptions() {
+      return this.isMobile ?
+        { iconImageSize: [35, 43], iconImageOffset: [-17, -43] } :
+        { iconImageSize: [74, 95], iconImageOffset: [-37, -95] };
+    }
   }
 };
 </script>
