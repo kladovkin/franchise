@@ -77,6 +77,7 @@ footer
     width: rem(187px)
 
   +gte_laptop
+    margin-top: -13px
     width: rem(242px)
 
   +laptop
@@ -138,5 +139,5 @@ ul
     font-size: 16px
     line-height: 23px
     width: 253px
-    margin-top: 107px
+    margin-top: 95px
 </style>
