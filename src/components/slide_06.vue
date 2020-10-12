@@ -107,13 +107,13 @@ export default {
   name: 'Slide6',
   methods: {
     async enlarge() {
-      // const { default: SimpleLightbox } = await import(
-      //   /* webpackChunkName: "lightbox" */ 'simple-lightbox'
-      // );
-      //
-      // SimpleLightbox.open({
-      //   items: ['demo/images/1big.jpg']
-      // });
+      const { default: SimpleLightbox } = await import(
+        /* webpackChunkName: "lightbox" */ 'simple-lightbox'
+      );
+
+      SimpleLightbox.open({
+        items: ['/schema.png']
+      });
     }
   }
 };
@@ -614,4 +614,8 @@ h2
 
     +gte_desktop
       height: 380px
+</style>
+
+<style lang='sass'>
+@import ../../node_modules/simple-lightbox/dist/simpleLightbox.css
 </style>
