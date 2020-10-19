@@ -12,7 +12,6 @@ const DIRECTION_BOTTOM = 'bottom';
 const DIRECTION_LEFT = 'left';
 
 export default {
-  // beforeMount(_el, _binding, _vnode, _prevVnode) {
   beforeMount(el, binding, vnode, _prevVnode) {
     const { active, callback, options } = binding.value;
 
@@ -82,7 +81,7 @@ function mapEntry(entry) {
     el: target,
     going: going(isIntersecting),
     direction: direction(boundingClientRect, oldBoundingClientRect),
-    j_entry: entry
+    _entry: entry
   };
 }
 

@@ -1,5 +1,12 @@
 <template>
-  <article id='slide_10' v-waypoint>
+  <article
+    id='slide_10'
+    v-waypoint='{
+      active: true,
+      callback: onWaypoint,
+      options: intersectionOptions
+    }'
+  >
     <h2>Контакты</h2>
     <div class='popup'>
       <div class='person'>
@@ -61,40 +68,18 @@
 </template>
 
 <script>
-import ymaps from 'ymaps';
 import IsMobileJS from 'ismobilejs';
 
 export default {
   name: 'Slide10',
-  mounted() {
-    ymaps
-      .load('https://api-maps.yandex.ru/2.1/?lang=ru_RU')
-      .then(maps => {
-        const map = new maps.Map(this.$refs.map, {
-          center: this.mapCenter,
-          zoom: 10,
-          controls: [
-            'geolocationControl',
-            'typeSelector',
-            'fullscreenControl',
-            'zoomControl',
-            'rulerControl'
-          ]
-        });
-        map.behaviors.disable('scrollZoom');
-
-        const marker = new window.ymaps.Placemark(
-          [55.866516, 37.480508],
-          { },
-          {
-            iconLayout: 'default#imageWithContent',
-            iconImageHref: '/marker.svg',
-            ...this.iconOptions
-          }
-        );
-        map.geoObjects.add(marker);
-      });
-  },
+  data: () => ({
+    isMapInitialized: false,
+    intersectionOptions: {
+      root: null,
+      rootMargin: '0px 0px 0px 0px',
+      threshold: [0, 1] // [0.25, 0.75] if you want a 25% offset!
+    } // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+  }),
   computed: {
     isMobile() {
       return document.documentElement.clientWidth < 1024 || (
@@ -109,6 +94,45 @@ export default {
       return this.isMobile ?
         { iconImageSize: [35, 43], iconImageOffset: [-17, -43] } :
         { iconImageSize: [74, 95], iconImageOffset: [-37, -95] };
+    }
+  },
+  methods: {
+    async onWaypoint({ going }) {
+      if (going !== 'in') { return; }
+      if (this.isMapInitialized) { return; }
+      this.isMapInitialized = true;
+
+      const { default: ymaps } = await import(
+        /* webpackChunkName: "ymaps" */
+        'ymaps'
+      );
+      ymaps
+        .load('https://api-maps.yandex.ru/2.1/?lang=ru_RU')
+        .then(maps => {
+          const map = new maps.Map(this.$refs.map, {
+            center: this.mapCenter,
+            zoom: 10,
+            controls: [
+              'geolocationControl',
+              'typeSelector',
+              'fullscreenControl',
+              'zoomControl',
+              'rulerControl'
+            ]
+          });
+          map.behaviors.disable('scrollZoom');
+
+          const marker = new window.ymaps.Placemark(
+            [55.866516, 37.480508],
+            { },
+            {
+              iconLayout: 'default#imageWithContent',
+              iconImageHref: '/marker.svg',
+              ...this.iconOptions
+            }
+          );
+          map.geoObjects.add(marker);
+        });
     }
   }
 };
