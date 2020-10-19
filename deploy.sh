@@ -4,7 +4,7 @@
 set -e
 
 # build
-yarn run build
+yarn run build --modern
 
 # navigate into the build output directory
 cd dist

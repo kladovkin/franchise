@@ -15,18 +15,16 @@ module.exports = {
     port: 8090
   },
   transpileDependencies: [
-    // 'delay',
-    // 'query-string',
-    // 'strict-uri-encode',
-    // 'split-on-first',
-    // 'dom7',
-    // 'swiper',
-    // 'local-storage'
+    'vue',
+    '@vue',
+    'vue-router',
+    'query-string',
+    'strict-uri-encode'
   ],
   // uncomment to debug es-check errors
-  chainWebpack: config => {
-    config.optimization.minimize(false);
-  },
+  // chainWebpack: config => {
+  //   config.optimization.minimize(false);
+  // },
   pluginOptions: {
     esCheck: {
       // [optional] uses sensible defaults if not set
