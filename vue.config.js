@@ -36,5 +36,6 @@ module.exports = {
       // [optional] default: es5
       esVersion: 'es5'
     }
-  }
+  },
+  productionSourceMap: false
 };
