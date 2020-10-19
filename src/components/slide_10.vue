@@ -1,5 +1,5 @@
 <template>
-  <article id='slide_10'>
+  <article id='slide_10' v-waypoint>
     <h2>Контакты</h2>
     <div class='popup'>
       <div class='person'>
