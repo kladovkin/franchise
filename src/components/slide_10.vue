@@ -73,8 +73,15 @@ export default {
         const map = new maps.Map(this.$refs.map, {
           center: this.mapCenter,
           zoom: 10,
-          controls: []
+          controls: [
+            'geolocationControl',
+            'typeSelector',
+            'fullscreenControl',
+            'zoomControl',
+            'rulerControl'
+          ]
         });
+        map.behaviors.disable('scrollZoom');
 
         const marker = new window.ymaps.Placemark(
           [55.866516, 37.480508],
