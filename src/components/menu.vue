@@ -67,9 +67,7 @@ export default {
       );
     },
     async lead() {
-      // (await SweetScroll.asyncInstance()).toElement(
-      //   document.getElementById('slide_09'), { duration: 450 }
-      // );
+      this.scrollTo('slide_09');
     }
   }
 };

@@ -126,8 +126,10 @@ export default {
 
 article
   +lte_ipad
-    padding-top: rem(185px)
+    padding-top: rem(25px)
+    /* padding-top: rem(185px) */
     padding-bottom: rem(424px)
+    margin-bottom: rem(-25px)
 
   +gte_laptop
     padding-top: 125px

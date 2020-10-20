@@ -59,6 +59,7 @@ export default {
 article
   +lte_ipad
     margin-bottom: rem(55px)
+    padding-top: rem(25px)
     padding-left: 0
     padding-right: 0
 

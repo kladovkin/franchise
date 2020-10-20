@@ -70,7 +70,7 @@ export default {
 <style scoped lang='sass'>
 article
   +lte_ipad
-    padding-top: rem(80px)
+    padding-top: rem(25px)
     padding-bottom: rem(80px)
 
   +gte_laptop
