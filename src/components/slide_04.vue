@@ -359,7 +359,7 @@ h2
         margin-bottom: 38px
 
     div
-      font-weight: 900
+      font-weight: 800
       letter-spacing: 0.01em
 
       +lte_ipad

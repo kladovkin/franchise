@@ -111,7 +111,7 @@ h2
         width: 240px
 
       .value
-        font-weight: 900
+        font-weight: 800
         color: #5096ff
         white-space: nowrap
 

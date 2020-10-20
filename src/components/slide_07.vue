@@ -126,7 +126,7 @@ article
           margin-right: 86px
 
       b
-        font-weight: 900
+        font-weight: 800
 
         +lte_ipad
           font-size: rem(30px)
@@ -187,7 +187,7 @@ article
 
   b
     color: #5096ff
-    font-weight: 900
+    font-weight: 800
 
     +lte_ipad
       font-size: rem(44px)

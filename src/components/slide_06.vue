@@ -202,7 +202,7 @@ h2
     background-size: contain
     display: flex
     flex-shrink: 0
-    font-weight: 900
+    font-weight: 800
     justify-content: center
     position: relative
     z-index: 1

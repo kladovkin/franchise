@@ -356,7 +356,7 @@ article
 
       p.first
         font-size: 16px
-        font-weight: 900
+        font-weight: 800
         line-height: 18px
         margin-top: 20px
 
