@@ -3,22 +3,20 @@
     <div class='container-padding-offset'>
       <div class='trigger' @click='toggle' />
     </div>
-    <div v-if='isExpanded'>
-      <ul>
-        <li><div @click='() => scrollTo("slide_02")'>О нас</div></li>
-        <li><div @click='() => scrollTo("slide_04")'>Преимущества</div></li>
-        <li><div @click='() => scrollTo("slide_05")'>С кем работаем</div></li>
-        <li><div @click='() => scrollTo("slide_06")'>Порядок действий</div></li>
-        <li><div @click='() => scrollTo("slide_08")'>Кейсы</div></li>
-        <li>
-          <Button
-            text='Оставить заявку'
-            type='white'
-            @click='lead'
-          />
-        </li>
-      </ul>
-    </div>
+    <ul v-if='isExpanded'>
+      <li><div @click='() => scrollTo("slide_02")'>О нас</div></li>
+      <li><div @click='() => scrollTo("slide_04")'>Преимущества</div></li>
+      <li><div @click='() => scrollTo("slide_05")'>С кем работаем</div></li>
+      <li><div @click='() => scrollTo("slide_06")'>Порядок действий</div></li>
+      <li><div @click='() => scrollTo("slide_08")'>Кейсы</div></li>
+      <li>
+        <Button
+          text='Оставить заявку'
+          type='white'
+          @click='lead'
+        />
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -40,7 +38,7 @@ export default {
     }
   },
   mounted() {
-    // this.toggle();
+    this.toggle();
   },
   methods: {
     async toggle() {
@@ -75,15 +73,17 @@ export default {
 
 <style scoped lang='sass'>
 .container.is-expanded
-  position: absolute
-  top: 0
   left: 0
+  top: 0
   width: 100vw
-  height: 100vh
-  background: #f44f0c
-  z-index: 2
 
   +lte_ipad
+    background: #f44f0c
+    height: 100vh
+    position: absolute
+    top: 0
+    z-index: 2
+
     &:before
       background-image: url(../assets/menu/background-mobile.svg)
       content: ''
@@ -91,12 +91,17 @@ export default {
       left: 0
       pointer-events: none
       position: absolute
-      top: 0
       width: rem(245px)
 
-  // disable z-index on first slide in order to make logo visible
-  & + /deep/ .background article
-    z-index: auto
+    // disable z-index on first slide in order to make logo visible
+    & + /deep/ .background article
+      z-index: auto
+
+  +gte_laptop
+    background: #fd5a18
+    height: 140px
+    position: fixed
+    z-index: 4
 
 .container-padding-offset
   position: relative
@@ -147,9 +152,9 @@ export default {
 
 ul
   display: flex
-  flex-direction: column
 
   +lte_ipad
+    flex-direction: column
     margin-top: rem(100px)
 
   li
