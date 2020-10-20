@@ -131,7 +131,7 @@ export default {
     border-radius: 63px
     height: 63px
     width: 63px
-    top: 37px
+    top: 39px
     right: 0px
 
     &:hover
@@ -157,6 +157,13 @@ ul
     flex-direction: column
     margin-top: rem(100px)
 
+  +gte_laptop
+    width: 100%
+    height: 100%
+    align-items: center
+    justify-content: space-between
+    padding-right: 122px
+
   li
     &:not(last-child)
       +lte_ipad
@@ -170,17 +177,26 @@ ul
       +lte_ipad
         margin-top: rem(16px)
 
-  div
-    letter-spacing: -0.01em
-    color: #fff
-    cursor: pointer
+    & > div
+      letter-spacing: -0.01em
+      color: #fff
+      cursor: pointer
 
-    +lte_ipad
-      font-size: rem(24px)
-      line-height: rem(28px)
-      text-align: center
+      +lte_ipad
+        font-size: rem(24px)
+        line-height: rem(28px)
+        text-align: center
 
-    +gte_laptop
-      font-size: 18px
-      line-height: 23px
+      +gte_laptop
+        border-bottom: 1px solid transparent
+        font-size: 18px
+        line-height: 23px
+
+        &:hover
+          border-bottom: 1px solid #fff
+
+    .button
+      +gte_laptop
+        height: 54px
+        width: 187px
 </style>
