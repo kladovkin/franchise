@@ -1,17 +1,15 @@
 <template>
-  <section>
-    <Slide01 />
-    <Slide02 />
-    <Slide03 />
-    <Slide04 />
-    <Slide05 />
-    <Slide06 />
-    <Slide07 />
-    <Slide08 />
-    <Slide09 />
-    <Slide10 />
-    <Footer />
-  </section>
+  <Slide01 />
+  <Slide02 />
+  <Slide03 />
+  <Slide04 />
+  <Slide05 />
+  <Slide06 />
+  <Slide07 />
+  <Slide08 />
+  <Slide09 />
+  <Slide10 />
+  <Footer />
 </template>
 
 <script>
