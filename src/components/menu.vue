@@ -99,9 +99,14 @@ export default {
 
   +gte_laptop
     background: #fd5a18
-    height: 140px
     position: fixed
     z-index: 4
+
+  +laptop
+    height: scale-laptop(120px, 140px)
+
+  +gte_desktop
+    height: 140px
 
 .container-padding-offset
   position: relative
@@ -112,6 +117,7 @@ export default {
   box-shadow: 0px 8px 16px rgba(244, 79, 12, 0.24)
   cursor: pointer
   position: absolute
+  user-select: none
   z-index: 3
 
   +lte_ipad
@@ -131,11 +137,16 @@ export default {
     border-radius: 63px
     height: 63px
     width: 63px
-    top: 39px
     right: 0px
 
     &:hover
       background-image: url(../assets/menu/open-desktop-hover.svg)
+
+  +laptop
+    top: scale-laptop(28px, 39px)
+
+  +gte_desktop
+    top: 39px
 
   .is-expanded &
     +lte_ipad
@@ -188,12 +199,17 @@ ul
         text-align: center
 
       +gte_laptop
-        border-bottom: 1px solid transparent
         font-size: 18px
         line-height: 23px
+        position: relative
 
-        &:hover
-          border-bottom: 1px solid #fff
+        &:hover:before
+          content: ''
+          position: absolute
+          left: 0
+          border-bottom: 2px solid #fff
+          width: 100%
+          bottom: -14px
 
     .button
       +gte_laptop
