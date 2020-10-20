@@ -5,11 +5,11 @@
     </div>
     <div v-if='isExpanded'>
       <ul>
-        <li><div>О нас</div></li>
-        <li><div>Преимущества</div></li>
-        <li><div>С кем работаем</div></li>
-        <li><div>Порядок действий</div></li>
-        <li><div>Кейсы</div></li>
+        <li><div @click='() => scrollTo("slide_02")'>О нас</div></li>
+        <li><div @click='() => scrollTo("slide_04")'>Преимущества</div></li>
+        <li><div @click='() => scrollTo("slide_05")'>С кем работаем</div></li>
+        <li><div @click='() => scrollTo("slide_06")'>Порядок действий</div></li>
+        <li><div @click='() => scrollTo("slide_08")'>Кейсы</div></li>
         <li>
           <Button
             text='Оставить заявку'
@@ -34,6 +34,11 @@ export default {
     isExpanded: false
   }),
   components: { Button },
+  computed: {
+    sweetScroll() {
+      return SweetScroll.asyncInstance();
+    }
+  },
   mounted() {
     this.toggle();
   },
@@ -47,9 +52,19 @@ export default {
           'scroll-lock'
         );
 
-        this.isExpanded ? disablePageScroll() : enablePageScroll();
-        (await SweetScroll.asyncInstance()).toTop();
+        if (this.isExpanded) {
+          disablePageScroll();
+          (await this.sweetScroll).toTop();
+        } else {
+          enablePageScroll();
+        }
       }
+    },
+    async scrollTo(elementId) {
+      this.toggle();
+      (await this.sweetScroll).toElement(
+        document.getElementById(elementId), { duration: 450 }
+      );
     },
     async lead() {
       // (await SweetScroll.asyncInstance()).toElement(
@@ -72,14 +87,14 @@ export default {
 
   +lte_ipad
     &:before
+      background-image: url(../assets/menu/background-mobile.svg)
       content: ''
+      height: rem(251px)
+      left: 0
+      pointer-events: none
       position: absolute
       top: 0
-      left: 0
-      background-image: url(../assets/menu/background-mobile.svg)
       width: rem(245px)
-      height: rem(251px)
-
 
   // disable z-index on first slide in order to make logo visible
   & + /deep/ .background article
@@ -144,9 +159,14 @@ ul
       +lte_ipad
         margin-bottom: 24px
 
+    &:first-child
+      +lte_ipad
+        font-weight: bold
+
   div
     letter-spacing: -0.01em
     color: #fff
+    cursor: pointer
 
     +lte_ipad
       font-size: rem(24px)
@@ -156,8 +176,4 @@ ul
     +gte_laptop
       font-size: 18px
       line-height: 23px
-
-    &.is-active
-      +lte_ipad
-        font-weight: bold
 </style>

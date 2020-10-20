@@ -125,6 +125,7 @@ export default {
 
 article
   +lte_ipad
+    padding-top: rem(25px)
     margin-bottom: rem(80px)
 
 h2
