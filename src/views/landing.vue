@@ -1,4 +1,5 @@
 <template>
+  <Menu />
   <Slide01 />
   <Slide02 />
   <Slide03 />
@@ -15,6 +16,7 @@
 <script>
 // import { defineAsyncComponent } from 'vue';
 
+import Menu from '@/components/menu';
 import Slide01 from '@/components/slide_01';
 import Slide02 from '@/components/slide_02';
 import Slide03 from '@/components/slide_03';
@@ -30,6 +32,7 @@ import Footer from '@/components/footer';
 export default {
   name: 'Landing',
   components: {
+    Menu,
     Slide01,
     Slide02,
     Slide03,
