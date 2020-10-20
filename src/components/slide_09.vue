@@ -247,7 +247,7 @@ h2
             text-decoration: underline
 
         +gte_laptop
-          font-weight: 800
+          font-weight: bold
           color: inherit
 
           &:hover
@@ -317,7 +317,7 @@ h2
 
   .headline
     color: #333
-    font-weight: 800
+    font-weight: bold
 
     +lte_ipad
       font-size: rem(20px)

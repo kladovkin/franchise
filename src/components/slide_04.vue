@@ -203,7 +203,7 @@ article
       background-color: #f44f0c
       box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25)
       color: #FFF
-      font-weight: 800
+      font-weight: bold
 
     &:not(.is-active)
       cursor: pointer
@@ -216,7 +216,7 @@ article
       background-color: #5096ff
       box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25)
       color: #fff !important
-      font-weight: 800
+      font-weight: bold
 
 h2
   color: #4b4b4b
@@ -359,7 +359,7 @@ h2
         margin-bottom: 38px
 
     div
-      font-weight: 800
+      font-weight: bold
       letter-spacing: 0.01em
 
       +lte_ipad

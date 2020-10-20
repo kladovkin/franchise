@@ -202,7 +202,7 @@ h2
     background-size: contain
     display: flex
     flex-shrink: 0
-    font-weight: 800
+    font-weight: bold
     justify-content: center
     position: relative
     z-index: 1
@@ -235,7 +235,7 @@ h2
   .info
     b
       display: block
-      font-weight: 800
+      font-weight: bold
 
       +lte_ipad
         font-size: rem(14px)
@@ -259,7 +259,7 @@ h2
         line-height: 23px
 
       &.final-bold
-        font-weight: 800
+        font-weight: bold
         color: inherit
 
         +lte_ipad
@@ -293,7 +293,7 @@ h2
 
       b
         color: #fff
-        font-weight: 800
+        font-weight: bold
 
         +lte_ipad
           font-size: rem(18px)

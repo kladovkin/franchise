@@ -164,7 +164,7 @@ h2
 
         +gte_laptop
           font-size: 16px
-          font-weight: 800
+          font-weight: bold
           line-height: 23px
 
         &:before

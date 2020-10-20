@@ -228,7 +228,7 @@ h2
 
       b
         +lte_ipad
-          font-weight: 800
+          font-weight: bold
           font-size: 16px
           line-height: 20px
           letter-spacing: -0.01em
