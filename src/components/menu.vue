@@ -99,7 +99,7 @@ aside
         width: rem(245px)
 
       // disable z-index on first slide in order to make logo visible
-      & + /deep/ .background article
+      & + ::v-deep .background article
         z-index: auto
 
     +gte_laptop

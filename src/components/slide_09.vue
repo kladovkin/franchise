@@ -207,7 +207,7 @@ h2
       +gte_laptop
         flex-grow: 1
 
-        /deep/ textarea
+        ::v-deep textarea
           height: 257px
 
   .submit
