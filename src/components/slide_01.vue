@@ -448,6 +448,7 @@ article
 
   +laptop
     transition: opacity 0.75s ease-in 0.85s, margin-top 0.5s ease-in 0.85s
+
   +gte_desktop
     transition: opacity 1s ease-in 1.1s, margin-top 0.5s ease-in 1.1s
 

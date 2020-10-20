@@ -3,10 +3,28 @@
     <div class='container-padding-offset'>
       <div class='trigger' @click='toggle' />
     </div>
+    <div v-if='isExpanded'>
+      <ul>
+        <li><div>О нас</div></li>
+        <li><div>Преимущества</div></li>
+        <li><div>С кем работаем</div></li>
+        <li><div>Порядок действий</div></li>
+        <li><div>Кейсы</div></li>
+        <li>
+          <Button
+            text='Оставить заявку'
+            type='white'
+            @click='lead'
+          />
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
+import Button from '@/components/button';
+
 import isMobile from '@/utils/is_mobile';
 import SweetScroll from '@/utils/sweet_scroll';
 
@@ -15,6 +33,10 @@ export default {
   data: () => ({
     isExpanded: false
   }),
+  components: { Button },
+  mounted() {
+    this.toggle();
+  },
   methods: {
     async toggle() {
       this.isExpanded = !this.isExpanded;
@@ -28,6 +50,11 @@ export default {
         this.isExpanded ? disablePageScroll() : enablePageScroll();
         (await SweetScroll.asyncInstance()).toTop();
       }
+    },
+    async lead() {
+      // (await SweetScroll.asyncInstance()).toElement(
+      //   document.getElementById('slide_09'), { duration: 450 }
+      // );
     }
   }
 };
@@ -104,4 +131,33 @@ export default {
 
       &:hover
         background-image: url(../assets/menu/close-desktop-hover.svg)
+
+ul
+  display: flex
+  flex-direction: column
+
+  +lte_ipad
+    margin-top: rem(100px)
+
+  li
+    &:not(last-child)
+      +lte_ipad
+        margin-bottom: 24px
+
+  div
+    letter-spacing: -0.01em
+    color: #fff
+
+    +lte_ipad
+      font-size: rem(24px)
+      line-height: rem(28px)
+      text-align: center
+
+    +gte_laptop
+      font-size: 18px
+      line-height: 23px
+
+    &.is-active
+      +lte_ipad
+        font-weight: bold
 </style>
