@@ -40,7 +40,7 @@ export default {
     }
   },
   mounted() {
-    this.toggle();
+    // this.toggle();
   },
   methods: {
     async toggle() {
@@ -155,11 +155,15 @@ ul
   li
     &:not(last-child)
       +lte_ipad
-        margin-bottom: 24px
+        margin-bottom: rem(24px)
 
     &:first-child
       +lte_ipad
         font-weight: bold
+
+    &:last-child
+      +lte_ipad
+        margin-top: rem(16px)
 
   div
     letter-spacing: -0.01em
