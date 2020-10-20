@@ -271,15 +271,14 @@ ul
 
   .label
     color: #6c6c6c
+    font-weight: bold
     line-height: 1
 
     +lte_ipad
       font-size: rem(9px)
-      font-weight: 500
 
     +gte_laptop
       font-size: 13px
-      font-weight: bold
 
 .finale
   font-weight: 300

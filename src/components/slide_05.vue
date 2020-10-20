@@ -155,7 +155,6 @@ h2
         align-items: center
 
         +lte_ipad
-          font-weight: 500
           font-size: rem(12px)
           line-height: rem(16px)
 

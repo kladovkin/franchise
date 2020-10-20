@@ -425,7 +425,7 @@ article
         letter-spacing: -0.01em
 
         +lte_ipad
-          font-weight: 500
+          font-weight: bold
           font-size: rem(14px)
           line-height: rem(14px)
 
