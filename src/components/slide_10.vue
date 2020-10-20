@@ -142,6 +142,9 @@ export default {
 article
   padding: 0
 
+.map
+  background: #f7f7f7
+
 h2
   +default_padding_left
   +default_padding_right
