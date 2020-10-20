@@ -1,23 +1,23 @@
 <template>
-  <div class='container' :class='{ "is-expanded": isExpanded }'>
-    <div class='container-padding-offset'>
+  <aside :class='{ "is-expanded": isExpanded }'>
+    <div class='container'>
       <div class='trigger' @click='toggle' />
+      <ul v-if='isExpanded'>
+        <li><div @click='() => scrollTo("slide_02")'>О нас</div></li>
+        <li><div @click='() => scrollTo("slide_04")'>Преимущества</div></li>
+        <li><div @click='() => scrollTo("slide_05")'>С кем работаем</div></li>
+        <li><div @click='() => scrollTo("slide_06")'>Порядок действий</div></li>
+        <li><div @click='() => scrollTo("slide_08")'>Кейсы</div></li>
+        <li>
+          <Button
+            text='Оставить заявку'
+            type='white'
+            @click='lead'
+          />
+        </li>
+      </ul>
     </div>
-    <ul v-if='isExpanded'>
-      <li><div @click='() => scrollTo("slide_02")'>О нас</div></li>
-      <li><div @click='() => scrollTo("slide_04")'>Преимущества</div></li>
-      <li><div @click='() => scrollTo("slide_05")'>С кем работаем</div></li>
-      <li><div @click='() => scrollTo("slide_06")'>Порядок действий</div></li>
-      <li><div @click='() => scrollTo("slide_08")'>Кейсы</div></li>
-      <li>
-        <Button
-          text='Оставить заявку'
-          type='white'
-          @click='lead'
-        />
-      </li>
-    </ul>
-  </div>
+  </aside>
 </template>
 
 <script>
@@ -38,7 +38,7 @@ export default {
     }
   },
   mounted() {
-    this.toggle();
+    // this.toggle();
   },
   methods: {
     async toggle() {
@@ -72,44 +72,54 @@ export default {
 </script>
 
 <style scoped lang='sass'>
-.container.is-expanded
-  left: 0
-  top: 0
-  width: 100vw
+aside
+  +default_padding_left
+  +default_padding_right
 
-  +lte_ipad
-    background: #f44f0c
-    height: 100vh
-    position: absolute
+  &.is-expanded
+    left: 0
+    max-width: 100vw
     top: 0
-    z-index: 2
+    width: 100vw
 
-    &:before
-      background-image: url(../assets/menu/background-mobile.svg)
-      content: ''
-      height: rem(251px)
-      left: 0
-      pointer-events: none
+    +lte_ipad
+      background: #f44f0c
+      height: 100vh
       position: absolute
-      width: rem(245px)
+      top: 0
+      z-index: 2
 
-    // disable z-index on first slide in order to make logo visible
-    & + /deep/ .background article
-      z-index: auto
+      &:before
+        background-image: url(../assets/menu/background-mobile.svg)
+        content: ''
+        height: rem(251px)
+        left: 0
+        pointer-events: none
+        position: absolute
+        width: rem(245px)
+
+      // disable z-index on first slide in order to make logo visible
+      & + /deep/ .background article
+        z-index: auto
+
+    +gte_laptop
+      background: #fd5a18
+      position: fixed
+      z-index: 4
+
+    +laptop
+      height: scale-laptop(120px, 140px)
+
+    +gte_desktop
+      height: 140px
+
+.container
+  padding: 0
 
   +gte_laptop
-    background: #fd5a18
-    position: fixed
-    z-index: 4
-
-  +laptop
-    height: scale-laptop(120px, 140px)
-
-  +gte_desktop
-    height: 140px
-
-.container-padding-offset
-  position: relative
+    display: flex
+    height: 100%
+    width: 100%
 
 .trigger
   background-repeat: no-repeat
@@ -166,7 +176,7 @@ ul
 
   +lte_ipad
     flex-direction: column
-    margin-top: rem(100px)
+    padding-top: rem(100px)
 
   +gte_laptop
     width: 100%
