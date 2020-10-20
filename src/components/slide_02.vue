@@ -213,7 +213,7 @@ ul
 
   .percent
     color: #5096ff
-    font-weight: 700
+    font-weight: 800
     line-height: 1
     text-align: center
 
@@ -279,7 +279,7 @@ ul
 
     +gte_laptop
       font-size: 13px
-      font-weight: 700
+      font-weight: 800
 
 .finale
   font-weight: 300
@@ -298,7 +298,7 @@ ul
     max-width: 341px
 
   strong
-    font-weight: 700
+    font-weight: 800
 
 img.girl
   position: absolute

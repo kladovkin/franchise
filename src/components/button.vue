@@ -36,7 +36,7 @@ export default {
   border-radius: rem(10px)
   cursor: pointer
   display: flex
-  font-weight: 700
+  font-weight: 800
   justify-content: center
   outline: none
   transition: color 0.25s, background-color 0.25s

@@ -293,7 +293,7 @@ h2
 
       b
         color: #fff
-        font-weight: 700
+        font-weight: 800
 
         +lte_ipad
           font-size: rem(18px)
