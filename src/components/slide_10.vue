@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import IsMobileJS from 'ismobilejs';
+import isMobile from '@/utils/is_mobile';
 
 export default {
   name: 'Slide10',
@@ -81,17 +81,11 @@ export default {
     } // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
   }),
   computed: {
-    isMobile() {
-      return document.documentElement.clientWidth < 1024 || (
-        IsMobileJS(window.navigator.userAgent).any &&
-          document.documentElement.clientWidth <= 1023
-      );
-    },
     mapCenter() {
-      return this.isMobile ? [55.85, 37.57] : [55.754, 37.27];
+      return isMobile() ? [55.85, 37.57] : [55.754, 37.27];
     },
     iconOptions() {
-      return this.isMobile ?
+      return isMobile() ?
         { iconImageSize: [35, 43], iconImageOffset: [-17, -43] } :
         { iconImageSize: [74, 95], iconImageOffset: [-37, -95] };
     }

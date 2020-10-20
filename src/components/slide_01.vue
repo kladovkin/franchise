@@ -1,7 +1,7 @@
 <template>
   <div class='background' :class='{ "is-opened": isOpened }' id='slide_01'>
     <article>
-      <a class='logo' href='https://kladovkin.ru' />
+      <a class='logo' href='https://kladovkin.ru'></a>
       <div class='outer'>
         <div class='content'>
           <h1>Технологичный бизнес на&nbsp;вашей&nbsp;территории</h1>
@@ -141,7 +141,7 @@ article
   background-repeat: no-repeat
   background-size: contain
   position: absolute
-  z-index: 2
+  z-index: 3
 
   +lte_ipad
     height: rem(52px)
