@@ -471,6 +471,9 @@ h2
   img.background
     border-radius: 50px
 
+    +lte_ipad
+      border-radius: 30px
+
   &:before
     content: ''
     background-repeat: no-repeat
