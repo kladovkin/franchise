@@ -93,7 +93,7 @@
             <img
               class='background'
               loading='lazy'
-              src='../assets/slide_06/background_final.png'
+              src='../assets/slide_06/background_final.jpg'
             />
           </div>
         </div>
@@ -467,6 +467,9 @@ h2
   position: relative
   display: flex
   align-items: center
+
+  img.background
+    border-radius: 50px
 
   &:before
     content: ''
