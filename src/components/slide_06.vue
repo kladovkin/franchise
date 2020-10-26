@@ -31,7 +31,7 @@
         <div class='entry-wrapper entry-wrapper-3'>
           <div class='entry entry-3'>
             <img
-              src='../assets/slide_06/design_project.png'
+              src='../assets/slide_06/design_project.jpg'
               class='design-project'
               @click='enlarge'
             />
