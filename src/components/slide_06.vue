@@ -30,11 +30,10 @@
         </div>
         <div class='entry-wrapper entry-wrapper-3'>
           <div class='entry entry-3'>
-            <img
-              src='../assets/slide_06/design_project.jpg'
-              class='design-project'
-              @click='enlarge'
-            />
+            <picture class='design-project' @click='enlarge'>
+              <source src='../assets/slide_06/design_project.webp' type='image/webp'>
+              <img loading='lazy' src='../assets/slide_06/design_project.jpg' />
+            </picture>
             <div class='circle top'>7 дней</div>
             <div class='info'>
               <b>Разработка и согласование дизайн-проекта</b>
@@ -505,6 +504,9 @@ h2
       +gte_laptop
         background-image: url(../assets/slide_06/entry_wrapper_1.png)
 
+        .webp &
+          background-image: url(../assets/slide_06/entry_wrapper_1.webp)
+
   &-2
     +laptop
       height: scale-laptop(409px, 531px)
@@ -529,6 +531,9 @@ h2
     &:before
       +gte_laptop
         background-image: url(../assets/slide_06/entry_wrapper_2.png)
+
+        .webp &
+          background-image: url(../assets/slide_06/entry_wrapper_2.webp)
 
   &-3
     +gte_laptop
@@ -587,6 +592,9 @@ h2
       +gte_laptop
         background-image: url(../assets/slide_06/entry_wrapper_4.png)
 
+        .webp &
+          background-image: url(../assets/slide_06/entry_wrapper_4.webp)
+
   &-5
     +gte_laptop
       justify-content: flex-end
@@ -614,6 +622,9 @@ h2
     &:before
       +gte_laptop
         background-image: url(../assets/slide_06/entry_wrapper_5.png)
+
+        .webp &
+          background-image: url(../assets/slide_06/entry_wrapper_5.webp)
 
   &-6
     +laptop
