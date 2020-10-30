@@ -210,40 +210,19 @@ export default {
   width: 2px
 
   &:before
-    background-color: white
+    background-image: url(../assets/comparison_slider/divider.svg)
+    background-repeat: no-repeat
+    background-size: contain
     content: ''
-    height: 20px
-    left: -9px
-    margin-top: -10px
     position: absolute
     top: 50%
-    transform: rotate(45deg)
-    transition: all 0.1s ease-in-out
-    width: 20px
 
-  &:after
-    background-color: white
-    content: ''
-    height: 12px
-    left: -5px
-    margin-top: -6px
-    position: absolute
-    top: 50%
-    transform: rotate(45deg)
-    transition: all 0.1s ease-in-out
-    width: 12px
+    +gte_laptop
+      left: -33px
+      margin-top: -33px
+      height: 67px
+      width: 67px
 
-  &.is-dragged
-    &:before
-      height: 30px
-      left: -14px
-      margin-top: -15px
-      width: 30px
-
-    &:after
-      background-color: #555
-      height: 20px
-      left: -9px
-      margin-top: -10px
-      width: 20px
+  &.is-dragged:before
+    background-image: url(../assets/comparison_slider/divider-active.svg)
 </style>
