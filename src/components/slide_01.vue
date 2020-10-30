@@ -60,7 +60,7 @@ export default {
   overflow: hidden // to prevent .collapsed:before overflow
 
   +lte_ipad
-    background-image: url(../assets/slide_01/background_bottom.png)
+    background-image: url(../assets/slide_01/background_bottom.jpg)
     background-position: bottom
     margin-bottom: rem(55px)
 
