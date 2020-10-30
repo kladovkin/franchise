@@ -46,7 +46,10 @@ export default {
     containerOffset: null,
     containerWidth: null,
     minLeft: null,
-    maxLeft: null
+    maxLeft: null,
+
+    disablePageScroll: () => {},
+    enablePageScroll: () => {}
   }),
   computed: {
     dividerNode() { return this.$refs.divider; },
@@ -67,7 +70,7 @@ export default {
 
       this.initSlider();
     },
-    initSlider() {
+    async initSlider() {
       window.addEventListener('touchstart', this.touchStart);
       window.addEventListener('touchend', this.touchEnd);
       window.addEventListener('touchcancel', this.touchEnd);
@@ -78,6 +81,14 @@ export default {
       this.dividerNode.addEventListener('mouseup', this.dragEnd);
       this.dividerNode.addEventListener('touchend', this.dragEnd);
       this.dividerNode.addEventListener('touchcancel', this.dragEnd);
+
+      const { disablePageScroll, enablePageScroll } = await import(
+        /* webpackChunkName: "scroll-lock" */
+        'scroll-lock'
+      );
+
+      this.disablePageScroll = disablePageScroll;
+      this.enablePageScroll = enablePageScroll;
     },
     dragStart(e) {
       this.isDragged = true;
@@ -98,9 +109,11 @@ export default {
       this.minLeft = this.containerOffset + 10;
       this.maxLeft = this.containerOffset + this.containerWidth -
         this.dragWidth - 10;
+
+      this.disablePageScroll();
     },
     dragMove(e) {
-      if (this.touched === false) {
+      if (this.isTouched === false) {
         e.preventDefault();
       }
 
@@ -124,6 +137,7 @@ export default {
     },
     dragEnd() {
       this.isDragged = false;
+      this.enablePageScroll();
 
       window.removeEventListener('mousemove', this.dragMove);
       window.removeEventListener('touchmove', this.dragMove);
