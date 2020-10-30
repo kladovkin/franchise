@@ -26,11 +26,10 @@
             <div class='label final'>Площадь&nbsp;складов</div>
           </div>
         </div>
-        <img
-          class='content'
-          loading='lazy'
-          src='../assets/slide_03/content.png'
-        />
+        <picture class='content'>
+          <source srcset='../assets/slide_03/content.webp' type="image/webp">
+          <img loading='lazy' src='../assets/slide_03/content.png' />
+        </picture>
       </div>
     </article>
   </div>
@@ -145,7 +144,7 @@ h2
           font-size: 18px
           line-height: 23px
 
-img.content
+.content
   position: absolute
   z-index: 1
 

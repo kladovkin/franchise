@@ -53,11 +53,10 @@
       для хранения вещей или товаров физическими или юридическими лицами
     </div>
 
-    <img
-      class='girl'
-      loading='lazy'
-      src='../assets/slide_02/girl.png'
-    />
+    <picture class='girl'>
+      <source srcset='../assets/slide_02/girl.webp' type="image/webp">
+      <img loading='lazy' src='../assets/slide_02/girl.png' />
+    </picture>
   </article>
 </template>
 
@@ -299,7 +298,7 @@ ul
   strong
     font-weight: bold
 
-img.girl
+.girl
   position: absolute
   bottom: 0
 
