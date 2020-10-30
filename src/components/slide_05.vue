@@ -8,11 +8,10 @@
         </h2>
       </div>
       <div class='background-details'>
-        <img
-          class='background'
-          loading='lazy'
-          src='../assets/slide_05/background.png'
-        />
+        <picture class='background'>
+          <source src='../assets/slide_05/background.webp' type='image/webp'>
+          <img loading='lazy' src='../assets/slide_05/background.png' />
+        </picture>
         <div class='details'>
           <div class='cc-2'>
             <div class='c-column'>
@@ -76,6 +75,9 @@ article
       background-repeat: no-repeat
       background-size: contain
       z-index: 1
+
+      .webp &
+        background-image: url(../assets/slide_05/skate.webp)
 
     +laptop
       width: scale-laptop(352px, 438px)

@@ -54,7 +54,7 @@
     </div>
 
     <picture class='girl'>
-      <source srcset='../assets/slide_02/girl.webp' type="image/webp">
+      <source srcset='../assets/slide_02/girl.webp' type='image/webp'>
       <img loading='lazy' src='../assets/slide_02/girl.png' />
     </picture>
   </article>

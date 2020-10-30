@@ -27,7 +27,7 @@
           </div>
         </div>
         <picture class='content'>
-          <source srcset='../assets/slide_03/content.webp' type="image/webp">
+          <source srcset='../assets/slide_03/content.webp' type='image/webp'>
           <img loading='lazy' src='../assets/slide_03/content.png' />
         </picture>
       </div>

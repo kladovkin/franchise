@@ -50,11 +50,10 @@
             <div>Сквозная веб-аналитика</div>
           </li>
         </ul>
-        <img
-          class='laptop'
-          loading='lazy'
-          src='../assets/slide_04/laptop.png'
-        />
+        <picture class='laptop'>
+          <source srcset='../assets/slide_04/laptop.webp' type='image/webp'>
+          <img loading='lazy' src='../assets/slide_04/laptop.png' />
+        </picture>
       </div>
       <div v-if='isTenant' class='slide slide-tenant'>
         <h2>
@@ -85,11 +84,10 @@
             <p>Вызов грузового такси при необходимости</p>
           </li>
         </ul>
-        <img
-          class='ipad'
-          loading='lazy'
-          src='../assets/slide_04/ipad.png'
-        />
+        <picture class='ipad'>
+          <source srcset='../assets/slide_04/ipad.webp' type='image/webp'>
+          <img loading='lazy' src='../assets/slide_04/ipad.png' />
+        </picture>
       </div>
     </article>
   </div>
