@@ -12,14 +12,13 @@
 
       <div
         class='resize'
-        :class='{ "resizable": isDragged }'
         ref='resize'
       >
         <img loading='lazy' src='../assets/comparison_slider/slide_after.jpg' >
       </div>
       <div
         class='divider'
-        :class='{ "draggable": isDragged }'
+        :class='{ "is-dragged": isDragged }'
         ref='divider'
       />
     </div>
@@ -119,12 +118,9 @@ export default {
         leftValue + this.dragWidth / 2 - this.containerOffset
       ) * 100 / this.containerWidth + '%';
 
-      // $(".draggable").css("left", widthValue).on("mouseup touchend touchcancel", function() {
-      //   $(this).removeClass("draggable");
-      //   resizeNode.removeClass("resizable");
-      // });
-      //
-      // $(".resizable").css("width", widthValue);
+
+      this.dividerNode.style.left = widthValue;
+      this.resizeNode.style.width = widthValue;
     },
     dragEnd() {
       this.isDragged = false;
@@ -222,7 +218,7 @@ export default {
     transition: all 0.1s ease-in-out
     width: 12px
 
-  &.draggable
+  &.is-dragged
     &:before
       height: 30px
       left: -14px
