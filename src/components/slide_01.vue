@@ -71,6 +71,9 @@ export default {
     background-image: url(../assets/slide_01/background_right.png)
     background-position: right
 
+    .webp &
+      background-image: url(../assets/slide_01/background_right.webp)
+
   +laptop
     background-position-x: scale-laptop(400px, 571px)
 
