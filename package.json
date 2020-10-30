@@ -9,7 +9,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "0.21.0",
     "core-js": "^3.6.5",
     "intersection-observer": "^0.11.0",
     "ismobilejs": "^1.1.1",
@@ -17,7 +17,7 @@
     "scroll-lock": "^2.1.4",
     "simple-lightbox": "^2.1.0",
     "sweet-scroll": "^4.0.0",
-    "throttle-debounce": "^2.3.0",
+    "throttle-debounce": "3.0.0",
     "vue": "3.0.0",
     "vue-router": "4.0.0-beta.11",
     "vuex": "^4.0.0-0",
