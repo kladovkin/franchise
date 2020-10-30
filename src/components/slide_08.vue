@@ -110,7 +110,6 @@ article
     .inner
       align-items: center
       display: flex
-      overflow: hidden
       position: relative
 
       +lte_ipad

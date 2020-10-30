@@ -27,6 +27,7 @@
 
 <script>
 import offset from '@/utils/offset';
+import isMobile from '@/utils/is_mobile';
 
 export default {
   name: 'ComparisonSlider',
@@ -100,15 +101,17 @@ export default {
       window.addEventListener('touchend', this.dragEnd);
       window.addEventListener('touchcancel', this.dragEnd);
 
+      const minOffset = isMobile() ? 25 : 37;
+
       let startX = e.pageX ? e.pageX : e.touches[0].pageX;
 
       this.dragWidth = this.dividerNode.offsetWidth;
       this.posX = offset(this.dividerNode).left + this.dragWidth - startX;
       this.containerOffset = offset(this.containerNode).left;
       this.containerWidth = this.containerNode.offsetWidth;
-      this.minLeft = this.containerOffset + 10;
+      this.minLeft = this.containerOffset + minOffset;
       this.maxLeft = this.containerOffset + this.containerWidth -
-        this.dragWidth - 10;
+        this.dragWidth - minOffset;
 
       this.disablePageScroll();
     },
@@ -218,16 +221,16 @@ export default {
     top: 50%
 
     +lte_ipad
-      left: -22px
+      left: -21px
       margin-top: -22px
-      height: 45px
-      width: 45px
+      height: 44px
+      width: 44px
 
     +gte_laptop
-      left: -33px
+      left: -32px
       margin-top: -33px
-      height: 67px
-      width: 67px
+      height: 66px
+      width: 66px
 
   &.is-dragged:before
     background-image: url(../assets/comparison_slider/divider-active.svg)
