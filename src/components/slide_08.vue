@@ -15,13 +15,9 @@
         </div>
         <div class='dots' />
       </div>
-      <div class='slider-container'>
+      <div class='outer-container'>
         <div class='inner'>
-          <img
-            class='laptop'
-            loading='lazy'
-            src='../assets/slide_08/case_1.png'
-          />
+          <ComparisonSlider />
         </div>
         <div class='dots' />
       </div>
@@ -30,8 +26,14 @@
 </template>
 
 <script>
+// convert -quality 100% -resize 635x418! ~/Downloads/IMG_0284.jpeg src/assets/slide_08/slide_after.jpg && convert -quality 100% -resize 635x418! ~/Downloads/0022_.jpg src/assets/slide_08/slide_before.jpg && tinypng src/assets/slide_08/slide_after.jpg && tinypng src/assets/slide_08/slide_before.jpg
+
+import ComparisonSlider from '@/components/comparison_slider';
 export default {
-  name: 'Slide8'
+  name: 'Slide8',
+  components: {
+    ComparisonSlider
+  }
 };
 </script>
 
@@ -104,11 +106,12 @@ article
       +gte_laptop
         margin-top: 45px
 
-  .slider-container
+  .outer-container
     .inner
-      position: relative
-      display: flex
       align-items: center
+      display: flex
+      overflow: hidden
+      position: relative
 
       +lte_ipad
         height: rem(288px)
