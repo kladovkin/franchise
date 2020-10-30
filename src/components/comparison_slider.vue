@@ -217,6 +217,12 @@ export default {
     position: absolute
     top: 50%
 
+    +lte_ipad
+      left: -22px
+      margin-top: -22px
+      height: 45px
+      width: 45px
+
     +gte_laptop
       left: -33px
       margin-top: -33px
