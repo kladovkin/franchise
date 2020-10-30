@@ -190,6 +190,7 @@ export default {
 
   > img
     display: block
+    height: 100%
     user-select: none
 
   .overlay
