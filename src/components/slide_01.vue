@@ -64,6 +64,9 @@ export default {
     background-position: bottom
     margin-bottom: rem(55px)
 
+    .webp &
+      background-image: url(../assets/slide_01/background_bottom.webp)
+
   +gte_laptop
     background-image: url(../assets/slide_01/background_right.png)
     background-position: right
