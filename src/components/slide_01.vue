@@ -59,13 +59,21 @@ export default {
   background-size: contain
   overflow: hidden // to prevent .collapsed:before overflow
 
-  +lte_ipad
-    background-image: url(../assets/slide_01/background_bottom.png)
-    background-position: bottom
-    margin-bottom: rem(55px)
+  +iphone
+    background-image: url(../assets/slide_01/background_bottom-iphone.png)
 
     .webp &
-      background-image: url(../assets/slide_01/background_bottom.webp)
+      background-image: url(../assets/slide_01/background_bottom-iphone.webp)
+
+  +ipad
+    background-image: url(../assets/slide_01/background_bottom-ipad.png)
+
+    .webp &
+      background-image: url(../assets/slide_01/background_bottom-ipad.webp)
+
+  +lte_ipad
+    background-position: bottom
+    margin-bottom: rem(55px)
 
   +gte_laptop
     background-image: url(../assets/slide_01/background_right.png)
@@ -138,10 +146,10 @@ article
     background-image: url(../assets/slide_01/background_upper-ipad.svg)
 
   +lte_ipad
+    padding-top: rem(110px)
     background-repeat: no-repeat
     background-size: contain
     padding-bottom: rem(82px)
-    padding-top: rem(110px)
     text-align: center
     z-index: 1
 
