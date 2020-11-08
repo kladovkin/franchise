@@ -220,11 +220,17 @@ export default {
     position: absolute
     top: 50%
 
-    +lte_ipad
-      left: -21px
-      margin-top: -22px
-      height: 44px
-      width: 44px
+    +iphone
+      left: rem(-21px)
+      margin-top: rem(-22px)
+      height: rem(44px)
+      width: rem(44px)
+
+    +ipad
+      left: -29px
+      margin-top: -30px
+      height: 60px
+      width: 60px
 
     +gte_laptop
       left: -32px

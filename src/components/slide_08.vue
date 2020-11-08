@@ -107,14 +107,23 @@ article
         margin-top: 45px
 
   .outer-container
+    +lte_ipad
+      display: flex
+      justify-content: center
+      margin-bottom: rem(40px)
+
     .inner
       align-items: center
       display: flex
       position: relative
 
-      +lte_ipad
+      +iphone
         height: rem(288px)
         width: rem(288px)
+
+      +ipad
+        height: rem(350px)
+        width: rem(350px)
 
       +gte_laptop
         margin-left: auto
