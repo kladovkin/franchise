@@ -217,12 +217,11 @@ article
       max-width: 565px
 
     h1
-      +iphone
-        margin-bottom: 20px
-
       +ipad
-        font-size: 28px
-        margin-bottom: 30px
+        font-size: rem(22px)
+
+      +lte_ipad
+        margin-bottom: rem(20px)
 
       +gte_laptop
         max-width: 520px
@@ -231,13 +230,8 @@ article
     p
       letter-spacing: -0.01em
 
-      +iphone
-        font-size: rem(14px)
-
-      +ipad
-        font-size: rem(17px)
-
       +lte_ipad
+        font-size: rem(14px)
         line-height: 1.42
 
       +gte_laptop

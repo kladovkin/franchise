@@ -91,6 +91,7 @@ aside
 
       &:before
         background-image: url(../assets/menu/background-mobile.svg)
+        background-repeat: no-repeat
         content: ''
         height: rem(251px)
         left: 0
