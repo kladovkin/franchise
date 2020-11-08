@@ -185,9 +185,14 @@ h2
 .entry
   display: flex
 
+  +iphone
+    margin-bottom: rem(40px)
+
+  +ipad
+    margin-bottom: rem(55px)
+
   +lte_ipad
     color: #4b4b4b
-    margin-bottom: rem(40px)
 
     .entry-wrapper:last-child &
       margin-bottom: 0
@@ -233,6 +238,14 @@ h2
         align-self: center
 
   .info
+    +ipad
+      max-width: rem(360px)
+
+    +lte_ipad
+      display: flex
+      flex-direction: column
+      justify-content: center
+
     b
       display: block
       font-weight: bold
@@ -333,6 +346,12 @@ h2
         margin-right: 111px
 
   &-2
+    +iphone
+      margin-bottom: rem(50px)
+
+    +ipad
+      margin-bottom: rem(70px)
+
     +gte_laptop
       align-items: flex-end
 
@@ -353,6 +372,9 @@ h2
       margin-top: 107px
 
   &-3
+    +iphone
+      margin-bottom: rem(50px)
+
     +lte_ipad
       .design-project
         display: none
@@ -387,6 +409,12 @@ h2
         margin-right: 29px
 
   &-4
+    +iphone
+      margin-bottom: rem(50px)
+
+    +ipad
+      margin-bottom: rem(70px)
+
     +gte_laptop
       align-items: flex-end
 
@@ -409,6 +437,9 @@ h2
       margin-top: 61px
 
   &-5
+    +ipad
+      margin-bottom: rem(70px)
+
     +gte_laptop
       align-items: center
       flex-direction: row-reverse
@@ -432,9 +463,13 @@ h2
         margin-right: 20px
 
   &-6
-    +lte_ipad
+    +iphone
       position: relative
-      padding-bottom: rem(248px)
+      padding-bottom: rem(230px)
+
+    +ipad
+      position: relative
+      padding-bottom: rem(300px)
 
     +laptop
       margin-top: scale-laptop(-587px, -73px)
@@ -480,8 +515,6 @@ h2
     position: absolute
 
   &-1
-    justify-content: flex-end
-
     +laptop
       height: scale-laptop(279px, 341px)
       margin-bottom: scale-laptop(61px, -62px)
@@ -493,6 +526,7 @@ h2
 
     +gte_desktop
       height: 341px
+      justify-content: flex-end
       margin-bottom: -62px
 
       &:before
