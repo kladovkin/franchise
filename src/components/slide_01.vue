@@ -131,8 +131,13 @@ export default {
 article
   color: #fff
 
+  +iphone
+    background-image: url(../assets/slide_01/background_upper-iphone.svg)
+
+  +ipad
+    background-image: url(../assets/slide_01/background_upper-ipad.svg)
+
   +lte_ipad
-    background-image: url(../assets/slide_01/background_upper-mobile.svg)
     background-repeat: no-repeat
     background-size: contain
     padding-bottom: rem(82px)
@@ -442,6 +447,10 @@ article
           line-height: 23px
 
 .button
+  +ipad
+    width: 375px
+    margin: 0 auto
+
   +gte_laptop
     margin-top: -160px
     position: absolute
