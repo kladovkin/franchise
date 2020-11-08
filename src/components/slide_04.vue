@@ -296,7 +296,7 @@ h2
 
   .laptop
     max-width: none
-    /* pointer-events: none */
+    pointer-events: none
     position: absolute
     z-index: 1
 
@@ -321,7 +321,7 @@ h2
 
   .ipad
     max-width: none
-    /* pointer-events: none */
+    pointer-events: none
     position: absolute
     z-index: 1
 
