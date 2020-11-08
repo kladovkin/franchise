@@ -141,15 +141,17 @@ article
 
   +iphone
     background-image: url(../assets/slide_01/background_upper-iphone.svg)
+    padding-bottom: rem(82px)
+    padding-top: rem(110px)
 
   +ipad
     background-image: url(../assets/slide_01/background_upper-ipad.svg)
+    padding-bottom: rem(100px)
+    padding-top: rem(160px)
 
   +lte_ipad
-    padding-top: rem(110px)
     background-repeat: no-repeat
     background-size: contain
-    padding-bottom: rem(82px)
     text-align: center
     z-index: 1
 
@@ -203,8 +205,11 @@ article
     position: relative
     z-index: 1
 
-    +lte_ipad
+    +iphone
       margin-bottom: rem(150px)
+
+    +ipad
+      margin-bottom: rem(250px)
 
     +gte_laptop
       background: #f44f0c
@@ -212,8 +217,12 @@ article
       max-width: 565px
 
     h1
-      +lte_ipad
+      +iphone
         margin-bottom: 20px
+
+      +ipad
+        font-size: 28px
+        margin-bottom: 30px
 
       +gte_laptop
         max-width: 520px
@@ -222,9 +231,14 @@ article
     p
       letter-spacing: -0.01em
 
-      +lte_ipad
+      +iphone
         font-size: rem(14px)
-        line-height: rem(20px)
+
+      +ipad
+        font-size: rem(17px)
+
+      +lte_ipad
+        line-height: 1.42
 
       +gte_laptop
         font-size: 24px
@@ -443,15 +457,18 @@ article
 
       p
         letter-spacing: -0.01em
+        font-weight: bold
 
-        +lte_ipad
-          font-weight: bold
+        +iphone
           font-size: rem(14px)
-          line-height: rem(14px)
+          line-height: 1
+
+        +ipad
+          font-size: rem(16px)
+          line-height: 1
 
         +gte_laptop
           font-size: 18px
-          font-weight: bold
           line-height: 23px
 
 .button
