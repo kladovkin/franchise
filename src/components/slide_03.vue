@@ -46,7 +46,7 @@ export default {
   background: #5096ff
 
   +lte_ipad
-    margin-bottom: 160px
+    margin-bottom: rem(160px)
 
   +gte_laptop
     overflow: hidden

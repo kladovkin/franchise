@@ -162,7 +162,7 @@ article
 .switchers
   align-items: center
   background: #f4f4f4
-  border-radius: 40px
+  border-radius: rem(40px)
   box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.15)
   display: flex
   margin: 0 auto
@@ -194,7 +194,7 @@ article
     width: 50%
 
     +lte_ipad
-      font-size: 12px
+      font-size: rem(12px)
 
     +gte_laptop
       font-size: 16px
