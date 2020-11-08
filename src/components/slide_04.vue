@@ -50,9 +50,13 @@
             <div>Сквозная веб-аналитика</div>
           </li>
         </ul>
-        <picture class='laptop'>
+        <picture>
           <source srcset='../assets/slide_04/laptop.webp' type='image/webp'>
-          <img loading='lazy' src='../assets/slide_04/laptop.png' />
+          <img
+            class='laptop'
+            loading='lazy'
+            src='../assets/slide_04/laptop.png'
+          />
         </picture>
       </div>
       <div v-if='isTenant' class='slide slide-tenant'>
@@ -84,9 +88,13 @@
             <p>Вызов грузового такси при необходимости</p>
           </li>
         </ul>
-        <picture class='ipad'>
+        <picture>
           <source srcset='../assets/slide_04/ipad.webp' type='image/webp'>
-          <img loading='lazy' src='../assets/slide_04/ipad.png' />
+          <img
+            class='ipad'
+            loading='lazy'
+            src='../assets/slide_04/ipad.png'
+          />
         </picture>
       </div>
     </article>
@@ -246,6 +254,9 @@ h2
     max-width: 340px
 
 .slide
+  +ipad
+    padding-top: rem(20px)
+
   +gte_laptop
     position: relative
 
@@ -263,10 +274,13 @@ h2
     position: absolute
 
     +lte_ipad
-      left: rem(76px)
       bottom: rem(70px)
-      width: rem(330px)
       height: rem(330px)
+      left: rem(76px)
+      width: rem(330px)
+
+    +ipad
+      margin-left: rem(120px)
 
     +laptop
       height: scale-laptop(500px, 652px)
@@ -281,15 +295,19 @@ h2
       width: 652px
 
   .laptop
-    pointer-events: none
+    max-width: none
+    /* pointer-events: none */
     position: absolute
     z-index: 1
 
     +lte_ipad
       bottom: rem(70px)
       height: rem(300px)
-      right: rem(-82px)
+      left: rem(-55px)
       width: rem(460px)
+
+    +ipad
+      margin-left: rem(120px)
 
     +laptop_desktop
       right: scale-between(-180px, -324px, 1024px, 1440px)
@@ -302,6 +320,7 @@ h2
       right: -324px
 
   .ipad
+    max-width: none
     /* pointer-events: none */
     position: absolute
     z-index: 1
@@ -311,6 +330,9 @@ h2
       left: rem(-39px)
       transform: scaleX(-1)
       width: rem(393px)
+
+    +ipad
+      margin-left: rem(120px)
 
     +gte_laptop
       top: 62px
