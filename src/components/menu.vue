@@ -174,9 +174,16 @@ aside
 ul
   display: flex
 
+  +iphone
+    padding-top: rem(100px)
+
+  +ipad
+    padding-top: 200px
+    margin: 0 auto
+    width: 375px
+
   +lte_ipad
     flex-direction: column
-    padding-top: rem(100px)
 
   +gte_laptop
     width: 100%
