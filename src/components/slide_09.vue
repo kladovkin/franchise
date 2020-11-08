@@ -287,6 +287,7 @@ h2
     flex-direction: column
     text-align: center
     padding: rem(27px) 0 rem(35px)
+    margin-bottom: 15px
 
   &:before
     background-image: url(../assets/slide_09/ok.png)
@@ -334,7 +335,7 @@ h2
 
       +lte_ipad
         display: block
-        margin-bottom: rem(2px)
+        margin-bottom: rem(8px)
 
   .text
     color: #6c6c6c
