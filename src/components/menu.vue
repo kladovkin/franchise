@@ -178,7 +178,7 @@ ul
     padding-top: rem(100px)
 
   +ipad
-    padding-top: 200px
+    padding-top: rem(160px)
     margin: 0 auto
     width: 375px
 
