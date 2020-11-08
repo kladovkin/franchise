@@ -8,9 +8,13 @@
         </h2>
       </div>
       <div class='background-details'>
-        <picture class='background'>
+        <picture>
           <source src='../assets/slide_05/background.webp' type='image/webp'>
-          <img loading='lazy' src='../assets/slide_05/background.png' />
+          <img
+            class='background'
+            loading='lazy'
+            src='../assets/slide_05/background.png'
+          />
         </picture>
         <div class='details'>
           <div class='cc-2'>
@@ -115,18 +119,18 @@ h2
 
   +iphone
     margin-bottom: rem(24px)
+    padding: rem(24px) rem(16px)
     width: rem(219px)
 
   +ipad
     margin-bottom: rem(38px)
+    padding: rem(24px) rem(32px)
     width: rem(480px)
-
-  +lte_ipad
-    padding: rem(24px) rem(16px)
 
   +gte_laptop
     height: 331px
     margin-bottom: 57px
+    padding: 60px 0
     width: 826px
 
     &:after
@@ -152,7 +156,7 @@ h2
       justify-content: space-between
 
       +ipad
-        width: rem(240px)
+        flex-grow: 1
 
       +gte_laptop
         width: 354px
@@ -208,11 +212,17 @@ h2
     position: absolute
     z-index: -1
 
+    +iphone
+      left: rem(-194px)
+
+    +ipad
+      right: rem(-268px)
+
     +lte_ipad
       display: block
       height: 100%
-      left: rem(-218px)
       min-width: 100%
+      max-width: none
 
     +gte_laptop
       transform: translateX(50%)
