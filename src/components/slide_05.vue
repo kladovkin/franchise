@@ -92,6 +92,10 @@ article
       right: 0
 
 .container
+  +ipad
+    display: flex
+    justify-content: center
+
   +gte_laptop
     padding: 0
 
@@ -109,15 +113,20 @@ h2
   border-radius: 0px 40px 40px 0px
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05)
 
-  +lte_ipad
+  +iphone
     margin-bottom: rem(24px)
-    padding: rem(24px) rem(16px)
     width: rem(219px)
+
+  +ipad
+    margin-bottom: rem(38px)
+    width: rem(480px)
+
+  +lte_ipad
+    padding: rem(24px) rem(16px)
 
   +gte_laptop
     height: 331px
     margin-bottom: 57px
-    padding: 60px 0
     width: 826px
 
     &:after
@@ -133,7 +142,7 @@ h2
     display: flex
     height: 100%
 
-    +lte_ipad
+    +iphone
       flex-direction: column
 
     .c-column
@@ -142,11 +151,14 @@ h2
       height: 100%
       justify-content: space-between
 
+      +ipad
+        width: rem(240px)
+
       +gte_laptop
         width: 354px
 
       &:not(:last-child)
-        +lte_ipad
+        +iphone
           margin-bottom: rem(24px)
 
         +gte_laptop
