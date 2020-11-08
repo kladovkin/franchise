@@ -125,10 +125,21 @@ h2
 
 .list-wrapper
   display: flex
-  justify-content: center
+
+  +iphone
+    justify-content: center
+
+  +ipad
+    margin-left: rem(22px)
+
+  +gte_laptop
+    justify-content: center
 
 ul
   color: #4b4b4b
+
+  +ipad
+    margin-top: rem(20px)
 
   +lte_ipad
     font-size: rem(14px)
@@ -168,9 +179,17 @@ ul
 .graph
   display: flex
 
-  +lte_ipad
+  +iphone
+    justify-content: center
     margin-bottom: rem(28px)
     margin-top: rem(-22px)
+
+  +ipad
+    justify-content: flex-end
+    margin-bottom: rem(48px)
+    margin-top: rem(-95px)
+
+  +lte_ipad
 
   +laptop
     margin-right: scale-laptop(32px, 45px)
