@@ -69,7 +69,7 @@ export default {
     background-image: url(../assets/slide_01/background_bottom-ipad.png)
 
     .webp &
-      background-image: url(../assets/slide_01/background_bottom-ipad.webp)
+      // background-image: url(../assets/slide_01/background_bottom-ipad.webp)
 
   +lte_ipad
     background-position: bottom
@@ -146,7 +146,7 @@ article
 
   +ipad
     background-image: url(../assets/slide_01/background_upper-ipad.svg)
-    padding-bottom: rem(100px)
+    padding-bottom: rem(143px)
     padding-top: rem(160px)
 
   +lte_ipad
@@ -205,11 +205,8 @@ article
     position: relative
     z-index: 1
 
-    +iphone
+    +lte_ipad
       margin-bottom: rem(150px)
-
-    +ipad
-      margin-bottom: rem(250px)
 
     +gte_laptop
       background: #f44f0c
@@ -453,12 +450,8 @@ article
         letter-spacing: -0.01em
         font-weight: bold
 
-        +iphone
+        +lte_ipad
           font-size: rem(14px)
-          line-height: 1
-
-        +ipad
-          font-size: rem(16px)
           line-height: 1
 
         +gte_laptop
