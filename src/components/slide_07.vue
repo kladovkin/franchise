@@ -80,6 +80,10 @@ h2
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.05)
 
 article
+  +ipad
+    display: flex
+    justify-content: center
+
   +lte_ipad
     padding-bottom: rem(40px)
 
@@ -89,6 +93,9 @@ article
   ul
     color: #fff
     display: flex
+
+    +ipad
+      display: inline-flex
 
     +lte_ipad
       flex-direction: column
