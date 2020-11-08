@@ -181,7 +181,6 @@ ul
   +ipad
     padding-top: rem(160px)
     margin: 0 auto
-    width: 375px
 
   +lte_ipad
     flex-direction: column

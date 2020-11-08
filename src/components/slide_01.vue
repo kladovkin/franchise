@@ -463,13 +463,11 @@ article
 
 .button
   +ipad
-    width: 375px
     margin: 0 auto
 
   +gte_laptop
     margin-top: -160px
     position: absolute
-    width: 255px
     z-index: 2
     opacity: 0
 

@@ -110,9 +110,9 @@ h2
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05)
 
   +lte_ipad
-    margin-bottom: 24px
+    margin-bottom: rem(24px)
     padding: rem(24px) rem(16px)
-    width: 68.4375%
+    width: rem(219px)
 
   +gte_laptop
     height: 331px
@@ -187,10 +187,6 @@ h2
       @each $icon in type-1, type-2, type-3, type-4, type-5, type-6
         .#{$icon}:before
           background-image: url(../assets/slide_05/#{$icon}.svg)
-
-.button
-  +gte_laptop
-    max-width: 255px
 
 .background-details
   +lte_ipad

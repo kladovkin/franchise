@@ -47,9 +47,13 @@ export default {
     font-size: rem(16px)
     height: rem(48px)
 
+  +ipad
+    max-width: 375px
+
   +gte_laptop
     font-size: 16px
     height: 60px
+    max-width: 255px
 
   &-white
     background-color: #fff
