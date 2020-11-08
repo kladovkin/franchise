@@ -281,8 +281,11 @@ h2
         margin-right: 10px
 
 .map
-  +lte_ipad
+  +iphone
     height: rem(195px)
+
+  +ipad
+    height: rem(350px)
 
   +gte_laptop
     height: 550px
