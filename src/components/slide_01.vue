@@ -146,7 +146,7 @@ article
 
   +ipad
     background-image: url(../assets/slide_01/background_upper-ipad.svg)
-    padding-bottom: rem(143px)
+    padding-bottom: rem(123px)
     padding-top: rem(160px)
 
   +lte_ipad
@@ -205,8 +205,11 @@ article
     position: relative
     z-index: 1
 
-    +lte_ipad
+    +iphone
       margin-bottom: rem(150px)
+
+    +ipad
+      margin-bottom: rem(170px)
 
     +gte_laptop
       background: #f44f0c
