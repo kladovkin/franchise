@@ -26,9 +26,9 @@
             <div class='label final'>Площадь&nbsp;складов</div>
           </div>
         </div>
-        <picture class='content'>
-          <source srcset='../assets/slide_03/content.webp' type='image/webp'>
-          <img loading='lazy' src='../assets/slide_03/content.png' />
+        <picture class='picture'>
+          <source srcset='../assets/slide_03/picture.webp' type='image/webp'>
+          <img loading='lazy' src='../assets/slide_03/picture.png' />
         </picture>
       </div>
     </article>
@@ -56,8 +56,13 @@ article
   flex-direction: column
   padding-right: 0
 
-  +lte_ipad
+  +iphone
     height: rem(444px)
+
+  +ipad
+    height: rem(400px)
+
+  +lte_ipad
     padding-bottom: rem(88px)
     padding-top: rem(40px)
 
@@ -106,8 +111,11 @@ h2
     display: flex
 
     .entry
-      +lte_ipad
-        width: 100px
+      +iphone
+        width: rem(100px)
+
+      +ipad
+        width: rem(150px)
 
       +gte_laptop
         width: 240px
@@ -144,13 +152,13 @@ h2
           font-size: 18px
           line-height: 23px
 
-.content
+.picture
   position: absolute
   z-index: 1
 
   +lte_ipad
     max-width: rem(266px)
-    margin-left: rem(-20px)
+    right: rem(7px)
     margin-top: rem(135px)
 
   +gte_laptop
