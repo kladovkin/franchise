@@ -227,10 +227,10 @@ h2
       letter-spacing: -0.01em
 
       +lte_ipad
-        font-size: 12px
-        line-height: 18px
+        color: #6c6c6c
+        font-size: rem(12px)
+        line-height: rem(18px)
         text-align: center
-        color: #6C6C6C
 
       +gte_laptop
         font-size: 14px
