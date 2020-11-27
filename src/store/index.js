@@ -22,6 +22,24 @@ export default createStore({
           },
           collapsed: 'Ставка доходности с Кладовкин',
           button: 'Узнать больше'
+        },
+        slide_02: {
+          h2: 'новый подход к бизнесу в сфере недвижимости',
+          note: 'Ставки доходности основных сегментов арендной недвижимости в России:',
+          list_1: 'Большее количество арендаторов',
+          list_2: 'Повышенная арендная ставка',
+          list_3: 'Постоянная заполненность склада',
+          list_4: 'Растущий рынок',
+          graph: {
+            residential: 'Жильё',
+            offices: 'Офисы',
+            street_retail: 'Стрит&nbsp;ритейл',
+            warehouses: 'Склады'
+          },
+          finale: {
+            strong: 'Self Storage — это склады, оборудованные боксами',
+            description: 'для хранения вещей или товаров физическими или юридическими лицами'
+          }
         }
       },
       en: {
@@ -42,6 +60,24 @@ export default createStore({
           },
           collapsed: 'yield rate together with Kladovkin',
           button: 'Learn more'
+        },
+        slide_02: {
+          h2: 'new approach in real estate business',
+          note: 'Yield rates for main segments of commercial real estate in Russia',
+          list_1: 'Big amount of small tenants',
+          list_2: 'High rental rates',
+          list_3: 'Constant occupancy of sites',
+          list_4: 'Steadily growing market',
+          graph: {
+            residential: 'Residential',
+            offices: 'Offices',
+            street_retail: 'Street&nbsp;retail',
+            warehouses: 'Warehouses'
+          },
+          finale: {
+            strong: 'Self Storage is warehouses equiped with many boxes',
+            description: 'for storage of personal belongings and\\or goods, available for private individuals and companies'
+          }
         }
       }
     }
