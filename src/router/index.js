@@ -1,7 +1,6 @@
 import {
   createRouter,
-  createWebHistory
-  // createWebHashHistory
+  createWebHashHistory
 } from 'vue-router';
 import Landing from '../views/landing.vue';
 import store from '../store';
@@ -29,9 +28,11 @@ const routes = [
   // }
 ];
 
-// Note: Don't use 'history' mode. @blackchestnut
+// Note: Don't use 'history: createWebHistory' mode.
+//       Because GitHub pages don't work with it. @blackchestnut
 const router = createRouter({
-  history: createWebHistory(),
+  // history: createWebHistory(),
+  history: createWebHashHistory(),
   routes
 });
 
