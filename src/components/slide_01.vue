@@ -4,7 +4,7 @@
       <a class='logo' href='https://kladovkin.ru'></a>
       <div class='outer'>
         <div class='content'>
-          <h1>Технологичный бизнес на&nbsp;вашей&nbsp;территории</h1>
+          <h1 v-html='t("slide_01.h1")' />
           <p>Станьте партнером и зарабатывайте на&nbsp;своей&nbsp;недвижимости</p>
         </div>
         <div class='collapsed'>
@@ -32,6 +32,7 @@
 <script>
 import Button from '@/components/button';
 import SweetScroll from '@/utils/sweet_scroll';
+import t from '@/utils/locale';
 
 export default {
   name: 'Slide1',
@@ -40,6 +41,7 @@ export default {
     isOpened: false
   }),
   methods: {
+    t,
     open() {
       this.isOpened = true;
     },
