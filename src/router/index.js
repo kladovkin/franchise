@@ -4,12 +4,20 @@ import {
   // createWebHashHistory
 } from 'vue-router';
 import Landing from '../views/landing.vue';
+import store from '../store';
 
 const routes = [
   {
-    path: '/',
+    path: '/:locale',
     name: 'landing',
-    component: Landing
+    component: Landing,
+    beforeEnter: (to, _from) => {
+      const { locale } = to.params;
+      if (locale != null) {
+        store.dispatch('setLocale', { locale });
+      }
+      return true;
+    }
   }
   // {
   //   path: '/about',
