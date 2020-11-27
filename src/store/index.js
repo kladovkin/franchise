@@ -40,6 +40,15 @@ export default createStore({
             strong: 'Self Storage — это склады, оборудованные боксами',
             description: 'для хранения вещей или товаров физическими или юридическими лицами'
           }
+        },
+        slide_03: {
+          h2: 'Кладовкин &mdash; технологический лидер российского рынка Self&nbsp;Storage',
+          entries: {
+            age: 'Года&nbsp;на&nbsp;рынке',
+            customers: 'Благодарных арендаторов',
+            storages: 'Складов в&nbsp;Москве',
+            square: 'Площадь&nbsp;складов'
+          }
         }
       },
       en: {
@@ -76,7 +85,17 @@ export default createStore({
           },
           finale: {
             strong: 'Self Storage is warehouses equiped with many boxes',
-            description: 'for storage of personal belongings and\\or goods, available for private individuals and companies'
+            description: 'for storage of personal belongings and\\or goods, ' +
+              'available for private individuals and companies'
+          }
+        },
+        slide_03: {
+          h2: 'Kladovkin — technological leader of Russian&nbsp;Self Storage market',
+          entries: {
+            age: 'Years&nbsp;on&nbsp;the&nbsp;market',
+            customers: 'Grateful customers',
+            storages: 'Stores&nbsp;in&nbsp;Moscow',
+            square: 'Overall&nbsp;usable&nbsp;space '
           }
         }
       }
