@@ -3,14 +3,14 @@
     <div class='container'>
       <div class='trigger' @click='toggle' />
       <ul v-if='isExpanded'>
-        <li><div @click='() => scrollTo("slide_02")'>О нас</div></li>
-        <li><div @click='() => scrollTo("slide_04")'>Преимущества</div></li>
-        <li><div @click='() => scrollTo("slide_05")'>С кем работаем</div></li>
-        <li><div @click='() => scrollTo("slide_06")'>Порядок действий</div></li>
-        <li><div @click='() => scrollTo("slide_08")'>Кейсы</div></li>
+        <li><div @click='() => scrollTo("slide_02")'>{{ t('menu.about') }}</div></li>
+        <li><div @click='() => scrollTo("slide_04")'>{{ t('menu.benefits') }}</div></li>
+        <li><div @click='() => scrollTo("slide_05")'>{{ t('menu.requirements') }}</div></li>
+        <li><div @click='() => scrollTo("slide_06")'>{{ t('menu.roadmap') }}</div></li>
+        <li><div @click='() => scrollTo("slide_08")'>{{ t('menu.cases') }}</div></li>
         <li>
           <Button
-            text='Оставить заявку'
+            :text='t("menu.button")'
             type='white'
             @click='lead'
           />
@@ -25,6 +25,7 @@ import Button from '@/components/button';
 
 import isMobile from '@/utils/is_mobile';
 import SweetScroll from '@/utils/sweet_scroll';
+import t from '@/utils/locale';
 
 export default {
   name: 'Menu',
@@ -37,10 +38,8 @@ export default {
       return SweetScroll.asyncInstance();
     }
   },
-  mounted() {
-    // this.toggle();
-  },
   methods: {
+    t,
     async toggle() {
       this.isExpanded = !this.isExpanded;
 
