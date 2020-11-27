@@ -321,6 +321,9 @@ ul
   position: absolute
   bottom: 0
 
+  img
+    margin-bottom: -2px
+
   +lte_ipad
     display: none
 
