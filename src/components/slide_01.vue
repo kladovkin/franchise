@@ -5,15 +5,15 @@
       <div class='outer'>
         <div class='content'>
           <h1 v-html='t("slide_01.h1")' />
-          <p>Станьте партнером и зарабатывайте на&nbsp;своей&nbsp;недвижимости</p>
+          <p v-html='t("slide_01.h2")' />
         </div>
         <div class='collapsed'>
           <div class='lock' @click='open'>
-            <p class='first'>Включи</p>
-            <p class='second'>свой бизнес</p>
+            <p class='first'>{{ t('slide_01.lock.first') }}</p>
+            <p class='second'>{{ t('slide_01.lock.second') }}</p>
           </div>
           <div class='yield'>
-            <p>Ставка доходности с Кладовкин</p>
+            <p>{{ t('slide_01.collapsed') }}</p>
           </div>
           <div class='start' />
           <div class='middle' />
@@ -21,7 +21,7 @@
         </div>
       </div>
       <Button
-        text='Узнать больше'
+        :text='t("slide_01.button")'
         type='white'
         @click='lead'
       />
