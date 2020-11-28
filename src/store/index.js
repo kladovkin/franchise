@@ -49,6 +49,34 @@ export default createStore({
             storages: 'Складов в&nbsp;Москве',
             square: 'Площадь&nbsp;складов'
           }
+        },
+        slide_04: {
+          h2: 'Организуем эффективный бизнес Self Storage с помощью IT-технологий',
+          note: 'Полная автоматизация бизнес-процессов для собственника',
+          switcher: {
+            owner: 'Владельцам',
+            tenant: 'Арендаторам'
+          },
+          list_1: {
+            title: 'Автоматизированные процессы управления',
+            body: 'Склад может полноценно функционировать без постоянного ' +
+              'присутствия персонала: охраны, менеджеров и администраторов'
+          },
+          list_2: {
+            title: 'Личный кабинет собственника',
+            body: 'С доступом к ежедневным аналитическим отчетам и ключевым' +
+              'показателям эффективности (<span>EBITDA</span>, <span>LTV</span>, ' +
+              '<span>IRR</span> и др.)'
+          },
+          list_3: {
+            title: 'Личный кабинет сотрудника',
+            body: 'С системой функциональных обязанностей' +
+              'и должностных инструкций, способной подсказать сотруднику' +
+              'его следующий шаг'
+          },
+          list_4: {
+            title: 'Сквозная веб-аналитика'
+          }
         }
       },
       en: {
@@ -96,6 +124,32 @@ export default createStore({
             customers: 'Grateful customers',
             storages: 'Stores&nbsp;in&nbsp;Moscow',
             square: 'Overall&nbsp;usable&nbsp;space '
+          }
+        },
+        slide_04: {
+          h2: 'Establishing highly efficient business with helping hand of IT-technologies ',
+          note: 'Complete automatization of business processes for a partner',
+          switcher: {
+            owner: 'For owners',
+            tenant: 'For tenants'
+          },
+          list_1: {
+            title: 'Automated management routines',
+            body: 'Your store can function without constant staff presence: ' +
+              'no managers, administrators and security needed.'
+          },
+          list_2: {
+            title: 'Partner’s personal account',
+            body: 'It provides access to various daily reports and other key ' +
+              'performance indicators like EBITDA, LTV, IRR and so on.'
+          },
+          list_3: {
+            title: 'Employee’s personal account',
+            body: 'With functional duty and instruction system, ' +
+              'that is capable to advise a next step to an employee'
+          },
+          list_4: {
+            title: 'End-to-end web analytics'
           }
         }
       }

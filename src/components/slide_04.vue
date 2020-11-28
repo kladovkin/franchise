@@ -7,47 +7,34 @@
           :class='{ "is-active": isOwner }'
           @click='() => switchswitcher("owner")'
         >
-          Владельцам
+          {{ t('slide_04.switcher.owner') }}
         </div>
         <div
           class='switcher'
           :class='{ "is-active": isTenant }'
           @click='() => switchswitcher("tenant")'
         >
-          Арендаторам
+          {{ t('slide_04.switcher.tenant') }}
         </div>
       </div>
       <div v-if='isOwner' class='slide slide-owner'>
-        <h2>Организуем эффективный бизнес Self Storage с помощью IT-технологий</h2>
-        <div class='note'>
-          Полная автоматизация бизнес-процессов для собственника
-        </div>
+        <h2>{{ t('slide_04.h2') }}</h2>
+        <div class='note'>{{ t('slide_04.note') }}</div>
         <ul>
           <li>
-            <div>Автоматизированные процессы управления</div>
-            <p>
-              Склад может полноценно функционировать без постоянного
-              присутствия персонала: охраны, менеджеров и администраторов
-            </p>
+            <div>{{ t('slide_04.list_1.title') }}</div>
+            <p>{{ t('slide_04.list_1.body') }}</p>
           </li>
           <li>
-            <div>Личный кабинет собственника</div>
-            <p>
-              С доступом к ежедневным аналитическим отчетам и ключевым
-              показателям эффективности (<span>EBITDA</span>, <span>LTV</span>,
-              <span>IRR</span> и др.)
-            </p>
+            <div>{{ t('slide_04.list_2.title') }}</div>
+            <p v-html='t("slide_04.list_2.body")' />
           </li>
           <li>
-            <div>Личный кабинет сотрудника</div>
-            <p>
-              С системой функциональных обязанностей
-              и должностных инструкций, способной подсказать сотруднику
-              его следующий шаг
-            </p>
+            <div>{{ t('slide_04.list_3.title') }}</div>
+            <p>{{ t('slide_04.list_3.body') }}</p>
           </li>
           <li>
-            <div>Сквозная веб-аналитика</div>
+            <div>{{ t('slide_04.list_4.title') }}</div>
           </li>
         </ul>
         <picture>
@@ -102,6 +89,8 @@
 </template>
 
 <script>
+import t from '@/utils/locale';
+
 export default {
   name: 'Slide4',
   data: () => ({
@@ -116,6 +105,7 @@ export default {
     }
   },
   methods: {
+    t,
     switchswitcher(switcher) {
       this.switcher = switcher;
     }
