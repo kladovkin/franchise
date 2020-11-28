@@ -51,31 +51,45 @@ export default createStore({
           }
         },
         slide_04: {
-          h2: 'Организуем эффективный бизнес Self Storage с помощью IT-технологий',
-          note: 'Полная автоматизация бизнес-процессов для собственника',
           switcher: {
             owner: 'Владельцам',
             tenant: 'Арендаторам'
           },
-          list_1: {
-            title: 'Автоматизированные процессы управления',
-            body: 'Склад может полноценно функционировать без постоянного ' +
-              'присутствия персонала: охраны, менеджеров и администраторов'
+          owner: {
+            h2: 'Организуем эффективный бизнес Self Storage с помощью IT-технологий',
+            note: 'Полная автоматизация бизнес-процессов для собственника',
+            list_1: {
+              title: 'Автоматизированные процессы управления',
+              body: 'Склад может полноценно функционировать без постоянного ' +
+                'присутствия персонала: охраны, менеджеров и администраторов'
+            },
+            list_2: {
+              title: 'Личный кабинет собственника',
+              body: 'С доступом к ежедневным аналитическим отчетам и ключевым' +
+                'показателям эффективности (<span>EBITDA</span>, <span>LTV</span>, ' +
+                '<span>IRR</span> и др.)'
+            },
+            list_3: {
+              title: 'Личный кабинет сотрудника',
+              body: 'С системой функциональных обязанностей' +
+                'и должностных инструкций, способной подсказать сотруднику' +
+                'его следующий шаг'
+            },
+            list_4: {
+              title: 'Сквозная веб-аналитика'
+            }
           },
-          list_2: {
-            title: 'Личный кабинет собственника',
-            body: 'С доступом к ежедневным аналитическим отчетам и ключевым' +
-              'показателям эффективности (<span>EBITDA</span>, <span>LTV</span>, ' +
-              '<span>IRR</span> и др.)'
-          },
-          list_3: {
-            title: 'Личный кабинет сотрудника',
-            body: 'С системой функциональных обязанностей' +
-              'и должностных инструкций, способной подсказать сотруднику' +
-              'его следующий шаг'
-          },
-          list_4: {
-            title: 'Сквозная веб-аналитика'
+          tenant: {
+            h2: '<span>Кладовкин</span> &mdash; технологический лидер ' +
+              'российского рынка Self Storage',
+            note: 'Лучший клиентский опыт для арендатора',
+            list_1: 'Поиск ближайшего склада на карте',
+            list_2: 'Выбор бокса нужного размера',
+            list_3: 'Заключение и расторжение договора аренды онлайн',
+            list_4: 'Оплата счета наиболее удобным&nbsp;способом',
+            list_5: 'Доступ к складу и парковке по приложению или пин-коду',
+            list_6: 'Отслеживание баланса и&nbsp;контроль&nbsp;задолженности',
+            list_7: 'Вызов грузового такси при необходимости'
           }
         }
       },
@@ -127,29 +141,43 @@ export default createStore({
           }
         },
         slide_04: {
-          h2: 'Establishing highly efficient business with helping hand of IT-technologies ',
-          note: 'Complete automatization of business processes for a partner',
           switcher: {
             owner: 'For owners',
             tenant: 'For tenants'
           },
-          list_1: {
-            title: 'Automated management routines',
-            body: 'Your store can function without constant staff presence: ' +
-              'no managers, administrators and security needed.'
+          owner: {
+            h2: 'Establishing highly efficient business with helping hand of IT-technologies ',
+            note: 'Complete automatization of business processes for a partner',
+            list_1: {
+              title: 'Automated management routines',
+              body: 'Your store can function without constant staff presence: ' +
+                'no managers, administrators and security needed.'
+            },
+            list_2: {
+              title: 'Partner’s personal account',
+              body: 'It provides access to various daily reports and other key ' +
+                'performance indicators like EBITDA, LTV, IRR and so on.'
+            },
+            list_3: {
+              title: 'Employee’s personal account',
+              body: 'With functional duty and instruction system, ' +
+                'that is capable to advise a next step to an employee'
+            },
+            list_4: {
+              title: 'End-to-end web analytics'
+            }
           },
-          list_2: {
-            title: 'Partner’s personal account',
-            body: 'It provides access to various daily reports and other key ' +
-              'performance indicators like EBITDA, LTV, IRR and so on.'
-          },
-          list_3: {
-            title: 'Employee’s personal account',
-            body: 'With functional duty and instruction system, ' +
-              'that is capable to advise a next step to an employee'
-          },
-          list_4: {
-            title: 'End-to-end web analytics'
+          tenant: {
+            h2: '<span>Kladovkin</span> &mdash; technological leader' +
+              'of Russian Self Storage market',
+            note: 'The best client-side expirience for a tenant',
+            list_1: 'Search for the nearest storage site on the map',
+            list_2: 'Choose the box size you need',
+            list_3: 'Conclude and terminate your rental contract online',
+            list_4: 'Pay for storage the way you like it',
+            list_5: 'Access your box and parking space through the App or a pin-code',
+            list_6: 'Monitor your account balance and control indebtedness',
+            list_7: 'Call a cargo taxi if needed'
           }
         }
       }

@@ -18,23 +18,23 @@
         </div>
       </div>
       <div v-if='isOwner' class='slide slide-owner'>
-        <h2>{{ t('slide_04.h2') }}</h2>
-        <div class='note'>{{ t('slide_04.note') }}</div>
+        <h2>{{ t('slide_04.owner.h2') }}</h2>
+        <div class='note'>{{ t('slide_04.owner.note') }}</div>
         <ul>
           <li>
-            <div>{{ t('slide_04.list_1.title') }}</div>
-            <p>{{ t('slide_04.list_1.body') }}</p>
+            <div>{{ t('slide_04.owner.list_1.title') }}</div>
+            <p>{{ t('slide_04.owner.list_1.body') }}</p>
           </li>
           <li>
-            <div>{{ t('slide_04.list_2.title') }}</div>
-            <p v-html='t("slide_04.list_2.body")' />
+            <div>{{ t('slide_04.owner.list_2.title') }}</div>
+            <p v-html='t("slide_04.owner.list_2.body")' />
           </li>
           <li>
-            <div>{{ t('slide_04.list_3.title') }}</div>
-            <p>{{ t('slide_04.list_3.body') }}</p>
+            <div>{{ t('slide_04.owner.list_3.title') }}</div>
+            <p>{{ t('slide_04.owner.list_3.body') }}</p>
           </li>
           <li>
-            <div>{{ t('slide_04.list_4.title') }}</div>
+            <div>{{ t('slide_04.owner.list_4.title') }}</div>
           </li>
         </ul>
         <picture>
@@ -47,32 +47,29 @@
         </picture>
       </div>
       <div v-if='isTenant' class='slide slide-tenant'>
-        <h2>
-          <span>Кладовкин</span> &mdash; технологический лидер российского
-          рынка Self Storage
-        </h2>
-        <div class='note'>Лучший клиентский опыт для&nbsp;арендатора</div>
+        <h2 v-html='t("slide_04.tenant.h2")' />
+        <div class='note'>{{ t('slide_04.tenant.note') }}</div>
         <ul>
           <li>
-            <p>Поиск ближайшего склада на карте</p>
+            <p>{{ t('slide_04.tenant.list_1') }}</p>
           </li>
           <li>
-            <p>Выбор бокса нужного размера</p>
+            <p>{{ t('slide_04.tenant.list_2') }}</p>
           </li>
           <li>
-            <p>Заключение и расторжение договора аренды онлайн</p>
+            <p>{{ t('slide_04.tenant.list_3') }}</p>
           </li>
           <li>
-            <p>Оплата счета наиболее удобным&nbsp;способом</p>
+            <p v-html='t("slide_04.tenant.list_4")' />
           </li>
           <li>
-            <p>Доступ к складу и парковке по приложению или пин-коду</p>
+            <p>{{ t('slide_04.tenant.list_5') }}</p>
           </li>
           <li>
-            <p>Отслеживание баланса и&nbsp;контроль&nbsp;задолженности</p>
+            <p v-html='t("slide_04.tenant.list_6")' />
           </li>
           <li>
-            <p>Вызов грузового такси при необходимости</p>
+            <p>{{ t('slide_04.tenant.list_7') }}</p>
           </li>
         </ul>
         <picture>
