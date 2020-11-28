@@ -91,6 +91,17 @@ export default createStore({
             list_6: 'Отслеживание баланса и&nbsp;контроль&nbsp;задолженности',
             list_7: 'Вызов грузового такси при необходимости'
           }
+        },
+        slide_05: {
+          h2: 'Мы работаем с юридическими лицами и ИП &mdash; собственниками' +
+            'помещений от 100 м²',
+          list_1: 'Отдельно стоящее<br>складское помещение',
+          list_2: 'Складское помещение<br>в жилом доме',
+          list_3: 'Здания<br>бывших АТС',
+          list_4: 'Подвальные<br>помещения',
+          list_5: 'Подземный паркинг<br>торгового центра',
+          list_6: 'Другие<br>помещения',
+          button: 'Узнать больше'
         }
       },
       en: {
@@ -179,6 +190,17 @@ export default createStore({
             list_6: 'Monitor your account balance and control indebtedness',
             list_7: 'Call a cargo taxi if needed'
           }
+        },
+        slide_05: {
+          h2: 'We work with legal entities and individual entrepreneurs who ' +
+            'are the own or rent premises of 100 m² and more',
+          list_1: 'Dedicated warehouse premises',
+          list_2: 'Storage and commercial areas in<br>living blocks',
+          list_3: 'Ex-PBX<br>buildings',
+          list_4: 'Basement<br>floors',
+          list_5: 'Underground or<br>mall parkings',
+          list_6: 'Other premises',
+          button: 'Learn more'
         }
       }
     }

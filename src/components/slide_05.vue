@@ -2,10 +2,7 @@
   <div class='background-cutter' id='slide_05'>
     <article>
       <div class='container'>
-        <h2>
-          Мы работаем с юридическими лицами и ИП &mdash; собственниками
-          помещений от 100 м²
-        </h2>
+        <h2 v-html='t("slide_05.h2")' />
       </div>
       <div class='background-details'>
         <picture>
@@ -19,20 +16,20 @@
         <div class='details'>
           <div class='cc-2'>
             <div class='c-column'>
-              <div class='type-1'>Отдельно стоящее<br>складское помещение</div>
-              <div class='type-2'>Складское помещение<br>в жилом доме</div>
-              <div class='type-3'>Здания<br>бывших АТС</div>
+              <div class='type-1' v-html='t("slide_05.list_1")' />
+              <div class='type-2' v-html='t("slide_05.list_2")' />
+              <div class='type-3' v-html='t("slide_05.list_3")' />
             </div>
             <div class='c-column'>
-              <div class='type-4'>Подвальные<br>помещения</div>
-              <div class='type-5'>Подземный паркинг<br>торгового центра</div>
-              <div class='type-6'>Другие<br>помещения</div>
+              <div class='type-4' v-html='t("slide_05.list_4")' />
+              <div class='type-5' v-html='t("slide_05.list_5")' />
+              <div class='type-6' v-html='t("slide_05.list_6")' />
             </div>
           </div>
         </div>
       </div>
       <div class='container'>
-        <Button type='red' text='Узнать больше' @click='lead'/>
+        <Button type='red' :text='t("slide_05.button")' @click='lead'/>
       </div>
     </article>
   </div>
@@ -41,11 +38,13 @@
 <script>
 import Button from '@/components/button';
 import SweetScroll from '@/utils/sweet_scroll';
+import t from '@/utils/locale';
 
 export default {
   name: 'Slide5',
   components: { Button },
   methods: {
+    t,
     async lead() {
       (await SweetScroll.asyncInstance()).toElement(
         document.getElementById('slide_09'), { duration: 450 }
