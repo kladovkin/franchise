@@ -102,6 +102,53 @@ export default createStore({
           list_5: 'Подземный паркинг<br>торгового центра',
           list_6: 'Другие<br>помещения',
           button: 'Узнать больше'
+        },
+        slide_06: {
+          h2: 'Станьте партнером и откройте автоматизированный бизнес под ключ' +
+            '<br><span>за&nbsp;2&nbsp;месяца</span>',
+          days: 'дня',
+          days_2: 'дней',
+          info_1: {
+            title: 'Сбор предварительной информации о&nbsp;помещении',
+            body: 'и расчет технико-экономических показателей&nbsp;склада'
+          },
+          info_2: {
+            title: 'Подготовка документов',
+            body: 'и заключение договора',
+            note: {
+              price: '0 рублей',
+              description: 'концессионный взнос'
+            }
+          },
+          info_3: {
+            title: 'Разработка и согласование дизайн-проекта',
+            body: 'Сбор предварительной информации о помещениии, расчет ' +
+              'технико-экономических показателей склада'
+          },
+          info_4: {
+            title: 'Изготовление, поставка и&nbsp;монтаж оборудования',
+            body: 'Изготовим и произведем поставку оборудования собственной '+
+              'разработки с гарантией качества и сроков оснащения',
+            note: {
+              price: '7000 руб./м²',
+              description: 'переоборудование помещения'
+            }
+          },
+          info_5: {
+            title: 'Пуско-наладочные работы охранной системы, интеграция с IT-платформой',
+            body: 'Служба монтажа быстро и качественно установит и настроит' +
+              'оборудование, систему контроля и управления доступом и' +
+              'обеспечит интеграцию склада с сайтом'
+          },
+          info_6: {
+            title: 'Открытие склада и поддержание бизнеса',
+            body: 'Возьмем все управление на себя:',
+            list: '&ndash; маркетинг и рекламу<br>' +
+              '&ndash; службу заботы о клиентах 24/7<br>' +
+              '&ndash; техническое обслуживание<br>' +
+              '&ndash; управление персоналом<br>' +
+              '&ndash; круглосуточное<br>&nbsp;&nbsp;&nbsp;видеонаблюдение<br>'
+          }
         }
       },
       en: {
@@ -201,6 +248,53 @@ export default createStore({
           list_5: 'Underground or<br>mall parkings',
           list_6: 'Other premises',
           button: 'Learn more'
+        },
+        slide_06: {
+          h2: 'Become a partner and open fully automatic turnkey business ' +
+            '<span>in 2 months</span>',
+          days: 'days',
+          days_2: 'days',
+          info_1: {
+            title: 'Gathering preliminary information on potential premise',
+            body: 'and calculation of techical and financial indicators for the store'
+          },
+          info_2: {
+            title: 'Documents preparing',
+            body: 'and contract concluding',
+            note: {
+              price: '0 rubles',
+              description: 'concession fee'
+            }
+          },
+          info_3: {
+            title: 'Design-project: developing and approval',
+            body: 'Gathering preliminary information on potential premise, ' +
+              'calculation of techical and financial indicators for the store'
+          },
+          info_4: {
+            title: 'Producing, delivery and installation of the equipment',
+            body: 'We will produce and deliver our self storage equipment with ' +
+              'quality and installation terms guarantee',
+            note: {
+              price: '7000 rub per m²',
+              description: 'premises outfitting'
+            }
+          },
+          info_5: {
+            title: 'Commissioning works on security system, IT-platfom integration',
+            body: 'Our assembling team will install and rig up the hardware ' +
+              'for access control quickly and qualitatively. They will also ' +
+              'set up its integration with the website'
+          },
+          info_6: {
+            title: 'Store grand opening and business support',
+            body: 'We will take over the control of:',
+            list: '&ndash; marketing and ads<br>' +
+              '&ndash; clients care service 24/7<br>' +
+              '&ndash; maintanance services<br>' +
+              '&ndash; staff management<br>' +
+              '&ndash; around the clock video surveillance<br>'
+          }
         }
       }
     }
