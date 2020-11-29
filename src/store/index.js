@@ -149,6 +149,21 @@ export default createStore({
               '&ndash; управление персоналом<br>' +
               '&ndash; круглосуточное<br>&nbsp;&nbsp;&nbsp;видеонаблюдение<br>'
           }
+        },
+        slide_07: {
+          h2: 'Комиссия&nbsp;управляющей компании',
+          circle: {
+            title: '5 лет',
+            note: 'срок окупаемости<br>' +
+              'первоначальных<br>' +
+              'инвестиций (РР)<br>'
+          },
+          list_1: 'валовой выручки',
+          list_2: 'на управление складом',
+          list_3: 'валовой выручки',
+          list_4: 'на маркетинговые услуги',
+          list_5: 'валовой выручки',
+          list_6: 'на услуги IT'
         }
       },
       en: {
@@ -295,6 +310,20 @@ export default createStore({
               '&ndash; staff management<br>' +
               '&ndash; around the clock video surveillance<br>'
           }
+        },
+        slide_07: {
+          h2: 'Managing company fee',
+          circle: {
+            title: '5 years',
+            note: 'Initial investments<br>' +
+              'payback period (РР)'
+          },
+          list_1: 'out of gross revenue',
+          list_2: 'for the store management',
+          list_3: 'out of gross revenue',
+          list_4: 'for the marketing purposes',
+          list_5: 'out of gross revenue',
+          list_6: 'for IT services'
         }
       }
     }
