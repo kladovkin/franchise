@@ -164,6 +164,16 @@ export default createStore({
           list_4: 'на маркетинговые услуги',
           list_5: 'валовой выручки',
           list_6: 'на услуги IT'
+        },
+        slide_08: {
+          h2: 'Кейсы',
+          list_1: '<b>Площадь:</b> 165 м²',
+          list_2: '<b>Расположение:</b> ул. Маршала Жукова, 76-2',
+          list_3: '<b>Дата запуска проекта:</b> май 2019 г.',
+          list_4: '<b>Инвестиции в переоборудование помещения:</b>&nbsp;1&nbsp;155&nbsp;000&nbsp;руб.',
+          list_5: '<b>Средняя арендная ставка:</b> 1 800 руб./м²',
+          list_6: '<b>Заполняемость:</b> 99%',
+          list_7: '<b>Срок окупаемости:</b> 17 месяцев'
         }
       },
       en: {
@@ -277,7 +287,7 @@ export default createStore({
             title: 'Documents preparing',
             body: 'and contract concluding',
             note: {
-              price: '0 rubles',
+              price: '$0',
               description: 'concession fee'
             }
           },
@@ -291,7 +301,7 @@ export default createStore({
             body: 'We will produce and deliver our self storage equipment with ' +
               'quality and installation terms guarantee',
             note: {
-              price: '7000 rub per m²',
+              price: '$100 per m²',
               description: 'premises outfitting'
             }
           },
@@ -324,6 +334,16 @@ export default createStore({
           list_4: 'for the marketing purposes',
           list_5: 'out of gross revenue',
           list_6: 'for IT services'
+        },
+        slide_08: {
+          h2: 'Cases ',
+          list_1: '<b>Total area:</b> 165 m²',
+          list_2: '<b>Location:</b> ул. Маршала Жукова, 76-2',
+          list_3: '<b>Project start date:</b> May 2019',
+          list_4: '<b>Premise outfitting investments:</b> $16,500',
+          list_5: '<b>Average rent price:</b> $26/m²',
+          list_6: '<b>Occupancy:</b> 99%',
+          list_7: '<b>Recoupment period:</b> 17 months'
         }
       }
     }

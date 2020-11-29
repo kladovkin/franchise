@@ -2,15 +2,16 @@
   <article id='slide_08'>
     <div class='cases'>
       <div class='content-container'>
-        <h2>Кейсы</h2>
+        <h2>{{ t('slide_08.h2') }}</h2>
         <div class='text'>
-          <div><b>Площадь:</b> 165 м²</div>
-          <div><b>Расположение:</b> ул. Маршала Жукова, 76-2</div>
-          <div><b>Дата запуска проекта:</b> май 2019 г.</div>
-          <div><b>Инвестиции в переоборудование помещения:</b>&nbsp;1&nbsp;155&nbsp;000&nbsp;руб.</div>
-          <div><b>Средняя арендная ставка:</b> 1 800 руб./м²</div>
-          <div><b>Заполняемость:</b> 99%</div>
-          <div><b>Срок окупаемости:</b> 17 месяцев</div>
+          <div v-html='t("slide_08.list_1")' />
+          <div v-html='t("slide_08.list_2")' />
+          <div v-html='t("slide_08.list_3")' />
+          <div v-html='t("slide_08.list_4")' />
+          <div v-html='t("slide_08.list_5")' />
+          <div v-html='t("slide_08.list_6")' />
+          <div v-html='t("slide_08.list_7")' />
+          <div v-html='t("slide_08.list_8")' />
           <div><b>IRR:</b> 105%</div>
         </div>
         <div class='dots' />
@@ -29,10 +30,15 @@
 // convert -quality 100% -resize 635x418! ~/Downloads/IMG_0284.jpeg src/assets/slide_08/slide_after.jpg && convert -quality 100% -resize 635x418! ~/Downloads/0022_.jpg src/assets/slide_08/slide_before.jpg && tinypng src/assets/slide_08/slide_after.jpg && tinypng src/assets/slide_08/slide_before.jpg
 
 import ComparisonSlider from '@/components/comparison_slider';
+import t from '@/utils/locale';
+
 export default {
   name: 'Slide8',
   components: {
     ComparisonSlider
+  },
+  methods: {
+    t
   }
 };
 </script>
