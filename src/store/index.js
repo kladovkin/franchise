@@ -191,6 +191,14 @@ export default createStore({
             'в соответствии с',
           privacy_link: 'политикой обработки персональных данных',
           error: '*Обязательное поле для заполения'
+        },
+        slide_10: {
+          h2: 'Контакты',
+          founder: 'Основатель',
+          founder_name: 'Карпушин Михаил',
+          staff: 'Руководитель отдела франчайзинга',
+          staff_name: 'Никитина Наталья',
+          address: '<b>Юридический адрес:</b>г. Москва, ул. Беломорская, 36'
         }
       },
       en: {
@@ -355,7 +363,7 @@ export default createStore({
         slide_08: {
           h2: 'Cases ',
           list_1: '<b>Total area:</b> 165 m²',
-          list_2: '<b>Location:</b> ул. Маршала Жукова, 76-2',
+          list_2: '<b>Location:</b> Moscow, Marshala Zhukova st. 76-2',
           list_3: '<b>Project start date:</b> May 2019',
           list_4: '<b>Premise outfitting investments:</b> $16,500',
           list_5: '<b>Average rent price:</b> $26/m²',
@@ -377,6 +385,14 @@ export default createStore({
             'in accordance with personal data processing',
           privacy_link: 'policy',
           error: '*This field is required'
+        },
+        slide_10: {
+          h2: 'Contacts',
+          founder: 'Founder and CEO',
+          founder_name: 'Mikhail Karpushin',
+          staff: 'Chief of franchising department',
+          staff_name: 'Natalia Nikitina',
+          address: '<b>Address:</b> Moscow, Belomorskaya st. 36'
         }
       }
     }
