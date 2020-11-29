@@ -1,21 +1,21 @@
 <template>
   <article id='slide_09'>
-    <h2>Остались вопросы?</h2>
-    <div class='note'>Оставьте свои контакты и мы с вами свяжемся</div>
+    <h2>{{ t('slide_09.h2') }}</h2>
+    <div class='note'>{{ t('slide_09.note') }}</div>
     <div v-if='isSubmitted' class='success-container'>
       <div>
         <div class='headline'>
-          <span>Спасибо!</span>
-          Мы получили вашу заявку
+          <span>{{ t('slide_09.thanks') }}</span>
+          {{ t('slide_09.success') }}
         </div>
-        <div class='text'>Наш менеджер свяжется с вами в течение 30 минут</div>
+        <div class='text'>{{ t('slide_09.success_note') }}</div>
       </div>
     </div>
     <div v-else class='form-container'>
       <div class='cc-form'>
         <div class='c-left'>
           <Input
-            placeholder='Имя и Фамилия'
+            :placeholder='t("slide_09.client")'
             name='client'
             v-model='client'
             :is-error='isValidated && !client'
@@ -28,7 +28,7 @@
             :is-error='isValidated && !email'
           />
           <Input
-            placeholder='Мобильный телефон'
+            :placeholder='t("slide_09.phone")'
             name='phone'
             type='tel'
             v-model='phone'
@@ -37,7 +37,7 @@
         </div>
         <div class='c-right'>
           <Input
-            placeholder='Сообщение'
+            :placeholder='t("slide_09.message")'
             name='comment'
             type='textarea'
             v-model='comment'
@@ -46,19 +46,18 @@
       </div>
       <div class='submit'>
         <div v-if='isError' class='error mobile'>*Обязательное поле для заполения</div>
-        <Button type='red' text='Отправить запрос' @click='submit' />
+        <Button type='red' :text='t("slide_09.submit")' @click='submit' />
         <div class='privacy'>
-          Нажимая «Отправить запрос», вы подтверждаете свое согласие на обработку
-          и хранение ваших персональных данных в соответствии с
+          {{ t('slide_09.privacy_note') }}
           <a
             href='https://kladovkin.ru/selfstorage/privacy/'
             target='_blank'
           >
-            политикой обработки персональных данных
+            {{ t('slide_09.privacy_link') }}
           </a>
         </div>
       </div>
-      <div v-if='isError' class='error desktop'>*Обязательное поле для заполения</div>
+      <div v-if='isError' class='error desktop'>{{ t('slide_09.error') }}</div>
     </div>
   </article>
 </template>
@@ -68,6 +67,7 @@ import axios from 'axios';
 
 import Button from '@/components/button';
 import Input from '@/components/input';
+import t from '@/utils/locale';
 
 export default {
   name: 'Slide9',
@@ -96,6 +96,7 @@ export default {
     }
   },
   methods: {
+    t,
     submit() {
       this.isValidated = true;
 

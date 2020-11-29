@@ -170,10 +170,27 @@ export default createStore({
           list_1: '<b>Площадь:</b> 165 м²',
           list_2: '<b>Расположение:</b> ул. Маршала Жукова, 76-2',
           list_3: '<b>Дата запуска проекта:</b> май 2019 г.',
-          list_4: '<b>Инвестиции в переоборудование помещения:</b>&nbsp;1&nbsp;155&nbsp;000&nbsp;руб.',
+          list_4: '<b>Инвестиции в переоборудование помещения:</b>' +
+            '&nbsp;1&nbsp;155&nbsp;000&nbsp;руб.',
           list_5: '<b>Средняя арендная ставка:</b> 1 800 руб./м²',
           list_6: '<b>Заполняемость:</b> 99%',
           list_7: '<b>Срок окупаемости:</b> 17 месяцев'
+        },
+        slide_09: {
+          h2: 'Остались вопросы?',
+          note: 'Оставьте свои контакты и мы с вами свяжемся',
+          thanks: 'Спасибо!',
+          success: 'Мы получили вашу заявку',
+          success_note: 'Наш менеджер свяжется с вами в течение 30 минут',
+          client: 'Имя и Фамилия',
+          phone: 'Мобильный телефон',
+          message: 'Сообщение',
+          submit: 'Отправить запрос',
+          privacy_note: 'Нажимая «Отправить запрос», вы подтверждаете свое ' +
+            'согласие на обработку и хранение ваших персональных данных' +
+            'в соответствии с',
+          privacy_link: 'политикой обработки персональных данных',
+          error: '*Обязательное поле для заполения'
         }
       },
       en: {
@@ -344,6 +361,22 @@ export default createStore({
           list_5: '<b>Average rent price:</b> $26/m²',
           list_6: '<b>Occupancy:</b> 99%',
           list_7: '<b>Recoupment period:</b> 17 months'
+        },
+        slide_09: {
+          h2: 'Still have questions?',
+          note: 'Fill in your details and we will contact you shortly',
+          thanks: 'Thank you!',
+          success: 'Your request has been received',
+          success_note: 'Our designated specialist will get in contact with you within 30 minutes',
+          client: 'Name and Surname',
+          phone: 'Phone number',
+          message: 'Message',
+          submit: 'Send the request',
+          privacy_note: 'By clicking “Send the request” button you are providing ' +
+            'your consent for processing and further storage of your personal data ' +
+            'in accordance with personal data processing',
+          privacy_link: 'policy',
+          error: '*This field is required'
         }
       }
     }
