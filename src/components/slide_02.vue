@@ -1,17 +1,17 @@
 <template>
   <article id='slide_02'>
     <h2>
-      <span>Self Storage</span> &mdash; новый подход к бизнесу в сфере недвижимости
+      <span>Self Storage</span> &mdash; {{ t('slide_02.h2') }}
     </h2>
     <div class='note'>
-      Ставки доходности основных сегментов арендной недвижимости в России:
+      {{ t('slide_02.note') }}
     </div>
     <div class='list-wrapper'>
       <ul>
-        <li>Большее количество арендаторов</li>
-        <li>Повышенная арендная ставка</li>
-        <li>Постоянная заполненность склада</li>
-        <li>Растущий рынок</li>
+        <li>{{ t('slide_02.list_1') }}</li>
+        <li>{{ t('slide_02.list_2') }}</li>
+        <li>{{ t('slide_02.list_3') }}</li>
+        <li>{{ t('slide_02.list_4') }}</li>
       </ul>
     </div>
 
@@ -19,22 +19,22 @@
       <div class='column column-1'>
         <div class='percent'>4%</div>
         <div class='bar' />
-        <div class='label'>Жильё</div>
+        <div class='label'>{{ t('slide_02.graph.residential') }}</div>
       </div>
       <div class='column column-2'>
         <div class='percent'>8%</div>
         <div class='bar' />
-        <div class='label'>Офисы</div>
+        <div class='label'>{{ t('slide_02.graph.offices') }}</div>
       </div>
       <div class='column column-3'>
         <div class='percent'>11%</div>
         <div class='bar' />
-        <div class='label'>Стрит&nbsp;ритейл</div>
+        <div class='label' v-html='t("slide_02.graph.street_retail")' />
       </div>
       <div class='column column-4'>
         <div class='percent'>12%</div>
         <div class='bar' />
-        <div class='label'>Склады</div>
+        <div class='label'>{{ t('slide_02.graph.warehouses') }}</div>
       </div>
       <div class='column column-5'>
         <img
@@ -49,8 +49,8 @@
     </div>
 
     <div class='finale'>
-      <strong>Self Storage — это склады, оборудованные боксами</strong>
-      для хранения вещей или товаров физическими или юридическими лицами
+      <strong>{{ t('slide_02.finale.strong') }}</strong>
+      {{ t('slide_02.finale.description') }}
     </div>
 
     <picture class='girl'>
@@ -61,8 +61,13 @@
 </template>
 
 <script>
+import t from '@/utils/locale';
+
 export default {
-  name: 'Slide2'
+  name: 'Slide2',
+  methods: {
+    t
+  }
 };
 </script>
 

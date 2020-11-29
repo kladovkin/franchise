@@ -7,7 +7,7 @@
       options: intersectionOptions
     }'
   >
-    <h2>Контакты</h2>
+    <h2>{{ t('slide_10.h2') }}</h2>
     <div class='popup'>
       <div class='person'>
         <img
@@ -17,8 +17,8 @@
 
         <div class='info'>
           <div class='name'>
-            <div>Основатель</div>
-            <div><b>Карпушин Михаил</b></div>
+            <div>{{ t('slide_10.founder') }}</div>
+            <div><b>{{ t('slide_10.founder_name') }}</b></div>
           </div>
 
           <div class='contacts'>
@@ -42,8 +42,8 @@
 
         <div class='info'>
           <div class='name'>
-            <div>Руководитель отдела франчайзинга</div>
-            <div><b>Никитина Наталья</b></div>
+            <div>{{ t('slide_10.staff') }}</div>
+            <div><b>{{ t('slide_10.staff_name') }}</b></div>
           </div>
 
           <div class='contacts'>
@@ -59,9 +59,7 @@
         </div>
       </div>
 
-      <div class='address'>
-        <b>Юридический адрес:</b>г. Москва, ул. Беломорская, 36
-      </div>
+      <div class='address' v-html='t("slide_10.address")' />
     </div>
   </article>
   <div ref='map' class='map' />
@@ -69,6 +67,7 @@
 
 <script>
 import isMobile from '@/utils/is_mobile';
+import t from '@/utils/locale';
 
 export default {
   name: 'Slide10',
@@ -91,6 +90,7 @@ export default {
     }
   },
   methods: {
+    t,
     async onWaypoint({ going }) {
       if (going !== 'in') { return; }
       if (this.isMapInitialized) { return; }

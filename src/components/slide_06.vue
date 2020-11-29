@@ -1,29 +1,26 @@
 <template>
   <div class='background-cutter' id='slide_06'>
     <article>
-      <h2>
-        Станьте партнером и откройте автоматизированный бизнес под ключ
-        <span>за&nbsp;2&nbsp;месяца</span>
-      </h2>
+      <h2 v-html='t("slide_06.h2")' />
       <div class='area'>
         <div class='entry-wrapper entry-wrapper-1'>
           <div class='entry entry-1'>
-            <div class='circle'>2 дня</div>
+            <div class='circle'>2 {{ t('slide_06.days') }}</div>
             <div class='info'>
-              <b>Сбор предварительной информации о&nbsp;помещении</b>
-              <p>и расчет технико-экономических показателей&nbsp;склада</p>
+              <b v-html='t("slide_06.info_1.title")' />
+              <p v-html='t("slide_06.info_1.body")' />
             </div>
           </div>
         </div>
         <div class='entry-wrapper entry-wrapper-2'>
           <div class='entry entry-2'>
-            <div class='circle'>2 дня</div>
+            <div class='circle'>2 {{ t('slide_06.days') }}</div>
             <div class='info'>
-              <b>Подготовка документов</b>
-              <p>и заключение договора</p>
+              <b v-html='t("slide_06.info_2.title")' />
+              <p v-html='t("slide_06.info_2.body")' />
               <div>
-                <b>0 рублей</b>
-                <p>концессионный взнос</p>
+                <b>{{ t('slide_06.info_2.note.price') }}</b>
+                <p>{{ t('slide_06.info_2.note.description') }}</p>
               </div>
             </div>
           </div>
@@ -34,44 +31,32 @@
               <source src='../assets/slide_06/design_project.webp' type='image/webp'>
               <img loading='lazy' src='../assets/slide_06/design_project.jpg' />
             </picture>
-            <div class='circle top'>7 дней</div>
+            <div class='circle top'>7 {{ t('slide_06.days_2') }}</div>
             <div class='info'>
-              <b>Разработка и согласование дизайн-проекта</b>
-              <p>
-                Сбор предварительной информации о помещениии, расчет
-                технико-экономических показателей склада
-              </p>
+              <b v-html='t("slide_06.info_3.title")' />
+              <p v-html='t("slide_06.info_3.body")' />
             </div>
           </div>
         </div>
         <div class='entry-wrapper entry-wrapper-4'>
           <div class='entry entry-4'>
-            <div class='circle'>45 дней</div>
+            <div class='circle'>45 {{ t('slide_06.days_2') }}</div>
             <div class='info'>
-              <b>Изготовление, поставка и&nbsp;монтаж оборудования</b>
-              <p>
-                Изготовим и произведем поставку оборудования собственной
-                разработки с гарантией качества и сроков оснащения
-              </p>
+              <b v-html='t("slide_06.info_4.title")' />
+              <p v-html='t("slide_06.info_4.body")' />
               <div>
-                <b>7000 руб./м²</b>
-                <p>переоборудование помещения</p>
+                <b>{{ t('slide_06.info_4.note.price') }}</b>
+                <p>{{ t('slide_06.info_4.note.description') }}</p>
               </div>
             </div>
           </div>
         </div>
         <div class='entry-wrapper entry-wrapper-5'>
           <div class='entry entry-5'>
-            <div class='circle top'>7 дней</div>
+            <div class='circle top'>7 {{ t('slide_06.days_2') }}</div>
             <div class='info'>
-              <b>
-                Пуско-наладочные работы охранной системы, интеграция с IT-платформой
-              </b>
-              <p>
-                Служба монтажа быстро и качественно установит и настроит
-                оборудование, систему контроля и управления доступом и
-                обеспечит интеграцию склада с сайтом
-              </p>
+              <b v-html='t("slide_06.info_5.title")' />
+              <p v-html='t("slide_06.info_5.body")' />
             </div>
           </div>
         </div>
@@ -79,15 +64,9 @@
           <div class='entry entry-6'>
             <div class='circle top logo' />
             <div class='info'>
-              <b>Открытие склада и поддержание бизнеса</b>
-              <p class='final-bold'>Возьмем все управление на себя:</p>
-              <p class='list'>
-                &ndash; маркетинг и рекламу<br>
-                &ndash; службу заботы о клиентах 24/7<br>
-                &ndash; техническое обслуживание<br>
-                &ndash; управление персоналом<br>
-                &ndash; круглосуточное<br>&nbsp;&nbsp;&nbsp;видеонаблюдение<br>
-              </p>
+              <b v-html='t("slide_06.info_6.title")' />
+              <p class='final-bold' v-html='t("slide_06.info_6.body")' />
+              <p class='list' v-html='t("slide_06.info_6.list")' />
             </div>
             <img
               class='background'
@@ -102,9 +81,12 @@
 </template>
 
 <script>
+import t from '@/utils/locale';
+
 export default {
   name: 'Slide6',
   methods: {
+    t,
     async enlarge() {
       const { default: SimpleLightbox } = await import(
         /* webpackChunkName: "lightbox" */ 'simple-lightbox'
@@ -135,9 +117,6 @@ h2
     margin: 0 auto 82px
     max-width: 727px
     text-align: center
-
-  span
-    display: block
 
 .area
   position: relative
@@ -272,6 +251,7 @@ h2
         line-height: 23px
 
       &.final-bold
+        margin-top: rem(16px)
         font-weight: bold
         color: inherit
 

@@ -1,29 +1,26 @@
 <template>
   <div class='background' id='slide_03'>
     <article>
-      <h2>
-        Кладовкин &mdash; технологический лидер российского
-        рынка Self&nbsp;Storage
-      </h2>
+      <h2 v-html='t("slide_03.h2")' />
       <div class='details'>
         <div class='line'>
           <div class='entry'>
             <div class='value'>4+</div>
-            <div class='label'>Года&nbsp;на&nbsp;рынке</div>
+            <div class='label' v-html='t("slide_03.entries.age")' />
           </div>
           <div class='entry'>
             <div class='value'>3 500+</div>
-            <div class='label'>Благодарных арендаторов</div>
+            <div class='label' v-html='t("slide_03.entries.customers")' />
           </div>
         </div>
         <div class='line'>
           <div class='entry'>
             <div class='value'>7</div>
-            <div class='label'>Складов в&nbsp;Москве</div>
+            <div class='label' v-html='t("slide_03.entries.storages")' />
           </div>
           <div class='entry'>
             <div class='value'>20&nbsp;000&nbsp;м²</div>
-            <div class='label final'>Площадь&nbsp;складов</div>
+            <div class='label final' v-html='t("slide_03.entries.square")' />
           </div>
         </div>
         <picture class='picture'>
@@ -36,8 +33,13 @@
 </template>
 
 <script>
+import t from '@/utils/locale';
+
 export default {
-  name: 'Slide3'
+  name: 'Slide3',
+  methods: {
+    t
+  }
 };
 </script>
 

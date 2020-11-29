@@ -1,36 +1,34 @@
 <template>
   <div class='outer' id='slide_07'>
     <div class='container'>
-      <h2>Комиссия&nbsp;управляющей компании</h2>
+      <h2 v-html='t("slide_07.h2")' />
     </div>
     <div class='background'>
       <article>
         <div class='circle'>
-          <b>5 лет</b>
-          <span>срок окупаемости</span>
-          <span>первоначальных</span>
-          <span>инвестиций (РР)</span>
+          <b>{{ t('slide_07.circle.title') }}</b>
+          <span v-html='t("slide_07.circle.note")' />
         </div>
         <ul>
           <li>
             <b>10 %</b>
             <div>
-              <span>валовой выручки</span>
-              <span>на управление складом</span>
+              <span>{{ t('slide_07.list_1') }}</span>
+              <span>{{ t('slide_07.list_2') }}</span>
             </div>
           </li>
           <li>
             <b>5 %</b>
             <div>
-              <span>валовой выручки</span>
-              <span>на маркетинговые услуги</span>
+              <span>{{ t('slide_07.list_3') }}</span>
+              <span>{{ t('slide_07.list_4') }}</span>
             </div>
           </li>
           <li>
             <b>5 %</b>
             <div>
-              <span>валовой выручки</span>
-              <span>на услуги IT</span>
+              <span>{{ t('slide_07.list_5') }}</span>
+              <span>{{ t('slide_07.list_6') }}</span>
             </div>
           </li>
         </ul>
@@ -40,8 +38,13 @@
 </template>
 
 <script>
+import t from '@/utils/locale';
+
 export default {
-  name: 'Slide7'
+  name: 'Slide7',
+  methods: {
+    t
+  }
 };
 </script>
 
@@ -207,6 +210,7 @@ article
       margin-bottom: 12px
 
   span
+    text-align: center
     color: #4b4b4b
     +lte_ipad
       font-size: rem(12px)
