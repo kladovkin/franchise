@@ -7,54 +7,59 @@
     />
     <ul>
       <li>
-        <a href='https://kladovkin.ru/o-minisklade/'>О нас</a>
+        <a href='https://kladovkin.ru/o-minisklade/'>{{ t('footer.about') }}</a>
       </li>
       <li>
         <a href='https://kladovkin.ru/self-storage/'>Self Storage</a>
       </li>
       <li>
-        <a href='https://kladovkin.ru/selfstorage/'>Боксы и цены</a>
+        <a href='https://kladovkin.ru/selfstorage/'>{{ t('footer.units') }}</a>
       </li>
       <li>
-        <a href='https://kladovkin.ru/dostavka/'>Доставка</a>
+        <a href='https://kladovkin.ru/dostavka/'>{{ t('footer.delivery') }}</a>
       </li>
       <li>
-        <a href='https://kladovkin.ru/karyera/'>Карьера</a>
+        <a href='https://kladovkin.ru/karyera/'>{{ t('footer.career') }}</a>
       </li>
       <li>
-        <a href='https://kladovkin.ru/partneram/'>Партнёры</a>
+        <a href='https://kladovkin.ru/partneram/'>{{ t('footer.partners') }}</a>
       </li>
       <li>
-        <a href='https://kladovkin.ru/kak-khranit-veshchi/'>Как хранить вещи</a>
+        <a href='https://kladovkin.ru/kak-khranit-veshchi/'>{{ t('footer.how_to') }}</a>
       </li>
       <li>
-        <a href='https://kladovkin.ru/kak-khranit-veshchi/'>Бизнес-хранение</a>
+        <a href='https://kladovkin.ru/kak-khranit-veshchi/'>{{ t('footer.business') }}</a>
       </li>
       <li>
-        <a href='https://kladovkin.ru/lichnye-veschi/'>Личное хранение</a>
+        <a href='https://kladovkin.ru/lichnye-veschi/'>{{ t('footer.personal') }}</a>
       </li>
       <li>
-        <a href='https://kladovkin.ru/kontakty/'>Контакты</a>
+        <a href='https://kladovkin.ru/kontakty/'>{{ t('footer.contacts') }}</a>
       </li>
       <li>
-        <a href='https://kladovkin.ru/sitemap/'>Карта сайта</a>
+        <a href='https://kladovkin.ru/sitemap/'>{{ t('footer.sitemap') }}</a>
       </li>
     </ul>
     <div class='copy-wrapper'>
       <div class='copy'>
-        © <b>ООО «Кладовкин»</b> 2019-{{ year }} все права защищены
+        © <b>{{ t('footer.brand') }}</b> 2019-{{ year }}<br>{{ t('footer.copyright') }}
       </div>
     </div>
   </footer>
 </template>
 
 <script>
+import t from '@/utils/locale';
+
 export default {
   name: 'Footer',
   computed: {
     year() {
       return new Date().getFullYear();
     }
+  },
+  methods: {
+    t
   }
 };
 </script>

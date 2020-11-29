@@ -199,6 +199,20 @@ export default createStore({
           staff: 'Руководитель отдела франчайзинга',
           staff_name: 'Никитина Наталья',
           address: '<b>Юридический адрес:</b>г. Москва, ул. Беломорская, 36'
+        },
+        footer: {
+          about: 'О нас',
+          units: 'Боксы и цены',
+          delivery: 'Доставка',
+          career: 'Карьера',
+          partners: 'Партнёры',
+          how_to: 'Как хранить вещи',
+          business: 'Бизнес-хранение',
+          personal: 'Личное хранение',
+          contacts: 'Контакты',
+          sitemap: 'Карта сайта',
+          brand: 'ООО «Кладовкин»',
+          copyright: 'все права защищены'
         }
       },
       en: {
@@ -393,6 +407,20 @@ export default createStore({
           staff: 'Chief of franchising department',
           staff_name: 'Natalia Nikitina',
           address: '<b>Address:</b> Moscow, Belomorskaya st. 36'
+        },
+        footer: {
+          about: 'About us',
+          units: 'Units and prices',
+          delivery: 'Delivery',
+          career: 'Career',
+          partners: 'Partners',
+          how_to: 'How to store stuff',
+          business: 'Storage for business',
+          personal: 'Storage for life',
+          contacts: 'Contacts',
+          sitemap: 'Site map',
+          brand: 'LLC Kladovkin',
+          copyright: 'all rights reserved'
         }
       }
     }
