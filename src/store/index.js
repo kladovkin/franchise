@@ -340,7 +340,7 @@ export default createStore({
             body: 'We will produce and deliver our self storage equipment with ' +
               'quality and installation terms guarantee',
             note: {
-              price: '$100 per m²',
+              price: '$99 per m²',
               description: 'premises outfitting'
             }
           },
