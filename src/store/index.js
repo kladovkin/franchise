@@ -65,8 +65,9 @@ export default createStore({
             },
             list_2: {
               title: 'Личный кабинет собственника',
-              body: 'С доступом к ежедневным аналитическим отчетам и ключевым' +
-                'показателям эффективности (<span>EBITDA</span>, <span>LTV</span>, ' +
+              body: 'С доступом к ежедневным аналитическим отчетам ' +
+                '(количество клиентов и арендованных м², выручка и др.) ' +
+                'и ключевым показателям эффективности (<span>OBITDA</span>, ' +
                 '<span>IRR</span> и др.)'
             },
             list_3: {
@@ -130,7 +131,7 @@ export default createStore({
             body: 'Изготовим и произведем поставку оборудования собственной '+
               'разработки с гарантией качества и сроков оснащения',
             note: {
-              price: '7000 руб./м²',
+              price: '8000 - 12000 руб./м²',
               description: 'переоборудование помещения'
             }
           },
@@ -153,7 +154,7 @@ export default createStore({
         slide_07: {
           h2: 'Комиссия&nbsp;управляющей компании',
           circle: {
-            title: '5 лет',
+            title: '24 мес.',
             note: 'срок окупаемости<br>' +
               'первоначальных<br>' +
               'инвестиций (РР)<br>'
@@ -171,7 +172,7 @@ export default createStore({
           list_2: '<b>Расположение:</b> ул. Маршала Жукова, 76-2',
           list_3: '<b>Дата запуска проекта:</b> май 2019 г.',
           list_4: '<b>Инвестиции в переоборудование помещения:</b>' +
-            '&nbsp;1&nbsp;155&nbsp;000&nbsp;руб.',
+            '&nbsp;1&nbsp;710&nbsp;000&nbsp;руб.',
           list_5: '<b>Средняя арендная ставка:</b> 1 800 руб./м²',
           list_6: '<b>Заполняемость:</b> 99%',
           list_7: '<b>Срок окупаемости:</b> 17 месяцев'
@@ -278,7 +279,7 @@ export default createStore({
             list_2: {
               title: 'Partner’s personal account',
               body: 'It provides access to various daily reports and other key ' +
-                'performance indicators like EBITDA, LTV, IRR and so on.'
+                'performance indicators like OBITDA, IRR and so on.'
             },
             list_3: {
               title: 'Employee’s personal account',
@@ -340,7 +341,7 @@ export default createStore({
             body: 'We will produce and deliver our self storage equipment with ' +
               'quality and installation terms guarantee',
             note: {
-              price: '$99 per m²',
+              price: 'from $99 per m²',
               description: 'premises outfitting'
             }
           },
@@ -363,7 +364,7 @@ export default createStore({
         slide_07: {
           h2: 'Managing company fee',
           circle: {
-            title: '5 years',
+            title: '2 years',
             note: 'Initial investments<br>' +
               'payback period (РР)'
           },
@@ -379,7 +380,7 @@ export default createStore({
           list_1: '<b>Total area:</b> 165 m²',
           list_2: '<b>Location:</b> Moscow, Marshala Zhukova st. 76-2',
           list_3: '<b>Project start date:</b> May 2019',
-          list_4: '<b>Premise outfitting investments:</b> $16,500',
+          list_4: '<b>Premise outfitting investments:</b> $21,000',
           list_5: '<b>Average rent price:</b> $26/m²',
           list_6: '<b>Occupancy:</b> 99%',
           list_7: '<b>Recoupment period:</b> 17 months'

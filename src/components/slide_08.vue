@@ -12,7 +12,7 @@
           <div v-html='t("slide_08.list_6")' />
           <div v-html='t("slide_08.list_7")' />
           <div v-html='t("slide_08.list_8")' />
-          <div><b>IRR:</b> 105%</div>
+          <div><b>IRR:</b> 45%</div>
         </div>
         <div class='dots' />
       </div>
