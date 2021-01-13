@@ -327,7 +327,7 @@ export default createStore({
             title: 'Documents preparing',
             body: 'and contract concluding',
             note: {
-              price: '$0',
+              price: '0 RUB',
               description: 'concession fee'
             }
           },
@@ -341,7 +341,7 @@ export default createStore({
             body: 'We will produce and deliver our self storage equipment with ' +
               'quality and installation terms guarantee',
             note: {
-              price: 'from $99 per m²',
+              price: 'from 8,000 RUB./м²',
               description: 'premises outfitting'
             }
           },
@@ -380,8 +380,8 @@ export default createStore({
           list_1: '<b>Total area:</b> 165 m²',
           list_2: '<b>Location:</b> Moscow, Marshala Zhukova st. 76-2',
           list_3: '<b>Project start date:</b> May 2019',
-          list_4: '<b>Premise outfitting investments:</b> $21,000',
-          list_5: '<b>Average rent price:</b> $26/m²',
+          list_4: '<b>Premise outfitting investments:</b> 1,710,000&nbsp;RUB',
+          list_5: '<b>Average rent price:</b> 1,800&nbsp;RUB/m²',
           list_6: '<b>Occupancy:</b> 99%',
           list_7: '<b>Recoupment period:</b> 17 months'
         },
