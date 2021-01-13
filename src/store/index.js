@@ -341,7 +341,7 @@ export default createStore({
             body: 'We will produce and deliver our self storage equipment with ' +
               'quality and installation terms guarantee',
             note: {
-              price: 'from 8,000 RUB./м²',
+              price: 'from 8,000 RUB/м²',
               description: 'premises outfitting'
             }
           },
