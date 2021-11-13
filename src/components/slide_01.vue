@@ -106,34 +106,28 @@ export default {
       z-index: -1
 
   // shade for image under opened lock
-  &:after
-    background: rgba(#000, 0.2)
-    content: ''
-    pointer-events: none
-    position: absolute
-    top: 0
-
-    +lte_ipad
-      height: 100%
-      width: 100%
-
-    +laptop
-      left: scale-laptop(400px, 571px)
-      transition: opacity 0.75s ease 0.85s
-
-    +gte_laptop
-      height: 600px
-      opacity: 0
-      width: 1024px
-
-    +gte_desktop
-      transition: opacity 1s ease 1.1s
-
-    +desktop_hd
-      left: scale-between(571px, 925px, 1200px, 1920px)
-
-    +uhd
-      left: scale-between(925px, 1224px, 1920px, 2520px)
+  // &:after
+  //   background: rgba(#000, 0.2)
+  //   content: ''
+  //   pointer-events: none
+  //   position: absolute
+  //   top: 0
+  //   +lte_ipad
+  //     height: 100%
+  //     width: 100%
+  //   +laptop
+  //     left: scale-laptop(400px, 571px)
+  //     transition: opacity 0.75s ease 0.85s
+  //   +gte_laptop
+  //     height: 600px
+  //     opacity: 0
+  //     width: 1024px
+  //   +gte_desktop
+  //     transition: opacity 1s ease 1.1s
+  //   +desktop_hd
+  //     left: scale-between(571px, 925px, 1200px, 1920px)
+  //   +uhd
+  //     left: scale-between(925px, 1224px, 1920px, 2520px)
 
   &.is-opened:after
     opacity: 1
