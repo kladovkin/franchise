@@ -1,5 +1,5 @@
 <template>
-  <div class='background' :class='{ "is-opened": isOpened }' id='slide_01'>
+  <div class='background is-opened' id='slide_01'>
     <article>
       <a class='logo' href='https://kladovkin.ru'></a>
       <div class='outer'>
@@ -8,10 +8,6 @@
           <p v-html='t("slide_01.h2")' />
         </div>
         <div class='collapsed'>
-          <div class='lock' @click='open'>
-            <p class='first'>{{ t('slide_01.lock.first') }}</p>
-            <p class='second'>{{ t('slide_01.lock.second') }}</p>
-          </div>
           <div class='yield'>
             <p>{{ t('slide_01.collapsed') }}</p>
           </div>
@@ -330,70 +326,6 @@ article
       background-image: url(../assets/slide_01/collapsed-end-desktop.svg)
       margin-left: -1px // NOTE: fix browser glitches
       width: 42px
-
-    $lock-size: 127px
-    .lock
-      -webkit-tap-highlight-color: transparent
-      align-items: center
-      border-radius: $lock-size
-      cursor: pointer
-      display: flex
-      flex-direction: column
-      height: $lock-size
-      justify-content: center
-      left: 15px
-      overflow: hidden
-      position: absolute
-      top: 50%
-      transform: translateY(-50%)
-      user-select: none
-      width: $lock-size
-
-      +laptop_hd
-        transition: left 1.15s ease-out, opacity 1s ease-in 0.15s
-
-      +gte_hd
-        transition: left 1s ease-out, opacity 0.85s ease-in 0.15s
-
-      +lte_ipad
-        display: none
-
-      &:before,
-      &:after
-        content: ''
-        height: 100%
-        left: 0
-        pointer-events: none
-        position: absolute
-        top: 0
-        width: 100%
-
-      &:before
-        background-image: url(../assets/slide_01/lock.svg)
-        background-repeat: no-repeat
-        background-size: contain
-
-      &:after
-        z-index: -1
-        background-color: #f44f0c
-        transition: background-color 0.25s
-
-      &:hover:after
-        background-color: #fa7912
-
-      &:active:after
-        background-color: #df4c10
-
-      p.first
-        font-size: 16px
-        font-weight: bold
-        line-height: 18px
-        margin-top: 20px
-
-      p.second
-        font-weight: 400
-        font-size: 10px
-        line-height: 18px
 
     .yield
       +lte_ipad
