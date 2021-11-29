@@ -1,12 +1,16 @@
 import { createApp } from 'vue';
-import App from './app.vue';
-import router from './router';
-import store from './store';
+import App from '@/app.vue';
+import router from '@/router';
+import store from '@/store';
 
-import waypoint from './directives/waypoint';
-import _modernizr from './modernizr'; // it detects webp support
+import waypoint from '@/directives/waypoint';
+import _modernizr from '@/modernizr'; // it detects webp support
+import requireFonts from '@/utils/require_fonts';
 
 import './stylesheets/application.sass';
+
+requireFonts('Lato:wght@300;400;700');
+// requireFonts('Lato:wght@300;400;700;900');
 
 createApp(App)
   .use(store)

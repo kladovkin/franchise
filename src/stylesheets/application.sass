@@ -3,10 +3,10 @@
 @import ./globals
 
 // 'Lato:300,400,500,700,900'
-@import ./mixins/font_face.scss
-+font-face('lato', '../assets/fonts/lato/Lato-Light', 300, $exts: eot woff woff2 ttf);
-+font-face('lato', '../assets/fonts/lato/Lato-Regular', 400, $exts: eot woff woff2 ttf);
-+font-face('lato', '../assets/fonts/lato/Lato-Heavy', 800, $exts: eot woff woff2 ttf);
+// @import ./mixins/font_face.scss
+// +font-face('lato', '../assets/fonts/lato/Lato-Light', 300, $exts: eot woff woff2 ttf);
+// +font-face('lato', '../assets/fonts/lato/Lato-Regular', 400, $exts: eot woff woff2 ttf);
+// +font-face('lato', '../assets/fonts/lato/Lato-Heavy', 800, $exts: eot woff woff2 ttf);
 
 *,
 *:before,
@@ -44,15 +44,15 @@ article,
     margin: 0 auto
 
 h1
-  font-weight: bold
+  font-weight: 900
 
   +lte_ipad
     font-size: rem(24px)
     line-height: 1.33
 
   +gte_laptop
-    font-size: 44px
-    line-height: 52px
+    font-size: 39px
+    line-height: 49px
 
 h2
   font-weight: bold
