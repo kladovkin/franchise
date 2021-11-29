@@ -9,11 +9,8 @@
         </div>
         <div class='collapsed'>
           <div class='yield'>
-            <p>{{ t('slide_01.collapsed') }}</p>
+            <p v-html="t('slide_01.yield')" />
           </div>
-          <div class='start' />
-          <div class='middle' />
-          <div class='end' />
         </div>
       </div>
       <Button
@@ -115,24 +112,16 @@ export default {
 
     +laptop
       left: scale-laptop(400px, 571px)
-      transition: opacity 0.75s ease 0.85s
 
     +gte_laptop
-      height: 600px
-      opacity: 0
+      height: 640px
       width: 1024px
-
-    +gte_desktop
-      transition: opacity 1s ease 1.1s
 
     +desktop_hd
       left: scale-between(571px, 925px, 1200px, 1920px)
 
     +uhd
       left: scale-between(925px, 1224px, 1920px, 2520px)
-
-  &.is-opened:after
-    opacity: 1
 
 article
   color: #fff
@@ -183,7 +172,7 @@ article
 .outer
   +gte_laptop
     display: flex
-    min-height: 600px
+    min-height: 640px
     position: relative
 
     &:before
@@ -211,7 +200,7 @@ article
 
     +gte_laptop
       background: #f44f0c
-      padding-top: 200px
+      padding-top: 149px
       max-width: 565px
 
     h1
@@ -233,8 +222,9 @@ article
         line-height: 1.42
 
       +gte_laptop
-        font-size: 24px
-        line-height: 28px
+        font-weight: 300
+        font-size: 18px
+        line-height: 26px
 
     &:after
       +gte_laptop
@@ -258,18 +248,6 @@ article
       flex-grow: 1
 
     .is-opened &
-      &:before
-        opacity: 0
-
-      .start,
-      .middle,
-      .end
-        opacity: 0
-
-      .lock
-        opacity: 0
-        left: 100%
-
       .yield
         margin-top : 0
         opacity: 1
@@ -280,52 +258,6 @@ article
 
     +gte_hd
       max-width: 425px
-
-    &:before
-      +gte_laptop
-        background: linear-gradient(to right, #fff, rgba(#fff, 0))
-        content: ''
-        height: 100%
-        left: 0
-        pointer-events: none
-        position: absolute
-        width: 200%
-
-      +laptop_hd
-        transition: opacity 0.75s ease-in 0.4s
-
-      +gte_hd
-        transition: opacity 1s ease-in 0.5s
-
-    .start,
-    .middle,
-    .end
-      background-position: left
-      background-repeat: no-repeat
-      pointer-events: none
-      position: relative
-      z-index: 2
-
-      +laptop_hd
-        transition: opacity 0.75s ease-in 0.4s
-
-      +gte_hd
-        transition: opacity 1s ease-in 0.5s
-
-    .start
-      background-image: url(../assets/slide_01/collapsed-start-desktop.svg)
-      width: 78px
-
-    .middle
-      background-image: url(../assets/slide_01/collapsed-middle-desktop.svg)
-      background-repeat: repeat-x
-      flex-grow: 1
-      margin-left: -1px // NOTE: fix browser glitches
-
-    .end
-      background-image: url(../assets/slide_01/collapsed-end-desktop.svg)
-      margin-left: -1px // NOTE: fix browser glitches
-      width: 42px
 
     .yield
       +lte_ipad
@@ -345,10 +277,6 @@ article
 
       +laptop
         left: scale-laptop(68px, 156px)
-        transition: opacity 0.75s ease 0.85s, margin-top 0.75s ease 0.85s
-
-      +gte_desktop
-        transition: opacity 1s ease 1.1s, margin-top 1s ease 1.1s
 
       +desktop_hd
         left: scale-between(156px, 290px, 1200px, 1920px)
@@ -364,24 +292,25 @@ article
           background-image: url(../assets/slide_01/yield-mobile.svg)
           background-repeat: no-repeat
           background-size: contain
-          width: rem(185px)
-          height: rem(88px)
-          margin-bottom: rem(18px)
+          width: rem(191px)
+          height: rem(89px)
+          margin-bottom: rem(29px)
 
         +gte_laptop
           background-image: url(../assets/slide_01/yield-desktop.svg)
           background-position: bottom
           background-repeat: no-repeat
           background-size: contain
-          height: 182px
-          margin-bottom: 12px
+          margin-bottom: 28px
 
         +laptop
           margin-top: scale-laptop(-20px, 0px)
-          width: scale-laptop(380px, 456px)
+          width: scale-laptop(306px, 380px)
+          height: scale-laptop(143px, 172px)
 
         +gte_desktop
-          width: 456px
+          width: 380px
+          height: 172px
 
       p
         letter-spacing: -0.01em
@@ -403,17 +332,6 @@ article
     margin-top: -160px
     position: absolute
     z-index: 2
-    opacity: 0
-
-    .is-opened &
-      opacity: 1
-      margin-top: -170px
-
-  +laptop
-    transition: opacity 0.75s ease-in 0.85s, margin-top 0.5s ease-in 0.85s
-
-  +gte_desktop
-    transition: opacity 1s ease-in 1.1s, margin-top 0.5s ease-in 1.1s
 
 a.navigation
   text-decoration: none

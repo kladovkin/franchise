@@ -1,3 +1,4 @@
+/* eslint max-len: 0 */
 import { createStore } from 'vuex';
 
 export default createStore({
@@ -15,13 +16,10 @@ export default createStore({
         },
         slide_01: {
           h1: 'Станьте партнером Кладовкин и начните получать доход с первого дня работы склада',
-          h2: 'Станьте партнером и зарабатывайте на&nbsp;своей&nbsp;недвижимости',
-          lock: {
-            first: 'Включи',
-            second: 'свой бизнес'
-          },
-          collapsed: 'Ставка доходности с Кладовкин',
-          button: 'Узнать больше'
+          h2: 'Мы построим технологичный бизнес на основе вашего помещения и возьмем управление на себя.',
+          yield: 'годовых — доходность вложений<br>в переоборудование помещения',
+          button: 'Стать партнером Кладовкин',
+          learn_more: 'Узнать больше'
         },
         slide_02: {
           h2: 'новый подход к бизнесу в сфере недвижимости',
@@ -226,14 +224,11 @@ export default createStore({
           button: 'Submit an enuiry'
         },
         slide_01: {
-          h1: 'Hi-Tech business in your&nbsp;premises',
-          h2: 'Become a partner and make money on your real estate',
-          lock: {
-            first: 'Turn on',
-            second: 'your business'
-          },
-          collapsed: 'yield rate together with Kladovkin',
-          button: 'Learn more'
+          h1: 'Станьте партнером Кладовкин и начните получать доход с первого дня работы склада',
+          h2: 'Мы построим технологичный бизнес на основе вашего помещения и возьмем управление на себя.',
+          yield: 'годовых — доходность вложений<br>в переоборудование помещения',
+          button: 'Стать партнером Кладовкин',
+          learn_more: 'Learn more'
         },
         slide_02: {
           h2: 'new approach in real estate business',

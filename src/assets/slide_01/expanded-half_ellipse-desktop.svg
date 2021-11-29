@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg width="177px" height="600" viewBox="0 0 177 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M 0 303.605 C 0 176.558 69.944 63.925 177 0 L 0.022 0 L 0.022 600 L 177 600 C 63.345 532.451 0 424.564 0 303.605 Z" fill="#F44F0C"/>
+<svg width="177px" height="640" viewBox="0 0 177 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 0 323.844 C 0 188.329 69.944 68.186 177 0 L 0.022 0 L 0.022 639.999 L 177 639.999 C 63.345 567.946 0 452.868 0 323.844 Z" fill="#F44F0C" style=""/>
   <g filter="url(#filter0_d)"/>
   <g filter="url(#filter1_d)"/>
   <defs>
