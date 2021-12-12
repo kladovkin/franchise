@@ -201,7 +201,12 @@ article
     +gte_laptop
       background: #f44f0c
       padding-top: 149px
-      max-width: 565px
+      // max-width: 565px
+
+    h1,
+    p
+      +gte_laptop
+        max-width: 520px
 
     h1
       +ipad
@@ -211,7 +216,6 @@ article
         margin-bottom: rem(20px)
 
       +gte_laptop
-        max-width: 520px
         margin-bottom: 24px
 
     p
@@ -235,7 +239,7 @@ article
         height: 100%
         pointer-events: none
         position: absolute
-        right: -176px
+        right: -177px
         top: 0
         width: 177px
         z-index: 2
