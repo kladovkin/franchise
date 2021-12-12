@@ -350,6 +350,17 @@ article
     position: absolute
     z-index: 2
 
+    +gte_laptop
+      max-width: none
+
+    +laptop_hd
+      height: scale-between(48px, 57px, 1024px, 1920px)
+      width: scale-between(254px, 295px, 1024px, 1920px)
+
+    +uhd
+      height: 57px
+      width: 295px
+
 a.navigation
   text-decoration: none
 </style>

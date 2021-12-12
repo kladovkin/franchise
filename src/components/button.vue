@@ -58,7 +58,6 @@ export default {
   &-white
     background-color: #fff
     border: 3px solid #fff
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25)
     color: #f44f0c
 
     &:active
@@ -68,7 +67,6 @@ export default {
   &-red
     background-color: #f44f0c
     border: 3px solid #f44f0c
-    box-shadow: 0px 4px 15px rgba(244, 79, 12, 0.24)
     color: #fff
 
     +gte_laptop
