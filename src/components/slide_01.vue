@@ -208,7 +208,6 @@ article
     +gte_laptop
       background: #f44f0c
       padding-top: 149px
-      // max-width: 565px
 
     +desktop
       width: scale-between(520px, 580px, 1200px, 1400px)
@@ -270,12 +269,6 @@ article
         opacity: 1
         pointer-events: auto
 
-    +laptop_desktop
-      max-width: scale-between(306px, 425px, 1024px, 1440px)
-
-    +gte_hd
-      max-width: 425px
-
     .yield
       +lte_ipad
         align-items: center
@@ -284,22 +277,20 @@ article
         margin-bottom: rem(53px)
 
       +gte_laptop
+        left: 50%
         margin-top: 35px
         opacity: 0
         pointer-events: none
         position: absolute
         top: 50%
-        transform: translateY(-50%)
+        transform: translateX(-50%) translateY(-50%)
         z-index: 2
 
-      +laptop
-        left: scale-laptop(68px, 156px)
+        +desktop
+          margin-left: scale-between(0px, 30px, 1200px, 1440px)
 
-      +desktop_hd
-        left: scale-between(156px, 290px, 1200px, 1920px)
-
-      +uhd
-        left: 290px
+        +gte_hd
+          margin-left: 30px
 
       &:before
         content: ''
