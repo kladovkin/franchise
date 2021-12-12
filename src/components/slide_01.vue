@@ -123,8 +123,12 @@ export default {
     +desktop_hd
       left: scale-between(571px, 925px, 1200px, 1920px)
 
-    +uhd
-      left: scale-between(925px, 1284px, 1920px, 2520px)
+    @media screen and (min-width: 1920px) and (max-width: 1999px)
+      left: scale-between(925px, 1024px, 1920px, 1999px)
+
+    @media screen and (min-width: 2000px)
+      left: calc(50% + 25px)
+      width: 1032px
 
 article
   color: #fff
