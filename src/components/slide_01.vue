@@ -3,11 +3,11 @@
     <article>
       <a class='logo' href='https://kladovkin.ru'></a>
       <div class='outer'>
-        <div class='content'>
+        <div class='left-content'>
           <h1 v-html='t("slide_01.h1")' />
           <p v-html='t("slide_01.h2")' />
         </div>
-        <div class='collapsed'>
+        <div class='right-content'>
           <div class='yield'>
             <p v-html="t('slide_01.yield')" />
           </div>
@@ -52,7 +52,7 @@ export default {
   position: relative
   background-repeat: no-repeat
   background-size: contain
-  overflow: hidden // to prevent .collapsed:before overflow
+  overflow: hidden
 
   +iphone
     background-image: url(../assets/slide_01/background_bottom-iphone.png)
@@ -79,6 +79,9 @@ export default {
 
   +laptop
     background-position-x: scale-laptop(400px, 571px)
+
+  @media screen and (min-width: 1024px) and (max-width: 1090px)
+    background-size: cover
 
   +desktop_hd
     background-position-x: scale-between(571px, 925px, 1200px, 1920px)
@@ -121,7 +124,7 @@ export default {
       left: scale-between(571px, 925px, 1200px, 1920px)
 
     +uhd
-      left: scale-between(925px, 1224px, 1920px, 2520px)
+      left: scale-between(925px, 1284px, 1920px, 2520px)
 
 article
   color: #fff
@@ -188,7 +191,7 @@ article
       z-index: 2
       pointer-events: none
 
-  .content
+  .left-content
     position: relative
     z-index: 1
 
@@ -202,6 +205,12 @@ article
       background: #f44f0c
       padding-top: 149px
       // max-width: 565px
+
+    +desktop
+      width: scale-between(520px, 580px, 1200px, 1400px)
+
+    +gte_hd
+      width: 580px
 
     h1,
     p
@@ -244,7 +253,7 @@ article
         width: 177px
         z-index: 2
 
-  .collapsed
+  .right-content
     position: relative
 
     +gte_laptop
