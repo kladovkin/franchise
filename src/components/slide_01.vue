@@ -135,7 +135,7 @@ article
 
   +iphone
     background-image: url(../assets/slide_01/background_upper-iphone.svg)
-    padding-bottom: rem(82px)
+    padding-bottom: rem(52px)
     padding-top: rem(110px)
 
   +ipad
@@ -200,7 +200,7 @@ article
     z-index: 1
 
     +iphone
-      margin-bottom: rem(150px)
+      margin-bottom: rem(90px)
 
     +ipad
       margin-bottom: rem(170px)
@@ -221,6 +221,11 @@ article
         max-width: 520px
 
     h1
+      +iphone
+        font-size: rem(20px)
+        padding-left: rem(5px)
+        padding-right: rem(5px)
+
       +ipad
         font-size: rem(22px)
 
