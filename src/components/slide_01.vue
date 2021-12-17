@@ -13,11 +13,16 @@
           </div>
         </div>
       </div>
-      <Button
-        :text='t("slide_01.button")'
-        type='white'
-        @click='lead'
-      />
+      <div class='lead-container'>
+        <Button
+          :text='t("slide_01.button")'
+          type='white'
+          @click='lead'
+        />
+        <div>
+          <p>{{ t('slide_01.learn_more') }}</p>
+        </div>
+      </div>
     </article>
   </div>
 </template>
@@ -338,17 +343,21 @@ article
           font-size: 18px
           line-height: 23px
 
-.button
-  +ipad
-    margin: 0 auto
-
+.lead-container
   +gte_laptop
+    align-items: center
+    display: flex
     margin-top: -160px
     position: absolute
     z-index: 2
 
+  .button
+    +ipad
+      margin: 0 auto
+
     +gte_laptop
       max-width: none
+      margin-right: 50px
 
     +laptop_hd
       height: scale-between(48px, 57px, 1024px, 1920px)
@@ -357,6 +366,18 @@ article
     +uhd
       height: 57px
       width: 295px
+
+  p
+    border-bottom: 1px solid rgba(#fff, 0.5)
+    cursor: pointer
+    font-size: 14px
+    line-height: 1.2
+
+    &:hover
+      border-bottom-color: #fff
+
+    +lte_ipad
+      display: none
 
 a.navigation
   text-decoration: none
