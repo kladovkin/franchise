@@ -103,13 +103,13 @@ export default {
 
   // shade for image under opened lock
   &:after
-    background: rgba(#000, 0.2)
     content: ''
     pointer-events: none
     position: absolute
     top: 0
 
     +lte_ipad
+      background: rgba(#000, 0.4)
       height: 100%
       width: 100%
 
@@ -117,6 +117,7 @@ export default {
       left: scale-laptop(400px, 571px)
 
     +gte_laptop
+      background: rgba(#000, 0.2)
       height: 640px
       width: 1024px
 
@@ -279,7 +280,7 @@ article
         align-items: center
         display: flex
         flex-direction: column
-        margin-bottom: rem(53px)
+        margin-bottom: rem(37px)
 
       +gte_laptop
         left: 50%
@@ -331,7 +332,7 @@ article
 
         +lte_ipad
           font-size: rem(14px)
-          line-height: 1
+          line-height: rem(23px)
 
         +gte_laptop
           font-size: 18px
