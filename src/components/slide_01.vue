@@ -146,7 +146,7 @@ article
 
   +ipad
     background-image: url(../assets/slide_01/background_upper-ipad.svg)
-    padding-bottom: rem(123px)
+    padding-bottom: rem(60px)
     padding-top: rem(160px)
 
   +lte_ipad
@@ -189,17 +189,17 @@ article
     position: relative
 
     &:before
-      content: ''
       background-image: url(../assets/slide_01/background_circles-desktop.svg)
       background-repeat: no-repeat
       background-size: contain
+      content: ''
       height: 100%
       left: 0
+      pointer-events: none
       position: absolute
       top: 0
       width: 100%
       z-index: 2
-      pointer-events: none
 
   .left-content
     position: relative
@@ -209,7 +209,7 @@ article
       margin-bottom: rem(90px)
 
     +ipad
-      margin-bottom: rem(170px)
+      margin-bottom: rem(130px)
 
     +gte_laptop
       background: #f44f0c
