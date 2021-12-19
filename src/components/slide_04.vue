@@ -1,5 +1,5 @@
 <template>
-  <div class='background-cutter' id='slide_04'>
+  <div id='slide_04' class='background-cutter'>
     <article>
       <div class='switchers'>
         <div
@@ -43,7 +43,7 @@
             class='laptop'
             loading='lazy'
             src='../assets/slide_04/laptop.png'
-          />
+          >
         </picture>
       </div>
       <div v-if='isTenant' class='slide slide-tenant'>
@@ -78,7 +78,7 @@
             class='ipad'
             loading='lazy'
             src='../assets/slide_04/ipad.png'
-          />
+          >
         </picture>
       </div>
     </article>

@@ -1,7 +1,7 @@
 <template>
-  <div class='background is-opened' id='slide_01'>
+  <div id='slide_01' class='background is-opened'>
     <article>
-      <a class='logo' href='https://kladovkin.ru'></a>
+      <a class='logo' href='https://kladovkin.ru' />
       <div class='outer'>
         <div class='left-content'>
           <h1 v-html='t("slide_01.h1")' />
@@ -9,7 +9,7 @@
         </div>
         <div class='right-content'>
           <div class='yield'>
-            <p v-html="t('slide_01.yield')" />
+            <p v-html='t(&apos;slide_01.yield&apos;)' />
           </div>
         </div>
       </div>

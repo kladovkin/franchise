@@ -1,25 +1,25 @@
 <template>
   <div
-    class='comparison-slider-wrapper'
     v-waypoint='{
       active: true,
       callback: onWaypoint,
       options: intersectionOptions
     }'
+    class='comparison-slider-wrapper'
   >
-    <div class='comparison-slider' ref='container'>
+    <div ref='container' class='comparison-slider'>
       <img loading='lazy' src='../assets/comparison_slider/slide_before.jpg'>
 
       <div
-        class='resize'
         ref='resize'
+        class='resize'
       >
-        <img loading='lazy' src='../assets/comparison_slider/slide_after.jpg' >
+        <img loading='lazy' src='../assets/comparison_slider/slide_after.jpg'>
       </div>
       <div
+        ref='divider'
         class='divider'
         :class='{ "is-dragged": isDragged }'
-        ref='divider'
       />
     </div>
   </div>

@@ -15,32 +15,32 @@
       <div class='cc-form'>
         <div class='c-left'>
           <Input
+            v-model='client'
             :placeholder='t("slide_09.client")'
             name='client'
-            v-model='client'
             :is-error='isValidated && !client'
           />
           <Input
+            v-model='email'
             placeholder='E-mail'
             name='email'
             type='email'
-            v-model='email'
             :is-error='isValidated && !email'
           />
           <Input
+            v-model='phone'
             :placeholder='t("slide_09.phone")'
             name='phone'
             type='tel'
-            v-model='phone'
             :is-error='isValidated && !phone'
           />
         </div>
         <div class='c-right'>
           <Input
+            v-model='comment'
             :placeholder='t("slide_09.message")'
             name='comment'
             type='textarea'
-            v-model='comment'
           />
         </div>
       </div>
@@ -71,6 +71,10 @@ import t from '@/utils/locale';
 
 export default {
   name: 'Slide9',
+  components: {
+    Button,
+    Input
+  },
   data: () => ({
     client: '',
     phone: '',
@@ -79,10 +83,6 @@ export default {
     isValidated: false,
     isSubmitted: false
   }),
-  components: {
-    Button,
-    Input
-  },
   computed: {
     url() {
       return process.env.NODE_ENV === 'development' ?

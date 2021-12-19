@@ -29,10 +29,10 @@ import t from '@/utils/locale';
 
 export default {
   name: 'Menu',
+  components: { Button },
   data: () => ({
     isExpanded: false
   }),
-  components: { Button },
   computed: {
     sweetScroll() {
       return SweetScroll.asyncInstance();

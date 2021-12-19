@@ -1,5 +1,5 @@
 <template>
-  <div class='background' id='slide_03'>
+  <div id='slide_03' class='background'>
     <article>
       <h2 v-html='t("slide_03.h2")' />
       <div class='details'>
@@ -25,7 +25,7 @@
         </div>
         <picture class='picture'>
           <source srcset='../assets/slide_03/picture.webp' type='image/webp'>
-          <img loading='lazy' src='../assets/slide_03/picture.png' />
+          <img loading='lazy' src='../assets/slide_03/picture.png'>
         </picture>
       </div>
     </article>

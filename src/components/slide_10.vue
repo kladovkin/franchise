@@ -13,7 +13,7 @@
         <img
           loading='lazy'
           src='../assets/slide_10/person_1.png'
-        />
+        >
 
         <div class='info'>
           <div class='name'>
@@ -38,7 +38,7 @@
         <img
           loading='lazy'
           src='../assets/slide_10/person_2.png'
-        />
+        >
 
         <div class='info'>
           <div class='name'>

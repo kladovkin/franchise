@@ -1,5 +1,5 @@
 <template>
-  <div class='background-cutter' id='slide_05'>
+  <div id='slide_05' class='background-cutter'>
     <article>
       <div class='container'>
         <h2 v-html='t("slide_05.h2")' />
@@ -11,7 +11,7 @@
             class='background'
             loading='lazy'
             src='../assets/slide_05/background.png'
-          />
+          >
         </picture>
         <div class='details'>
           <div class='cc-2'>
@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class='container'>
-        <Button type='red' :text='t("slide_05.button")' @click='lead'/>
+        <Button type='red' :text='t("slide_05.button")' @click='lead' />
       </div>
     </article>
   </div>

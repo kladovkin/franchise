@@ -1,5 +1,5 @@
 <template>
-  <div class='outer' id='slide_07'>
+  <div id='slide_07' class='outer'>
     <div class='container'>
       <h2 v-html='t("slide_07.h2")' />
     </div>

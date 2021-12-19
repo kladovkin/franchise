@@ -35,7 +35,7 @@
           <div class='note'>{{ t('slide_02.slide_3.note') }}</div>
         </div>
       </div>
-      <div ref='swiper_pagination' class='swiper-pagination' data-slide='1'/>
+      <div ref='swiper_pagination' class='swiper-pagination' data-slide='1' />
     </div>
   </article>
 </template>
