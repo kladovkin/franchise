@@ -54,12 +54,15 @@
 
 <script>
 import t from '@/utils/locale';
-import Swiper from 'swiper';
+import Swiper, { Pagination } from 'swiper';
+
+Swiper.use([Pagination]);
 
 export default {
   name: 'Slide2',
   mounted() {
-    new Swiper(this.$refs.swiper, {
+    // new Swiper(this.$refs.swiper, {
+    new Swiper('.swiper', {
       wrapperClass: 'slides',
       slideClass: 'slide',
       grabCursor: true,
@@ -71,7 +74,6 @@ export default {
         modifierClass: 'slider-pagination-',
         bulletClass: 'slider-pagination-bullet',
         bulletActiveClass: 'slider-pagination-bullet-active',
-        type: 'bullets',
         clickable: true
       },
       loop: true
@@ -283,31 +285,31 @@ ul.blocks
 
   .swiper-pagination
     display: flex
+    justify-content: center
+</style>
 
-    +lte_ipad
-      justify-content: center
+<style lang='sass'>
+.slider-pagination-bullet
+  -webkit-tap-highlight-color: transparent
+  -webkit-appearance: none
+  background: $secondary
+  border-radius: 12px
+  cursor: pointer
+  flex-shrink: 0
+  height: 12px
+  transition: background 0.25s
+  width: 12px
 
-    .slider-pagination-bullet
-      -webkit-tap-highlight-color: transparent
-      -webkit-appearance: none
-      background: $secondary
-      border-radius: 12px
-      cursor: pointer
-      flex-shrink: 0
-      height: 12px
-      transition: background 0.25s
-      width: 12px
+  &-active
+    background: $primary
 
-      &-active
-        background: $primary
+  &:not(:last-child)
+    margin-right: 11px
 
-      &:not(:last-child)
-        margin-right: 11px
+  +gte_laptop
+    &:hover
+      background: $primary-hover
 
-      +gte_laptop
-        &:hover
-          background: $primary-hover
-
-      &:active
-        background: $primary-active
+  &:active
+    background: $primary-active
 </style>
