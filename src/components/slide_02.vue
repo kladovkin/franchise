@@ -54,9 +54,9 @@ article
 
     +laptop_hd
       height: scale-between(232px, 346px, 1024px, 1920px)
-      width: scale-between(198px, 296px, 1024px, 1920px)
       left: 144px
       top: 191px
+      width: scale-between(198px, 296px, 1024px, 1920px)
 
     +hd
       left: scale-between(144px, 0px, 1440px, 1920px)
@@ -67,6 +67,31 @@ article
       left: 0
       top: 161px
       width: 296px
+
+  &:after
+    +gte_laptop
+      background-image: url(../assets/slide_02/circles_right-desktop.svg)
+      background-repeat: no-repeat
+      background-size: contain
+      content: ''
+      z-index: -1
+      position: absolute
+
+    +laptop_hd
+      height: scale-between(77px, 109px, 1024px, 1920px)
+      right: -7px
+      top: 125px
+      width: scale-between(102px, 144px, 1024px, 1920px)
+
+    +hd
+      right: scale-between(-7px, -187px, 1440px, 1920px)
+      top: scale-between(125px, 178px, 1440px, 1920px)
+
+    +uhd
+      height: 109px
+      right: -187px
+      top: 178px
+      width: 144px
 
 h2
   +lte_ipad
