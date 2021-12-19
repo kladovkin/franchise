@@ -38,31 +38,35 @@ export default {
 article
   +lte_ipad
     padding-top: rem(72px)
-    /* padding-bottom: rem(80px) */
 
   +gte_laptop
     padding-top: 96px
-    /* height: 983px */
 
-  /* &:before                                                             */
-  /*   +laptop                                                            */
-  /*     // 82.5%                                                         */
-  /*     width: scale-laptop(550px, 645px)                                */
-  /*     height: scale-laptop(550px, 645px)                               */
+  &:before
+    +gte_laptop
+      background-image: url(../assets/slide_02/circles_left-desktop.svg)
+      background-repeat: no-repeat
+      background-size: contain
+      content: ''
+      z-index: -1
+      position: absolute
+      transform: translateX(-100%)
 
-  /*   +gte_laptop                                                        */
-  /*     background-image: url(../assets/slide_02/background-desktop.svg) */
-  /*     background-repeat: no-repeat                                     */
-  /*     background-size: contain                                         */
-  /*     content: ''                                                      */
-  /*     position: absolute                                               */
-  /*     z-index: -1                                                      */
-  /*     top: 214px                                                       */
-  /*     left: -287px                                                     */
+    +laptop_hd
+      height: scale-between(232px, 346px, 1024px, 1920px)
+      width: scale-between(198px, 296px, 1024px, 1920px)
+      left: 144px
+      top: 191px
 
-  /*   +gte_desktop                                                       */
-  /*     width: 645px                                                     */
-  /*     height: 645px                                                    */
+    +hd
+      left: scale-between(144px, 0px, 1440px, 1920px)
+      top: scale-between(191px, 161px, 1440px, 1920px)
+
+    +uhd
+      height: 346px
+      left: 0
+      top: 161px
+      width: 296px
 
 h2
   +lte_ipad
