@@ -30,19 +30,17 @@ export default createStore({
             red: 'Self storage',
             other: '– это сдача в аренду помещений для хранения личных вещей, товаров или документов для бизнеса в индивидуальных кладовках'
           },
-          list_1: 'Большее количество арендаторов',
-          list_2: 'Повышенная арендная ставка',
-          list_3: 'Постоянная заполненность склада',
-          list_4: 'Растущий рынок',
-          graph: {
-            residential: 'Жильё',
-            offices: 'Офисы',
-            street_retail: 'Стрит&nbsp;ритейл',
-            warehouses: 'Склады'
+          block_1: {
+            headline: '2 750 ₽',
+            text: 'остигает арендная ставка за 1 м2 в месяц в сегменте Self storage'
           },
-          finale: {
-            strong: 'Self Storage — это склады, оборудованные боксами',
-            description: 'для хранения вещей или товаров физическими или юридическими лицами'
+          block_2: {
+            headline: '5-10%',
+            text: 'годовой прирост площадей Self storage в Москве'
+          },
+          block_3: {
+            headline: '95%',
+            text: 'средняя наполняемость складов Self storage в Москве '
           }
         },
         slide_03: {
@@ -245,20 +243,17 @@ export default createStore({
             red: 'Self storage',
             other: '– это сдача в аренду помещений для хранения личных вещей, товаров или документов для бизнеса в индивидуальных кладовках'
           },
-          list_1: 'Big amount of small tenants',
-          list_2: 'High rental rates',
-          list_3: 'Constant occupancy of sites',
-          list_4: 'Steadily growing market',
-          graph: {
-            residential: 'Residential',
-            offices: 'Offices',
-            street_retail: 'Street&nbsp;retail',
-            warehouses: 'Warehouses'
+          block_1: {
+            headline: '2 750 ₽',
+            text: 'остигает арендная ставка за 1 м2 в месяц в сегменте Self storage'
           },
-          finale: {
-            strong: 'Self Storage is warehouses equiped with many boxes',
-            description: 'for storage of personal belongings and\\or goods, ' +
-              'available for private individuals and companies'
+          block_2: {
+            headline: '5-10%',
+            text: 'годовой прирост площадей Self storage в Москве'
+          },
+          block_3: {
+            headline: '95%',
+            text: 'средняя наполняемость складов Self storage в Москве '
           }
         },
         slide_03: {

@@ -6,6 +6,20 @@
     <div class='note'>
       <span>{{ t('slide_02.note.red') }}</span> {{ t('slide_02.note.other') }}
     </div>
+    <ul class='blocks'>
+      <li>
+        <div class='headline'>{{ t('slide_02.block_1.headline') }}</div>
+        <div class='text'>{{ t('slide_02.block_1.text') }}</div>
+      </li>
+      <li>
+        <div class='headline'>{{ t('slide_02.block_2.headline') }}</div>
+        <div class='text'>{{ t('slide_02.block_2.text') }}</div>
+      </li>
+      <li>
+        <div class='headline'>{{ t('slide_02.block_3.headline') }}</div>
+        <div class='text'>{{ t('slide_02.block_3.text') }}</div>
+      </li>
+    </ul>
   </article>
 </template>
 
@@ -78,4 +92,71 @@ h2
   span
     color: #f2642b
     font-weight: bold
+
+ul.blocks
+  +lte_ipad
+    margin-bottom: rem(72px)
+
+  +gte_laptop
+    +fcolumn(3, 30px, 0, 'li')
+    margin-bottom: 72px
+
+  li
+    background: #eef5ff
+    border-radius: rem(12px)
+    padding: rem(20px)
+
+    +lte_ipad
+      font-size: rem(44px)
+      height: rem(180px)
+
+      &:not(:last-child)
+        margin-bottom: 12px
+
+    +laptop
+      height: scale-laptop(247px, 260px)
+
+    +gte_desktop
+      height: 260px
+
+    &:nth-child(2),
+    &:nth-child(3)
+      position: relative
+      overflow: hidden
+
+      &:before
+        background-position: bottom
+        background-repeat: no-repeat
+        background-size: contain
+        bottom: 0
+        content: ''
+        height: 100%
+        left: 0
+        pointer-events: none
+        position: absolute
+        width: 100%
+
+    &:nth-child(2):before
+      background-image: url(../assets/slide_02/block_2_background.svg)
+
+    &:nth-child(3):before
+      background-image: url(../assets/slide_02/block_3_background.svg)
+
+    .headline
+      color: #5096ff
+      font-weight: bold
+      line-height: 1.2
+
+      +lte_ipad
+        font-size: rem(44px)
+        margin-bottom: rem(12px)
+
+      +gte_laptop
+        font-size: 72px
+        margin-bottom: 8px
+
+    .text
+      color: #5f5f5f
+      font-size: rem(14px)
+      line-height: 1.4
 </style>
