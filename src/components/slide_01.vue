@@ -73,7 +73,6 @@ export default {
 
   +lte_ipad
     background-position: bottom
-    margin-bottom: rem(55px)
 
   +gte_laptop
     background-image: url(../assets/slide_01/background_right.png)
