@@ -17,6 +17,7 @@
     "scroll-lock": "^2.1.4",
     "simple-lightbox": "^2.1.0",
     "sweet-scroll": "^4.0.0",
+    "swiper": "^7.3.3",
     "throttle-debounce": "^3.0.1",
     "vue": "3.0.0",
     "vue-router": "4.0.0-rc.5",

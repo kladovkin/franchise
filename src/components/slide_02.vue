@@ -23,7 +23,7 @@
       </li>
     </ul>
 
-    <div class='swiper'>
+    <div ref='swiper' class='swiper'>
       <div class='slides'>
         <div class='slide slide_1'>
           <div class='note'>{{ t('slide_02.slide_1.note') }}</div>
@@ -35,17 +35,59 @@
           <div class='note'>{{ t('slide_02.slide_3.note') }}</div>
         </div>
       </div>
-      <div class='b-slider-pagination' data-slide='1'/>
+      <div ref='swiper_pagination' class='swiper-pagination' data-slide='1'/>
     </div>
-
   </article>
 </template>
 
 <script>
 import t from '@/utils/locale';
+import Swiper from 'swiper';
 
 export default {
   name: 'Slide2',
+  mounted() {
+    // const innerNode = node.querySelector('.inner');
+    const swiperNode = this.$refs.swiper;
+    debugger
+    // const paginationNode = this.$refs.swiper_pagination;
+
+    // const swiper =
+    new Swiper(swiperNode, {
+      // wrapperClass: 'slides',
+      // slideClass: 'slide',
+      // grabCursor: false,
+      // allowTouchMove: true,
+      // slidesPerView: 1,
+      // spaceBetween: 0,
+      // navigation: {
+      //   nextEl: '.b-slider-next',
+      //   prevEl: '.b-slider-prev'
+      // },
+      // pagination: {
+      //   el: '.b-slider-pagination',
+      //   modifierClass: 'slider-pagination-',
+      //   bulletClass: 'slider-pagination-bullet',
+      //   bulletActiveClass: 'slider-pagination-bullet-active',
+      //   clickable: true
+      // },
+      // loop: true,
+      // on: {
+      //   slideChange() {
+      //     const INDEX_ATTRIBUTE = 'data-swiper-slide-index';
+      //     const index = swiper ?
+      //       parseInt(
+      //         swiper.slides[swiper.activeIndex].getAttribute(INDEX_ATTRIBUTE)
+      //       ) :
+      //       0;
+      //
+      //     const n1Index = parseInt(index) + 1;
+      //     innerNode.setAttribute('data-slide', n1Index);
+      //     paginationNode.setAttribute('data-slide', n1Index);
+      //   }
+      // }
+    });
+  },
   methods: {
     t
   }
