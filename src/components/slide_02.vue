@@ -49,42 +49,40 @@ export default {
   mounted() {
     // const innerNode = node.querySelector('.inner');
     const swiperNode = this.$refs.swiper;
-    // const paginationNode = this.$refs.swiper_pagination;
+    const paginationNode = this.$refs.swiper_pagination;
 
-    // const swiper =
-    new Swiper(swiperNode, {
-      // wrapperClass: 'slides',
-      // slideClass: 'slide',
-      // grabCursor: false,
-      // allowTouchMove: true,
-      // slidesPerView: 1,
-      // spaceBetween: 0,
+    const swiper = new Swiper(swiperNode, {
+      wrapperClass: 'slides',
+      slideClass: 'slide',
+      grabCursor: true,
+      allowTouchMove: true,
+      slidesPerView: 1,
+      spaceBetween: 0,
       // navigation: {
       //   nextEl: '.b-slider-next',
       //   prevEl: '.b-slider-prev'
       // },
-      // pagination: {
-      //   el: '.b-slider-pagination',
-      //   modifierClass: 'slider-pagination-',
-      //   bulletClass: 'slider-pagination-bullet',
-      //   bulletActiveClass: 'slider-pagination-bullet-active',
-      //   clickable: true
-      // },
-      // loop: true,
-      // on: {
-      //   slideChange() {
-      //     const INDEX_ATTRIBUTE = 'data-swiper-slide-index';
-      //     const index = swiper ?
-      //       parseInt(
-      //         swiper.slides[swiper.activeIndex].getAttribute(INDEX_ATTRIBUTE)
-      //       ) :
-      //       0;
-      //
-      //     const n1Index = parseInt(index) + 1;
-      //     innerNode.setAttribute('data-slide', n1Index);
-      //     paginationNode.setAttribute('data-slide', n1Index);
-      //   }
-      // }
+      pagination: {
+        el: '.swiper-pagination',
+        modifierClass: 'slider-pagination-',
+        bulletClass: 'slider-pagination-bullet',
+        bulletActiveClass: 'slider-pagination-bullet-active',
+        clickable: true
+      },
+      loop: true,
+      on: {
+        slideChange() {
+          const INDEX_ATTRIBUTE = 'data-swiper-slide-index';
+          const index = swiper ?
+            parseInt(
+              swiper.slides[swiper.activeIndex].getAttribute(INDEX_ATTRIBUTE)
+            ) :
+            0;
+
+          const n1Index = parseInt(index) + 1;
+          paginationNode.setAttribute('data-slide', n1Index);
+        }
+      }
     });
   },
   methods: {
@@ -249,33 +247,88 @@ ul.blocks
       font-size: rem(14px)
       line-height: 1.4
 
-.slider-pagination
-  display: flex
+.swiper
+  overflow: hidden
+  width: 100%
 
-  +lte_ipad
-    justify-content: center
+  /* +lte_ipad             */
+  /*   margin-bottom: 72px */
 
-  .slider-pagination-bullet
-    -webkit-tap-highlight-color: transparent
-    -webkit-appearance: none
-    background: $secondary
-    border-radius: 12px
-    cursor: pointer
-    flex-shrink: 0
-    height: 12px
-    transition: background 0.25s
-    width: 12px
+  /* +gte_laptop           */
+  /*   margin-bottom: 97px */
+  /*   margin-right: 82px  */
+  /*   padding-top: 6px    */
+  /*   width: 273px        */
 
-    &-active
-      background: $primary
+  .slides
+    display: flex
 
-    &:not(:last-child)
-      margin-right: 11px
+    +lte_ipad
+      margin-bottom: 28px
 
     +gte_laptop
-      &:hover
-        background: $primary-hover
+      margin-bottom: 40px
 
-    &:active
-      background: $primary-active
+    .headline
+      color: #333333
+      font-weight: bold
+
+      +lte_ipad
+        font-size: 16px
+        line-height: 24px
+        margin-bottom: 12px
+
+      +gte_laptop
+        font-size: 18px
+        line-height: 22px
+        margin-bottom: 25px
+
+    .note
+      line-height: 1.3
+      color: #333333
+
+      +lte_ipad
+        font-size: 12px
+
+      +gte_laptop
+        font-size: 16px
+
+    .slide
+      flex-shrink: 0
+      width: 100%
+
+      +lte_ipad
+        display: flex
+        flex-direction: column
+        text-align: center
+
+  .swiper-pagination
+    display: flex
+
+    +lte_ipad
+      justify-content: center
+
+    .slider-pagination-bullet
+      -webkit-tap-highlight-color: transparent
+      -webkit-appearance: none
+      background: $secondary
+      border-radius: 12px
+      cursor: pointer
+      flex-shrink: 0
+      height: 12px
+      transition: background 0.25s
+      width: 12px
+
+      &-active
+        background: $primary
+
+      &:not(:last-child)
+        margin-right: 11px
+
+      +gte_laptop
+        &:hover
+          background: $primary-hover
+
+      &:active
+        background: $primary-active
 </style>
