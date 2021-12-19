@@ -22,7 +22,10 @@ export default createStore({
           learn_more: 'Узнать больше'
         },
         slide_02: {
-          h2: 'новый подход к бизнесу в сфере недвижимости',
+          h2: {
+            red: 'Рынок self storage в России',
+            other: 'находится на стадии активного роста'
+          },
           note: 'Ставки доходности основных сегментов арендной недвижимости в России:',
           list_1: 'Большее количество арендаторов',
           list_2: 'Повышенная арендная ставка',
@@ -231,7 +234,10 @@ export default createStore({
           learn_more: 'Learn more'
         },
         slide_02: {
-          h2: 'new approach in real estate business',
+          h2: {
+            red: 'Рынок self storage в России',
+            other: 'находится на стадии активного роста'
+          },
           note: 'Yield rates for main segments of commercial real estate in Russia',
           list_1: 'Big amount of small tenants',
           list_2: 'High rental rates',

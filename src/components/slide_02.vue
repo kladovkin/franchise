@@ -1,7 +1,7 @@
 <template>
   <article id='slide_02'>
     <h2>
-      <span>Self Storage</span> &mdash; {{ t('slide_02.h2') }}
+      <span>{{ t('slide_02.h2.red') }}</span> {{ t('slide_02.h2.other') }}
     </h2>
     <div class='note'>
       {{ t('slide_02.note') }}
@@ -103,30 +103,34 @@ article
 
 h2
   +lte_ipad
-    margin-bottom: rem(12px)
+    margin-bottom: rem(24px)
 
   +gte_laptop
-    margin: 0 auto 22px
-    max-width: 540px
-    padding-top: 118px
+    margin: 0 auto 35px
+    max-width: 610px
+    /* padding-top: 118px  */
     text-align: center
 
 .note
-  color: #6c6c6c
+  /* color: #282828 */
+  font-weight: 300
   letter-spacing: -0.01em
   text-align: center
 
   +lte_ipad
     font-size: rem(14px)
-    line-height: rem(18px)
-    margin-bottom: rem(42px)
+    line-height: rem(20px)
+    margin-bottom: rem(37px)
 
   +gte_laptop
-    font-size: 18px
-    font-weight: 300
+    font-size: 16px
     line-height: 23px
-    max-width: 406px
-    margin: 0 auto 68px
+    margin: 0 auto 72px
+    max-width: 640px
+
+  span
+    color: #f2642b
+    font-weight: bold
 
 .list-wrapper
   display: flex
