@@ -49,7 +49,6 @@ export default {
   mounted() {
     // const innerNode = node.querySelector('.inner');
     const swiperNode = this.$refs.swiper;
-    debugger
     // const paginationNode = this.$refs.swiper_pagination;
 
     // const swiper =
