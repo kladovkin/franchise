@@ -26,7 +26,10 @@ export default createStore({
             red: 'Рынок self storage в России',
             other: 'находится на стадии активного роста'
           },
-          note: 'Ставки доходности основных сегментов арендной недвижимости в России:',
+          note: {
+            red: 'Self storage',
+            other: '– это сдача в аренду помещений для хранения личных вещей, товаров или документов для бизнеса в индивидуальных кладовках'
+          },
           list_1: 'Большее количество арендаторов',
           list_2: 'Повышенная арендная ставка',
           list_3: 'Постоянная заполненность склада',
@@ -238,7 +241,10 @@ export default createStore({
             red: 'Рынок self storage в России',
             other: 'находится на стадии активного роста'
           },
-          note: 'Yield rates for main segments of commercial real estate in Russia',
+          note: {
+            red: 'Self storage',
+            other: '– это сдача в аренду помещений для хранения личных вещей, товаров или документов для бизнеса в индивидуальных кладовках'
+          },
           list_1: 'Big amount of small tenants',
           list_2: 'High rental rates',
           list_3: 'Constant occupancy of sites',
