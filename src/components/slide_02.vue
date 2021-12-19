@@ -1,25 +1,43 @@
 <template>
   <article id='slide_02'>
-    <h2>
-      <span>{{ t('slide_02.h2.red') }}</span> {{ t('slide_02.h2.other') }}
-    </h2>
-    <div class='note'>
-      <span>{{ t('slide_02.note.red') }}</span> {{ t('slide_02.note.other') }}
+    <div class='header'>
+      <h2>
+        <span>{{ t('slide_02.h2.red') }}</span> {{ t('slide_02.h2.other') }}
+      </h2>
+      <div class='note'>
+        <span>{{ t('slide_02.note.red') }}</span> {{ t('slide_02.note.other') }}
+      </div>
     </div>
     <ul class='blocks'>
       <li>
         <div class='headline'>{{ t('slide_02.block_1.headline') }}</div>
-        <div class='text'>{{ t('slide_02.block_1.text') }}</div>
+        <div class='note'>{{ t('slide_02.block_1.note') }}</div>
       </li>
       <li>
         <div class='headline'>{{ t('slide_02.block_2.headline') }}</div>
-        <div class='text'>{{ t('slide_02.block_2.text') }}</div>
+        <div class='note'>{{ t('slide_02.block_2.note') }}</div>
       </li>
       <li>
         <div class='headline'>{{ t('slide_02.block_3.headline') }}</div>
-        <div class='text'>{{ t('slide_02.block_3.text') }}</div>
+        <div class='note'>{{ t('slide_02.block_3.note') }}</div>
       </li>
     </ul>
+
+    <div class='swiper'>
+      <div class='slides'>
+        <div class='slide slide_1'>
+          <div class='note'>{{ t('slide_02.slide_1.note') }}</div>
+        </div>
+        <div class='slide slide_2'>
+          <div class='note'>{{ t('slide_02.slide_2.note') }}</div>
+        </div>
+        <div class='slide slide_3'>
+          <div class='note'>{{ t('slide_02.slide_3.note') }}</div>
+        </div>
+      </div>
+      <div class='b-slider-pagination' data-slide='1'/>
+    </div>
+
   </article>
 </template>
 
@@ -93,34 +111,35 @@ article
       top: 178px
       width: 144px
 
-h2
-  +lte_ipad
-    margin-bottom: rem(24px)
+.header
+  h2
+    +lte_ipad
+      margin-bottom: rem(24px)
 
-  +gte_laptop
-    margin: 0 auto 35px
-    max-width: 610px
+    +gte_laptop
+      margin: 0 auto 35px
+      max-width: 610px
+      text-align: center
+
+  .note
+    font-weight: 300
+    letter-spacing: -0.01em
     text-align: center
 
-.note
-  font-weight: 300
-  letter-spacing: -0.01em
-  text-align: center
+    +lte_ipad
+      font-size: rem(14px)
+      line-height: rem(20px)
+      margin-bottom: rem(37px)
 
-  +lte_ipad
-    font-size: rem(14px)
-    line-height: rem(20px)
-    margin-bottom: rem(37px)
+    +gte_laptop
+      font-size: 16px
+      line-height: 23px
+      margin: 0 auto 72px
+      max-width: 640px
 
-  +gte_laptop
-    font-size: 16px
-    line-height: 23px
-    margin: 0 auto 72px
-    max-width: 640px
-
-  span
-    color: #f2642b
-    font-weight: bold
+    span
+      color: #f2642b
+      font-weight: bold
 
 ul.blocks
   +lte_ipad
@@ -184,8 +203,38 @@ ul.blocks
         font-size: 72px
         margin-bottom: 8px
 
-    .text
+    .note
       color: #5f5f5f
       font-size: rem(14px)
       line-height: 1.4
+
+.slider-pagination
+  display: flex
+
+  +lte_ipad
+    justify-content: center
+
+  .slider-pagination-bullet
+    -webkit-tap-highlight-color: transparent
+    -webkit-appearance: none
+    background: $secondary
+    border-radius: 12px
+    cursor: pointer
+    flex-shrink: 0
+    height: 12px
+    transition: background 0.25s
+    width: 12px
+
+    &-active
+      background: $primary
+
+    &:not(:last-child)
+      margin-right: 11px
+
+    +gte_laptop
+      &:hover
+        background: $primary-hover
+
+    &:active
+      background: $primary-active
 </style>

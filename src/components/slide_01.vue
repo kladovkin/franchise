@@ -96,7 +96,7 @@ export default {
   // red background
   &:before
     +gte_laptop
-      background: #f44f0c
+      background: $primary
       content: ''
       height: 100%
       left: 0
@@ -211,7 +211,7 @@ article
       margin-bottom: rem(130px)
 
     +gte_laptop
-      background: #f44f0c
+      background: $primary
       padding-top: 149px
 
     +desktop
