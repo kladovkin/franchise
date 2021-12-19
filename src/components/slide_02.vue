@@ -26,16 +26,28 @@
     <div ref='swiper' class='swiper'>
       <div class='slides'>
         <div class='slide slide_1'>
+          <img
+            loading='lazy'
+            src='../assets/slide_02/swiper_slide_1@2x.png'
+          >
           <div class='note'>{{ t('slide_02.slide_1.note') }}</div>
         </div>
         <div class='slide slide_2'>
+          <img
+            loading='lazy'
+            src='../assets/slide_02/swiper_slide_1@2x.png'
+          >
           <div class='note'>{{ t('slide_02.slide_2.note') }}</div>
         </div>
         <div class='slide slide_3'>
+          <img
+            loading='lazy'
+            src='../assets/slide_02/swiper_slide_1@2x.png'
+          >
           <div class='note'>{{ t('slide_02.slide_3.note') }}</div>
         </div>
       </div>
-      <div ref='swiper_pagination' class='swiper-pagination' data-slide='1' />
+      <div class='swiper-pagination' />
     </div>
   </article>
 </template>
@@ -47,42 +59,22 @@ import Swiper from 'swiper';
 export default {
   name: 'Slide2',
   mounted() {
-    // const innerNode = node.querySelector('.inner');
-    const swiperNode = this.$refs.swiper;
-    const paginationNode = this.$refs.swiper_pagination;
-
-    const swiper = new Swiper(swiperNode, {
+    new Swiper(this.$refs.swiper, {
       wrapperClass: 'slides',
       slideClass: 'slide',
       grabCursor: true,
       allowTouchMove: true,
       slidesPerView: 1,
       spaceBetween: 0,
-      // navigation: {
-      //   nextEl: '.b-slider-next',
-      //   prevEl: '.b-slider-prev'
-      // },
       pagination: {
         el: '.swiper-pagination',
         modifierClass: 'slider-pagination-',
         bulletClass: 'slider-pagination-bullet',
         bulletActiveClass: 'slider-pagination-bullet-active',
+        type: 'bullets',
         clickable: true
       },
-      loop: true,
-      on: {
-        slideChange() {
-          const INDEX_ATTRIBUTE = 'data-swiper-slide-index';
-          const index = swiper ?
-            parseInt(
-              swiper.slides[swiper.activeIndex].getAttribute(INDEX_ATTRIBUTE)
-            ) :
-            0;
-
-          const n1Index = parseInt(index) + 1;
-          paginationNode.setAttribute('data-slide', n1Index);
-        }
-      }
+      loop: true
     });
   },
   methods: {
@@ -251,56 +243,43 @@ ul.blocks
   overflow: hidden
   width: 100%
 
-  /* +lte_ipad             */
-  /*   margin-bottom: 72px */
-
-  /* +gte_laptop           */
-  /*   margin-bottom: 97px */
-  /*   margin-right: 82px  */
-  /*   padding-top: 6px    */
-  /*   width: 273px        */
-
   .slides
     display: flex
 
     +lte_ipad
-      margin-bottom: 28px
+      margin-bottom: rem(32px)
 
     +gte_laptop
-      margin-bottom: 40px
+      margin-bottom: 24px
 
-    .headline
-      color: #333333
-      font-weight: bold
+    img
+      width: rem(207px)
 
       +lte_ipad
-        font-size: 16px
-        line-height: 24px
-        margin-bottom: 12px
+        align-self: center
+        margin-bottom: rem(32px)
 
       +gte_laptop
-        font-size: 18px
-        line-height: 22px
-        margin-bottom: 25px
+        margin-right: 78px
 
     .note
-      line-height: 1.3
       color: #333333
 
       +lte_ipad
-        font-size: 12px
+        font-size: rem(16px)
+        line-height: rem(19px)
 
       +gte_laptop
-        font-size: 16px
+        font-size: 20px
+        line-height: 23px
 
     .slide
       flex-shrink: 0
       width: 100%
+      display: flex
 
       +lte_ipad
-        display: flex
         flex-direction: column
-        text-align: center
 
   .swiper-pagination
     display: flex
