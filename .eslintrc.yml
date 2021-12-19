@@ -21,7 +21,6 @@ extends:
 
 plugins:
   - vue
-  - jest
 
 rules:
   quotes:
@@ -141,8 +140,3 @@ settings:
   #     extensions:
   #       - '.js'
   #       - '.vue'
-
-overrides:
-  - files: "**/*.test.js"
-    env:
-      jest: true
