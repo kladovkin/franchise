@@ -1,5 +1,5 @@
 <template>
-  <div class='background-cutter' id='slide_06'>
+  <div id='slide_06' class='background-cutter'>
     <article>
       <h2 v-html='t("slide_06.h2")' />
       <div class='area'>
@@ -29,7 +29,7 @@
           <div class='entry entry-3'>
             <picture class='design-project' @click='enlarge'>
               <source src='../assets/slide_06/design_project.webp' type='image/webp'>
-              <img loading='lazy' src='../assets/slide_06/design_project.jpg' />
+              <img loading='lazy' src='../assets/slide_06/design_project.jpg'>
             </picture>
             <div class='circle top'>7 {{ t('slide_06.days_2') }}</div>
             <div class='info'>
@@ -72,7 +72,7 @@
               class='background'
               loading='lazy'
               src='../assets/slide_06/background_final.jpg'
-            />
+            >
           </div>
         </div>
       </div>

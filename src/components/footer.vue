@@ -4,7 +4,7 @@
       class='logo'
       loading='lazy'
       src='../assets/logo.svg'
-    />
+    >
     <ul>
       <li>
         <a href='https://kladovkin.ru/o-minisklade/'>{{ t('footer.about') }}</a>
