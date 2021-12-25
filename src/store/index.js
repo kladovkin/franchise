@@ -53,7 +53,10 @@ export default createStore({
           }
         },
         slide_03: {
-          h2: 'Кладовкин &mdash; технологический лидер российского рынка Self&nbsp;Storage',
+          h2: {
+            red: 'Кладовкин',
+            other: '– единственная компания в России, обладающая тремя ключевыми компетенциями в self storage'
+          },
           entries: {
             age: 'Года&nbsp;на&nbsp;рынке',
             customers: 'Благодарных арендаторов',
@@ -275,7 +278,10 @@ export default createStore({
           }
         },
         slide_03: {
-          h2: 'Kladovkin — technological leader of Russian&nbsp;Self Storage market',
+          h2: {
+            red: 'Кладовкин',
+            other: '– единственная компания в России, обладающая тремя ключевыми компетенциями в self storage'
+          },
           entries: {
             age: 'Years&nbsp;on&nbsp;the&nbsp;market',
             customers: 'Grateful customers',

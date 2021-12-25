@@ -1,35 +1,35 @@
 <template>
-  <div id='slide_03' class='background'>
-    <article>
-      <h2 v-html='t("slide_03.h2")' />
-      <div class='details'>
-        <div class='line'>
-          <div class='entry'>
-            <div class='value'>4+</div>
-            <div class='label' v-html='t("slide_03.entries.age")' />
-          </div>
-          <div class='entry'>
-            <div class='value'>3 500+</div>
-            <div class='label' v-html='t("slide_03.entries.customers")' />
-          </div>
+  <article id='slide_03'>
+    <h2>
+      <span>{{ t('slide_03.h2.red') }}</span> {{ t('slide_03.h2.other') }}
+    </h2>
+    <div class='details'>
+      <div class='line'>
+        <div class='entry'>
+          <div class='value'>4+</div>
+          <div class='label' v-html='t("slide_03.entries.age")' />
         </div>
-        <div class='line'>
-          <div class='entry'>
-            <div class='value'>7</div>
-            <div class='label' v-html='t("slide_03.entries.storages")' />
-          </div>
-          <div class='entry'>
-            <div class='value'>20&nbsp;000&nbsp;м²</div>
-            <div class='label final' v-html='t("slide_03.entries.square")' />
-          </div>
+        <div class='entry'>
+          <div class='value'>3 500+</div>
+          <div class='label' v-html='t("slide_03.entries.customers")' />
         </div>
-        <picture class='picture'>
-          <source srcset='../assets/slide_03/picture.webp' type='image/webp'>
-          <img loading='lazy' src='../assets/slide_03/picture.png'>
-        </picture>
       </div>
-    </article>
-  </div>
+      <div class='line'>
+        <div class='entry'>
+          <div class='value'>7</div>
+          <div class='label' v-html='t("slide_03.entries.storages")' />
+        </div>
+        <div class='entry'>
+          <div class='value'>20&nbsp;000&nbsp;м²</div>
+          <div class='label final' v-html='t("slide_03.entries.square")' />
+        </div>
+      </div>
+      <picture class='picture'>
+        <source srcset='../assets/slide_03/picture.webp' type='image/webp'>
+        <img loading='lazy' src='../assets/slide_03/picture.png'>
+      </picture>
+    </div>
+  </article>
 </template>
 
 <script>
@@ -44,15 +44,6 @@ export default {
 </script>
 
 <style scoped lang='sass'>
-.background
-  background: #5096ff
-
-  +lte_ipad
-    margin-bottom: rem(160px)
-
-  +gte_laptop
-    overflow: hidden
-
 article
   display: flex
   flex-direction: column
