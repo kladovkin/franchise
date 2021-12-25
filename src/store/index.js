@@ -57,11 +57,22 @@ export default createStore({
             red: 'Кладовкин',
             other: '– единственная компания в России, обладающая тремя ключевыми компетенциями в self storage'
           },
-          entries: {
-            age: 'Года&nbsp;на&nbsp;рынке',
-            customers: 'Благодарных арендаторов',
-            storages: 'Складов в&nbsp;Москве',
-            square: 'Площадь&nbsp;складов'
+          h2_note: 'Мы независимая компания, которая все умеет сама',
+          picture_block_1: {
+            headline: '4+',
+            note: 'Года на рынке'
+          },
+          picture_block_2: {
+            headline: '3 500+',
+            note: 'Благодарных арендаторов'
+          },
+          picture_block_3: {
+            headline: '10',
+            note: 'Складов в Москве'
+          },
+          picture_block_4: {
+            headline: '20 000 м²',
+            note: 'Площадь складов'
           }
         },
         slide_04: {
@@ -282,11 +293,22 @@ export default createStore({
             red: 'Кладовкин',
             other: '– единственная компания в России, обладающая тремя ключевыми компетенциями в self storage'
           },
-          entries: {
-            age: 'Years&nbsp;on&nbsp;the&nbsp;market',
-            customers: 'Grateful customers',
-            storages: 'Stores&nbsp;in&nbsp;Moscow',
-            square: 'Overall&nbsp;usable&nbsp;space '
+          h2_note: 'Мы независимая компания, которая все умеет сама',
+          picture_block_1: {
+            headline: '4+',
+            note: 'Года на рынке'
+          },
+          picture_block_2: {
+            headline: '3 500+',
+            note: 'Благодарных арендаторов'
+          },
+          picture_block_3: {
+            headline: '10',
+            note: 'Складов в Москве'
+          },
+          picture_block_4: {
+            headline: '20 000 м²',
+            note: 'Площадь складов'
           }
         },
         slide_04: {
