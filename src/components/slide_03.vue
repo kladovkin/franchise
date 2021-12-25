@@ -95,18 +95,18 @@ h2
     height: 248px
 
   ul
-    align-items: center
     color: #fff
     display: flex
     height: 100%
 
     +lte_ipad
       flex-wrap: wrap
-      padding-left: rem(21px)
-      padding-right: rem(21px)
+      padding: rem(35px) rem(21px) 0
 
     +gte_laptop
+      align-items: center
       justify-content: space-between
+      padding-top: 10px
 
     +laptop
       padding-left: scale-laptop(61px, 81px)
@@ -119,6 +119,7 @@ h2
     li
       +lte_ipad
         width: 50%
+        height: rem(90px)
 
   .headline
     font-weight: bold
