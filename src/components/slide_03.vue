@@ -27,19 +27,19 @@
       </ul>
       <picture>
         <source
-          srcset='../assets/slide_03/background-mobile.webp, ../assets/slide_03/background-mobile@2x.webp 2x'
+          srcset='../assets/slide_03/picture_background-mobile.webp, ../assets/slide_03/picture_background-mobile@2x.webp 2x'
           type='image/webp'
           media='(max-width: 1023px)'
         >
         <source
-          srcset='../assets/slide_03/background-desktop.webp, ../assets/slide_03/background-desktop@2x.webp 2x'
+          srcset='../assets/slide_03/picture_background-desktop.webp, ../assets/slide_03/picture_background-desktop@2x.webp 2x'
           type='image/webp'
         >
         <img
           class='laptop'
           loading='lazy'
-          src='../assets/slide_03/background-desktop.png'
-          srcset='../assets/slide_03/background-desktop@2x.png 2x'
+          src='../assets/slide_03/picture_background-desktop.png'
+          srcset='../assets/slide_03/picture_background-desktop@2x.png 2x'
         >
       </picture>
     </div>
