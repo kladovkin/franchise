@@ -1,55 +1,57 @@
 <template>
-  <article id='slide_02'>
-    <div class='header'>
-      <h2>
-        <span>{{ t('slide_02.h2.red') }}</span> {{ t('slide_02.h2.other') }}
-      </h2>
-      <div class='note'>
-        <span>{{ t('slide_02.note.red') }}</span> {{ t('slide_02.note.other') }}
+  <div class='background-cutter'>
+    <article id='slide_02'>
+      <div class='header'>
+        <h2>
+          <span>{{ t('slide_02.h2.red') }}</span> {{ t('slide_02.h2.other') }}
+        </h2>
+        <div class='note'>
+          <span>{{ t('slide_02.note.red') }}</span> {{ t('slide_02.note.other') }}
+        </div>
       </div>
-    </div>
-    <ul class='blocks'>
-      <li>
-        <div class='headline'>{{ t('slide_02.block_1.headline') }}</div>
-        <div class='note'>{{ t('slide_02.block_1.note') }}</div>
-      </li>
-      <li>
-        <div class='headline'>{{ t('slide_02.block_2.headline') }}</div>
-        <div class='note'>{{ t('slide_02.block_2.note') }}</div>
-      </li>
-      <li>
-        <div class='headline'>{{ t('slide_02.block_3.headline') }}</div>
-        <div class='note'>{{ t('slide_02.block_3.note') }}</div>
-      </li>
-    </ul>
+      <ul class='blocks'>
+        <li>
+          <div class='headline'>{{ t('slide_02.block_1.headline') }}</div>
+          <div class='note'>{{ t('slide_02.block_1.note') }}</div>
+        </li>
+        <li>
+          <div class='headline'>{{ t('slide_02.block_2.headline') }}</div>
+          <div class='note'>{{ t('slide_02.block_2.note') }}</div>
+        </li>
+        <li>
+          <div class='headline'>{{ t('slide_02.block_3.headline') }}</div>
+          <div class='note'>{{ t('slide_02.block_3.note') }}</div>
+        </li>
+      </ul>
 
-    <div ref='swiper' class='swiper'>
-      <div class='slides'>
-        <div class='slide slide_1'>
-          <img
-            loading='lazy'
-            src='../assets/slide_02/swiper_slide_1@2x.png'
-          >
-          <div class='note'>{{ t('slide_02.slide_1.note') }}</div>
+      <div ref='swiper' class='swiper'>
+        <div class='slides'>
+          <div class='slide slide_1'>
+            <img
+              loading='lazy'
+              src='../assets/slide_02/swiper_slide_1@2x.png'
+            >
+            <div class='note'>{{ t('slide_02.slide_1.note') }}</div>
+          </div>
+          <div class='slide slide_2'>
+            <img
+              loading='lazy'
+              src='../assets/slide_02/swiper_slide_1@2x.png'
+            >
+            <div class='note'>{{ t('slide_02.slide_2.note') }}</div>
+          </div>
+          <div class='slide slide_3'>
+            <img
+              loading='lazy'
+              src='../assets/slide_02/swiper_slide_1@2x.png'
+            >
+            <div class='note'>{{ t('slide_02.slide_3.note') }}</div>
+          </div>
         </div>
-        <div class='slide slide_2'>
-          <img
-            loading='lazy'
-            src='../assets/slide_02/swiper_slide_1@2x.png'
-          >
-          <div class='note'>{{ t('slide_02.slide_2.note') }}</div>
-        </div>
-        <div class='slide slide_3'>
-          <img
-            loading='lazy'
-            src='../assets/slide_02/swiper_slide_1@2x.png'
-          >
-          <div class='note'>{{ t('slide_02.slide_3.note') }}</div>
-        </div>
+        <div class='swiper-pagination' />
       </div>
-      <div class='swiper-pagination' />
-    </div>
-  </article>
+    </article>
+  </div>
 </template>
 
 <script>
@@ -86,6 +88,10 @@ export default {
 </script>
 
 <style scoped lang='sass'>
+.background-cutter
+  max-width: 100%
+  overflow: hidden
+
 article
   +lte_ipad
     padding-top: rem(72px)
