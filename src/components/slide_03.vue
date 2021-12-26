@@ -46,6 +46,27 @@
           </li>
         </ul>
       </div>
+      <ul class='blocks'>
+        <li>
+          <div class='headline'>{{ t('slide_03.block_1.headline') }}</div>
+          <div class='note'>{{ t('slide_03.block_1.note') }}</div>
+          <a href='#' class='details'>{{ t('slide_03.details') }}</a>
+        </li>
+        <li>
+          <div class='headline'>{{ t('slide_03.block_2.headline') }}</div>
+          <div class='note'>{{ t('slide_03.block_2.note') }}</div>
+          <a href='#' class='details'>{{ t('slide_03.details') }}</a>
+        </li>
+        <li>
+          <div class='headline'>{{ t('slide_03.block_3.headline') }}</div>
+          <div class='note'>{{ t('slide_03.block_3.note') }}</div>
+          <a href='#' class='details'>{{ t('slide_03.details') }}</a>
+        </li>
+      </ul>
+      <div class='block-note'>
+        {{ t('slide_03.block_note.text') }}
+        <a href='#'>{{ t('slide_03.block_note.link') }}</a>
+      </div>
     </article>
   </div>
 </template>
@@ -79,10 +100,11 @@ article
       background-size: contain
       content: ''
       height: 1119px
-      position: absolute
-      width: 1685px
       left: -10px
+      pointer-events: none
+      position: absolute
       top: -52px
+      width: 1685px
 
 h2
   +lte_ipad
@@ -109,9 +131,11 @@ h2
 
   +lte_ipad
     height: rem(223px)
+    margin-bottom: rem(24px)
 
   +gte_laptop
     height: 248px
+    margin-bottom: 56px
 
   ul
     color: #fff
@@ -183,4 +207,72 @@ h2
 
     img
       overflow: hidden
+
+ul.blocks
+  +lte_ipad
+    margin-bottom: rem(32px)
+
+  +gte_laptop
+    +fcolumn(3, 30px, 0, 'li')
+    margin-bottom: 56px
+
+  li
+    background: #eef5ff
+    border-radius: rem(12px)
+    color: #333333
+    display: flex
+    flex-direction: column
+
+    +lte_ipad
+      height: rem(208px)
+      padding: rem(20px)
+
+      &:not(:last-child)
+        margin-bottom: rem(12px)
+
+    +gte_laptop
+      height: 324px
+      padding: rem(44px) rem(32px)
+
+    .headline
+      font-weight: bold
+
+      +lte_ipad
+        font-size: rem(16px)
+        line-height: rem(24px)
+        margin-bottom: rem(12px)
+
+      +gte_laptop
+        font-size: 24px
+        line-height: 32px
+        margin-bottom: 24px
+
+    .note
+      +lte_ipad
+        font-size: rem(12px)
+        line-height: rem(20px)
+
+      +gte_laptop
+        font-size: 16px
+        line-height: 28px
+
+    .details
+      +link
+      font-size: rem(12px)
+      line-height: rem(16px)
+      margin-top: auto
+
+.block-note
+  font-size: rem(14px)
+  line-height: rem(20px)
+  text-align: center
+
+  +lte_ipad
+    margin-bottom: rem(24px)
+
+  +gte_laptop
+    margin-bottom: rem(32px)
+
+  a
+    +link
 </style>
