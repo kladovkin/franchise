@@ -1,5 +1,5 @@
 <template>
-  <div class='background-cutter'>
+  <div id='slide_03' class='background-cutter'>
     <article id='slide_03'>
       <h2>
         <span>{{ t('slide_03.h2.red') }}</span> {{ t('slide_03.h2.other') }}

@@ -1,5 +1,5 @@
 <template>
-  <div class='background-cutter'>
+  <div id='slide_02' class='background-cutter'>
     <article id='slide_02'>
       <div class='header'>
         <h2>
