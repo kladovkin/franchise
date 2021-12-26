@@ -1,49 +1,51 @@
 <template>
-  <article id='slide_03'>
-    <h2>
-      <span>{{ t('slide_03.h2.red') }}</span> {{ t('slide_03.h2.other') }}
-    </h2>
+  <div class='background-cutter'>
+    <article id='slide_03'>
+      <h2>
+        <span>{{ t('slide_03.h2.red') }}</span> {{ t('slide_03.h2.other') }}
+      </h2>
 
-    <div class='h2-note'>{{ t('slide_03.h2_note') }}</div>
+      <div class='h2-note'>{{ t('slide_03.h2_note') }}</div>
 
-    <div class='picture-container'>
-      <ul>
-        <li>
-          <div class='headline'>{{ t('slide_03.picture_block_1.headline') }}</div>
-          <div class='note'>{{ t('slide_03.picture_block_1.note') }}</div>
-        </li>
-        <li>
-          <div class='headline'>{{ t('slide_03.picture_block_2.headline') }}</div>
-          <div class='note'>{{ t('slide_03.picture_block_2.note') }}</div>
-        </li>
-        <li>
-          <div class='headline'>{{ t('slide_03.picture_block_3.headline') }}</div>
-          <div class='note'>{{ t('slide_03.picture_block_3.note') }}</div>
-        </li>
-        <li>
-          <div class='headline'>{{ t('slide_03.picture_block_4.headline') }}</div>
-          <div class='note'>{{ t('slide_03.picture_block_4.note') }}</div>
-        </li>
-      </ul>
-      <picture>
-        <source
-          srcset='../assets/slide_03/picture_background-mobile.webp, ../assets/slide_03/picture_background-mobile@2x.webp 2x'
-          type='image/webp'
-          media='(max-width: 1023px)'
-        >
-        <source
-          srcset='../assets/slide_03/picture_background-desktop.webp, ../assets/slide_03/picture_background-desktop@2x.webp 2x'
-          type='image/webp'
-        >
-        <img
-          class='laptop'
-          loading='lazy'
-          src='../assets/slide_03/picture_background-desktop.png'
-          srcset='../assets/slide_03/picture_background-desktop@2x.png 2x'
-        >
-      </picture>
-    </div>
-  </article>
+      <div class='picture-container'>
+        <ul>
+          <li>
+            <div class='headline'>{{ t('slide_03.picture_block_1.headline') }}</div>
+            <div class='note'>{{ t('slide_03.picture_block_1.note') }}</div>
+          </li>
+          <li>
+            <div class='headline'>{{ t('slide_03.picture_block_2.headline') }}</div>
+            <div class='note'>{{ t('slide_03.picture_block_2.note') }}</div>
+          </li>
+          <li>
+            <div class='headline'>{{ t('slide_03.picture_block_3.headline') }}</div>
+            <div class='note'>{{ t('slide_03.picture_block_3.note') }}</div>
+          </li>
+          <li>
+            <div class='headline'>{{ t('slide_03.picture_block_4.headline') }}</div>
+            <div class='note'>{{ t('slide_03.picture_block_4.note') }}</div>
+          </li>
+        </ul>
+        <picture>
+          <source
+            srcset='../assets/slide_03/picture_background-mobile.webp, ../assets/slide_03/picture_background-mobile@2x.webp 2x'
+            type='image/webp'
+            media='(max-width: 1023px)'
+          >
+          <source
+            srcset='../assets/slide_03/picture_background-desktop.webp, ../assets/slide_03/picture_background-desktop@2x.webp 2x'
+            type='image/webp'
+          >
+          <img
+            class='laptop'
+            loading='lazy'
+            src='../assets/slide_03/picture_background-desktop.png'
+            srcset='../assets/slide_03/picture_background-desktop@2x.png 2x'
+          >
+        </picture>
+      </div>
+    </article>
+  </div>
 </template>
 
 <script>
@@ -58,12 +60,27 @@ export default {
 </script>
 
 <style scoped lang='sass'>
+.background-cutter
+  max-width: 100%
+  overflow: hidden
+
 article
   +lte_ipad
     padding-top: rem(72px)
 
   +gte_laptop
     padding-top: 166px
+
+    &:before
+      background-image: url(../assets/slide_03/circles_background-desktop.svg)
+      background-repeat: no-repeat
+      background-size: contain
+      content: ''
+      height: 1119px
+      position: absolute
+      width: 1685px
+      left: 0
+      top: -53px
 
 h2
   +lte_ipad
