@@ -8,6 +8,25 @@
       <div class='h2-note'>{{ t('slide_03.h2_note') }}</div>
 
       <div class='picture-container'>
+        <div class='picture-cutter'>
+          <picture>
+            <source
+              srcset='../assets/slide_03/picture_background-mobile.webp, ../assets/slide_03/picture_background-mobile@2x.webp 2x'
+              type='image/webp'
+              media='(max-width: 1023px)'
+            >
+            <source
+              srcset='../assets/slide_03/picture_background-desktop.webp, ../assets/slide_03/picture_background-desktop@2x.webp 2x'
+              type='image/webp'
+            >
+            <img
+              class='laptop'
+              loading='lazy'
+              src='../assets/slide_03/picture_background-desktop.png'
+              srcset='../assets/slide_03/picture_background-desktop@2x.png 2x'
+            >
+          </picture>
+        </div>
         <ul>
           <li>
             <div class='headline'>{{ t('slide_03.picture_block_1.headline') }}</div>
@@ -26,23 +45,6 @@
             <div class='note'>{{ t('slide_03.picture_block_4.note') }}</div>
           </li>
         </ul>
-        <picture>
-          <source
-            srcset='../assets/slide_03/picture_background-mobile.webp, ../assets/slide_03/picture_background-mobile@2x.webp 2x'
-            type='image/webp'
-            media='(max-width: 1023px)'
-          >
-          <source
-            srcset='../assets/slide_03/picture_background-desktop.webp, ../assets/slide_03/picture_background-desktop@2x.webp 2x'
-            type='image/webp'
-          >
-          <img
-            class='laptop'
-            loading='lazy'
-            src='../assets/slide_03/picture_background-desktop.png'
-            srcset='../assets/slide_03/picture_background-desktop@2x.png 2x'
-          >
-        </picture>
       </div>
     </article>
   </div>
@@ -79,8 +81,8 @@ article
       height: 1119px
       position: absolute
       width: 1685px
-      left: 0
-      top: -53px
+      left: -10px
+      top: -52px
 
 h2
   +lte_ipad
@@ -161,16 +163,24 @@ h2
       font-size: 18px
       line-height: 23px
 
+  .picture-cutter
+    +gte_laptop
+      border-radius: 12px
+      height: 248px
+      max-width: 1100px
+      overflow: hidden
+      position: absolute
+      width: 100%
+
   // cp src/assets/slide_03/original/* src/assets/slide_03/; for image in src/assets/slide_03/*@2x.png; do; echo $image; convert -resize 50% $image ${image/@2x/}; convert -quality 95% $image ${image/\.png/.webp}; convert -resize 50% ${image/\.png/.webp} ${${image/\.png/.webp}/@2x/}; tinypng $image; tinypng ${image/@2x/}; done;
   picture
-    height: 100%
+    width: 1100px
+    height: 248px
     left: 0
     position: absolute
     top: 0
-    width: 100%
     z-index: -1
 
     img
-      border-radius: 12px
       overflow: hidden
 </style>
