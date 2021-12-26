@@ -87,6 +87,8 @@ article
   +lte_ipad
     font-size: rem(24px)
     line-height: rem(32px)
+    margin-top: rem(64px)
+    text-align: center
 
   +laptop
     font-size: scale-laptop(27px, 32px)
