@@ -90,7 +90,8 @@ export default createStore({
           block_note: {
             text: 'Больше информации вы можете узнать из ',
             link: 'нашей презентации'
-          }
+          },
+          button: 'Стать партнером Кладовкин'
         },
         slide_04: {
           switcher: {
@@ -343,7 +344,8 @@ export default createStore({
           block_note: {
             text: 'Больше информации вы можете узнать из ',
             link: 'нашей презентации'
-          }
+          },
+          button: 'Стать партнером Кладовкин'
         },
         slide_04: {
           switcher: {

@@ -3,7 +3,8 @@
     class='button'
     :class='{
       "button-white": type === "white",
-      "button-red": type === "red"
+      "button-red": type === "red",
+      "button-conversion": styling === "conversion"
     }'
   >
     {{ text }}
@@ -19,10 +20,15 @@ export default {
       type: String,
       required: true,
       validator: (value) => (
-        [
-          'red',
-          'white'
-        ].indexOf(value) !== -1
+        ['red', 'white'].indexOf(value) !== -1
+      )
+    },
+    styling: {
+      type: String,
+      required: false,
+      default: 'default',
+      validator: (value) => (
+        ['default', 'conversion'].indexOf(value) !== -1
       )
     }
   }
@@ -77,4 +83,17 @@ export default {
     &:active
       background-color: #df4c10
       border-color: #df4c10
+
+  &-conversion
+    +lte_ipad
+      font-size: rem(14px)
+      height: rem(56px)
+
+    +ipad
+      max-width: 375px
+
+    +gte_laptop
+      font-size: 18px
+      height: 68px
+      max-width: 350px
 </style>

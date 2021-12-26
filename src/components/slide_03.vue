@@ -67,17 +67,33 @@
         {{ t('slide_03.block_note.text') }}
         <a href='#'>{{ t('slide_03.block_note.link') }}</a>
       </div>
+      <div class='container'>
+        <Button
+          type='red'
+          styling='conversion'
+          :text='t("slide_03.button")'
+          @click='lead'
+        />
+      </div>
     </article>
   </div>
 </template>
 
 <script>
+import Button from '@/components/button';
+import SweetScroll from '@/utils/sweet_scroll';
 import t from '@/utils/locale';
 
 export default {
   name: 'Slide3',
+  components: { Button },
   methods: {
-    t
+    t,
+    async lead() {
+      (await SweetScroll.asyncInstance()).toElement(
+        document.getElementById('slide_09'), { duration: 450 }
+      );
+    }
   }
 };
 </script>
@@ -275,4 +291,9 @@ ul.blocks
 
   a
     +link
+
+.container
+  display: flex
+  justify-content: center
+  padding: 0
 </style>
