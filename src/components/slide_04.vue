@@ -87,18 +87,18 @@ article
   +lte_ipad
     font-size: rem(24px)
     line-height: rem(32px)
-    margin-top: rem(64px)
+    padding-top: rem(64px)
     text-align: center
 
   +laptop
     font-size: scale-laptop(27px, 32px)
     line-height: scale-laptop(48px, 56px)
-    margin-top: scale-laptop(62px, 156px)
+    padding-top: scale-laptop(62px, 156px)
     max-width: scale-laptop(336px, 539px)
 
   +gte_desktop
     font-size: 32px
     line-height: 56px
-    margin-top: 156px
+    padding-top: 156px
     max-width: 539px
 </style>
