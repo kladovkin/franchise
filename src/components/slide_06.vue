@@ -101,9 +101,6 @@ export default {
 </script>
 
 <style scoped lang='sass'>
-.background-cutter
-  overflow: hidden
-
 article
   +lte_ipad
     padding-top: rem(25px)
