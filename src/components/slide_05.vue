@@ -50,18 +50,40 @@
           </li>
         </ul>
       </div>
+      <div class='container'>
+        <Button
+          type='red'
+          styling='conversion'
+          :text='t("slide_05.button")'
+          @click='lead'
+        />
+      </div>
     </article>
   </div>
 </template>
 
 <script>
 import { ImgComparisonSlider } from '@img-comparison-slider/vue';
+
+import Button from '@/components/button';
+
+import SweetScroll from '@/utils/sweet_scroll';
 import t from '@/utils/locale';
 
 export default {
   name: 'Slide5',
-  components: { ImgComparisonSlider },
-  methods: { t }
+  components: {
+    Button,
+    ImgComparisonSlider
+  },
+  methods: {
+    t,
+    async lead() {
+      (await SweetScroll.asyncInstance()).toElement(
+        document.getElementById('slide_09'), { duration: 450 }
+      );
+    }
+  }
 };
 </script>
 
@@ -206,7 +228,9 @@ h2
         flex-basis: 100%
 
         +lte_ipad
+          padding: rem(12px) 0 rem(16px)
           text-align: center
+          margin-top: rem(16px)
 
         +gte_laptop
           padding: 16px 32px
@@ -229,12 +253,14 @@ h2
             font-size: 16px
             line-height: 48px
 
-            b
-              +lte_ipad
-                font-size: 20px
+          b
+            +lte_ipad
+              margin-right: rem(2px)
+              font-size: rem(24px)
 
-              +gte_laptop
-                font-size: 44px
+            +gte_laptop
+              font-size: 44px
+              margin-right: 5px
 
         .note
           color: #000
@@ -248,4 +274,9 @@ h2
           +gte_laptop
             font-size: 16px
             line-height: 24px
-  </style>
+
+.container
+  display: flex
+  justify-content: center
+  padding: 0
+</style>

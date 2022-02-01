@@ -132,7 +132,8 @@ export default createStore({
               text: 'годовых'
             },
             note: 'доходность вложений в переоборудование помещения'
-          }
+          },
+          button: 'Стать партнером Кладовкин'
         },
         slide_06: {
           h2: 'Станьте партнером и откройте автоматизированный бизнес под ключ' +
@@ -373,7 +374,8 @@ export default createStore({
               text: 'годовых'
             },
             note: 'доходность вложений в переоборудование помещения'
-          }
+          },
+          button: 'Стать партнером Кладовкин'
         },
         slide_06: {
           h2: 'Become a partner and open fully automatic turnkey business ' +
