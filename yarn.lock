@@ -1029,6 +1029,13 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@img-comparison-slider/vue@^7.4.3":
+  version "7.4.3"
+  resolved "https://registry.yarnpkg.com/@img-comparison-slider/vue/-/vue-7.4.3.tgz#4c1b6bc491b6b5ff5c84bdc79a9736a45eaabcab"
+  integrity sha512-zwxNNfBsq/3xnXAUyusZhc4oSb5ce6c7csx7JbnRCcKv6bEZcFUxFxxwnXSsX7WWPrDNFV1wQuiLPlnYLzB5LQ==
+  dependencies:
+    img-comparison-slider "^7.4.3"
+
 "@intervolga/optimize-cssnano-plugin@^1.0.5":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@intervolga/optimize-cssnano-plugin/-/optimize-cssnano-plugin-1.0.6.tgz#be7c7846128b88f6a9b1d1261a0ad06eb5c0fdf8"
@@ -5046,6 +5053,11 @@ ignore@^4.0.3, ignore@^4.0.6:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-4.0.6.tgz#750e3db5862087b4737ebac8207ffd1ef27b25fc"
   integrity sha512-cyFDKrqc/YdcWFniJhzI42+AzS+gNwmUzOSFcRCQYwySuBBBy/KjuxWLZ/FHEH6Moq1NizMOBWyTcv8O4OZIMg==
+
+img-comparison-slider@^7.4.3:
+  version "7.4.3"
+  resolved "https://registry.yarnpkg.com/img-comparison-slider/-/img-comparison-slider-7.4.3.tgz#2fc32fdd51f2f3620f7924008df7dc2bf6fcf3a7"
+  integrity sha512-hFwZ+644VbpPraAbJk9upCN8luI/ejd0YLOxI+8WP43A+zPj6nma3H411qAEBwhD8XBpFobJdkOq/r/TGU5udg==
 
 import-cwd@^2.0.0:
   version "2.1.0"
