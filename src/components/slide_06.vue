@@ -18,23 +18,42 @@
           </div>
           <div class='commission'>
             <div class='headline'>
-              {{ t('slide_06.commission.headline') }} <span class='commission-note-icon' />
+              {{ t('slide_06.commission.headline') }}
+              <span ref='commission_note_icon' class='commission-note-icon' />
+              <div ref='commission_note_tooltip' class='popper'>
+                <div ref='commission_note_tooltip_popper_arrow' class='arrow' />
+                {{ t('slide_06.commission.note') }}
+              </div>
             </div>
             <div class='note'>{{ t('slide_06.commission.note') }}</div>
           </div>
         </div>
       </div>
-      <div class='details'>
-      </div>
+      <div class='details' />
     </div>
   </article>
 </template>
 
 <script>
 import t from '@/utils/locale';
+import { createPopper } from '@popperjs/core';
 
 export default {
   name: 'Slide5',
+  mounted() {
+    createPopper(this.$refs.commission_note_icon, this.$refs.commission_note_tooltip, {
+      placement: 'right',
+      modifiers: [{
+        name: 'arrow',
+        options: { element: this.$refs.commission_note_tooltip_popper_arrow }
+      }, {
+        name: 'offset',
+        options: {
+          offset: [0, 14]
+        }
+      }]
+    });
+  },
   methods: {
     t
   }
@@ -205,7 +224,60 @@ h2
         background-size: contain
         content: ''
         height: 24px
-        width: 24px
-        position: absolute
         margin: 1px 0 0 9px
+        position: absolute
+        width: 24px
+
+    .popper
+      +lte_ipad
+        display: none
+
+      +gte_laptop
+        visibility: hidden
+
+        .arrow:before
+          visibility: hidden
+
+    .commission-note-icon:hover + .popper
+      visibility: visible
+
+      .arrow:before
+        visibility: visible
+
+.popper
+  background: #474747
+  border-radius: 10px
+  color: #fff
+  font-size: 14px
+  font-weight: normal
+  line-height: 18px
+  padding: 12px 16px
+  width: 253px
+
+  .arrow,
+  .arrow:before
+    position: absolute
+    width: 16px
+    height: 16px
+    background: inherit
+
+  .arrow
+    visibility: hidden
+
+  .arrow:before
+    visibility: visible
+    content: ''
+    transform: rotate(45deg)
+
+  &[data-popper-placement^='top'] > .arrow
+    bottom: -8px
+
+  &[data-popper-placement^='bottom'] > .arrow
+    top: -8px
+
+  &[data-popper-placement^='left'] > .arrow
+    right: -8px
+
+  &[data-popper-placement^='right'] > .arrow
+    left: -8px
 </style>
