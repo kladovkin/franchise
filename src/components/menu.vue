@@ -6,8 +6,8 @@
         <li><div @click='() => scrollTo("slide_02")'>{{ t('menu.about') }}</div></li>
         <li><div @click='() => scrollTo("slide_04")'>{{ t('menu.benefits') }}</div></li>
         <li><div @click='() => scrollTo("slide_05")'>{{ t('menu.requirements') }}</div></li>
-        <li><div @click='() => scrollTo("slide_06")'>{{ t('menu.roadmap') }}</div></li>
-        <li><div @click='() => scrollTo("slide_08")'>{{ t('menu.cases') }}</div></li>
+        <li><div @click='() => scrollTo("slide_07")'>{{ t('menu.roadmap') }}</div></li>
+        <li><div @click='() => scrollTo("slide_09")'>{{ t('menu.cases') }}</div></li>
         <li>
           <Button
             :text='t("menu.button")'
@@ -64,7 +64,7 @@ export default {
       );
     },
     async lead() {
-      this.scrollTo('slide_09');
+      this.scrollTo('slide_10');
     }
   }
 };

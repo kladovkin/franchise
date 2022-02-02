@@ -1,39 +1,82 @@
 <template>
-  <div id='slide_07' class='outer'>
-    <div class='container'>
+  <div id='slide_07' class='background-cutter'>
+    <article>
       <h2 v-html='t("slide_07.h2")' />
-    </div>
-    <div class='background'>
-      <article>
-        <div class='circle'>
-          <b>{{ t('slide_07.circle.title') }}</b>
-          <span v-html='t("slide_07.circle.note")' />
+      <div class='area'>
+        <div class='entry-wrapper entry-wrapper-1'>
+          <div class='entry entry-1'>
+            <div class='circle'>2 {{ t('slide_07.days') }}</div>
+            <div class='info'>
+              <b v-html='t("slide_07.info_1.title")' />
+              <p v-html='t("slide_07.info_1.body")' />
+            </div>
+          </div>
         </div>
-        <ul>
-          <li>
-            <b>10 %</b>
-            <div>
-              <span>{{ t('slide_07.list_1') }}</span>
-              <span>{{ t('slide_07.list_2') }}</span>
+        <div class='entry-wrapper entry-wrapper-2'>
+          <div class='entry entry-2'>
+            <div class='circle'>2 {{ t('slide_07.days') }}</div>
+            <div class='info'>
+              <b v-html='t("slide_07.info_2.title")' />
+              <p v-html='t("slide_07.info_2.body")' />
+              <div>
+                <b>{{ t('slide_07.info_2.note.price') }}</b>
+                <p>{{ t('slide_07.info_2.note.description') }}</p>
+              </div>
             </div>
-          </li>
-          <li>
-            <b>5 %</b>
-            <div>
-              <span>{{ t('slide_07.list_3') }}</span>
-              <span>{{ t('slide_07.list_4') }}</span>
+          </div>
+        </div>
+        <div class='entry-wrapper entry-wrapper-3'>
+          <div class='entry entry-3'>
+            <picture class='design-project' @click='enlarge'>
+              <source src='../assets/slide_07/design_project.webp' type='image/webp'>
+              <img loading='lazy' src='../assets/slide_07/design_project.jpg'>
+            </picture>
+            <div class='circle top'>7 {{ t('slide_07.days_2') }}</div>
+            <div class='info'>
+              <b v-html='t("slide_07.info_3.title")' />
+              <p v-html='t("slide_07.info_3.body")' />
             </div>
-          </li>
-          <li>
-            <b>5 %</b>
-            <div>
-              <span>{{ t('slide_07.list_5') }}</span>
-              <span>{{ t('slide_07.list_6') }}</span>
+          </div>
+        </div>
+        <div class='entry-wrapper entry-wrapper-4'>
+          <div class='entry entry-4'>
+            <div class='circle'>45 {{ t('slide_07.days_2') }}</div>
+            <div class='info'>
+              <b v-html='t("slide_07.info_4.title")' />
+              <p v-html='t("slide_07.info_4.body")' />
+              <div>
+                <b>{{ t('slide_07.info_4.note.price') }}</b>
+                <p>{{ t('slide_07.info_4.note.description') }}</p>
+              </div>
             </div>
-          </li>
-        </ul>
-      </article>
-    </div>
+          </div>
+        </div>
+        <div class='entry-wrapper entry-wrapper-5'>
+          <div class='entry entry-5'>
+            <div class='circle top'>7 {{ t('slide_07.days_2') }}</div>
+            <div class='info'>
+              <b v-html='t("slide_07.info_5.title")' />
+              <p v-html='t("slide_07.info_5.body")' />
+            </div>
+          </div>
+        </div>
+        <div class='entry-wrapper entry-wrapper-6'>
+          <div class='entry entry-6'>
+            <div class='circle top logo' />
+            <div class='info'>
+              <b v-html='t("slide_07.info_6.title")' />
+              <p class='final-bold' v-html='t("slide_07.info_6.body")' />
+              <p class='list' v-html='t("slide_07.info_6.list")' />
+            </div>
+            <img
+              class='background'
+              loading='lazy'
+              src='../assets/slide_07/background_final.jpg'
+            >
+          </div>
+        </div>
+      </div>
+    </article>
   </div>
 </template>
 
@@ -41,182 +84,567 @@
 import t from '@/utils/locale';
 
 export default {
-  name: 'Slide7',
+  name: 'Slide6',
   methods: {
-    t
+    t,
+    async enlarge() {
+      const { default: SimpleLightbox } = await import(
+        /* webpackChunkName: "lightbox" */ 'simple-lightbox'
+      );
+
+      SimpleLightbox.open({
+        items: ['/schema.png']
+      });
+    }
   }
 };
 </script>
 
 <style scoped lang='sass'>
-$mobile-circle-radius: 117px
-.outer
+article
   +lte_ipad
-    margin-bottom: rem(26px)
-
-  +gte_laptop
-    margin-bottom: 82px
-
-  +laptop
-    margin-top: scale-laptop(-167px, -23px)
-
-  +gte_desktop
-    margin-top: -23px
+    padding-top: rem(25px)
+    margin-bottom: rem(80px)
 
 h2
   +lte_ipad
-    margin-bottom: rem($mobile-circle-radius + 40px)
+    margin-bottom: 54px
 
   +gte_laptop
-    margin-bottom: 45px
+    margin: 0 auto 82px
+    max-width: 727px
     text-align: center
-    width: 500px
+
+.area
+  position: relative
+
+  +gte_laptop
+    margin: 0 auto
 
   +laptop
-    margin-left: scale-laptop(270px, 334px)
+    max-width: 100%
+    height: scale-laptop(2587px, 2913px)
 
   +gte_desktop
-    margin-left: 334px
+    height: 2913px
 
-.background
-  background: #5096FF
-  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.05)
-
-article
-  +ipad
-    display: flex
-    justify-content: center
-
-  +lte_ipad
-    padding-bottom: rem(40px)
-
-  +gte_laptop
-    height: 223px
-
-  ul
-    color: #fff
-    display: flex
-
-    +ipad
-      display: inline-flex
+  &:before
+    content: ''
+    position: absolute
+    z-index: -1
 
     +lte_ipad
-      flex-direction: column
-      padding-top: rem($mobile-circle-radius + 8px)
+      background: #f6f5fe
+      height: rem(840px)
+      left: rem(35px)
+      top: rem(42px)
+      width: rem(16px)
 
     +gte_laptop
-      justify-content: center
-      align-items: center
-      height: 100%
+      background-image: url(../assets/slide_07/background_line-desktop.svg)
+      background-repeat: no-repeat
+      background-size: cover
+      left: 50%
+      transform: translateX(-50%)
 
     +laptop
-      margin-left: scale-laptop(270px, 334px)
-      width: scale-laptop(635px, 728px)
+      width: scale-laptop(964px, 1096px)
+      height: scale-laptop(2587px, 2913px)
+      top: scale-laptop(108px, 130px) // it is intentionally 15px less than on desktop
 
     +gte_desktop
-      margin-left: 334px
-      width: 728px
+      background-size: 1096px 2913px
+      top: 145px
+      width: 1096px
+      height: 2913px
 
-    li
-      display: flex
-      flex-shrink: 0
+.entry
+  display: flex
 
-      +lte_ipad
-        &:not(:last-child)
-          margin-bottom: rem(24px)
+  +iphone
+    margin-bottom: rem(40px)
+
+  +ipad
+    margin-bottom: rem(55px)
+
+  +lte_ipad
+    color: #4b4b4b
+
+    .entry-wrapper:last-child &
+      margin-bottom: 0
+
+  +gte_laptop
+    color: #333
+
+  .circle
+    align-items: center
+    align-self: flex-end
+    background-repeat: no-repeat
+    background-size: contain
+    display: flex
+    flex-shrink: 0
+    font-weight: bold
+    justify-content: center
+    position: relative
+    z-index: 1
+
+    &.top
+      align-self: flex-start
+
+    +lte_ipad
+      background-image: url(../assets/slide_07/circle-mobile.svg)
+      font-size: rem(14px)
+      height: rem(85px)
+      line-height: rem(16px)
+      margin-right: rem(16px)
+      width: rem(85px)
+
+    +gte_laptop
+      background-image: url(../assets/slide_07/circle-desktop.svg)
+      font-size: 30px
+      height: 160px
+      line-height: 23px
+      margin-right: 28px
+      width: 160px
+
+    &.logo
+      background-image: url(../assets/slide_07/circle_logo.svg)
 
       +gte_laptop
-        flex-direction: column
+        align-self: center
+
+  .info
+    +ipad
+      max-width: rem(360px)
+
+    +lte_ipad
+      display: flex
+      flex-direction: column
+      justify-content: center
+
+    b
+      display: block
+      font-weight: bold
+
+      +lte_ipad
+        font-size: rem(14px)
+        line-height: rem(18px)
+        margin-bottom: rem(4px)
+
+      +gte_laptop
+        font-size: 18px
+        line-height: 23px
+        margin-bottom: rem(4px)
+
+    p
+      +lte_ipad
+        color: #6c6c6c
+        font-size: rem(12px)
+        line-height: rem(16px)
+
+      +gte_laptop
+        color: #4B4B4B
+        font-size: 16px
+        line-height: 23px
+
+      &.final-bold
+        margin-top: rem(16px)
+        font-weight: bold
+        color: inherit
+
+        +lte_ipad
+          margin-top: rem(8px)
+          margin-bottom: rem(12px)
+
+      &.list
+        white-space: nowrap
 
       &:not(:last-child)
-        +laptop
-          margin-right: scale-laptop(41px, 86px)
+        +lte_ipad
+          margin-bottom: rem(12px)
 
-        +gte_desktop
-          margin-right: 86px
+    div
+      justify-content: center
+      background: #f44f0c
+      border-radius: 10px
+      display: flex
+      flex-direction: column
+
+      +lte_ipad
+        height: rem(52px)
+        width: rem(255px)
+        margin-left: rem(-68px)
+        padding-left: rem(68px)
+
+      +gte_laptop
+        height: rem(95px)
+        margin-left: rem(-108px)
+        padding-left: rem(108px)
 
       b
+        color: #fff
         font-weight: bold
 
         +lte_ipad
-          font-size: rem(30px)
-          line-height: rem(30px)
-          width: rem(85px)
-          margin-right: rem(16px)
-
-        +gte_laptop
-          font-size: 50px
-          line-height: 35px
-          margin-bottom: 11px
-
-      div
-        display: flex
-        flex-direction: column
-
-      span
-        +lte_ipad
-          font-size: rem(14px)
-          line-height: rem(18px)
+          font-size: rem(18px)
+          line-height: rem(24px)
+          margin-bottom: rem(1px)
 
         +gte_laptop
           font-size: 18px
           line-height: 23px
+          margin-bottom: -3px
 
-.circle
-  align-items: center
-  background-repeat: no-repeat
-  background-size: contain
+      p
+        color: #fff
+
+        +gte_laptop
+          font-weight: normal
+
+  &-1
+    +gte_laptop
+      align-items: center
+      flex-direction: row-reverse
+
+      .circle
+        margin-right: 0
+
+      .info
+        max-width: 250px
+
+        & > b
+          margin-bottom: 5px
+
+    .info
+      +laptop
+        margin-right: scale-laptop(60px, 111px)
+
+      +gte_desktop
+        margin-right: 111px
+
+  &-2
+    +iphone
+      margin-bottom: rem(50px)
+
+    +ipad
+      margin-bottom: rem(70px)
+
+    +gte_laptop
+      align-items: flex-end
+
+      .info
+        & > b
+          margin-bottom: 3px
+
+        & > p
+          margin-bottom: 30px
+
+        & > div
+          width: 369px
+
+    +laptop
+      margin-top: scale-laptop(-80px, 107px)
+
+    +gte_desktop
+      margin-top: 107px
+
+  &-3
+    +iphone
+      margin-bottom: rem(50px)
+
+    +lte_ipad
+      .design-project
+        display: none
+
+    +gte_laptop
+      align-items: center
+      flex-direction: row-reverse
+
+      .design-project
+        cursor: pointer
+
+      .circle
+        margin-right: 0
+
+      .info
+        max-width: 350px
+
+        & > b
+          max-width: 300px
+          margin-bottom: 16px
+
+    +laptop
+      margin-top: scale-laptop(-233px, -4px)
+
+      .info
+        margin-right: scale-laptop(41px, 29px)
+
+    +gte_desktop
+      margin-top: -4px
+
+      .info
+        margin-right: 29px
+
+  &-4
+    +iphone
+      margin-bottom: rem(50px)
+
+    +ipad
+      margin-bottom: rem(70px)
+
+    +gte_laptop
+      align-items: flex-end
+
+      .info
+        & > b
+          margin-bottom: 13px
+          max-width: 230px
+
+        & > p
+          margin-bottom: 37px
+          max-width: 350px
+
+        & > div
+          width: 462px
+
+    +laptop
+      margin-top: scale-laptop(-381px, 61px)
+
+    +gte_desktop
+      margin-top: 61px
+
+  &-5
+    +ipad
+      margin-bottom: rem(70px)
+
+    +gte_laptop
+      align-items: center
+      flex-direction: row-reverse
+
+      .circle
+        margin-right: 0
+
+      .info
+        max-width: 360px
+
+    +laptop
+      margin-top: scale-laptop(-435px, 6px)
+
+      .info
+        margin-right: scale-laptop(32px, 20px)
+
+    +gte_desktop
+      margin-top: 6px
+
+      .info
+        margin-right: 20px
+
+  &-6
+    +iphone
+      position: relative
+      padding-bottom: rem(230px)
+
+    +ipad
+      position: relative
+      padding-bottom: rem(300px)
+
+    +laptop
+      margin-top: scale-laptop(-587px, -73px)
+      margin-left: -14px
+
+    +gte_desktop
+      margin-top: -73px
+
+    .background
+      +lte_ipad
+        max-width: 100%
+        bottom: 0
+        position: absolute
+
+      +gte_laptop
+        position: absolute
+        right: -87px
+
+      +laptop
+        width: scale-laptop(464px, 540px)
+        margin-top: scale-laptop(-54px, -84px)
+
+      +gte_desktop
+        width: 540px
+        margin-top: -84px
+        right: -80px
+
+.entry-wrapper
+  position: relative
   display: flex
-  flex-direction: column
-  justify-content: center
-  position: absolute
-  z-index: 1
+  align-items: center
 
-  +lte_ipad
-    background-image: url(../assets/slide_07/circle-mobile.svg)
-    height: rem(218px)
-    left: 50%
-    transform: translateX(-50%)
-    width: rem(218px)
-    margin-top: rem(-$mobile-circle-radius)
-
-  +gte_laptop
-    background-image: url(../assets/slide_07/circle-desktop.svg)
-
-  +laptop
-    height: scale-laptop(310px, 367px)
-    margin-top: scale-laptop(-44px, -72px)
-    margin-left: scale-laptop(-92px, -100px)
-    width: scale-laptop(310px, 367px)
-
-  +gte_desktop
-    height: 367px
-    margin-left: -100px
-    margin-top: -72px
-    width: 367px
-
-  b
-    color: #5096ff
-    font-weight: bold
+  img.background
+    border-radius: 50px
 
     +lte_ipad
-      font-size: rem(44px)
-      line-height: rem(44px)
-      margin-bottom: rem(8px)
+      border-radius: 30px
 
+  &:before
+    content: ''
+    background-repeat: no-repeat
+    background-size: contain
+    position: absolute
+
+  &-1
+    +laptop
+      height: scale-laptop(279px, 341px)
+      margin-bottom: scale-laptop(61px, -62px)
+
+      &:before
+        height: scale-laptop(279px, 341px)
+        width: scale-laptop(451px, 491px)
+        left: scale-laptop(-68px, -35px)
+
+    +gte_desktop
+      height: 341px
+      justify-content: flex-end
+      margin-bottom: -62px
+
+      &:before
+        height: 341px
+        left: -35px
+        width: 491px
+
+    &:before
+      +gte_laptop
+        background-image: url(../assets/slide_07/entry_wrapper_1.png)
+
+        .webp &
+          background-image: url(../assets/slide_07/entry_wrapper_1.webp)
+
+  &-2
+    +laptop
+      height: scale-laptop(409px, 531px)
+      margin-bottom: scale-laptop(157px, 110px)
+
+      &:before
+        height: scale-laptop(407px, 531px)
+        right: scale-laptop(-111px, -162px)
+        width: scale-laptop(533px, 682px)
+        top: scale-laptop(-44px, 33px)
+
+    +gte_desktop
+      height: 531px
+      margin-bottom: 110px
+
+      &:before
+        height: 531px
+        right: -162px
+        width: 682px
+        top: 33px
+
+    &:before
+      +gte_laptop
+        background-image: url(../assets/slide_07/entry_wrapper_2.png)
+
+        .webp &
+          background-image: url(../assets/slide_07/entry_wrapper_2.webp)
+
+  &-3
     +gte_laptop
-      font-size: 50px
-      line-height: 35px
-      margin-bottom: 12px
+      justify-content: flex-end
 
-  span
-    text-align: center
-    color: #4b4b4b
-    +lte_ipad
-      font-size: rem(12px)
-      line-height: rem(14px)
+    +laptop
+      height: scale-laptop(215px, 247px)
+      margin-bottom: scale-laptop(205px, 70px)
 
+      .design-project
+        height: scale-laptop(215px, 247px)
+        width: scale-laptop(384px, 443px)
+
+    +gte_desktop
+      height: 247px
+      margin-bottom: 70px
+
+      .design-project
+        height: 247px
+        width: 443px
+
+    .design-project
+      position: absolute
+      left: 0
+
+  &-4
+    +laptop
+      height: scale-laptop(297px, 435px)
+      margin-bottom: scale-laptop(42px, 23px)
+
+      &:before
+        height: scale-laptop(297px, 337px)
+        right: scale-laptop(-53px, -46px)
+        top: scale-laptop(-127px, 82px)
+        width: scale-laptop(446px, 506px)
+
+    +gte_desktop
+      height: 435px
+      margin-bottom: 23px
+
+    +desktop
+      &:before
+        height: scale-between(337px, 435px, 1200px, 1440px)
+        width: scale-between(506px, 652px, 1200px, 1440px)
+        right: scale-between(-46px, -403px, 1200px, 1440px)
+        top: scale-between(82px, 50px, 1200px, 1440px)
+
+    +gte_hd
+      &:before
+        height: 435px
+        right: -403px
+        top: 50px
+        width: 652px
+
+    &:before
+      +gte_laptop
+        background-image: url(../assets/slide_07/entry_wrapper_4.png)
+
+        .webp &
+          background-image: url(../assets/slide_07/entry_wrapper_4.webp)
+
+  &-5
     +gte_laptop
-      font-size: 18px
-      line-height: 23px
+      justify-content: flex-end
+
+    +laptop
+      height: 585px
+      margin-bottom: scale-laptop(80px, 54px)
+
+      &:before
+        height: scale-laptop(445px, 575px)
+        left: scale-laptop(-147px, -184px)
+        width: scale-laptop(445px, 575px)
+        top: scale-laptop(-158px, 33px)
+
+    +gte_desktop
+      height: 585px
+      margin-bottom: 54px
+
+      &:before
+        height: 575px
+        left: -184px
+        width: 575px
+        top: 33px
+
+    &:before
+      +gte_laptop
+        background-image: url(../assets/slide_07/entry_wrapper_5.png)
+
+        .webp &
+          background-image: url(../assets/slide_07/entry_wrapper_5.webp)
+
+  &-6
+    +laptop
+      height: scale-laptop(283px, 380px)
+
+    +gte_desktop
+      height: 380px
+</style>
+
+<style lang='sass'>
+@import ../../node_modules/simple-lightbox/dist/simpleLightbox.css
 </style>

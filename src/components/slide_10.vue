@@ -1,132 +1,117 @@
 <template>
-  <article
-    id='slide_10'
-    v-waypoint='{
-      active: true,
-      callback: onWaypoint,
-      options: intersectionOptions
-    }'
-  >
+  <article id='slide_10'>
     <h2>{{ t('slide_10.h2') }}</h2>
-    <div class='popup'>
-      <div class='person'>
-        <img
-          loading='lazy'
-          src='../assets/slide_10/person_1.png'
-        >
-
-        <div class='info'>
-          <div class='name'>
-            <div>{{ t('slide_10.founder') }}</div>
-            <div><b>{{ t('slide_10.founder_name') }}</b></div>
-          </div>
-
-          <div class='contacts'>
-            <div>
-              <a href='mailto:m.karpushin@kladovkin.ru'>
-                m.karpushin@kladovkin.ru
-              </a>
-            </div>
-            <div>
-              <a href='tel:+7-916-305-22-05'>+7-916-305-22-05</a>
-            </div>
-          </div>
+    <div class='note'>{{ t('slide_10.note') }}</div>
+    <div v-if='isSubmitted' class='success-container'>
+      <div>
+        <div class='headline'>
+          <span>{{ t('slide_10.thanks') }}</span>
+          {{ t('slide_10.success') }}
+        </div>
+        <div class='text'>{{ t('slide_10.success_note') }}</div>
+      </div>
+    </div>
+    <div v-else class='form-container'>
+      <div class='cc-form'>
+        <div class='c-left'>
+          <Input
+            v-model='client'
+            :placeholder='t("slide_10.client")'
+            name='client'
+            :is-error='isValidated && !client'
+          />
+          <Input
+            v-model='email'
+            placeholder='E-mail'
+            name='email'
+            type='email'
+            :is-error='isValidated && !email'
+          />
+          <Input
+            v-model='phone'
+            :placeholder='t("slide_10.phone")'
+            name='phone'
+            type='tel'
+            :is-error='isValidated && !phone'
+          />
+        </div>
+        <div class='c-right'>
+          <Input
+            v-model='comment'
+            :placeholder='t("slide_10.message")'
+            name='comment'
+            type='textarea'
+          />
         </div>
       </div>
-
-      <div class='person'>
-        <img
-          loading='lazy'
-          src='../assets/slide_10/person_2.png'
-        >
-
-        <div class='info'>
-          <div class='name'>
-            <div>{{ t('slide_10.staff') }}</div>
-            <div><b>{{ t('slide_10.staff_name') }}</b></div>
-          </div>
-
-          <div class='contacts'>
-            <div>
-              <a href='mailto:n.nikitina@kladovkin.ru'>
-                n.nikitina@kladovkin.ru
-              </a>
-            </div>
-            <div>
-              <a href='tel:+7-495-181-55-45'>+7-495-181-55-45</a>
-            </div>
-          </div>
+      <div class='submit'>
+        <div v-if='isError' class='error mobile'>*Обязательное поле для заполения</div>
+        <Button type='red' :text='t("slide_10.submit")' @click='submit' />
+        <div class='privacy'>
+          {{ t('slide_10.privacy_note') }}
+          <a
+            href='https://kladovkin.ru/selfstorage/privacy/'
+            target='_blank'
+          >
+            {{ t('slide_10.privacy_link') }}
+          </a>
         </div>
       </div>
-
-      <div class='address' v-html='t("slide_10.address")' />
+      <div v-if='isError' class='error desktop'>{{ t('slide_10.error') }}</div>
     </div>
   </article>
-  <div ref='map' class='map' />
 </template>
 
 <script>
-import isMobile from '@/utils/is_mobile';
+import axios from 'axios';
+
+import Button from '@/components/button';
+import Input from '@/components/input';
 import t from '@/utils/locale';
 
 export default {
-  name: 'Slide10',
+  name: 'Slide9',
+  components: {
+    Button,
+    Input
+  },
   data: () => ({
-    isMapInitialized: false,
-    intersectionOptions: {
-      root: null,
-      rootMargin: '0px 0px 0px 0px',
-      threshold: [0, 1] // [0.25, 0.75] if you want a 25% offset!
-    } // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+    client: '',
+    phone: '',
+    email: '',
+    comment: '',
+    isValidated: false,
+    isSubmitted: false
   }),
   computed: {
-    mapCenter() {
-      return isMobile() ? [55.85, 37.57] : [55.754, 37.27];
+    url() {
+      return process.env.NODE_ENV === 'development' ?
+        'http://ms.local/selfstorage/leads/' :
+        'https://kladovkin.ru/selfstorage/leads/';
     },
-    iconOptions() {
-      return isMobile() ?
-        { iconImageSize: [35, 43], iconImageOffset: [-17, -43] } :
-        { iconImageSize: [74, 95], iconImageOffset: [-37, -95] };
+    isError() {
+      return this.isValidated && (
+        !this.client || !this.email || !this.phone
+      );
     }
   },
   methods: {
     t,
-    async onWaypoint({ going }) {
-      if (going !== 'in') { return; }
-      if (this.isMapInitialized) { return; }
-      this.isMapInitialized = true;
+    submit() {
+      this.isValidated = true;
 
-      const { default: ymaps } = await import(
-        /* webpackChunkName: "ymaps" */
-        'ymaps'
-      );
-      ymaps
-        .load('https://api-maps.yandex.ru/2.1/?lang=ru_RU')
-        .then(maps => {
-          const map = new maps.Map(this.$refs.map, {
-            center: this.mapCenter,
-            zoom: 10,
-            controls: [
-              'geolocationControl',
-              'typeSelector',
-              'fullscreenControl',
-              'zoomControl',
-              'rulerControl'
-            ]
-          });
-          map.behaviors.disable('scrollZoom');
-
-          const marker = new window.ymaps.Placemark(
-            [55.866516, 37.480508],
-            { },
-            {
-              iconLayout: 'default#imageWithContent',
-              iconImageHref: '/marker.svg',
-              ...this.iconOptions
-            }
-          );
-          map.geoObjects.add(marker);
+      if (!this.isError) {
+        this.isSubmitted = true;
+        axios.post(this.url, {
+          crm_lead: {
+            phone: this.phone,
+            client: this.client,
+            email: this.email,
+            lead_type: 'franchise',
+            rent_note: this.comment
+          }
         });
+      }
     }
   }
 };
@@ -134,159 +119,238 @@ export default {
 
 <style scoped lang='sass'>
 article
-  padding: 0
+  +lte_ipad
+    margin-bottom: 80px
+    overflow: hidden
+    padding-top: rem(81px)
 
-.map
-  background: #f7f7f7
+  +gte_laptop
+    margin-bottom: 125px
+    padding-bottom: 6px
+    padding-top: 96px
+
+  &:before
+    background-repeat: no-repeat
+    background-size: contain
+    content: ''
+    position: absolute
+    top: 0
+    z-index: -1
+
+    +lte_ipad
+      background-image: url(../assets/slide_10/circles-mobile.svg)
+      height: rem(207px)
+      left: 0
+      width: rem(127px)
+
+    +gte_laptop
+      background-image: url(../assets/slide_10/circles-desktop.svg)
+      height: 239px
+      width: 622px
+
+    +laptop
+      left: scale-laptop(305px, 405px)
+
+    +gte_desktop
+      left: 405px
 
 h2
-  +default_padding_left
-  +default_padding_right
+  +lte_ipad
+    margin-bottom: rem(12px)
+
+  +gte_laptop
+    margin-bottom: rem(16px)
+
+.note
+  color: #6c6c6c
+  letter-spacing: -0.01em
 
   +lte_ipad
-    text-align: left
+    font-size: rem(14px)
+    line-height: rem(16px)
+    text-align: center
     margin-bottom: rem(40px)
 
   +gte_laptop
-    margin-bottom: 45px
+    font-size: 18px
+    line-height: 23px
+    margin-bottom: 42px
 
-.popup
-  background: #fff
-  box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.25)
-  +default_margin_left
+    &:after
+      background-image: url(../assets/logo.svg)
+      background-repeat: no-repeat
+      background-size: contain
+      content: ''
+      height: 62px
+      position: absolute
+      width: 226px
+      margin: -46px 0 0 77px
 
-  +lte_ipad
-    padding: rem(24px) rem(24px) rem(24px) rem(16px)
-    margin: 0
+.form-container
+  .cc-form
+    +lte_ipad
+      margin-bottom: rem(24px)
 
-  +gte_laptop
-    border-radius: 25px
-    padding: 45px 49px 37px 46px
-    margin-top: 77px
-    position: absolute
-    z-index: 1
-
-  +laptop
-    width: scale-laptop(538px, 636px)
-
-  +gte_desktop
-    width: 636px
-
-  .person
-    display: flex
-    align-items: center
-
-    &:first-child
-      +lte_ipad
-        margin-bottom: rem(28px)
-
-      +gte_laptop
-        margin-bottom: 23px
-
-    &:not(:first-child)
-      +lte_ipad
-        margin-bottom: rem(23px)
-
-      +gte_laptop
-        margin-bottom: 33px
-
-    img
-      +lte_ipad
-        width: rem(85px)
-        height: rem(85px)
-        margin-right: rem(16px)
-
-      +gte_laptop
-        width: 120px
-        height: 120px
-
-      +laptop
-        margin-right: scale-laptop(59px, 70px)
-
-      +gte_desktop
-        margin-right: 70px
-
-    .info
+    +gte_laptop
       display: flex
-      flex-direction: column
+      margin-bottom: 26px
+
+    .c-left
+      +lte_ipad
+        margin-bottom: rem(12px)
+
+      +gte_laptop
+        flex-shrink: 0
+        margin-right: 32px
+        width: 350px
+
+    .c-right
+      +gte_laptop
+        flex-grow: 1
+
+        ::v-deep(textarea)
+          height: 257px
+
+  .submit
+    +gte_laptop
+      display: flex
+      align-items: center
+
+    .button
+      +lte_ipad
+        margin-bottom: rem(24px)
+
+      +gte_laptop
+        width: 350px
+        margin-right: 29px
+
+    .privacy
       letter-spacing: -0.01em
 
       +lte_ipad
-        color: #4b4b4b
-        font-size: rem(14px)
-        line-height: rem(20px)
+        color: #6c6c6c
+        font-size: rem(12px)
+        line-height: rem(18px)
+        text-align: center
 
       +gte_laptop
-        color: #6c6c6c
-        font-size: 16px
-        font-weight: 300
-        height: 100px
+        font-size: 14px
         line-height: 20px
-
-      b
-        +lte_ipad
-          font-weight: bold
-          font-size: 16px
-          line-height: 20px
-          letter-spacing: -0.01em
-          color: #4b4b4b
-
-        +gte_laptop
-          color: #333
+        color: #a5a5a5
 
       a
-        color: inherit
         text-decoration: none
 
         +lte_ipad
+          color: #f44f0c
+
           &:active
             text-decoration: underline
 
         +gte_laptop
+          font-weight: bold
+          color: inherit
+
           &:hover
             text-decoration: underline
 
-      .name
-        +lte_ipad
-          margin-bottom: rem(8px)
-
-        +gte_laptop
-          margin-bottom: auto
-
-        & > div:first-child
-          +lte_ipad
-            color: #6c6c6c
-            font-size: rem(10px)
-            line-height: rem(16px)
-
-  .address
-    font-weight: 300
+  .error
+    color: #f00
     letter-spacing: -0.01em
 
     +lte_ipad
-      color: #4B4B4B
-      font-size: rem(14px)
-      line-height: rem(24px)
+      font-size: 13px
+      line-height: 18px
+      margin-top: rem(-4px)
+      margin-bottom: rem(16px)
+
+      &.desktop
+        display: none
 
     +gte_laptop
-      color: #333
-      font-size: 18px
-      line-height: 23px
+      font-size: 14px
+      line-height: 20px
+      margin-top: 14px
+      position: absolute
 
-    b
-      +lte_ipad
-        display: block
+      &.mobile
+        display: none
 
-      +gte_laptop
-        margin-right: 10px
+.success-container
+  background: #fff
+  border-radius: 40px
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15)
+  display: flex
+  align-items: center
+  justify-content: center
 
-.map
-  +iphone
-    height: rem(195px)
+  +lte_ipad
+    flex-direction: column
+    text-align: center
+    padding: rem(27px) 0 rem(35px)
+    margin-bottom: 15px
 
-  +ipad
-    height: rem(350px)
+  &:before
+    background-image: url(../assets/slide_10/ok.png)
+    background-repeat: no-repeat
+    background-size: contain
+    content: ''
+
+    +lte_ipad
+      margin-bottom: rem(26px)
+      height: rem(130px / 1.0306748466)
+      width: rem(130px)
+
+    +gte_laptop
+      height: 163px
+      margin-right: 79px
+      margin-top: -30px
+      width: 168px
+
+    +laptop
+      margin-left: scale-laptop(0px, -70px)
+
+    +gte_desktop
+      margin-left: -70px
 
   +gte_laptop
-    height: 550px
+    height: 293px
+    margin-top: 60px
+
+  .headline
+    color: #333
+    font-weight: bold
+
+    +lte_ipad
+      font-size: rem(20px)
+      line-height: rem(22px)
+      margin-bottom: rem(13px)
+
+    +gte_laptop
+      font-size: 32px
+      line-height: 35px
+      margin-bottom: 16px
+
+    span
+      color: #f44f0c
+
+      +lte_ipad
+        display: block
+        margin-bottom: rem(8px)
+
+  .text
+    color: #6c6c6c
+    +lte_ipad
+      font-size: rem(14px)
+      line-height: rem(16px)
+      text-align: center
+      padding: 0 rem(30px)
+
+    +gte_laptop
+      font-size: 18px
+      letter-spacing: -0.01em
+      line-height: 23px
+
+    span
+      font-weight: 300
 </style>

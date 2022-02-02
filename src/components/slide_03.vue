@@ -91,7 +91,7 @@ export default {
     t,
     async lead() {
       (await SweetScroll.asyncInstance()).toElement(
-        document.getElementById('slide_09'), { duration: 450 }
+        document.getElementById('slide_10'), { duration: 450 }
       );
     }
   }
