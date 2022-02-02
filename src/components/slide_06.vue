@@ -7,6 +7,10 @@
     </h2>
     <div class='group-container'>
       <div class='revenue'>
+        <div class='graph'>
+          <div class='income' data-value='85%' />
+          <div class='commission' data-value='15%' />
+        </div>
       </div>
       <div class='details'>
       </div>
@@ -59,20 +63,74 @@ h2
   .revenue
     display: flex
 
+    +lte_ipad
+      flex-direction: column
+
     &:before
       background-repeat: no-repeat
       background-size: contain
       content: ''
-      pointer-events: none
       display: block
+      pointer-events: none
 
       +lte_ipad
         background-image: url(../assets/slide_06/line_top-mobile.svg)
-        width: rem(288px)
         height: rem(18px)
+        margin-bottom: rem(9px)
+        width: rem(288px)
 
       +gte_laptop
         background-image: url(../assets/slide_06/line_left-desktop.svg)
         height: 807px
+        margin-right: 26px
         width: 53px
+
+    .graph
+      border-radius: 20px
+      display: flex
+
+      +lte_ipad
+        height: rem(72px)
+
+      +gte_laptop
+        flex-direction: column
+        width: 129px
+
+      .income,
+      .commission
+        align-items: center
+        display: flex
+        justify-content: center
+
+        &:before
+          content: attr(data-value)
+          color: #fff
+          font-weight: 900
+
+          +lte_ipad
+            font-size: rem(24px)
+            line-height: rem(20px)
+
+          +gte_laptop
+            font-size: 40px
+            line-height: 50px
+
+      .income
+        background: #5096ff
+        box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2)
+
+        +lte_ipad
+          width: rem(233px)
+
+        +gte_laptop
+          height: 645px
+
+      .commission
+        background: #f44f0c
+        box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2)
+        flex-grow: 1
+
+        &:before
+          +lte_ipad
+            font-size: rem(16px)
 </style>
