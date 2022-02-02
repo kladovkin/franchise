@@ -11,6 +11,18 @@
           <div class='income' data-value='85%' />
           <div class='commission' data-value='15%' />
         </div>
+        <div class='texts'>
+          <div class='income'>
+            <div class='headline'>{{ t('slide_06.income.headline') }}</div>
+            <div class='note'>{{ t('slide_06.income.note') }}</div>
+          </div>
+          <div class='commission'>
+            <div class='headline'>
+              {{ t('slide_06.commission.headline') }} <span class='commission-note-icon' />
+            </div>
+            <div class='note'>{{ t('slide_06.commission.note') }}</div>
+          </div>
+        </div>
       </div>
       <div class='details'>
       </div>
@@ -86,14 +98,18 @@ h2
         width: 53px
 
     .graph
-      border-radius: 20px
+      overflow: hidden
       display: flex
 
       +lte_ipad
+        border-radius: rem(10px)
         height: rem(72px)
+        margin-bottom: rem(24px)
 
       +gte_laptop
+        border-radius: 20px
         flex-direction: column
+        margin-right: 29px
         width: 129px
 
       .income,
@@ -133,4 +149,63 @@ h2
         &:before
           +lte_ipad
             font-size: rem(16px)
+    .texts
+      .headline
+        font-weight: 900
+
+        +lte_ipad
+          font-size: rem(16px)
+          line-height: rem(20px)
+          margin-bottom: rem(4px)
+
+        +gte_laptop
+          color: #333
+          font-size: 32px
+          line-height: 50px
+
+      .note
+        color: #5f5f5f
+
+        +lte_ipad
+          font-size: rem(12px)
+          line-height: rem(16px)
+
+        +gte_laptop
+          font-size: 16px
+          line-height: 20px
+          max-width: 250px
+
+      .income
+        +lte_ipad
+          margin-bottom: rem(24px)
+
+        +gte_laptop
+          margin-top: 302px
+
+        .headline
+          +lte_ipad
+            color: #5096ff
+
+      .commission
+        +gte_laptop
+          margin-top: 292px
+
+        .headline
+          +lte_ipad
+            color: #f44f0c
+
+        .note
+          +gte_laptop
+            display: none
+
+    .commission-note-icon
+      +gte_laptop
+        background-image: url(../assets/slide_06/commission_note_icon-desktop.svg)
+        background-repeat: no-repeat
+        background-size: contain
+        content: ''
+        height: 24px
+        width: 24px
+        position: absolute
+        margin: 1px 0 0 9px
 </style>
