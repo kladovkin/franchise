@@ -276,6 +276,7 @@ h2
   .details
     display: flex
     flex-direction: column
+    margin-left: 132px
 
     &:before
       background-image: url(../assets/slide_06/line_right-desktop.svg)
@@ -291,6 +292,7 @@ h2
 
     .block
       position: relative
+      padding-left: 100px
 
       @each $index in 0,1,2
         &-#{$index}:before
@@ -306,43 +308,54 @@ h2
           width: 65px
 
       &-0
-        margin-top: 30px
+        margin-top: 35px
+        margin-bottom: 20px
 
       &-1
-        margin-top: 75px
+        +gte_desktop
+          margin-top: auto
 
       &-2
         margin-top: auto
-        margin-bottom: -17px // + 26px
+        margin-bottom: 30px
 
         &:before
           bottom: 0
 
-      .headline
-        color: #333
-        font-size: 18px
-        font-weight: bold
-        line-height: 23px
-        margin-bottom: 16px
+      li
+        &.headline
+          color: #333
+          font-size: 18px
+          font-weight: bold
+          line-height: 23px
+          margin-bottom: 16px
 
-      .text
-        color: #4b4b4b
-        font-size: 16px
-        font-weight: 300
-        line-height: 20px
-        margin-bottom: 8px
-        padding-left: 8px
+        &:not(:last-child)
+          margin-bottom: 8px
 
-        &:before
-          background-image: url(../assets/slide_06/li_text.svg)
-          background-repeat: no-repeat
-          background-size: contain
-          content: ''
-          height: 6px
-          width: 6px
-          position: absolute
-          margin-top: 9px
-          margin-left: -14px
+        &.text
+          color: #4b4b4b
+          font-size: 16px
+          font-weight: 300
+          line-height: 20px
+          padding-left: 8px
+
+          +laptop
+            max-width: 240px
+
+          +gte_desktop
+            max-width: 337px
+
+          &:before
+            background-image: url(../assets/slide_06/li_text.svg)
+            background-repeat: no-repeat
+            background-size: contain
+            content: ''
+            height: 6px
+            width: 6px
+            position: absolute
+            margin-top: 9px
+            margin-left: -14px
 
 .popper
   background: #474747
@@ -353,6 +366,7 @@ h2
   line-height: 18px
   padding: 12px 16px
   width: 253px
+  z-index: 1
 
   .arrow,
   .arrow:before
