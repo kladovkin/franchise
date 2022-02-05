@@ -393,8 +393,13 @@ h2
 
       .texts
         +lte_ipad
-          padding-top: rem(14px)
-          margin-left: rem(58px)
+          padding-left: rem(58px)
+          overflow: hidden
+          transition: 250ms ease-out
+          position: relative
+
+          .text:first-child
+            padding-top: rem(14px)
 
       .headline
         color: #333
