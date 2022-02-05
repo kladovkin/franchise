@@ -44,15 +44,17 @@
             <div class='icon' />
             <div class='headline'>{{ block.headline }}</div>
           </div>
-          <div class='texts'>
-            <div
-              v-for='(text, textIndex) in block.texts'
-              :key='textIndex'
-              class='text'
-            >
-              {{ text }}
+          <TransitionHeight :duration='350'>
+            <div v-show='blockIsExpanded[blockIndex]' class='texts'>
+              <div
+                v-for='(text, textIndex) in block.texts'
+                :key='textIndex'
+                class='text'
+              >
+                {{ text }}
+              </div>
             </div>
-          </div>
+          </TransitionHeight>
         </div>
       </div>
     </div>
@@ -60,17 +62,22 @@
 </template>
 
 <script>
-import t from '@/utils/locale';
 import { createPopper } from '@popperjs/core';
+
+import TransitionHeight from '@/components/transition_height';
+
+import isMobile from '@/utils/is_mobile';
+import t from '@/utils/locale';
 
 export default {
   name: 'Slide5',
+  components: { TransitionHeight },
   data() {
     const blocks = t('slide_06.blocks');
 
     return {
       blocks,
-      blockIsExpanded: blocks.map(_ => false)
+      blockIsExpanded: blocks.map(_ => !isMobile())
     };
   },
   mounted() {
