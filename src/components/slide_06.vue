@@ -33,7 +33,7 @@
         <div class='mobile-label'>{{ t('slide_06.mobile_label') }}</div>
         <div
           v-for='(block, blockIndex) in blocks'
-          :key='block'
+          :key='blockIndex'
           :class='`block block-${blockIndex}`'
         >
           <div
@@ -58,6 +58,18 @@
         </div>
       </div>
     </div>
+    <div class='comparison'>
+      <div class='headline' v-html='t("slide_06.comparison.headline")' />
+      <div
+        v-for='(block, index) in comparison'
+        :key='index'
+        :class='`block block-${index}`'
+      >
+        <div class='label'>{{ block.label }}</div>
+        <div class='icon' />
+        <div class='value'>{{ block.value }}</div>
+      </div>
+    </div>
   </article>
 </template>
 
@@ -77,7 +89,8 @@ export default {
 
     return {
       blocks,
-      blockIsExpanded: blocks.map(_ => !isMobile())
+      blockIsExpanded: blocks.map(_ => !isMobile()),
+      comparison: t('slide_06.comparison.blocks')
     };
   },
   mounted() {
@@ -131,9 +144,13 @@ h2
       display: block
 
 .group-container
+  +lte_ipad
+    margin-bottom: rem(56px)
+
   +gte_laptop
     display: flex
     position: relative
+    margin-bottom: 120px
 
   .revenue
     display: flex
@@ -492,4 +509,81 @@ h2
 
   &[data-popper-placement^='right'] > .arrow
     left: -8px
+
+.comparison
+  background: rgba(#5096ff, 0.1)
+  border-radius: rem(12px)
+
+  +lte_ipad
+    padding: rem(24px) rem(16px) rem(23px)
+
+  +gte_laptop
+    display: flex
+    padding: 22px 55px 32px
+
+  .headline
+    color: #333
+    font-weight: bold
+
+    +lte_ipad
+      font-size: rem(16px)
+      line-height: rem(20px)
+      margin-bottom: rem(26px)
+
+    +gte_laptop
+      font-size: 24px
+      line-height: 28px
+      max-width: 210px
+
+  .block
+    +lte_ipad
+      position: relative
+
+    &:not(:last-child)
+      +lte_ipad
+        margin-bottom: rem(26px)
+
+    @each $index in 0,1,2
+      &-#{$index} .icon
+        background-image: url(../assets/slide_06/comparison_#{$index}.png)
+        background-repeat: no-repeat
+        background-size: contain
+        content: ''
+        width: rem(100px)
+        height: rem(52px)
+
+        +lte_ipad
+          position: absolute
+          top: rem(2px)
+          right: 0
+
+    .label
+      color: #000
+      font-weight: 300
+
+      +lte_ipad
+        font-size: rem(16px)
+        line-height: rem(20px)
+        margin-bottom: rem(8px)
+
+      +gte_laptop
+        font-size: 16px
+        line-height: 30px
+        margin-bottom: 4px
+
+    .icon
+      +gte_laptop
+        margin-bottom: 27px
+
+    .value
+      color: #f44f0c
+      font-weight: 900
+
+      +lte_ipad
+        font-size: rem(20px)
+        line-height: rem(24px)
+
+      +gte_laptop
+        font-size: 30px
+        line-height: 30px
 </style>

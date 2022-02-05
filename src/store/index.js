@@ -176,7 +176,20 @@ export default createStore({
               'SMM',
               'продвижение на картах'
             ]
-          }]
+          }],
+          comparison: {
+            headline: 'Сравните разные платформы и&nbsp;их&nbsp;комиссии',
+            blocks: [{
+              label: 'Квартиры',
+              value: '14-20%'
+            }, {
+              label: 'Автомобили',
+              value: '18-24%'
+            }, {
+              label: 'Помещения',
+              value: '15-20%'
+            }]
+          }
         },
         slide_07: {
           h2: 'Станьте партнером и откройте автоматизированный бизнес под ключ' +
@@ -461,7 +474,20 @@ export default createStore({
               'SMM',
               'продвижение на картах'
             ]
-          }]
+          }],
+          comparison: {
+            headline: 'Сравните разные платформы и&nbsp;их&nbsp;комиссии',
+            blocks: [{
+              text: 'Квартиры',
+              value: '14-20%'
+            }, {
+              text: 'Автомобили',
+              value: '18-24%'
+            }, {
+              text: 'Помещения',
+              value: '15-20%'
+            }]
+          }
         },
         slide_07: {
           h2: 'Become a partner and open fully automatic turnkey business ' +
