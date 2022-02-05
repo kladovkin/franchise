@@ -30,22 +30,20 @@
         </div>
       </div>
       <div class='details'>
-        <div class='blocks'>
-          <ul
-            v-for='(block, blockIndex) in blocks'
-            :key='block'
-            :class='`block block-${blockIndex}`'
+        <ul
+          v-for='(block, blockIndex) in blocks'
+          :key='block'
+          :class='`block block-${blockIndex}`'
+        >
+          <li class='headline'>{{ block.headline }}</li>
+          <li
+            v-for='(text, textIndex) in block.texts'
+            :key='textIndex'
+            class='text'
           >
-            <li class='headline'>{{ block.headline }}</li>
-            <li
-              v-for='(text, textIndex) in block.texts'
-              :key='textIndex'
-              class='text'
-            >
-              {{ text }}
-            </li>
-          </ul>
-        </div>
+            {{ text }}
+          </li>
+        </ul>
       </div>
     </div>
   </article>
@@ -110,12 +108,17 @@ h2
 .group-container
   +gte_laptop
     display: flex
+    position: relative
 
   .revenue
     display: flex
+    flex-shrink: 0
 
     +lte_ipad
       flex-direction: column
+
+    +gte_laptop
+      width: 492px
 
     &:before
       background-repeat: no-repeat
@@ -123,6 +126,7 @@ h2
       content: ''
       display: block
       pointer-events: none
+      flex-shrink: 0
 
       +lte_ipad
         background-image: url(../assets/slide_06/line_top-mobile.svg)
@@ -137,8 +141,9 @@ h2
         width: 53px
 
     .graph
-      overflow: hidden
       display: flex
+      flex-shrink: 0
+      overflow: hidden
 
       +lte_ipad
         border-radius: rem(10px)
@@ -189,13 +194,17 @@ h2
           +lte_ipad
             font-size: rem(16px)
     .texts
+      +gte_laptop
+        display: flex
+        flex-direction: column
+
       .headline
         font-weight: 900
 
         +lte_ipad
           font-size: rem(16px)
           line-height: rem(20px)
-          margin-bottom: rem(4px)
+
 
         +gte_laptop
           color: #333
@@ -212,7 +221,6 @@ h2
         +gte_laptop
           font-size: 16px
           line-height: 20px
-          max-width: 250px
 
       .income
         +lte_ipad
@@ -227,7 +235,8 @@ h2
 
       .commission
         +gte_laptop
-          margin-top: 292px
+          margin-top: auto
+          margin-bottom: 53px
 
         .headline
           +lte_ipad
@@ -266,63 +275,74 @@ h2
 
   .details
     display: flex
+    flex-direction: column
 
     &:before
-      align-self: flex-end
       background-image: url(../assets/slide_06/line_right-desktop.svg)
       background-repeat: no-repeat
       background-size: contain
+      bottom: 46px
       content: ''
-      display: block
-      flex-shrink: 0
       height: 686px
-      margin-bottom: 46px
+      left: 429px
       pointer-events: none
+      position: absolute
       width: 182px
-      margin-right: 14px
 
-    .blocks
-      display: flex
-      flex-direction: column
+    .block
+      position: relative
 
-      .block
-        padding-left: 100px
+      @each $index in 0,1,2
+        &-#{$index}:before
+          background-image: url(../assets/slide_06/block_#{$index}_icon.svg)
+          background-repeat: no-repeat
+          background-size: contain
+          content: ''
+          display: block
+          height: 65px
+          left: 1px
+          pointer-events: none
+          position: absolute
+          width: 65px
 
-        @each $index in 0,1,2
-          &-#{$index}:before
-            margin-left: -99px
-            position: absolute
-            background-image: url(../assets/slide_06/block_#{$index}_icon.svg)
-            background-repeat: no-repeat
-            background-size: contain
-            content: ''
-            display: block
-            height: 65px
-            pointer-events: none
-            width: 65px
+      &-0
+        margin-top: 30px
 
-        &-0
-          margin-top: 34px
+      &-1
+        margin-top: 75px
 
-        &-1
-          margin-top: 75px
+      &-2
+        margin-top: auto
+        margin-bottom: -17px // + 26px
 
-        &-2
-          margin-top: auto
+        &:before
+          bottom: 0
 
-        .headline
-          color: #333
-          font-size: 18px
-          font-weight: bold
-          line-height: 23px
-          margin-bottom: 16px
+      .headline
+        color: #333
+        font-size: 18px
+        font-weight: bold
+        line-height: 23px
+        margin-bottom: 16px
 
-        .text
-          color: #4b4b4b
-          font-size: 16px
-          font-weight: 300
-          line-height: 20px
-          margin-bottom: 8px
+      .text
+        color: #4b4b4b
+        font-size: 16px
+        font-weight: 300
+        line-height: 20px
+        margin-bottom: 8px
+        padding-left: 8px
+
+        &:before
+          background-image: url(../assets/slide_06/li_text.svg)
+          background-repeat: no-repeat
+          background-size: contain
+          content: ''
+          height: 6px
+          width: 6px
+          position: absolute
+          margin-top: 9px
+          margin-left: -14px
 
 .popper
   background: #474747
