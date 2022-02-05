@@ -29,7 +29,24 @@
           </div>
         </div>
       </div>
-      <div class='details' />
+      <div class='details'>
+        <div class='blocks'>
+          <ul
+            v-for='(block, blockIndex) in blocks'
+            :key='block'
+            :class='`block block-${blockIndex}`'
+          >
+            <li class='headline'>{{ block.headline }}</li>
+            <li
+              v-for='(text, textIndex) in block.texts'
+              :key='textIndex'
+              class='text'
+            >
+              {{ text }}
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </article>
 </template>
@@ -40,6 +57,9 @@ import { createPopper } from '@popperjs/core';
 
 export default {
   name: 'Slide5',
+  data: () => ({
+    blocks: t('slide_06.blocks')
+  }),
   mounted() {
     createPopper(this.$refs.commission_note_icon, this.$refs.commission_note_tooltip, {
       placement: 'right',
@@ -243,6 +263,66 @@ h2
 
       .arrow:before
         visibility: visible
+
+  .details
+    display: flex
+
+    &:before
+      align-self: flex-end
+      background-image: url(../assets/slide_06/line_right-desktop.svg)
+      background-repeat: no-repeat
+      background-size: contain
+      content: ''
+      display: block
+      flex-shrink: 0
+      height: 686px
+      margin-bottom: 46px
+      pointer-events: none
+      width: 182px
+      margin-right: 14px
+
+    .blocks
+      display: flex
+      flex-direction: column
+
+      .block
+        padding-left: 100px
+
+        @each $index in 0,1,2
+          &-#{$index}:before
+            margin-left: -99px
+            position: absolute
+            background-image: url(../assets/slide_06/block_#{$index}_icon.svg)
+            background-repeat: no-repeat
+            background-size: contain
+            content: ''
+            display: block
+            height: 65px
+            pointer-events: none
+            width: 65px
+
+        &-0
+          margin-top: 34px
+
+        &-1
+          margin-top: 75px
+
+        &-2
+          margin-top: auto
+
+        .headline
+          color: #333
+          font-size: 18px
+          font-weight: bold
+          line-height: 23px
+          margin-bottom: 16px
+
+        .text
+          color: #4b4b4b
+          font-size: 16px
+          font-weight: 300
+          line-height: 20px
+          margin-bottom: 8px
 
 .popper
   background: #474747

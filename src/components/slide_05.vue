@@ -34,12 +34,12 @@
         </ImgComparisonSlider>
         <ul>
           <li
-            v-for='i in 6'
-            :key='i'
+            v-for='block in 6'
+            :key='block'
             class='item'
           >
-            <div class='headline'>{{ t(`slide_05.block_${i}.headline`) }}</div>
-            <div class='note'>{{ t(`slide_05.block_${i}.note`) }}</div>
+            <div class='headline'>{{ t(`slide_05.block_${block}.headline`) }}</div>
+            <div class='note'>{{ t(`slide_05.block_${block}.note`) }}</div>
           </li>
           <li class='summary'>
             <div class='headline'>
