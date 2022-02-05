@@ -36,7 +36,11 @@
           :key='block'
           :class='`block block-${blockIndex}`'
         >
-          <div class='mobile-container'>
+          <div
+            class='mobile-container'
+            :class='{ "is-active": blockIsExpanded[blockIndex] }'
+            @click='toggleBlock(blockIndex)'
+          >
             <div class='icon' />
             <div class='headline'>{{ block.headline }}</div>
           </div>
@@ -61,9 +65,14 @@ import { createPopper } from '@popperjs/core';
 
 export default {
   name: 'Slide5',
-  data: () => ({
-    blocks: t('slide_06.blocks')
-  }),
+  data() {
+    const blocks = t('slide_06.blocks');
+
+    return {
+      blocks,
+      blockIsExpanded: blocks.map(_ => false)
+    };
+  },
   mounted() {
     createPopper(this.$refs.commission_note_icon, this.$refs.commission_note_tooltip, {
       placement: 'right',
@@ -79,7 +88,10 @@ export default {
     });
   },
   methods: {
-    t
+    t,
+    toggleBlock(blockIndex) {
+      this.blockIsExpanded[blockIndex] = !this.blockIsExpanded[blockIndex];
+    }
   }
 };
 </script>
@@ -355,8 +367,22 @@ h2
 
       .mobile-container
         +lte_ipad
-          display: flex
           align-items: center
+          cursor: pointer
+          display: flex
+
+          &.is-active:after
+            transform: rotate(180deg)
+
+          &:after
+            background-image: url(../assets/slide_06/trigger-mobile.svg)
+            background-repeat: no-repeat
+            background-size: contain
+            content: ''
+            height: rem(13px)
+            transition: transform 0.25s
+            margin-left: auto
+            width: rem(13px)
 
       .texts
         +lte_ipad
