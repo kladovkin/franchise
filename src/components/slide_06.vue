@@ -30,20 +30,26 @@
         </div>
       </div>
       <div class='details'>
-        <ul
+        <div class='mobile-label'>{{ t('slide_06.mobile_label') }}</div>
+        <div
           v-for='(block, blockIndex) in blocks'
           :key='block'
           :class='`block block-${blockIndex}`'
         >
-          <li class='headline'>{{ block.headline }}</li>
-          <li
-            v-for='(text, textIndex) in block.texts'
-            :key='textIndex'
-            class='text'
-          >
-            {{ text }}
-          </li>
-        </ul>
+          <div class='mobile-container'>
+            <div class='icon' />
+            <div class='headline'>{{ block.headline }}</div>
+          </div>
+          <div class='texts'>
+            <div
+              v-for='(text, textIndex) in block.texts'
+              :key='textIndex'
+              class='text'
+            >
+              {{ text }}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </article>
@@ -116,6 +122,7 @@ h2
 
     +lte_ipad
       flex-direction: column
+      margin-bottom: rem(33px)
 
     +gte_laptop
       width: 492px
@@ -274,88 +281,141 @@ h2
         visibility: visible
 
   .details
-    display: flex
-    flex-direction: column
-    margin-left: 132px
+    +gte_laptop
+      display: flex
+      flex-direction: column
+      margin-left: 132px
 
-    &:before
-      background-image: url(../assets/slide_06/line_right-desktop.svg)
-      background-repeat: no-repeat
-      background-size: contain
-      bottom: 46px
-      content: ''
-      height: 686px
-      left: 429px
-      pointer-events: none
-      position: absolute
-      width: 182px
+      &:before
+        background-image: url(../assets/slide_06/line_right-desktop.svg)
+        background-repeat: no-repeat
+        background-size: contain
+        bottom: 46px
+        content: ''
+        height: 686px
+        left: 429px
+        pointer-events: none
+        position: absolute
+        width: 182px
+
+    .mobile-label
+      +lte_ipad
+        color: #333
+        font-size: rem(14px)
+        line-height: rem(23px)
+        margin-bottom: rem(24px)
+
+      +gte_laptop
+        display: none
 
     .block
-      position: relative
-      padding-left: 100px
+      +lte_ipad
+        &:not(:last-child)
+          margin-bottom: rem(17px)
+
+      +gte_laptop
+        position: relative
+        padding-left: 100px
 
       @each $index in 0,1,2
-        &-#{$index}:before
+        &-#{$index} .icon
           background-image: url(../assets/slide_06/block_#{$index}_icon.svg)
           background-repeat: no-repeat
           background-size: contain
           content: ''
-          display: block
-          height: 65px
-          left: 1px
-          pointer-events: none
-          position: absolute
-          width: 65px
+
+          +lte_ipad
+            display: block
+            height: rem(32px)
+            margin-right: rem(19px)
+            width: rem(32px)
+
+          +gte_laptop
+            height: 65px
+            left: 1px
+            position: absolute
+            width: 65px
 
       &-0
-        margin-top: 35px
-        margin-bottom: 20px
+        +gte_laptop
+          margin-top: 35px
+          margin-bottom: 20px
 
       &-1
         +gte_desktop
           margin-top: auto
 
       &-2
-        margin-top: auto
-        margin-bottom: 30px
+        +gte_laptop
+          margin-top: auto
+          margin-bottom: 30px
 
-        &:before
-          bottom: 0
+          .icon
+            bottom: 0
 
-      li
-        &.headline
-          color: #333
+      .mobile-container
+        +lte_ipad
+          display: flex
+          align-items: center
+
+      .texts
+        +lte_ipad
+          padding-top: rem(14px)
+          margin-left: rem(58px)
+
+      .headline
+        color: #333
+        font-weight: bold
+
+        +lte_ipad
+          font-size: rem(14px)
+          line-height: rem(23px)
+
+        +gte_laptop
           font-size: 18px
-          font-weight: bold
           line-height: 23px
           margin-bottom: 16px
+
+          &:after
+            content: ':'
+
+      .text
+        color: #4b4b4b
+        padding-left: rem(8px)
+
+        +lte_ipad
+          font-size: rem(12px)
+          line-height: rem(16px)
+
+        +gte_laptop
+          font-size: 16px
+          font-weight: 300
+          line-height: 20px
+
+        +laptop
+          max-width: 240px
+
+        +gte_desktop
+          max-width: 337px
 
         &:not(:last-child)
           margin-bottom: 8px
 
-        &.text
-          color: #4b4b4b
-          font-size: 16px
-          font-weight: 300
-          line-height: 20px
-          padding-left: 8px
+        &:before
+          background-image: url(../assets/slide_06/li_text.svg)
+          background-repeat: no-repeat
+          background-size: contain
+          content: ''
+          height: rem(6px)
+          margin-left: rem(-14px)
+          position: absolute
+          width: rem(6px)
 
-          +laptop
-            max-width: 240px
+          +lte_ipad
+            margin-top: rem(6px)
 
-          +gte_desktop
-            max-width: 337px
-
-          &:before
-            background-image: url(../assets/slide_06/li_text.svg)
-            background-repeat: no-repeat
-            background-size: contain
-            content: ''
-            height: 6px
-            width: 6px
-            position: absolute
+          +gte_laptop
             margin-top: 9px
-            margin-left: -14px
 
 .popper
   background: #474747
