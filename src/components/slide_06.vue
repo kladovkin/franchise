@@ -518,8 +518,16 @@ h2
     padding: rem(24px) rem(16px) rem(23px)
 
   +gte_laptop
+    align-items: center
     display: flex
+    justify-content: space-between
     padding: 22px 55px 32px
+
+  +laptop
+    padding-right: scale-laptop(55px, 136px)
+
+  +gte_desktop
+    padding-right: 136px
 
   .headline
     color: #333
