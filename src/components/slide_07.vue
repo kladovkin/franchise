@@ -20,19 +20,40 @@
           </ul>
         </div>
       </div>
+      <div class='container'>
+        <Button
+          type='red'
+          styling='conversion'
+          :text='t("slide_07.button")'
+          @click='lead'
+        />
+      </div>
     </article>
   </div>
 </template>
 
 <script>
+import Button from '@/components/button';
+
+import SweetScroll from '@/utils/sweet_scroll';
 import t from '@/utils/locale';
 
 export default {
   name: 'Slide6',
+  components: {
+    Button
+  },
   data: () => ({
     columns: t('slide_07.columns')
   }),
-  methods: { t }
+  methods: {
+    t,
+    async lead() {
+      (await SweetScroll.asyncInstance()).toElement(
+        document.getElementById('slide_11'), { duration: 450 }
+      );
+    }
+  }
 };
 </script>
 
@@ -54,6 +75,8 @@ article
       top: 237px
 
   +gte_laptop
+    padding-bottom: 70px // padding added in order to fit left bottom blue circle
+
     &:before
       background-image: url(../assets/slide_07/circles_background-desktop.svg)
       background-repeat: no-repeat
@@ -115,6 +138,7 @@ h2
         background-repeat: no-repeat
         background-size: contain
         content: ''
+        flex-shrink: 0
         height: rem(52px)
         width: rem(52px)
 
@@ -123,4 +147,9 @@ h2
 
         +gte_laptop
           margin-right: rem(43px)
+
+.container
+  display: flex
+  justify-content: center
+  padding: 0
 </style>
