@@ -1,135 +1,58 @@
 <template>
   <article id='slide_10'>
-    <h2>{{ t('slide_10.h2') }}</h2>
-    <div class='note'>{{ t('slide_10.note') }}</div>
-    <div v-if='isSubmitted' class='success-container'>
-      <div>
-        <div class='headline'>
-          <span>{{ t('slide_10.thanks') }}</span>
-          {{ t('slide_10.success') }}
+    <div class='cases'>
+      <div class='content-container'>
+        <h2>{{ t('slide_10.h2') }}</h2>
+        <div class='text'>
+          <div v-html='t("slide_10.list_1")' />
+          <div v-html='t("slide_10.list_2")' />
+          <div v-html='t("slide_10.list_3")' />
+          <div v-html='t("slide_10.list_4")' />
+          <div v-html='t("slide_10.list_5")' />
+          <div v-html='t("slide_10.list_6")' />
+          <div v-html='t("slide_10.list_7")' />
+          <div v-html='t("slide_10.list_8")' />
+          <div><b>IRR:</b> 45%</div>
         </div>
-        <div class='text'>{{ t('slide_10.success_note') }}</div>
+        <div class='dots' />
       </div>
-    </div>
-    <div v-else class='form-container'>
-      <div class='cc-form'>
-        <div class='c-left'>
-          <Input
-            v-model='client'
-            :placeholder='t("slide_10.client")'
-            name='client'
-            :is-error='isValidated && !client'
-          />
-          <Input
-            v-model='email'
-            placeholder='E-mail'
-            name='email'
-            type='email'
-            :is-error='isValidated && !email'
-          />
-          <Input
-            v-model='phone'
-            :placeholder='t("slide_10.phone")'
-            name='phone'
-            type='tel'
-            :is-error='isValidated && !phone'
-          />
+      <div class='outer-container'>
+        <div class='inner'>
+          <ComparisonSlider />
         </div>
-        <div class='c-right'>
-          <Input
-            v-model='comment'
-            :placeholder='t("slide_10.message")'
-            name='comment'
-            type='textarea'
-          />
-        </div>
+        <div class='dots' />
       </div>
-      <div class='submit'>
-        <div v-if='isError' class='error mobile'>*Обязательное поле для заполения</div>
-        <Button type='red' :text='t("slide_10.submit")' @click='submit' />
-        <div class='privacy'>
-          {{ t('slide_10.privacy_note') }}
-          <a
-            href='https://kladovkin.ru/selfstorage/privacy/'
-            target='_blank'
-          >
-            {{ t('slide_10.privacy_link') }}
-          </a>
-        </div>
-      </div>
-      <div v-if='isError' class='error desktop'>{{ t('slide_10.error') }}</div>
     </div>
   </article>
 </template>
 
 <script>
-import axios from 'axios';
+// convert -quality 100% -resize 635x418! ~/Downloads/IMG_0284.jpeg src/assets/slide_10/slide_after.jpg && convert -quality 100% -resize 635x418! ~/Downloads/0022_.jpg src/assets/slide_10/slide_before.jpg && tinypng src/assets/slide_10/slide_after.jpg && tinypng src/assets/slide_10/slide_before.jpg
 
-import Button from '@/components/button';
-import Input from '@/components/input';
+import ComparisonSlider from '@/components/comparison_slider';
 import t from '@/utils/locale';
 
 export default {
-  name: 'Slide9',
+  name: 'Slide8',
   components: {
-    Button,
-    Input
-  },
-  data: () => ({
-    client: '',
-    phone: '',
-    email: '',
-    comment: '',
-    isValidated: false,
-    isSubmitted: false
-  }),
-  computed: {
-    url() {
-      return process.env.NODE_ENV === 'development' ?
-        'http://ms.local/selfstorage/leads/' :
-        'https://kladovkin.ru/selfstorage/leads/';
-    },
-    isError() {
-      return this.isValidated && (
-        !this.client || !this.email || !this.phone
-      );
-    }
+    ComparisonSlider
   },
   methods: {
-    t,
-    submit() {
-      this.isValidated = true;
-
-      if (!this.isError) {
-        this.isSubmitted = true;
-        axios.post(this.url, {
-          crm_lead: {
-            phone: this.phone,
-            client: this.client,
-            email: this.email,
-            lead_type: 'franchise',
-            rent_note: this.comment
-          }
-        });
-      }
-    }
+    t
   }
 };
 </script>
 
 <style scoped lang='sass'>
 article
-  +lte_ipad
-    margin-bottom: 80px
-    overflow: hidden
-    padding-top: rem(81px)
+  overflow: hidden
 
   +gte_laptop
-    margin-bottom: 125px
-    padding-bottom: 6px
-    padding-top: 96px
+    margin-bottom: 70px
+    padding-top: 67px
 
   &:before
+    background-image: url(../assets/slide_10/circles.svg)
     background-repeat: no-repeat
     background-size: contain
     content: ''
@@ -138,219 +61,112 @@ article
     z-index: -1
 
     +lte_ipad
-      background-image: url(../assets/slide_10/circles-mobile.svg)
-      height: rem(207px)
-      left: 0
-      width: rem(127px)
+      height: rem(117px)
+      right: rem(-36px)
+      width: rem(170px)
 
     +gte_laptop
-      background-image: url(../assets/slide_10/circles-desktop.svg)
-      height: 239px
-      width: 622px
+      height: 109px
+      left: 50%
+      transform: translateX(-50%)
+      width: 144px
 
-    +laptop
-      left: scale-laptop(305px, 405px)
+  .cases
+    +gte_laptop
+      align-items: center
+      display: flex
 
-    +gte_desktop
-      left: 405px
+  .content-container
+    +lte_ipad
+      padding-top: rem(52px)
+
+    +gte_laptop
+      flex-shrink: 0
+      // padding-top: 162px
+
+    .text
+      color: #4b4b4b
+
+      +lte_ipad
+        font-size: rem(14px)
+        line-height: rem(21px)
+        margin-bottom: rem(23px)
+
+      +gte_laptop
+        font-size: 18px
+        line-height: 30px
+        max-width: 410px
+        margin-right: 40px
+
+      b
+        font-weight: bold
+
+    .dots
+      // NOTE: remove when more cases are added
+      &:empty
+        display: none
+
+      +lte_ipad
+        display: none
+
+      +gte_laptop
+        margin-top: 45px
+
+  .outer-container
+    +lte_ipad
+      display: flex
+      justify-content: center
+      margin-bottom: rem(40px)
+
+    .inner
+      align-items: center
+      display: flex
+      position: relative
+
+      +iphone
+        height: rem(288px)
+        width: rem(288px)
+
+      +ipad
+        height: rem(350px)
+        width: rem(350px)
+
+      +gte_laptop
+        margin-left: auto
+
+      +laptop
+        height: scale-laptop(514px, 635px)
+        width: scale-laptop(514px, 635px)
+
+      +gte_desktop
+        height: 635px
+        width: 635px
+
+      &:before
+        background-image: url(../assets/slide_10/circle_red.svg)
+        background-repeat: no-repeat
+        background-size: contain
+        content: ''
+        height: 100%
+        position: absolute
+        width: 100%
+        z-index: -1
+
+    img
+      max-width: 100%
+
+    .dots
+      +lte_ipad
+        margin-top: rem(40px)
+
+      +gte_laptop
+        display: none
 
 h2
   +lte_ipad
-    margin-bottom: rem(12px)
+    margin-bottom: rem(50px)
+    text-align: left
 
   +gte_laptop
-    margin-bottom: rem(16px)
-
-.note
-  color: #6c6c6c
-  letter-spacing: -0.01em
-
-  +lte_ipad
-    font-size: rem(14px)
-    line-height: rem(16px)
-    text-align: center
-    margin-bottom: rem(40px)
-
-  +gte_laptop
-    font-size: 18px
-    line-height: 23px
-    margin-bottom: 42px
-
-    &:after
-      background-image: url(../assets/logo.svg)
-      background-repeat: no-repeat
-      background-size: contain
-      content: ''
-      height: 62px
-      position: absolute
-      width: 226px
-      margin: -46px 0 0 77px
-
-.form-container
-  .cc-form
-    +lte_ipad
-      margin-bottom: rem(24px)
-
-    +gte_laptop
-      display: flex
-      margin-bottom: 26px
-
-    .c-left
-      +lte_ipad
-        margin-bottom: rem(12px)
-
-      +gte_laptop
-        flex-shrink: 0
-        margin-right: 32px
-        width: 350px
-
-    .c-right
-      +gte_laptop
-        flex-grow: 1
-
-        ::v-deep(textarea)
-          height: 257px
-
-  .submit
-    +gte_laptop
-      display: flex
-      align-items: center
-
-    .button
-      +lte_ipad
-        margin-bottom: rem(24px)
-
-      +gte_laptop
-        width: 350px
-        margin-right: 29px
-
-    .privacy
-      letter-spacing: -0.01em
-
-      +lte_ipad
-        color: #6c6c6c
-        font-size: rem(12px)
-        line-height: rem(18px)
-        text-align: center
-
-      +gte_laptop
-        font-size: 14px
-        line-height: 20px
-        color: #a5a5a5
-
-      a
-        text-decoration: none
-
-        +lte_ipad
-          color: #f44f0c
-
-          &:active
-            text-decoration: underline
-
-        +gte_laptop
-          font-weight: bold
-          color: inherit
-
-          &:hover
-            text-decoration: underline
-
-  .error
-    color: #f00
-    letter-spacing: -0.01em
-
-    +lte_ipad
-      font-size: 13px
-      line-height: 18px
-      margin-top: rem(-4px)
-      margin-bottom: rem(16px)
-
-      &.desktop
-        display: none
-
-    +gte_laptop
-      font-size: 14px
-      line-height: 20px
-      margin-top: 14px
-      position: absolute
-
-      &.mobile
-        display: none
-
-.success-container
-  background: #fff
-  border-radius: 40px
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15)
-  display: flex
-  align-items: center
-  justify-content: center
-
-  +lte_ipad
-    flex-direction: column
-    text-align: center
-    padding: rem(27px) 0 rem(35px)
-    margin-bottom: 15px
-
-  &:before
-    background-image: url(../assets/slide_10/ok.png)
-    background-repeat: no-repeat
-    background-size: contain
-    content: ''
-
-    +lte_ipad
-      margin-bottom: rem(26px)
-      height: rem(130px / 1.0306748466)
-      width: rem(130px)
-
-    +gte_laptop
-      height: 163px
-      margin-right: 79px
-      margin-top: -30px
-      width: 168px
-
-    +laptop
-      margin-left: scale-laptop(0px, -70px)
-
-    +gte_desktop
-      margin-left: -70px
-
-  +gte_laptop
-    height: 293px
-    margin-top: 60px
-
-  .headline
-    color: #333
-    font-weight: bold
-
-    +lte_ipad
-      font-size: rem(20px)
-      line-height: rem(22px)
-      margin-bottom: rem(13px)
-
-    +gte_laptop
-      font-size: 32px
-      line-height: 35px
-      margin-bottom: 16px
-
-    span
-      color: #f44f0c
-
-      +lte_ipad
-        display: block
-        margin-bottom: rem(8px)
-
-  .text
-    color: #6c6c6c
-    +lte_ipad
-      font-size: rem(14px)
-      line-height: rem(16px)
-      text-align: center
-      padding: 0 rem(30px)
-
-    +gte_laptop
-      font-size: 18px
-      letter-spacing: -0.01em
-      line-height: 23px
-
-    span
-      font-weight: 300
+    margin-bottom: 41px
 </style>

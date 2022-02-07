@@ -1,42 +1,47 @@
 <template>
-  <article id='slide_09'>
-    <div class='cases'>
-      <div class='content-container'>
-        <h2>{{ t('slide_09.h2') }}</h2>
-        <div class='text'>
-          <div v-html='t("slide_09.list_1")' />
-          <div v-html='t("slide_09.list_2")' />
-          <div v-html='t("slide_09.list_3")' />
-          <div v-html='t("slide_09.list_4")' />
-          <div v-html='t("slide_09.list_5")' />
-          <div v-html='t("slide_09.list_6")' />
-          <div v-html='t("slide_09.list_7")' />
-          <div v-html='t("slide_09.list_8")' />
-          <div><b>IRR:</b> 45%</div>
-        </div>
-        <div class='dots' />
-      </div>
-      <div class='outer-container'>
-        <div class='inner'>
-          <ComparisonSlider />
-        </div>
-        <div class='dots' />
-      </div>
+  <div id='slide_09' class='outer'>
+    <div class='container'>
+      <h2 v-html='t("slide_09.h2")' />
     </div>
-  </article>
+    <div class='background'>
+      <article>
+        <div class='circle'>
+          <b>{{ t('slide_09.circle.title') }}</b>
+          <span v-html='t("slide_09.circle.note")' />
+        </div>
+        <ul>
+          <li>
+            <b>10 %</b>
+            <div>
+              <span>{{ t('slide_09.list_1') }}</span>
+              <span>{{ t('slide_09.list_2') }}</span>
+            </div>
+          </li>
+          <li>
+            <b>5 %</b>
+            <div>
+              <span>{{ t('slide_09.list_3') }}</span>
+              <span>{{ t('slide_09.list_4') }}</span>
+            </div>
+          </li>
+          <li>
+            <b>5 %</b>
+            <div>
+              <span>{{ t('slide_09.list_5') }}</span>
+              <span>{{ t('slide_09.list_6') }}</span>
+            </div>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
 </template>
 
 <script>
-// convert -quality 100% -resize 635x418! ~/Downloads/IMG_0284.jpeg src/assets/slide_09/slide_after.jpg && convert -quality 100% -resize 635x418! ~/Downloads/0022_.jpg src/assets/slide_09/slide_before.jpg && tinypng src/assets/slide_09/slide_after.jpg && tinypng src/assets/slide_09/slide_before.jpg
-
-import ComparisonSlider from '@/components/comparison_slider';
 import t from '@/utils/locale';
 
 export default {
-  name: 'Slide8',
-  components: {
-    ComparisonSlider
-  },
+  name: 'Slide7',
   methods: {
     t
   }
@@ -44,129 +49,174 @@ export default {
 </script>
 
 <style scoped lang='sass'>
-article
-  overflow: hidden
+$mobile-circle-radius: 117px
+.outer
+  +lte_ipad
+    margin-bottom: rem(26px)
 
   +gte_laptop
-    margin-bottom: 70px
-    padding-top: 67px
+    margin-bottom: 82px
 
-  &:before
-    background-image: url(../assets/slide_09/circles.svg)
-    background-repeat: no-repeat
-    background-size: contain
-    content: ''
-    position: absolute
-    top: 0
-    z-index: -1
+  +laptop
+    margin-top: scale-laptop(-167px, -23px)
+
+  +gte_desktop
+    margin-top: -23px
+
+h2
+  +lte_ipad
+    margin-bottom: rem($mobile-circle-radius + 40px)
+
+  +gte_laptop
+    margin-bottom: 45px
+    text-align: center
+    width: 500px
+
+  +laptop
+    margin-left: scale-laptop(270px, 334px)
+
+  +gte_desktop
+    margin-left: 334px
+
+.background
+  background: #5096FF
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.05)
+
+article
+  +ipad
+    display: flex
+    justify-content: center
+
+  +lte_ipad
+    padding-bottom: rem(40px)
+
+  +gte_laptop
+    height: 223px
+
+  ul
+    color: #fff
+    display: flex
+
+    +ipad
+      display: inline-flex
 
     +lte_ipad
-      height: rem(117px)
-      right: rem(-36px)
-      width: rem(170px)
+      flex-direction: column
+      padding-top: rem($mobile-circle-radius + 8px)
 
     +gte_laptop
-      height: 109px
-      left: 50%
-      transform: translateX(-50%)
-      width: 144px
-
-  .cases
-    +gte_laptop
+      justify-content: center
       align-items: center
+      height: 100%
+
+    +laptop
+      margin-left: scale-laptop(270px, 334px)
+      width: scale-laptop(635px, 728px)
+
+    +gte_desktop
+      margin-left: 334px
+      width: 728px
+
+    li
       display: flex
-
-  .content-container
-    +lte_ipad
-      padding-top: rem(52px)
-
-    +gte_laptop
       flex-shrink: 0
-      // padding-top: 162px
-
-    .text
-      color: #4b4b4b
 
       +lte_ipad
-        font-size: rem(14px)
-        line-height: rem(21px)
-        margin-bottom: rem(23px)
+        &:not(:last-child)
+          margin-bottom: rem(24px)
 
       +gte_laptop
-        font-size: 18px
-        line-height: 30px
-        max-width: 410px
-        margin-right: 40px
+        flex-direction: column
+
+      &:not(:last-child)
+        +laptop
+          margin-right: scale-laptop(41px, 86px)
+
+        +gte_desktop
+          margin-right: 86px
 
       b
         font-weight: bold
 
-    .dots
-      // NOTE: remove when more cases are added
-      &:empty
-        display: none
+        +lte_ipad
+          font-size: rem(30px)
+          line-height: rem(30px)
+          width: rem(85px)
+          margin-right: rem(16px)
 
-      +lte_ipad
-        display: none
+        +gte_laptop
+          font-size: 50px
+          line-height: 35px
+          margin-bottom: 11px
 
-      +gte_laptop
-        margin-top: 45px
+      div
+        display: flex
+        flex-direction: column
 
-  .outer-container
-    +lte_ipad
-      display: flex
-      justify-content: center
-      margin-bottom: rem(40px)
+      span
+        +lte_ipad
+          font-size: rem(14px)
+          line-height: rem(18px)
 
-    .inner
-      align-items: center
-      display: flex
-      position: relative
+        +gte_laptop
+          font-size: 18px
+          line-height: 23px
 
-      +iphone
-        height: rem(288px)
-        width: rem(288px)
+.circle
+  align-items: center
+  background-repeat: no-repeat
+  background-size: contain
+  display: flex
+  flex-direction: column
+  justify-content: center
+  position: absolute
+  z-index: 1
 
-      +ipad
-        height: rem(350px)
-        width: rem(350px)
-
-      +gte_laptop
-        margin-left: auto
-
-      +laptop
-        height: scale-laptop(514px, 635px)
-        width: scale-laptop(514px, 635px)
-
-      +gte_desktop
-        height: 635px
-        width: 635px
-
-      &:before
-        background-image: url(../assets/slide_09/circle_red.svg)
-        background-repeat: no-repeat
-        background-size: contain
-        content: ''
-        height: 100%
-        position: absolute
-        width: 100%
-        z-index: -1
-
-    img
-      max-width: 100%
-
-    .dots
-      +lte_ipad
-        margin-top: rem(40px)
-
-      +gte_laptop
-        display: none
-
-h2
   +lte_ipad
-    margin-bottom: rem(50px)
-    text-align: left
+    background-image: url(../assets/slide_09/circle-mobile.svg)
+    height: rem(218px)
+    left: 50%
+    transform: translateX(-50%)
+    width: rem(218px)
+    margin-top: rem(-$mobile-circle-radius)
 
   +gte_laptop
-    margin-bottom: 41px
+    background-image: url(../assets/slide_09/circle-desktop.svg)
+
+  +laptop
+    height: scale-laptop(310px, 367px)
+    margin-top: scale-laptop(-44px, -72px)
+    margin-left: scale-laptop(-92px, -100px)
+    width: scale-laptop(310px, 367px)
+
+  +gte_desktop
+    height: 367px
+    margin-left: -100px
+    margin-top: -72px
+    width: 367px
+
+  b
+    color: #5096ff
+    font-weight: bold
+
+    +lte_ipad
+      font-size: rem(44px)
+      line-height: rem(44px)
+      margin-bottom: rem(8px)
+
+    +gte_laptop
+      font-size: 50px
+      line-height: 35px
+      margin-bottom: 12px
+
+  span
+    text-align: center
+    color: #4b4b4b
+    +lte_ipad
+      font-size: rem(12px)
+      line-height: rem(14px)
+
+    +gte_laptop
+      font-size: 18px
+      line-height: 23px
 </style>

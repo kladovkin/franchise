@@ -191,7 +191,7 @@ export default createStore({
             }]
           }
         },
-        slide_07: {
+        slide_08: {
           h2: 'Станьте партнером и откройте автоматизированный бизнес под ключ' +
             '<br><span>за&nbsp;2&nbsp;месяца</span>',
           days: 'дня',
@@ -238,7 +238,7 @@ export default createStore({
               '&ndash; круглосуточное<br>&nbsp;&nbsp;&nbsp;видеонаблюдение<br>'
           }
         },
-        slide_08: {
+        slide_09: {
           h2: 'Комиссия&nbsp;управляющей компании',
           circle: {
             title: '24 мес.',
@@ -253,7 +253,7 @@ export default createStore({
           list_5: 'валовой выручки',
           list_6: 'на услуги IT'
         },
-        slide_09: {
+        slide_10: {
           h2: 'Кейсы',
           list_1: '<b>Площадь:</b> 165 м²',
           list_2: '<b>Расположение:</b> ул. Маршала Жукова, 76-2',
@@ -264,7 +264,7 @@ export default createStore({
           list_6: '<b>Заполняемость:</b> 99%',
           list_7: '<b>Срок окупаемости:</b> 17 месяцев'
         },
-        slide_10: {
+        slide_11: {
           h2: 'Остались вопросы?',
           note: 'Оставьте свои контакты и мы с вами свяжемся',
           thanks: 'Спасибо!',
@@ -280,7 +280,7 @@ export default createStore({
           privacy_link: 'политикой обработки персональных данных',
           error: '*Обязательное поле для заполения'
         },
-        slide_11: {
+        slide_12: {
           h2: 'Контакты',
           founder: 'Основатель',
           founder_name: 'Карпушин Михаил',
@@ -489,7 +489,7 @@ export default createStore({
             }]
           }
         },
-        slide_07: {
+        slide_08: {
           h2: 'Become a partner and open fully automatic turnkey business ' +
             '<span>in 2 months</span>',
           days: 'days',
@@ -536,7 +536,7 @@ export default createStore({
               '&ndash; around the clock video surveillance<br>'
           }
         },
-        slide_08: {
+        slide_09: {
           h2: 'Managing company fee',
           circle: {
             title: '2 years',
@@ -550,7 +550,7 @@ export default createStore({
           list_5: 'out of gross revenue',
           list_6: 'for IT services'
         },
-        slide_09: {
+        slide_10: {
           h2: 'Cases ',
           list_1: '<b>Total area:</b> 165 m²',
           list_2: '<b>Location:</b> Moscow, Marshala Zhukova st. 76-2',
@@ -560,7 +560,7 @@ export default createStore({
           list_6: '<b>Occupancy:</b> 99%',
           list_7: '<b>Recoupment period:</b> 17 months'
         },
-        slide_10: {
+        slide_11: {
           h2: 'Still have questions?',
           note: 'Fill in your details and we will contact you shortly',
           thanks: 'Thank you!',
@@ -576,7 +576,7 @@ export default createStore({
           privacy_link: 'policy',
           error: '*This field is required'
         },
-        slide_11: {
+        slide_12: {
           h2: 'Contacts',
           founder: 'Founder and CEO',
           founder_name: 'Mikhail Karpushin',
