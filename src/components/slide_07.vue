@@ -2,12 +2,23 @@
   <div id='slide_7' class='background-cutter'>
     <article>
       <h2 v-html='t("slide_07.h2")' />
-      <div
-        v-for='(column, columnIndex) in columns'
-        :key='columnIndex'
-        :class='`column column-${columnIndex}`'
-      >
-        <div class='headline'>{{ column.headline }}</div>
+      <div class='columns'>
+        <div
+          v-for='(column, columnIndex) in columns'
+          :key='columnIndex'
+          :class='`column column-${columnIndex}`'
+        >
+          <div class='headline'>{{ column.headline }}</div>
+          <ul>
+            <li
+              v-for='(line, lineIndex) in column.lines'
+              :key='lineIndex'
+              :class='`line line-${columnIndex}-${lineIndex}`'
+            >
+              {{ line }}
+            </li>
+          </ul>
+        </div>
       </div>
     </article>
   </div>
@@ -63,7 +74,16 @@ h2
   +gte_laptop
     margin-bottom: 72px
 
+.columns
+  +gte_laptop
+    +fcolumn(2, 29px, 0, '.column')
+    display: flex
+    margin-bottom: 56px
+
 .column
+  +lte_ipad
+    margin-bottom: rem(32px)
+
   .headline
     color: #333
 
@@ -76,4 +96,31 @@ h2
       font-size: 20px
       line-height: 24px
       margin-bottom: 32px
+
+.line
+  align-items: center
+  color: #5f5f5f
+  display: flex
+  font-size: rem(16px)
+  height: rem(52px)
+  line-height: 1.3
+
+  &:not(:last-child)
+    margin-bottom: rem(24px)
+
+  @each $columnIndex in 0,1
+    @each $lineIndex in 0,1,2,3,4,5
+      &-#{$columnIndex}-#{$lineIndex}:before
+        background-image: url(../assets/slide_07/line_#{$columnIndex}_#{$lineIndex}_icon.svg)
+        background-repeat: no-repeat
+        background-size: contain
+        content: ''
+        height: rem(52px)
+        width: rem(52px)
+
+        +lte_ipad
+          margin-right: rem(24px)
+
+        +gte_laptop
+          margin-right: rem(43px)
 </style>
