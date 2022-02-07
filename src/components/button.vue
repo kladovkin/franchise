@@ -90,10 +90,16 @@ export default {
       height: rem(56px)
 
     +ipad
-      max-width: 375px
+      max-width: none
+      padding-left: 34px
+      padding-right: 34px
+      width: auto
 
     +gte_laptop
       font-size: 18px
       height: 68px
-      max-width: 350px
+      max-width: none
+      padding-left: 34px
+      padding-right: 34px
+      width: auto
 </style>
