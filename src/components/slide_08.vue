@@ -8,7 +8,6 @@
             <div class='circle'>2 {{ t('slide_08.days') }}</div>
             <div class='info'>
               <b v-html='t("slide_08.info_1.title")' />
-              <p v-html='t("slide_08.info_1.body")' />
             </div>
           </div>
         </div>
@@ -103,16 +102,20 @@ export default {
 <style scoped lang='sass'>
 article
   +lte_ipad
-    padding-top: rem(25px)
-    margin-bottom: rem(80px)
+    padding-top: rem(72px)
+
+  +laptop
+    padding-top: scale-laptop(50px, 110px)
+
+  +gte_desktop
+    padding-top: 110px
 
 h2
   +lte_ipad
     margin-bottom: 54px
 
   +gte_laptop
-    margin: 0 auto 82px
-    max-width: 727px
+    margin-bottom: 120px
     text-align: center
 
 .area
@@ -493,23 +496,23 @@ h2
 
   &-1
     +laptop
-      height: scale-laptop(279px, 341px)
+      height: scale-laptop(279px, 309px)
       margin-bottom: scale-laptop(61px, -62px)
 
       &:before
-        height: scale-laptop(279px, 341px)
-        width: scale-laptop(451px, 491px)
+        height: scale-laptop(279px, 309px)
+        width: scale-laptop(451px, 445px)
         left: scale-laptop(-68px, -35px)
 
     +gte_desktop
-      height: 341px
+      height: 309px
       justify-content: flex-end
       margin-bottom: -62px
 
       &:before
-        height: 341px
+        height: 309px
         left: -35px
-        width: 491px
+        width: 445px
 
     &:before
       +gte_laptop
