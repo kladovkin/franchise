@@ -5,7 +5,7 @@
       <div class='area'>
         <div class='entry-wrapper entry-wrapper-1'>
           <div class='entry entry-1'>
-            <div class='circle'>2 {{ t('slide_08.days') }}</div>
+            <div class='circle'>{{ t('slide_08.info_1.days') }}</div>
             <div class='info'>
               <b v-html='t("slide_08.info_1.title")' />
             </div>
@@ -13,7 +13,7 @@
         </div>
         <div class='entry-wrapper entry-wrapper-2'>
           <div class='entry entry-2'>
-            <div class='circle'>2 {{ t('slide_08.days') }}</div>
+            <div class='circle'>{{ t('slide_08.info_2.days') }}</div>
             <div class='info'>
               <b v-html='t("slide_08.info_2.title")' />
               <p v-html='t("slide_08.info_2.body")' />
@@ -26,11 +26,11 @@
         </div>
         <div class='entry-wrapper entry-wrapper-3'>
           <div class='entry entry-3'>
-            <picture class='design-project' @click='enlarge'>
-              <source src='../assets/slide_08/design_project.webp' type='image/webp'>
-              <img loading='lazy' src='../assets/slide_08/design_project.jpg'>
-            </picture>
-            <div class='circle top'>7 {{ t('slide_08.days_2') }}</div>
+            <!-- <picture class='design-project' @click='enlarge'>                         -->
+            <!--   <source src='../assets/slide_08/design_project.webp' type='image/webp'> -->
+            <!--   <img loading='lazy' src='../assets/slide_08/design_project.jpg'>        -->
+            <!-- </picture>                                                                -->
+            <div class='circle top'>{{ t('slide_08.info_3.days') }}</div>
             <div class='info'>
               <b v-html='t("slide_08.info_3.title")' />
               <p v-html='t("slide_08.info_3.body")' />
@@ -39,7 +39,7 @@
         </div>
         <div class='entry-wrapper entry-wrapper-4'>
           <div class='entry entry-4'>
-            <div class='circle'>45 {{ t('slide_08.days_2') }}</div>
+            <div class='circle'>{{ t('slide_08.info_3.days') }}</div>
             <div class='info'>
               <b v-html='t("slide_08.info_4.title")' />
               <p v-html='t("slide_08.info_4.body")' />
@@ -67,11 +67,11 @@
               <p class='final-bold' v-html='t("slide_08.info_6.body")' />
               <p class='list' v-html='t("slide_08.info_6.list")' />
             </div>
-            <img
+            <!--img
               class='background'
               loading='lazy'
               src='../assets/slide_08/background_final.jpg'
-            >
+            -->
           </div>
         </div>
       </div>
@@ -115,7 +115,7 @@ h2
     margin-bottom: 54px
 
   +gte_laptop
-    margin-bottom: 120px
+    margin-bottom: 88px
     text-align: center
 
 .area
@@ -148,16 +148,19 @@ h2
       background-repeat: no-repeat
       background-size: cover
       left: 50%
+      top: 0
       transform: translateX(-50%)
 
     +laptop
       width: scale-laptop(964px, 1096px)
       height: scale-laptop(2587px, 2913px)
-      top: scale-laptop(108px, 130px) // it is intentionally 15px less than on desktop
+      /* top: scale-laptop(108px, 130px) // it is intentionally 15px less than on desktop */
+      margin-top: scale-laptop(53px, 39px)
 
     +gte_desktop
       background-size: 1096px 2913px
-      top: 145px
+      margin-top: 39px
+      /* top: 145px */
       width: 1096px
       height: 2913px
 
@@ -204,9 +207,9 @@ h2
 
     +gte_laptop
       background-image: url(../assets/slide_08/circle-desktop.svg)
-      font-size: 30px
+      font-size: 24px
       height: 160px
-      line-height: 23px
+      line-height: 25px
       margin-right: 28px
       width: 160px
 
@@ -313,17 +316,14 @@ h2
         margin-right: 0
 
       .info
-        max-width: 250px
+        max-width: 275px
 
         & > b
           margin-bottom: 5px
 
     .info
-      +laptop
-        margin-right: scale-laptop(60px, 111px)
-
-      +gte_desktop
-        margin-right: 111px
+      +gte_laptop
+        margin-right: 25px
 
   &-2
     +iphone
@@ -495,31 +495,34 @@ h2
     position: absolute
 
   &-1
-    +laptop
-      height: scale-laptop(279px, 309px)
-      margin-bottom: scale-laptop(61px, -62px)
-
-      &:before
-        height: scale-laptop(279px, 309px)
-        width: scale-laptop(451px, 445px)
-        left: scale-laptop(-68px, -35px)
-
-    +gte_desktop
-      height: 309px
+    +gte_laptop
       justify-content: flex-end
-      margin-bottom: -62px
 
-      &:before
-        height: 309px
-        left: -35px
-        width: 445px
+    /* +laptop                                    */
+    /*   height: scale-laptop(279px, 309px)       */
+    /*   margin-bottom: scale-laptop(61px, -62px) */
 
-    &:before
-      +gte_laptop
-        background-image: url(../assets/slide_08/entry_wrapper_1.png)
+    /*   &:before                                 */
+    /*     height: scale-laptop(279px, 309px)     */
+    /*     width: scale-laptop(451px, 445px)      */
+    /*     left: scale-laptop(-68px, -35px)       */
 
-        .webp &
-          background-image: url(../assets/slide_08/entry_wrapper_1.webp)
+    /* +gte_desktop                               */
+    /*   height: 309px                            */
+    /*   justify-content: flex-end                */
+    /*   margin-bottom: -62px                     */
+
+    /*   &:before                                 */
+    /*     height: 309px                          */
+    /*     left: -35px                            */
+    /*     width: 445px                           */
+
+    /* &:before                                                             */
+    /*   +gte_laptop                                                        */
+    /*     background-image: url(../assets/slide_08/entry_wrapper_1.png)    */
+
+    /*     .webp &                                                          */
+    /*       background-image: url(../assets/slide_08/entry_wrapper_1.webp) */
 
   &-2
     +laptop
@@ -542,24 +545,24 @@ h2
         width: 682px
         top: 33px
 
-    &:before
-      +gte_laptop
-        background-image: url(../assets/slide_08/entry_wrapper_2.png)
+    /* &:before                                                             */
+    /*   +gte_laptop                                                        */
+    /*     background-image: url(../assets/slide_08/entry_wrapper_2.png)    */
 
-        .webp &
-          background-image: url(../assets/slide_08/entry_wrapper_2.webp)
+    /*     .webp &                                                          */
+    /*       background-image: url(../assets/slide_08/entry_wrapper_2.webp) */
 
   &-3
     +gte_laptop
       justify-content: flex-end
 
-    +laptop
-      height: scale-laptop(215px, 247px)
-      margin-bottom: scale-laptop(205px, 70px)
+    /* +laptop                                    */
+    /*   height: scale-laptop(215px, 247px)       */
+    /*   margin-bottom: scale-laptop(205px, 70px) */
 
-      .design-project
-        height: scale-laptop(215px, 247px)
-        width: scale-laptop(384px, 443px)
+    /*   .design-project                          */
+    /*     height: scale-laptop(215px, 247px)     */
+    /*     width: scale-laptop(384px, 443px)      */
 
     +gte_desktop
       height: 247px
@@ -578,22 +581,22 @@ h2
       height: scale-laptop(297px, 435px)
       margin-bottom: scale-laptop(42px, 23px)
 
-      &:before
-        height: scale-laptop(297px, 337px)
-        right: scale-laptop(-53px, -46px)
-        top: scale-laptop(-127px, 82px)
-        width: scale-laptop(446px, 506px)
+      /* &:before                             */
+      /*   height: scale-laptop(297px, 337px) */
+      /*   right: scale-laptop(-53px, -46px)  */
+      /*   top: scale-laptop(-127px, 82px)    */
+      /*   width: scale-laptop(446px, 506px)  */
 
     +gte_desktop
       height: 435px
       margin-bottom: 23px
 
-    +desktop
-      &:before
-        height: scale-between(337px, 435px, 1200px, 1440px)
-        width: scale-between(506px, 652px, 1200px, 1440px)
-        right: scale-between(-46px, -403px, 1200px, 1440px)
-        top: scale-between(82px, 50px, 1200px, 1440px)
+    /* +desktop                                                */
+    /*   &:before                                              */
+    /*     height: scale-between(337px, 435px, 1200px, 1440px) */
+    /*     width: scale-between(506px, 652px, 1200px, 1440px)  */
+    /*     right: scale-between(-46px, -403px, 1200px, 1440px) */
+    /*     top: scale-between(82px, 50px, 1200px, 1440px)      */
 
     +gte_hd
       &:before
@@ -602,12 +605,12 @@ h2
         top: 50px
         width: 652px
 
-    &:before
-      +gte_laptop
-        background-image: url(../assets/slide_08/entry_wrapper_4.png)
+    /* &:before                                                             */
+    /*   +gte_laptop                                                        */
+    /*     background-image: url(../assets/slide_08/entry_wrapper_4.png)    */
 
-        .webp &
-          background-image: url(../assets/slide_08/entry_wrapper_4.webp)
+    /*     .webp &                                                          */
+    /*       background-image: url(../assets/slide_08/entry_wrapper_4.webp) */
 
   &-5
     +gte_laptop
@@ -633,12 +636,12 @@ h2
         width: 575px
         top: 33px
 
-    &:before
-      +gte_laptop
-        background-image: url(../assets/slide_08/entry_wrapper_5.png)
+    /* &:before                                                             */
+    /*   +gte_laptop                                                        */
+    /*     background-image: url(../assets/slide_08/entry_wrapper_5.png)    */
 
-        .webp &
-          background-image: url(../assets/slide_08/entry_wrapper_5.webp)
+    /*     .webp &                                                          */
+    /*       background-image: url(../assets/slide_08/entry_wrapper_5.webp) */
 
   &-6
     +laptop
