@@ -3,16 +3,38 @@
     <article>
       <h2 v-html='t("slide_08.h2")' />
       <div class='area'>
-        <div class='entry-wrapper entry-wrapper-1'>
-          <div class='entry entry-1'>
+        <div
+          v-for='(block, blockIndex) in blocks'
+          :key='blockIndex'
+          class='block'
+          :class='{
+            [`block-${blockIndex}`]: true,
+            "block-even": (blockIndex % 2) === 0,
+            "block-odd": (blockIndex % 2) === 1,
+            "block-price": !!block.price
+          }'
+        >
+          <div class='circle'>{{ block.days }}</div>
+          <div class='info'>
+            <b v-html='block.headline' />
+            <p v-if='block.note' v-html='block.note' />
+            <div v-if='block.price' class='details'>
+              <b>{{ block.price }}</b>
+              <p v-if='block.price_note'>{{ block.price_note }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!--div class='block-wrapper block-wrapper-1'>
+          <div class='block block-1'>
             <div class='circle'>{{ t('slide_08.info_1.days') }}</div>
             <div class='info'>
               <b v-html='t("slide_08.info_1.title")' />
             </div>
           </div>
         </div>
-        <div class='entry-wrapper entry-wrapper-2'>
-          <div class='entry entry-2'>
+        <div class='block-wrapper block-wrapper-2'>
+          <div class='block block-2'>
             <div class='circle'>{{ t('slide_08.info_2.days') }}</div>
             <div class='info'>
               <b v-html='t("slide_08.info_2.title")' />
@@ -24,12 +46,12 @@
             </div>
           </div>
         </div>
-        <div class='entry-wrapper entry-wrapper-3'>
-          <div class='entry entry-3'>
-            <!-- <picture class='design-project' @click='enlarge'>                         -->
-            <!--   <source src='../assets/slide_08/design_project.webp' type='image/webp'> -->
-            <!--   <img loading='lazy' src='../assets/slide_08/design_project.jpg'>        -->
-            <!-- </picture>                                                                -->
+        <div class='block-wrapper block-wrapper-3'>
+          <div class='block block-3'>
+            <picture class='design-project' @click='enlarge'>
+              <source src='../assets/slide_08/design_project.webp' type='image/webp'>
+              <img loading='lazy' src='../assets/slide_08/design_project.jpg'>
+            </picture>
             <div class='circle top'>{{ t('slide_08.info_3.days') }}</div>
             <div class='info'>
               <b v-html='t("slide_08.info_3.title")' />
@@ -37,9 +59,9 @@
             </div>
           </div>
         </div>
-        <div class='entry-wrapper entry-wrapper-4'>
-          <div class='entry entry-4'>
-            <div class='circle'>{{ t('slide_08.info_3.days') }}</div>
+        <div class='block-wrapper block-wrapper-4'>
+          <div class='block block-4'>
+            <div class='circle'>{{ t('slide_08.info_4.days') }}</div>
             <div class='info'>
               <b v-html='t("slide_08.info_4.title")' />
               <p v-html='t("slide_08.info_4.body")' />
@@ -50,30 +72,30 @@
             </div>
           </div>
         </div>
-        <div class='entry-wrapper entry-wrapper-5'>
-          <div class='entry entry-5'>
-            <div class='circle top'>7 {{ t('slide_08.days_2') }}</div>
+        <div class='block-wrapper block-wrapper-5'>
+          <div class='block block-5'>
+            <div class='circle top'>{{ t('slide_08.info_5.days') }}</div>
             <div class='info'>
               <b v-html='t("slide_08.info_5.title")' />
               <p v-html='t("slide_08.info_5.body")' />
             </div>
           </div>
         </div>
-        <div class='entry-wrapper entry-wrapper-6'>
-          <div class='entry entry-6'>
+        <div class='block-wrapper block-wrapper-6'>
+          <div class='block block-6'>
             <div class='circle top logo' />
             <div class='info'>
               <b v-html='t("slide_08.info_6.title")' />
               <p class='final-bold' v-html='t("slide_08.info_6.body")' />
               <p class='list' v-html='t("slide_08.info_6.list")' />
             </div>
-            <!--img
+            <img
               class='background'
               loading='lazy'
               src='../assets/slide_08/background_final.jpg'
-            -->
+            >
           </div>
-        </div>
+        </div-->
       </div>
     </article>
   </div>
@@ -84,6 +106,9 @@ import t from '@/utils/locale';
 
 export default {
   name: 'Slide6',
+  data: () => ({
+    blocks: t('slide_08.blocks')
+  }),
   methods: {
     t,
     async enlarge() {
@@ -164,7 +189,7 @@ h2
       width: 1096px
       height: 2913px
 
-.entry
+.block
   display: flex
 
   +iphone
@@ -176,11 +201,15 @@ h2
   +lte_ipad
     color: #4b4b4b
 
-    .entry-wrapper:last-child &
-      margin-bottom: 0
-
   +gte_laptop
     color: #333
+
+  &-even
+    align-items: center
+    flex-direction: row-reverse
+
+  &-price
+    align-items: flex-end
 
   .circle
     align-items: center
@@ -269,7 +298,7 @@ h2
         +lte_ipad
           margin-bottom: rem(12px)
 
-    div
+    .details
       justify-content: center
       background: #f44f0c
       border-radius: 10px
@@ -306,349 +335,6 @@ h2
 
         +gte_laptop
           font-weight: normal
-
-  &-1
-    +gte_laptop
-      align-items: center
-      flex-direction: row-reverse
-
-      .circle
-        margin-right: 0
-
-      .info
-        max-width: 275px
-
-        & > b
-          margin-bottom: 5px
-
-    .info
-      +gte_laptop
-        margin-right: 25px
-
-  &-2
-    +iphone
-      margin-bottom: rem(50px)
-
-    +ipad
-      margin-bottom: rem(70px)
-
-    +gte_laptop
-      align-items: flex-end
-
-      .info
-        & > b
-          margin-bottom: 3px
-
-        & > p
-          margin-bottom: 30px
-
-        & > div
-          width: 369px
-
-    +laptop
-      margin-top: scale-laptop(-80px, 107px)
-
-    +gte_desktop
-      margin-top: 107px
-
-  &-3
-    +iphone
-      margin-bottom: rem(50px)
-
-    +lte_ipad
-      .design-project
-        display: none
-
-    +gte_laptop
-      align-items: center
-      flex-direction: row-reverse
-
-      .design-project
-        cursor: pointer
-
-      .circle
-        margin-right: 0
-
-      .info
-        max-width: 350px
-
-        & > b
-          max-width: 300px
-          margin-bottom: 16px
-
-    +laptop
-      margin-top: scale-laptop(-233px, -4px)
-
-      .info
-        margin-right: scale-laptop(41px, 29px)
-
-    +gte_desktop
-      margin-top: -4px
-
-      .info
-        margin-right: 29px
-
-  &-4
-    +iphone
-      margin-bottom: rem(50px)
-
-    +ipad
-      margin-bottom: rem(70px)
-
-    +gte_laptop
-      align-items: flex-end
-
-      .info
-        & > b
-          margin-bottom: 13px
-          max-width: 230px
-
-        & > p
-          margin-bottom: 37px
-          max-width: 350px
-
-        & > div
-          width: 462px
-
-    +laptop
-      margin-top: scale-laptop(-381px, 61px)
-
-    +gte_desktop
-      margin-top: 61px
-
-  &-5
-    +ipad
-      margin-bottom: rem(70px)
-
-    +gte_laptop
-      align-items: center
-      flex-direction: row-reverse
-
-      .circle
-        margin-right: 0
-
-      .info
-        max-width: 360px
-
-    +laptop
-      margin-top: scale-laptop(-435px, 6px)
-
-      .info
-        margin-right: scale-laptop(32px, 20px)
-
-    +gte_desktop
-      margin-top: 6px
-
-      .info
-        margin-right: 20px
-
-  &-6
-    +iphone
-      position: relative
-      padding-bottom: rem(230px)
-
-    +ipad
-      position: relative
-      padding-bottom: rem(300px)
-
-    +laptop
-      margin-top: scale-laptop(-587px, -73px)
-      margin-left: -14px
-
-    +gte_desktop
-      margin-top: -73px
-
-    .background
-      +lte_ipad
-        max-width: 100%
-        bottom: 0
-        position: absolute
-
-      +gte_laptop
-        position: absolute
-        right: -87px
-
-      +laptop
-        width: scale-laptop(464px, 540px)
-        margin-top: scale-laptop(-54px, -84px)
-
-      +gte_desktop
-        width: 540px
-        margin-top: -84px
-        right: -80px
-
-.entry-wrapper
-  position: relative
-  display: flex
-  align-items: center
-
-  img.background
-    border-radius: 50px
-
-    +lte_ipad
-      border-radius: 30px
-
-  &:before
-    content: ''
-    background-repeat: no-repeat
-    background-size: contain
-    position: absolute
-
-  &-1
-    +gte_laptop
-      justify-content: flex-end
-
-    /* +laptop                                    */
-    /*   height: scale-laptop(279px, 309px)       */
-    /*   margin-bottom: scale-laptop(61px, -62px) */
-
-    /*   &:before                                 */
-    /*     height: scale-laptop(279px, 309px)     */
-    /*     width: scale-laptop(451px, 445px)      */
-    /*     left: scale-laptop(-68px, -35px)       */
-
-    /* +gte_desktop                               */
-    /*   height: 309px                            */
-    /*   justify-content: flex-end                */
-    /*   margin-bottom: -62px                     */
-
-    /*   &:before                                 */
-    /*     height: 309px                          */
-    /*     left: -35px                            */
-    /*     width: 445px                           */
-
-    /* &:before                                                             */
-    /*   +gte_laptop                                                        */
-    /*     background-image: url(../assets/slide_08/entry_wrapper_1.png)    */
-
-    /*     .webp &                                                          */
-    /*       background-image: url(../assets/slide_08/entry_wrapper_1.webp) */
-
-  &-2
-    +laptop
-      height: scale-laptop(409px, 531px)
-      margin-bottom: scale-laptop(157px, 110px)
-
-      &:before
-        height: scale-laptop(407px, 531px)
-        right: scale-laptop(-111px, -162px)
-        width: scale-laptop(533px, 682px)
-        top: scale-laptop(-44px, 33px)
-
-    +gte_desktop
-      height: 531px
-      margin-bottom: 110px
-
-      &:before
-        height: 531px
-        right: -162px
-        width: 682px
-        top: 33px
-
-    /* &:before                                                             */
-    /*   +gte_laptop                                                        */
-    /*     background-image: url(../assets/slide_08/entry_wrapper_2.png)    */
-
-    /*     .webp &                                                          */
-    /*       background-image: url(../assets/slide_08/entry_wrapper_2.webp) */
-
-  &-3
-    +gte_laptop
-      justify-content: flex-end
-
-    /* +laptop                                    */
-    /*   height: scale-laptop(215px, 247px)       */
-    /*   margin-bottom: scale-laptop(205px, 70px) */
-
-    /*   .design-project                          */
-    /*     height: scale-laptop(215px, 247px)     */
-    /*     width: scale-laptop(384px, 443px)      */
-
-    +gte_desktop
-      height: 247px
-      margin-bottom: 70px
-
-      .design-project
-        height: 247px
-        width: 443px
-
-    .design-project
-      position: absolute
-      left: 0
-
-  &-4
-    +laptop
-      height: scale-laptop(297px, 435px)
-      margin-bottom: scale-laptop(42px, 23px)
-
-      /* &:before                             */
-      /*   height: scale-laptop(297px, 337px) */
-      /*   right: scale-laptop(-53px, -46px)  */
-      /*   top: scale-laptop(-127px, 82px)    */
-      /*   width: scale-laptop(446px, 506px)  */
-
-    +gte_desktop
-      height: 435px
-      margin-bottom: 23px
-
-    /* +desktop                                                */
-    /*   &:before                                              */
-    /*     height: scale-between(337px, 435px, 1200px, 1440px) */
-    /*     width: scale-between(506px, 652px, 1200px, 1440px)  */
-    /*     right: scale-between(-46px, -403px, 1200px, 1440px) */
-    /*     top: scale-between(82px, 50px, 1200px, 1440px)      */
-
-    +gte_hd
-      &:before
-        height: 435px
-        right: -403px
-        top: 50px
-        width: 652px
-
-    /* &:before                                                             */
-    /*   +gte_laptop                                                        */
-    /*     background-image: url(../assets/slide_08/entry_wrapper_4.png)    */
-
-    /*     .webp &                                                          */
-    /*       background-image: url(../assets/slide_08/entry_wrapper_4.webp) */
-
-  &-5
-    +gte_laptop
-      justify-content: flex-end
-
-    +laptop
-      height: 585px
-      margin-bottom: scale-laptop(80px, 54px)
-
-      &:before
-        height: scale-laptop(445px, 575px)
-        left: scale-laptop(-147px, -184px)
-        width: scale-laptop(445px, 575px)
-        top: scale-laptop(-158px, 33px)
-
-    +gte_desktop
-      height: 585px
-      margin-bottom: 54px
-
-      &:before
-        height: 575px
-        left: -184px
-        width: 575px
-        top: 33px
-
-    /* &:before                                                             */
-    /*   +gte_laptop                                                        */
-    /*     background-image: url(../assets/slide_08/entry_wrapper_5.png)    */
-
-    /*     .webp &                                                          */
-    /*       background-image: url(../assets/slide_08/entry_wrapper_5.webp) */
-
-  &-6
-    +laptop
-      height: scale-laptop(283px, 380px)
-
-    +gte_desktop
-      height: 380px
 </style>
 
 <style lang='sass'>
