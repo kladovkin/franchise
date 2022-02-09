@@ -6,21 +6,25 @@
         <div
           v-for='(block, blockIndex) in blocks'
           :key='blockIndex'
-          class='block'
-          :class='{
-            [`block-${blockIndex}`]: true,
-            "block-even": (blockIndex % 2) === 0,
-            "block-odd": (blockIndex % 2) === 1,
-            "block-price": !!block.price
-          }'
+          class='block-wrapper'
         >
-          <div class='circle'>{{ block.days }}</div>
-          <div class='info'>
-            <b v-html='block.headline' />
-            <p v-if='block.note' v-html='block.note' />
-            <div v-if='block.price' class='details'>
-              <b>{{ block.price }}</b>
-              <p v-if='block.price_note'>{{ block.price_note }}</p>
+          <div
+            class='block'
+            :class='{
+              [`block-${blockIndex}`]: true,
+              "block-even": (blockIndex % 2) === 0,
+              "block-odd": (blockIndex % 2) === 1,
+              "block-price": !!block.price
+            }'
+          >
+            <div class='circle'>{{ block.days }}</div>
+            <div class='info'>
+              <div class='headline' v-html='block.headline' />
+              <div v-if='block.note' class='note' v-html='block.note' />
+              <div v-if='block.price' class='red'>
+                <b>{{ block.price }}</b>
+                <p v-if='block.price_note'>{{ block.price_note }}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -180,14 +184,26 @@ h2
       width: scale-laptop(964px, 1096px)
       height: scale-laptop(2587px, 2913px)
       /* top: scale-laptop(108px, 130px) // it is intentionally 15px less than on desktop */
-      margin-top: scale-laptop(53px, 39px)
+      /* margin-top: scale-laptop(53px, 39px) */
 
     +gte_desktop
-      background-size: 1096px 2913px
-      margin-top: 39px
+      background-size: 1096px 2773px
+      /* margin-top: 39px */
       /* top: 145px */
+      top: 80px
       width: 1096px
-      height: 2913px
+      height: 2773px
+
+.block-wrapper
+  +gte_laptop
+    height: 440px
+    /* display: flex             */
+    /* flex-direction: column    */
+    /* justify-content: flex-end */
+    /* width: 100%               */
+
+    /* &:first-child             */
+    /*   height: 160px           */
 
 .block
   display: flex
@@ -204,137 +220,142 @@ h2
   +gte_laptop
     color: #333
 
-  &-even
-    align-items: center
-    flex-direction: row-reverse
+    &-even
+      flex-direction: row-reverse
 
-  &-price
-    align-items: flex-end
+    &-price
+      align-items: flex-end
 
-  .circle
-    align-items: center
-    align-self: flex-end
-    background-repeat: no-repeat
-    background-size: contain
-    display: flex
-    flex-shrink: 0
-    font-weight: bold
-    justify-content: center
-    position: relative
-    z-index: 1
+    &:not(.block-price)
+      align-items: center
 
-    &.top
-      align-self: flex-start
+.circle
+  align-items: center
+  align-self: flex-end
+  background-repeat: no-repeat
+  background-size: contain
+  display: flex
+  flex-shrink: 0
+  font-weight: bold
+  justify-content: center
+  position: relative
+  z-index: 1
 
-    +lte_ipad
-      background-image: url(../assets/slide_08/circle-mobile.svg)
-      font-size: rem(14px)
-      height: rem(85px)
-      line-height: rem(16px)
-      margin-right: rem(16px)
-      width: rem(85px)
+  +lte_ipad
+    background-image: url(../assets/slide_08/circle-mobile.svg)
+    font-size: rem(14px)
+    height: rem(85px)
+    line-height: rem(16px)
+    margin-right: rem(16px)
+    width: rem(85px)
+
+  +gte_laptop
+    background-image: url(../assets/slide_08/circle-desktop.svg)
+    font-size: 24px
+    height: 160px
+    line-height: 25px
+    width: 160px
+
+  .block-wrapper:last-child &
+    background-image: url(../assets/slide_08/circle_logo.svg)
 
     +gte_laptop
-      background-image: url(../assets/slide_08/circle-desktop.svg)
-      font-size: 24px
-      height: 160px
-      line-height: 25px
-      margin-right: 28px
-      width: 160px
+      align-self: center
 
-    &.logo
-      background-image: url(../assets/slide_08/circle_logo.svg)
+.info
+  +ipad
+    max-width: rem(360px)
 
-      +gte_laptop
-        align-self: center
+  +lte_ipad
+    display: flex
+    flex-direction: column
+    justify-content: center
 
-  .info
-    +ipad
-      max-width: rem(360px)
+  .headline
+    font-weight: bold
 
     +lte_ipad
-      display: flex
-      flex-direction: column
-      justify-content: center
+      font-size: rem(14px)
+      line-height: rem(18px)
+      margin-bottom: rem(4px)
 
-    b
-      display: block
-      font-weight: bold
+    +gte_laptop
+      font-size: 18px
+      line-height: 23px
 
+  .headline,
+  .note
+    +gte_laptop
+      .block-odd &
+        margin-left: 28px
+
+      .block-even &
+        margin-right: 26px
+
+  .note
+    +lte_ipad
+      color: #6c6c6c
+      font-size: rem(12px)
+      line-height: rem(16px)
+
+    +gte_laptop
+      color: #4B4B4B
+      font-size: 16px
+      line-height: 23px
+      margin-top: 11px
+
+    &:not(:last-child)
       +lte_ipad
-        font-size: rem(14px)
-        line-height: rem(18px)
-        margin-bottom: rem(4px)
+        margin-bottom: rem(12px)
 
-      +gte_laptop
-        font-size: 18px
-        line-height: 23px
-        margin-bottom: rem(4px)
+.red
+  justify-content: center
+  background: #f44f0c
+  display: flex
+  flex-direction: column
 
-    p
-      +lte_ipad
-        color: #6c6c6c
-        font-size: rem(12px)
-        line-height: rem(16px)
+  +lte_ipad
+    height: rem(52px)
+    border-radius: rem(10px)
+    width: rem(255px)
+    margin-left: rem(-68px)
+    padding-left: rem(68px)
 
-      +gte_laptop
-        color: #4B4B4B
-        font-size: 16px
-        line-height: 23px
+  +gte_laptop
+    height: 95px
+    margin-top: 26px
 
-      &.final-bold
-        margin-top: rem(16px)
-        font-weight: bold
-        color: inherit
+    .block-odd &
+      border-radius: 0 10px 10px 0
+      margin-left: -80px
+      padding-left: 80px
 
-        +lte_ipad
-          margin-top: rem(8px)
-          margin-bottom: rem(12px)
+    .block-even &
+      border-radius: 10px 0 0 10px
+      margin-left: -31px
+      padding-left: 31px
+      margin-right: -80px
+      padding-right: 80px
 
-      &.list
-        white-space: nowrap
+  b
+    color: #fff
+    font-weight: bold
 
-      &:not(:last-child)
-        +lte_ipad
-          margin-bottom: rem(12px)
+    +lte_ipad
+      font-size: rem(18px)
+      line-height: rem(24px)
+      margin-bottom: rem(1px)
 
-    .details
-      justify-content: center
-      background: #f44f0c
-      border-radius: 10px
-      display: flex
-      flex-direction: column
+    +gte_laptop
+      font-size: 18px
+      line-height: 23px
+      margin-bottom: -3px
 
-      +lte_ipad
-        height: rem(52px)
-        width: rem(255px)
-        margin-left: rem(-68px)
-        padding-left: rem(68px)
+  p
+    color: #fff
 
-      +gte_laptop
-        height: rem(95px)
-        margin-left: rem(-108px)
-        padding-left: rem(108px)
-
-      b
-        color: #fff
-        font-weight: bold
-
-        +lte_ipad
-          font-size: rem(18px)
-          line-height: rem(24px)
-          margin-bottom: rem(1px)
-
-        +gte_laptop
-          font-size: 18px
-          line-height: 23px
-          margin-bottom: -3px
-
-      p
-        color: #fff
-
-        +gte_laptop
-          font-weight: normal
+    +gte_laptop
+      font-weight: normal
 </style>
 
 <style lang='sass'>
