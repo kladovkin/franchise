@@ -22,84 +22,12 @@
               <div class='headline' v-html='block.headline' />
               <div v-if='block.note' class='note' v-html='block.note' />
               <div v-if='block.price' class='red'>
-                <b>{{ block.price }}</b>
-                <p v-if='block.price_note'>{{ block.price_note }}</p>
+                <div class='red-price'>{{ block.price }}</div>
+                <div v-if='block.price_note' class='red-note'>{{ block.price_note }}</div>
               </div>
             </div>
           </div>
         </div>
-
-        <!--div class='block-wrapper block-wrapper-1'>
-          <div class='block block-1'>
-            <div class='circle'>{{ t('slide_08.info_1.days') }}</div>
-            <div class='info'>
-              <b v-html='t("slide_08.info_1.title")' />
-            </div>
-          </div>
-        </div>
-        <div class='block-wrapper block-wrapper-2'>
-          <div class='block block-2'>
-            <div class='circle'>{{ t('slide_08.info_2.days') }}</div>
-            <div class='info'>
-              <b v-html='t("slide_08.info_2.title")' />
-              <p v-html='t("slide_08.info_2.body")' />
-              <div>
-                <b>{{ t('slide_08.info_2.note.price') }}</b>
-                <p>{{ t('slide_08.info_2.note.description') }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class='block-wrapper block-wrapper-3'>
-          <div class='block block-3'>
-            <picture class='design-project' @click='enlarge'>
-              <source src='../assets/slide_08/design_project.webp' type='image/webp'>
-              <img loading='lazy' src='../assets/slide_08/design_project.jpg'>
-            </picture>
-            <div class='circle top'>{{ t('slide_08.info_3.days') }}</div>
-            <div class='info'>
-              <b v-html='t("slide_08.info_3.title")' />
-              <p v-html='t("slide_08.info_3.body")' />
-            </div>
-          </div>
-        </div>
-        <div class='block-wrapper block-wrapper-4'>
-          <div class='block block-4'>
-            <div class='circle'>{{ t('slide_08.info_4.days') }}</div>
-            <div class='info'>
-              <b v-html='t("slide_08.info_4.title")' />
-              <p v-html='t("slide_08.info_4.body")' />
-              <div>
-                <b>{{ t('slide_08.info_4.note.price') }}</b>
-                <p>{{ t('slide_08.info_4.note.description') }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class='block-wrapper block-wrapper-5'>
-          <div class='block block-5'>
-            <div class='circle top'>{{ t('slide_08.info_5.days') }}</div>
-            <div class='info'>
-              <b v-html='t("slide_08.info_5.title")' />
-              <p v-html='t("slide_08.info_5.body")' />
-            </div>
-          </div>
-        </div>
-        <div class='block-wrapper block-wrapper-6'>
-          <div class='block block-6'>
-            <div class='circle top logo' />
-            <div class='info'>
-              <b v-html='t("slide_08.info_6.title")' />
-              <p class='final-bold' v-html='t("slide_08.info_6.body")' />
-              <p class='list' v-html='t("slide_08.info_6.list")' />
-            </div>
-            <img
-              class='background'
-              loading='lazy'
-              src='../assets/slide_08/background_final.jpg'
-            >
-          </div>
-        </div-->
       </div>
     </article>
   </div>
@@ -337,25 +265,31 @@ h2
       margin-right: -80px
       padding-right: 80px
 
-  b
-    color: #fff
-    font-weight: bold
+.red-price
+  color: #fff
+  font-weight: bold
 
-    +lte_ipad
-      font-size: rem(18px)
-      line-height: rem(24px)
-      margin-bottom: rem(1px)
+  +lte_ipad
+    font-size: rem(18px)
+    line-height: rem(24px)
+    margin-bottom: rem(1px)
 
-    +gte_laptop
-      font-size: 18px
-      line-height: 23px
-      margin-bottom: -3px
+  +gte_laptop
+    font-size: 20px
+    line-height: 23px
 
-  p
-    color: #fff
+  &:first-child:last-child
+    align-self: center
+    width: 369px
 
-    +gte_laptop
-      font-weight: normal
+.red-note
+  color: #fff
+
+  +gte_laptop
+    font-size: 16px
+    font-weight: 300
+    line-height: 23px
+    margin-top: 5px
 </style>
 
 <style lang='sass'>
