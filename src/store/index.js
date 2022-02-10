@@ -523,51 +523,34 @@ export default createStore({
           button: 'Я готов стать партнером Кладовкин'
         },
         slide_08: {
-          h2: 'Become a partner and open fully automatic turnkey business ' +
-            '<span>in 2 months</span>',
-          days: 'days',
-          days_2: 'days',
-          info_1: {
-            title: 'Gathering preliminary information on potential premise',
-            body: 'and calculation of techical and financial indicators for the store'
-          },
-          info_2: {
-            title: 'Documents preparing',
-            body: 'and contract concluding',
-            note: {
-              price: '0 RUB',
-              description: 'concession fee'
-            }
-          },
-          info_3: {
-            title: 'Design-project: developing and approval',
-            body: 'Gathering preliminary information on potential premise, ' +
-              'calculation of techical and financial indicators for the store'
-          },
-          info_4: {
-            title: 'Producing, delivery and installation of the equipment',
-            body: 'We will produce and deliver our self storage equipment with ' +
-              'quality and installation terms guarantee',
-            note: {
-              price: 'from 8,000 RUB/м²',
-              description: 'premises outfitting'
-            }
-          },
-          info_5: {
-            title: 'Commissioning works on security system, IT-platfom integration',
-            body: 'Our assembling team will install and rig up the hardware ' +
-              'for access control quickly and qualitatively. They will also ' +
-              'set up its integration with the website'
-          },
-          info_6: {
-            title: 'Store grand opening and business support',
-            body: 'We will take over the control of:',
-            list: '&ndash; marketing and ads<br>' +
-              '&ndash; clients care service 24/7<br>' +
-              '&ndash; maintanance services<br>' +
-              '&ndash; staff management<br>' +
-              '&ndash; around the clock video surveillance<br>'
-          }
+          h2: 'Откройте технологичный бизнес' +
+            '<br><span>в сфере недвижимости за 2 месяца</span>',
+          blocks: [{
+            headline: 'Консультация, сбор предварительной информации о партнере и помещении',
+            days: '2 дня'
+          }, {
+            headline: 'Технико-экономическое обоснование&nbsp;проекта склада',
+            note: 'Разработаем дизайн-проект, составим смету на оборудование, подготовим финансовую модель',
+            days: '7 дней',
+            price: 'от 50 000 до 100 000 руб.'
+          }, {
+            headline: 'Подготовка документов и&nbsp;заключение&nbsp;договора франшизы',
+            days: '2 дня',
+            price: '0 рублей',
+            price_note: 'концессионный взнос'
+          }, {
+            headline: 'Изготовление и поставка оборудования',
+            note: 'Изготовим и произведем поставку оборудования собственной разработки с&nbsp;гарантией качества и сроков',
+            days: '30 дней',
+            price: '10 000 руб./м²',
+            price_note: 'переоборудование помещения'
+          }, {
+            headline: 'Пуско-наладочные работы охранной системы, интеграция с IT-платформой',
+            note: 'Сервисная служба установит оборудование, систему контроля и управления доступом, обеспечит интеграцию склада с сайтом',
+            days: '20 дней'
+          }, {
+            headline: 'Открытие склада, начало продаж'
+          }]
         },
         slide_09: {
           h2: 'Managing company fee',

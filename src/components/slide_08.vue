@@ -29,6 +29,7 @@
                 class='laptop'
                 :src='`/slide_08/block-${blockIndex}.png`'
                 :srcset='`/slide_08/block-${blockIndex}@2x.png 2x`'
+                @click='enlarge(blockIndex)'
               >
             </picture>
             <div class='circle'>{{ block.days }}</div>
@@ -56,16 +57,18 @@ export default {
     blocks: t('slide_08.blocks')
   }),
   methods: {
-    t
-    // async enlarge() {
-    //   const { default: SimpleLightbox } = await import(
-    //     /* webpackChunkName: "lightbox" */ 'simple-lightbox'
-    //   );
-    //
-    //   SimpleLightbox.open({
-    //     items: ['/schema.png']
-    //   });
-    // }
+    t,
+    async enlarge(blockIndex) {
+      if (blockIndex !== 1) { return; }
+
+      const { default: SimpleLightbox } = await import(
+        /* webpackChunkName: "lightbox" */ 'simple-lightbox'
+      );
+
+      SimpleLightbox.open({
+        items: ['/schema.png']
+      });
+    }
   }
 };
 </script>
@@ -224,6 +227,7 @@ picture
         left: scale-laptop(-26px, 0px)
 
       .block-1 &
+        cursor: pointer
         right: scale-laptop(-26px, 0px)
 
       .block-2 &
@@ -234,9 +238,9 @@ picture
         right: scale-laptop($laptop-scale-factor*(-370px), -370px)
 
       .block-4 &
-        transform: scale(0.8) translateY(-50%)
         left: scale-laptop(-207px / $laptop-scale-factor, -207px)
         margin-top: scale-laptop(-60px, 0)
+        transform: scale(0.8) translateY(-50%)
 
       .block-5 &
         right: 0
