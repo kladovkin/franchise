@@ -11,27 +11,27 @@
             [`block-wrapper-${blockIndex}`]: true,
           }'
         >
-          <picture>
-            <source
-              :srcset='`/slide_08/block-${blockIndex}.webp, /slide_08/block-${blockIndex}@2x.webp 2x`'
-              type='image/webp'
-            >
-            <img
-              class='laptop'
-              loading='lazy'
-              :src='`/slide_08/block-${blockIndex}.png`'
-              :srcset='`/slide_08/block-${blockIndex}@2x.png 2x`'
-            >
-          </picture>
           <div
             class='block'
             :class='{
               [`block-${blockIndex}`]: true,
-              "block-even": (blockIndex % 2) === 0,
-              "block-odd": (blockIndex % 2) === 1,
+              "block-right": (blockIndex % 2) === 0,
+              "block-left": (blockIndex % 2) === 1,
               "block-price": !!block.price
             }'
           >
+            <picture>
+              <source
+                :srcset='`/slide_08/block-${blockIndex}.webp, /slide_08/block-${blockIndex}@2x.webp 2x`'
+                type='image/webp'
+              >
+              <img
+                class='laptop'
+                loading='lazy'
+                :src='`/slide_08/block-${blockIndex}.png`'
+                :srcset='`/slide_08/block-${blockIndex}@2x.png 2x`'
+              >
+            </picture>
             <div class='circle'>{{ block.days }}</div>
             <div class='info'>
               <div class='headline' v-html='block.headline' />
@@ -149,6 +149,8 @@ $circle-laptop-size: 160px
     height: 440px
 
   +gte_laptop
+    position: relative
+
     &-1
       +realign_wrapper(247px)
 
@@ -172,8 +174,9 @@ $circle-laptop-size: 160px
 
   +gte_laptop
     color: #333
+    position: relative
 
-    &-even
+    &-right
       flex-direction: row-reverse
 
     &-price
@@ -208,11 +211,16 @@ $circle-laptop-size: 160px
 
 // cp public/slide_08/original/* public/slide_08/; for image in public/slide_08/*@2x.png; do; echo $image; convert -resize 50% $image ${image/@2x/}; convert -quality 95% $image ${image/\.png/.webp}; convert -resize 50% ${image/\.png/.webp} ${${image/\.png/.webp}/@2x/}; tinypng $image; tinypng ${image/@2x/}; done;
 picture img
-  /* cursor: pointer             */
-  /* left: 50%                   */
-  /* position: absolute          */
-  /* top: 0                      */
-  /* transform: translateX(-50%) */
+  position: absolute
+  /* top: 50% */
+  transform: translateY(-50%)
+
+  .block-left &
+    right: 0
+
+  .block-right &
+    left: 0
+
 
 .info
   +ipad
@@ -238,10 +246,10 @@ picture img
   .headline,
   .note
     +gte_laptop
-      .block-odd &
+      .block-left &
         margin-left: 28px
 
-      .block-even &
+      .block-right &
         margin-right: 26px
 
   .note
@@ -310,12 +318,12 @@ picture img
     height: 95px
     margin-top: 26px
 
-    .block-odd &
+    .block-left &
       border-radius: 0 10px 10px 0
       margin-left: -80px
       padding-left: 80px
 
-    .block-even &
+    .block-right &
       border-radius: 10px 0 0 10px
       margin-left: -31px
       padding-left: 31px
