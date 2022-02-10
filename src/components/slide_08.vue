@@ -115,7 +115,7 @@ $circle-laptop-size: 160px
 
     +lte_ipad
       background: #f6f5fe
-      height: rem(840px)
+      height: rem(700px)
       left: rem(35px)
       top: rem(42px)
       width: rem(16px)
@@ -168,6 +168,12 @@ $circle-laptop-size: 160px
   +iphone
     margin-bottom: rem(40px)
 
+    &-3
+      margin-bottom: rem(50px)
+
+    &-5
+      margin-bottom: rem(32px)
+
   +ipad
     margin-bottom: rem(55px)
 
@@ -202,8 +208,9 @@ $circle-laptop-size: 160px
     &-3 .info
       width: 350px
 
-    &-4 .info
-      width: 360px
+    &-4
+      .info
+        width: 360px
 
     &-5 .info
       width: 205px
@@ -283,7 +290,6 @@ picture
     +lte_ipad
       font-size: rem(14px)
       line-height: rem(18px)
-      margin-bottom: rem(4px)
 
     +gte_laptop
       font-size: 18px
@@ -303,16 +309,13 @@ picture
       color: #6c6c6c
       font-size: rem(12px)
       line-height: rem(16px)
+      margin-top: rem(8px)
 
     +gte_laptop
       color: #4B4B4B
       font-size: 16px
       line-height: 23px
       margin-top: 11px
-
-    &:not(:last-child)
-      +lte_ipad
-        margin-bottom: rem(12px)
 
 .circle
   align-items: center
@@ -334,6 +337,9 @@ picture
     margin-right: rem(16px)
     width: rem(85px)
 
+    .block-4 &
+      align-self: flex-start
+
   +gte_laptop
     background-image: url(../assets/slide_08/circle-desktop.svg)
     font-size: 24px
@@ -354,11 +360,12 @@ picture
   flex-direction: column
 
   +lte_ipad
-    height: rem(52px)
     border-radius: rem(10px)
-    width: rem(255px)
+    height: rem(52px)
+    margin-top: rem(15px)
     margin-left: rem(-68px)
     padding-left: rem(68px)
+    width: rem(255px)
 
   +gte_laptop
     height: 95px
@@ -379,15 +386,13 @@ picture
 .red-price
   color: #fff
   font-weight: bold
+  line-height: 1
 
   +lte_ipad
-    font-size: rem(18px)
-    line-height: rem(24px)
-    margin-bottom: rem(1px)
+    font-size: rem(14px)
 
   +gte_laptop
     font-size: 20px
-    line-height: 23px
 
   &:first-child:last-child
     align-self: center
@@ -395,12 +400,16 @@ picture
 
 .red-note
   color: #fff
+  line-height: 1
+
+  +lte_ipad
+    font-size: rem(12px)
+    margin-top: rem(4px)
 
   +gte_laptop
     font-size: 16px
     font-weight: 300
-    line-height: 23px
-    margin-top: 5px
+    margin-top: 8px
 </style>
 
 <style lang='sass'>
