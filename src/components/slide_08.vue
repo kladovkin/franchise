@@ -11,6 +11,18 @@
             [`block-wrapper-${blockIndex}`]: true,
           }'
         >
+          <picture>
+            <source
+              :srcset='`/slide_08/block-${blockIndex}.webp, /slide_08/block-${blockIndex}@2x.webp 2x`'
+              type='image/webp'
+            >
+            <img
+              class='laptop'
+              loading='lazy'
+              :src='`/slide_08/block-${blockIndex}.png`'
+              :srcset='`/slide_08/block-${blockIndex}@2x.png 2x`'
+            >
+          </picture>
           <div
             class='block'
             :class='{
@@ -45,16 +57,16 @@ export default {
     blocks: t('slide_08.blocks')
   }),
   methods: {
-    t,
-    async enlarge() {
-      const { default: SimpleLightbox } = await import(
-        /* webpackChunkName: "lightbox" */ 'simple-lightbox'
-      );
-
-      SimpleLightbox.open({
-        items: ['/schema.png']
-      });
-    }
+    t
+    // async enlarge() {
+    //   const { default: SimpleLightbox } = await import(
+    //     /* webpackChunkName: "lightbox" */ 'simple-lightbox'
+    //   );
+    //
+    //   SimpleLightbox.open({
+    //     items: ['/schema.png']
+    //   });
+    // }
   }
 };
 </script>
@@ -193,6 +205,14 @@ $circle-laptop-size: 160px
     &-5
       .info
         width: 205px
+
+// cp public/slide_08/original/* public/slide_08/; for image in public/slide_08/*@2x.png; do; echo $image; convert -resize 50% $image ${image/@2x/}; convert -quality 95% $image ${image/\.png/.webp}; convert -resize 50% ${image/\.png/.webp} ${${image/\.png/.webp}/@2x/}; tinypng $image; tinypng ${image/@2x/}; done;
+picture img
+  /* cursor: pointer             */
+  /* left: 50%                   */
+  /* position: absolute          */
+  /* top: 0                      */
+  /* transform: translateX(-50%) */
 
 .info
   +ipad
