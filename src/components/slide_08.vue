@@ -157,38 +157,23 @@ h2
     &:not(.block-price)
       align-items: center
 
-.circle
-  align-items: center
-  align-self: flex-end
-  background-repeat: no-repeat
-  background-size: contain
-  display: flex
-  flex-shrink: 0
-  font-weight: bold
-  justify-content: center
-  position: relative
-  z-index: 1
+    &-0 .info
+      width: 270px
 
-  +lte_ipad
-    background-image: url(../assets/slide_08/circle-mobile.svg)
-    font-size: rem(14px)
-    height: rem(85px)
-    line-height: rem(16px)
-    margin-right: rem(16px)
-    width: rem(85px)
+    &-1 .info
+      width: 351px
 
-  +gte_laptop
-    background-image: url(../assets/slide_08/circle-desktop.svg)
-    font-size: 24px
-    height: 160px
-    line-height: 25px
-    width: 160px
+    &-2 .info
+      width: 371px
 
-  .block-wrapper:last-child &
-    background-image: url(../assets/slide_08/circle_logo.svg)
+    &-3 .info
+      width: 350px
 
-    +gte_laptop
-      align-self: center
+    &-4 .info
+      width: 360px
+
+    &-5 .info
+      width: 205px
 
 .info
   +ipad
@@ -235,6 +220,39 @@ h2
     &:not(:last-child)
       +lte_ipad
         margin-bottom: rem(12px)
+
+.circle
+  align-items: center
+  align-self: flex-end
+  background-repeat: no-repeat
+  background-size: contain
+  display: flex
+  flex-shrink: 0
+  font-weight: bold
+  justify-content: center
+  position: relative
+  z-index: 1
+
+  +lte_ipad
+    background-image: url(../assets/slide_08/circle-mobile.svg)
+    font-size: rem(14px)
+    height: rem(85px)
+    line-height: rem(16px)
+    margin-right: rem(16px)
+    width: rem(85px)
+
+  +gte_laptop
+    background-image: url(../assets/slide_08/circle-desktop.svg)
+    font-size: 24px
+    height: 160px
+    line-height: 25px
+    width: 160px
+
+  .block-wrapper:last-child &
+    background-image: url(../assets/slide_08/circle_logo.svg)
+
+    +gte_laptop
+      align-self: center
 
 .red
   justify-content: center
