@@ -100,10 +100,10 @@ $circle-laptop-size: 160px
 
   +laptop
     max-width: 100%
-    height: scale-laptop(2587px, 2913px)
+    height: scale-laptop($laptop-scale-factor*2773px, 2773px)
 
   +gte_desktop
-    height: 2913px
+    height: 2773px
 
   &:before
     content: ''
@@ -219,7 +219,7 @@ picture
     +laptop
       transform: scale($laptop-scale-factor) translateY(-50%)
 
-    +gte_laptop
+    +laptop
       .block-0 &
         left: scale-laptop(-26px, 0px)
 
@@ -260,6 +260,9 @@ picture
 
       .block-5 &
         margin-top: 50px
+
+      .block-5 &
+        right: 0
 
 .info
   +ipad
