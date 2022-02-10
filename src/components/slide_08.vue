@@ -27,7 +27,6 @@
               >
               <img
                 class='laptop'
-                loading='lazy'
                 :src='`/slide_08/block-${blockIndex}.png`'
                 :srcset='`/slide_08/block-${blockIndex}@2x.png 2x`'
               >
@@ -210,11 +209,39 @@ $circle-laptop-size: 160px
 picture
   align-self: center
 
+  +lte_ipad
+    display: none
+
   img
     position: absolute
     transform: translateY(-50%)
 
+    +laptop
+      transform: scale($laptop-scale-factor) translateY(-50%)
+
     +gte_laptop
+      .block-0 &
+        left: scale-laptop(-26px, 0px)
+
+      .block-1 &
+        right: scale-laptop(-26px, 0px)
+
+      .block-2 &
+        left: scale-laptop(-360px, -253px)
+        margin-top: scale-laptop(-50px, -35px)
+
+      .block-3 &
+        right: scale-laptop($laptop-scale-factor*(-370px), -370px)
+
+      .block-4 &
+        transform: scale(0.8) translateY(-50%)
+        left: scale-laptop(-207px / $laptop-scale-factor, -207px)
+        margin-top: scale-laptop(-60px, 0)
+
+      .block-5 &
+        right: 0
+
+    +gte_desktop
       .block-0 &
         left: 0
 
@@ -225,7 +252,6 @@ picture
         left: -253px
         margin-top: -35px
 
-
       .block-3 &
         right: -370px
 
@@ -233,7 +259,6 @@ picture
         left: -207px
 
       .block-5 &
-        right: 0
         margin-top: 50px
 
 .info
