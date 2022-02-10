@@ -248,10 +248,8 @@ export default createStore({
         },
         slide_09: {
           circle: {
-            title: '24 мес.',
-            note: 'срок окупаемости<br>' +
-              'первоначальных<br>' +
-              'инвестиций (РР)<br>'
+            title: '40%',
+            note: 'годовых'
           },
           list_1: 'валовой выручки',
           list_2: 'на управление складом',
@@ -553,9 +551,8 @@ export default createStore({
         },
         slide_09: {
           circle: {
-            title: '2 years',
-            note: 'Initial investments<br>' +
-              'payback period (РР)'
+            title: '40%',
+            note: 'годовых'
           },
           list_1: 'out of gross revenue',
           list_2: 'for the store management',

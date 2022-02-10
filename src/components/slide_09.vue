@@ -1,13 +1,10 @@
 <template>
   <div id='slide_09' class='outer'>
-    <div class='container'>
-      <h2 v-html='t("slide_09.h2")' />
-    </div>
     <div class='background'>
       <article>
         <div class='circle'>
-          <b>{{ t('slide_09.circle.title') }}</b>
-          <span v-html='t("slide_09.circle.note")' />
+          <div class='title'>{{ t('slide_09.circle.title') }}</div>
+          <div class='note'>{{ t('slide_09.circle.note') }}</div>
         </div>
         <ul>
           <li>
@@ -52,31 +49,19 @@ export default {
 $mobile-circle-radius: 117px
 .outer
   +lte_ipad
-    margin-bottom: rem(26px)
+    margin-top: 32px
+    padding-top: 115px
+  /* +lte_ipad                                 */
+  /*   margin-bottom: rem(26px)                */
 
-  +gte_laptop
-    margin-bottom: 82px
+  /* +gte_laptop                               */
+  /*   margin-bottom: 82px                     */
 
-  +laptop
-    margin-top: scale-laptop(-167px, -23px)
+  /* +laptop                                   */
+  /*   margin-top: scale-laptop(-167px, -23px) */
 
-  +gte_desktop
-    margin-top: -23px
-
-h2
-  +lte_ipad
-    margin-bottom: rem($mobile-circle-radius + 40px)
-
-  +gte_laptop
-    margin-bottom: 45px
-    text-align: center
-    width: 500px
-
-  +laptop
-    margin-left: scale-laptop(270px, 334px)
-
-  +gte_desktop
-    margin-left: 334px
+  /* +gte_desktop                              */
+  /*   margin-top: -23px                       */
 
 .background
   background: #5096FF
@@ -195,28 +180,26 @@ article
     margin-top: -72px
     width: 367px
 
-  b
+  .title,
+  .note
     color: #5096ff
-    font-weight: bold
+    font-weight: 900
+    line-height: 1
+    text-align: center
 
+  .title
     +lte_ipad
       font-size: rem(44px)
-      line-height: rem(44px)
-      margin-bottom: rem(8px)
+      margin-bottom: rem(7px)
 
     +gte_laptop
-      font-size: 50px
-      line-height: 35px
-      margin-bottom: 12px
+      font-size: 56px
+      margin-bottom: 17px
 
-  span
-    text-align: center
-    color: #4b4b4b
+  .note
     +lte_ipad
-      font-size: rem(12px)
-      line-height: rem(14px)
+      font-size: rem(24px)
 
     +gte_laptop
-      font-size: 18px
-      line-height: 23px
+      font-size: 32px
 </style>
