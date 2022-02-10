@@ -46,6 +46,9 @@ $mobile-circle-radius: 109px
     margin-top: 32px
     padding-top: 115px
 
+  +ipad
+    margin-top: 96px
+
   +gte_desktop
     margin-top: -133px
 
@@ -121,7 +124,10 @@ article
   display: flex
 
   +ipad
-    display: inline-flex
+    padding-left: rem(80px)
+    padding-right: rem(80px)
+    text-align: center
+    align-items: center
 
   +lte_ipad
     flex-direction: column
