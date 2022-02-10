@@ -2,11 +2,14 @@
   <div id='slide_08' class='background-cutter'>
     <article>
       <h2 v-html='t("slide_08.h2")' />
-      <div class='area'>
+      <div class='zigzag-container'>
         <div
           v-for='(block, blockIndex) in blocks'
           :key='blockIndex'
           class='block-wrapper'
+          :class='{
+            [`block-wrapper-${blockIndex}`]: true,
+          }'
         >
           <div
             class='block'
@@ -75,7 +78,10 @@ h2
     margin-bottom: 88px
     text-align: center
 
-.area
+$laptop-scale-factor: 964 / 1096
+$circle-laptop-size: 160px
+
+.zigzag-container
   position: relative
 
   +gte_laptop
@@ -109,29 +115,36 @@ h2
       transform: translateX(-50%)
 
     +laptop
-      width: scale-laptop(964px, 1096px)
-      height: scale-laptop(2587px, 2913px)
-      /* top: scale-laptop(108px, 130px) // it is intentionally 15px less than on desktop */
-      /* margin-top: scale-laptop(53px, 39px) */
+      top: $laptop-scale-factor*80px
+      height: scale-laptop($laptop-scale-factor*2773px, 2773px)
+      width: scale-laptop($laptop-scale-factor*1096px, 1096px)
 
     +gte_desktop
-      background-size: 1096px 2773px
-      /* margin-top: 39px */
-      /* top: 145px */
+      height: 2773px
       top: 80px
       width: 1096px
-      height: 2773px
+
+=realign_wrapper($block-height)
+  $offset: $block-height - $circle-laptop-size
+  margin-top: -$offset
+  margin-bottom: $offset
 
 .block-wrapper
-  +gte_laptop
-    height: 440px
-    /* display: flex             */
-    /* flex-direction: column    */
-    /* justify-content: flex-end */
-    /* width: 100%               */
+  +laptop
+    height: scale-laptop($laptop-scale-factor*440px, 440px)
 
-    /* &:first-child             */
-    /*   height: 160px           */
+  +gte_desktop
+    height: 440px
+
+  +gte_laptop
+    &-1
+      +realign_wrapper(247px)
+
+    &-2
+      +realign_wrapper(167px)
+
+    &-3
+      +realign_wrapper(247px)
 
 .block
   display: flex
@@ -157,23 +170,29 @@ h2
     &:not(.block-price)
       align-items: center
 
-    &-0 .info
-      width: 270px
+    &-0
+      .info
+        width: 270px
 
-    &-1 .info
-      width: 351px
+    &-1
+      .info
+        width: 351px
 
-    &-2 .info
-      width: 371px
+    &-2
+      .info
+        width: 371px
 
-    &-3 .info
-      width: 350px
+    &-3
+      .info
+        width: 350px
 
-    &-4 .info
-      width: 360px
+    &-4
+      .info
+        width: 360px
 
-    &-5 .info
-      width: 205px
+    &-5
+      .info
+        width: 205px
 
 .info
   +ipad
@@ -244,9 +263,9 @@ h2
   +gte_laptop
     background-image: url(../assets/slide_08/circle-desktop.svg)
     font-size: 24px
-    height: 160px
+    height: $circle-laptop-size
     line-height: 25px
-    width: 160px
+    width: $circle-laptop-size
 
   .block-wrapper:last-child &
     background-image: url(../assets/slide_08/circle_logo.svg)
