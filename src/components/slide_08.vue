@@ -144,6 +144,18 @@ $circle-laptop-size: 160px
   margin-bottom: $offset
 
 .block-wrapper
+  position: relative
+
+  +iphone
+    &:not(:last-child)
+      margin-bottom: rem(40px)
+
+    &-3
+      margin-bottom: rem(50px)
+
+  +ipad
+    margin-bottom: rem(55px)
+
   +laptop
     height: scale-laptop($laptop-scale-factor*440px, 440px)
 
@@ -151,8 +163,6 @@ $circle-laptop-size: 160px
     height: 440px
 
   +gte_laptop
-    position: relative
-
     &-1
       +realign_wrapper(247px)
 
@@ -162,23 +172,17 @@ $circle-laptop-size: 160px
     &-3
       +realign_wrapper(247px)
 
+  &-5
+    margin-bottom: 0
+
 .block
   display: flex
 
-  +iphone
-    margin-bottom: rem(40px)
-
-    &-3
-      margin-bottom: rem(50px)
-
-    &-5
-      margin-bottom: rem(32px)
-
-  +ipad
-    margin-bottom: rem(55px)
-
   +lte_ipad
     color: #4b4b4b
+
+    &-5
+      flex-wrap: wrap
 
   +gte_laptop
     color: #333
@@ -222,14 +226,20 @@ picture
   +lte_ipad
     display: none
 
+    .block-5 &
+      order: 99
+      display: block
+      flex-basis: 100%
+      margin-top: rem(32px)
+
   img
-    position: absolute
-    transform: translateY(-50%)
+    +gte_laptop
+      position: absolute
+      transform: translateY(-50%)
 
     +laptop
       transform: scale($laptop-scale-factor) translateY(-50%)
 
-    +laptop
       .block-0 &
         left: scale-laptop(-26px, 0px)
 
