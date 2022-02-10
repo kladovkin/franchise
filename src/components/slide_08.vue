@@ -87,7 +87,7 @@ h2
     margin-bottom: 54px
 
   +gte_laptop
-    margin-bottom: 88px
+    margin-bottom: 188px
     text-align: center
 
 $laptop-scale-factor: 964 / 1096
@@ -197,30 +197,44 @@ $circle-laptop-size: 160px
       .info
         width: 371px
 
-    &-3
-      .info
-        width: 350px
+    &-3 .info
+      width: 350px
 
-    &-4
-      .info
-        width: 360px
+    &-4 .info
+      width: 360px
 
-    &-5
-      .info
-        width: 205px
+    &-5 .info
+      width: 205px
 
 // cp public/slide_08/original/* public/slide_08/; for image in public/slide_08/*@2x.png; do; echo $image; convert -resize 50% $image ${image/@2x/}; convert -quality 95% $image ${image/\.png/.webp}; convert -resize 50% ${image/\.png/.webp} ${${image/\.png/.webp}/@2x/}; tinypng $image; tinypng ${image/@2x/}; done;
-picture img
-  position: absolute
-  /* top: 50% */
-  transform: translateY(-50%)
+picture
+  align-self: center
 
-  .block-left &
-    right: 0
+  img
+    position: absolute
+    transform: translateY(-50%)
 
-  .block-right &
-    left: 0
+    +gte_laptop
+      .block-0 &
+        left: 0
 
+      .block-1 &
+        right: 0
+
+      .block-2 &
+        left: -253px
+        margin-top: -35px
+
+
+      .block-3 &
+        right: -370px
+
+      .block-4 &
+        left: -207px
+
+      .block-5 &
+        right: 0
+        margin-top: 50px
 
 .info
   +ipad
