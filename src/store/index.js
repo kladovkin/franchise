@@ -249,14 +249,10 @@ export default createStore({
         slide_09: {
           circle: {
             title: '40%',
-            note: 'годовых'
+            subtitle: 'годовых'
           },
-          list_1: 'валовой выручки',
-          list_2: 'на управление складом',
-          list_3: 'валовой выручки',
-          list_4: 'на маркетинговые услуги',
-          list_5: 'валовой выручки',
-          list_6: 'на услуги IT'
+          headline: 'доходность вложений в переоборудование помещения',
+          button: 'Стать партнером Кладовкин'
         },
         slide_10: {
           h2: 'Кейсы',
@@ -552,14 +548,10 @@ export default createStore({
         slide_09: {
           circle: {
             title: '40%',
-            note: 'годовых'
+            subtitle: 'годовых'
           },
-          list_1: 'out of gross revenue',
-          list_2: 'for the store management',
-          list_3: 'out of gross revenue',
-          list_4: 'for the marketing purposes',
-          list_5: 'out of gross revenue',
-          list_6: 'for IT services'
+          headline: 'доходность вложений в переоборудование помещения',
+          button: 'Стать партнером Кладовкин'
         },
         slide_10: {
           h2: 'Cases ',

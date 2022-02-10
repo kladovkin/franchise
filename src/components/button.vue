@@ -84,6 +84,20 @@ export default {
       background-color: #df4c10
       border-color: #df4c10
 
+  &-white-blue
+    background-color: #f44f0c
+    border: 3px solid #f44f0c
+    color: #fff
+
+    +gte_laptop
+      &:hover
+        background-color: #fa7912
+        border-color: #fa7912
+
+    &:active
+      background-color: #df4c10
+      border-color: #df4c10
+
   &-conversion
     +lte_ipad
       font-size: rem(14px)
