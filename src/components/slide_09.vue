@@ -7,7 +7,7 @@
           <div class='subtitle'>{{ t('slide_09.circle.subtitle') }}</div>
         </div>
         <div class='content'>
-          <div class='headline'>{{ t('slide_09.headline') }}</div>
+          <div class='headline' v-html='t("slide_09.headline")' />
           <Button
             type='white'
             :text='t("slide_09.button")'
@@ -46,6 +46,9 @@ $mobile-circle-radius: 109px
     margin-top: 32px
     padding-top: 115px
 
+  +gte_desktop
+    margin-top: -133px
+
 .background
   background: #5096FF
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.05)
@@ -59,7 +62,7 @@ article
     padding-bottom: rem(32px)
 
   +gte_laptop
-    height: 223px
+    height: 173px
 
 .circle
   align-items: center
@@ -79,20 +82,17 @@ article
     transform: translateX(-50%)
     width: rem(218px)
 
+  +laptop
+    margin-left: scale-laptop(-96px, -82px)
+
   +gte_laptop
+    height: 317px
+    margin-top: -72px
+    width: 317px
     background-image: url(../assets/slide_09/circle-desktop.svg)
 
-  +laptop
-    height: scale-laptop(310px, 367px)
-    margin-top: scale-laptop(-44px, -72px)
-    margin-left: scale-laptop(-92px, -100px)
-    width: scale-laptop(310px, 367px)
-
   +gte_desktop
-    height: 367px
-    margin-left: -100px
-    margin-top: -72px
-    width: 367px
+    margin-left: -82px
 
   .title,
   .subtitle
@@ -133,12 +133,10 @@ article
     height: 100%
 
   +laptop
-    margin-left: scale-laptop(270px, 334px)
-    width: scale-laptop(635px, 728px)
+    margin-left: scale-laptop(250px, 272px)
 
   +gte_desktop
-    margin-left: 334px
-    width: 728px
+    margin-left: 272px
 
   .headline
     color: #ffffff
@@ -153,6 +151,12 @@ article
     +gte_laptop
       font-size: 24px
       line-height: 28px
+
+    +laptop
+      margin-right: scale-laptop(32px, 62px)
+
+    +gte_desktop
+      margin-right: 62px
 
   .button
     color: #5096ff
