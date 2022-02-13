@@ -213,7 +213,7 @@ h2
 
   // cp src/assets/slide_03/original/* src/assets/slide_03/; for image in src/assets/slide_03/*@2x.png; do; echo $image; convert -resize 50% $image ${image/@2x/}; convert -quality 95% $image ${image/\.png/.webp}; convert -resize 50% ${image/\.png/.webp} ${${image/\.png/.webp}/@2x/}; tinypng $image; tinypng ${image/@2x/}; done;
   picture
-    height: 248px
+    height: rem(248px)
     left: 0
     max-width: 100%
     position: absolute
