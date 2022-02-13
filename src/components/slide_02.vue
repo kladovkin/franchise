@@ -52,16 +52,15 @@
 
 <script>
 import t from '@/utils/locale';
-import Swiper, { Pagination } from 'swiper';
-
-Swiper.use([Pagination]);
 
 export default {
   name: 'Slide2',
   data: () => ({
     blocks: t('slide_02.blocks')
   }),
-  mounted() {
+  async mounted() {
+    const { Swiper, Pagination } = await import('swiper');
+
     new Swiper(this.$refs.swiper, {
       wrapperClass: 'slides',
       slideClass: 'slide',
@@ -76,7 +75,8 @@ export default {
         bulletActiveClass: 'slider-pagination-bullet-active',
         clickable: true
       },
-      loop: true
+      loop: true,
+      modules: [Pagination]
     });
   },
   methods: {

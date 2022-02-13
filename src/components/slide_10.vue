@@ -183,11 +183,11 @@ h2
 
       +gte_laptop
         &:hover
-          box-shadow: 0px 3px 10px rgb(244 79 12 / 35%)
+          box-shadow: 0px 3px 10px rgba(#cf4c17, 0.35)
           color: #333
 
       &:active
-        color: $primary
+        background: #cf4c17
         box-shadow: none
 
       &:before
@@ -195,6 +195,7 @@ h2
         background-repeat: no-repeat
         background-size: contain
         background: url('../assets/slide_10/navigation.svg')
+        margin-left: rem(2px)
         width: rem(16px)
         height: rem(25px)
 
@@ -211,5 +212,6 @@ h2
         margin-right: 26px
 
       &:before
-        transform: scale(-1)
+        margin-left: rem(-2px)
+        transform: rotate(180deg)
 </style>
