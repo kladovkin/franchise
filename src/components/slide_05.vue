@@ -89,7 +89,7 @@ export default {
 
 <style scoped lang='sass'>
 .background-cutter
-  +slide_offset_default(278px)
+  +slide_offset_default
 
 article
   +gte_laptop
