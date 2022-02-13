@@ -3,38 +3,31 @@
     <h2>{{ t('slide_10.h2') }}</h2>
 
     <div ref='swiper' class='swiper'>
-      <div class='swiper-wrapper'>
-        <img
+      <div class='slides'>
+        <div
           v-for='imageIndex in images'
           :key='imageIndex'
           class='slide'
-          :src='`/slide_10/slide_image-${imageIndex}.png`'
-          :srcset='`/slide_10/slide_image-${imageIndex}@2x.png 2x`'
-          @click='enlarge(imageIndex)'
         >
+          <picture>
+            <source
+              :srcset='`/slide_10/slide_image-${imageIndex}.webp, /slide_10/slide_image-${imageIndex}@2x.webp 2x`'
+              type='image/webp'
+            >
+            <img
+              class='laptop'
+              :src='`/slide_10/slide_image-${imageIndex}.png`'
+              :srcset='`/slide_10/slide_image-${imageIndex}@2x.png 2x`'
+            >
+          </picture>
+        </div>
       </div>
       <div class='navigation'>
-        <button class='prev' />
-        <button class='next' />
+        <button class='swiper-button-prev' />
+        <button class='swiper-button-next' />
       </div>
     </div>
   </article>
-        <!-- <picture                                                                                                 -->
-        <!--   v-for='imageIndex in images'                                                                           -->
-        <!--   :key='imageIndex'                                                                                      -->
-        <!--   class='slide'                                                                                          -->
-        <!-- >                                                                                                        -->
-        <!--   <source                                                                                                -->
-        <!--     :srcset='`/slide_10/slide_image-${imageIndex}.webp, /slide_10/slide_image-${imageIndex}@2x.webp 2x`' -->
-        <!--     type='image/webp'                                                                                    -->
-        <!--   >                                                                                                      -->
-        <!--   <img                                                                                                   -->
-        <!--     class='laptop'                                                                                       -->
-        <!--     :src='`/slide_10/slide_image-${imageIndex}.png`'                                                     -->
-        <!--     :srcset='`/slide_10/slide_image-${imageIndex}@2x.png 2x`'                                            -->
-        <!--     @click='enlarge(imageIndex)'                                                                         -->
-        <!--   >                                                                                                      -->
-        <!-- </picture>                                                                                               -->
 </template>
 
 <script>
@@ -42,19 +35,14 @@ import t from '@/utils/locale';
 
 export default {
   name: 'Slide8',
-  // components: {
-  //   Swiper,
-  //   SwiperSlidp
-  // },
   data: () => ({
-    images: [0, 1, 2, 3, 4, 5]
+    images: [0, 1, 2, 3]
   }),
   async mounted() {
     const { Swiper, Navigation } = await import('swiper');
 
-    // console.log(isMobile() ? 'auto' : 4);
     this.swiper = new Swiper(this.$refs.swiper, {
-      wrapperClass: 'swiper-wrapper',
+      wrapperClass: 'slides',
       slideClass: 'slide',
       loop: false,
 
@@ -78,8 +66,8 @@ export default {
       },
 
       navigation: {
-        nextEl: '.next',
-        prevEl: '.prev'
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
       },
       modules: [Navigation]
     });
@@ -113,7 +101,6 @@ h2
   +gte_desktop
     margin-bottom: 58px
 
-
 .swiper
   list-style: none
   margin-left: auto
@@ -127,7 +114,7 @@ h2
   &-pointer-events
     touch-action: pan-y
 
-  .swiper-wrapper
+  .slides
     box-sizing: content-box
     display: flex
     position: relative
@@ -136,7 +123,19 @@ h2
     z-index: 1
 
   .slide
-    border-radius: rem(12px)
-// cp public/slide_10/original/* public/slide_10/; for image in public/slide_10/*@2x.png; do; echo $image; convert -resize 50% $image ${image/@2x/}; convert -quality 95% $image ${image/\.png/.webp}; convert -resize 50% ${image/\.png/.webp} ${${image/\.png/.webp}/@2x/}; tinypng $image; tinypng ${image/@2x/}; done;
-/* picture */
+    overflow: hidden
+    flex-shrink: 0
+
+    // cp public/slide_10/original/* public/slide_10/; for image in public/slide_10/*@2x.png; do; echo $image; convert -resize 50% $image ${image/@2x/}; convert -quality 95% $image ${image/\.png/.webp}; convert -resize 50% ${image/\.png/.webp} ${${image/\.png/.webp}/@2x/}; tinypng $image; tinypng ${image/@2x/}; done;
+    picture img
+      border-radius: rem(12px)
+
+      +lte_ipad
+        width: rem(187px)
+
+      +laptop
+        width: scale-laptop(222px, 265px)
+
+      +gte_desktop
+        width: 265px
 </style>
