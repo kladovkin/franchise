@@ -1,5 +1,5 @@
 <template>
-  <div id='slide_7' class='background-cutter'>
+  <div id='slide_07' class='background-cutter'>
     <article>
       <h2 v-html='t("slide_07.h2")' />
       <div class='columns'>
