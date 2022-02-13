@@ -15,12 +15,15 @@
       </div>
       <div class='lead-container'>
         <Button
+          class='primary'
           :text='t("slide_01.button")'
           type='white'
           @click='lead'
         />
         <div>
-          <p>{{ t('slide_01.learn_more') }}</p>
+          <p class='secondary' @click='learnMore'>
+            {{ t('slide_01.learn_more') }}
+          </p>
         </div>
       </div>
     </article>
@@ -46,6 +49,11 @@ export default {
     async lead() {
       (await SweetScroll.asyncInstance()).toElement(
         document.getElementById('slide_02'), { duration: 450 }
+      );
+    },
+    async learnMore() {
+      (await SweetScroll.asyncInstance()).toElement(
+        document.getElementById('slide_03'), { duration: 450 }
       );
     }
   }
@@ -350,7 +358,7 @@ article
     position: absolute
     z-index: 2
 
-  .button
+  .button.primary
     +ipad
       margin: 0 auto
 
@@ -366,7 +374,7 @@ article
       height: 57px
       width: 295px
 
-  p
+  p.secondary
     border-bottom: 1px solid rgba(#fff, 0.5)
     cursor: pointer
     font-size: 14px
