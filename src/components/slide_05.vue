@@ -158,7 +158,7 @@ h2
 
     +lte_ipad
       height: rem(240px)
-      margin-top: 32px
+      margin: 32px auto 0
       width: rem(287px)
 
     +laptop
