@@ -33,7 +33,7 @@ export default {
   methods: {
     t,
     lead() {
-      alert('click');
+      window.open('https://youtu.be/ifF-ATIOYXg');
     }
   }
 };
