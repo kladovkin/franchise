@@ -7,8 +7,13 @@
 </template>
 
 <script>
+import t from '@/utils/locale';
+
 export default {
-  name: 'Slide11'
+  name: 'Slide11',
+  methods: {
+    t
+  }
 };
 </script>
 
@@ -18,20 +23,12 @@ article
     padding-top: rem(72px)
 
   +laptop
-    padding-top: scale-laptop(120px, 180px)
+    padding-top: scale-laptop(106px, 174px)
 
   +gte_desktop
-    padding-top: 180px
+    padding-top: 174px
 
 h2
   text-align: center
-
-  +lte_ipad
-    margin-bottom: rem(32px)
-
-  +laptop
-    margin-bottom: scale-laptop(50px, 97px)
-
-  +gte_desktop
-    margin-bottom: 97px
+  margin-bottom: rem(58px)
 </style>
