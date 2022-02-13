@@ -47,6 +47,9 @@ export default {
   position: relative
   overflow: hidden
 
+  +lte_ipad
+    background-color: #626262
+
 // cp src/assets/slide_04/original/* src/assets/slide_04/; for image in src/assets/slide_04/*@2x.png; do; echo $image; convert -resize 50% $image ${image/@2x/}; convert -quality 95% $image ${image/\.png/.webp}; convert -resize 50% ${image/\.png/.webp} ${${image/\.png/.webp}/@2x/}; tinypng $image; tinypng ${image/@2x/}; done;
 picture img
   cursor: pointer

@@ -278,6 +278,10 @@ picture
       .block-5 &
         right: 0
 
+    +lte_ipad
+      .block-5 &
+        width: 100%
+
 .info
   +ipad
     max-width: rem(360px)
