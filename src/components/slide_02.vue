@@ -9,18 +9,14 @@
           <span>{{ t('slide_02.note.red') }}</span> {{ t('slide_02.note.other') }}
         </div>
       </div>
+
       <ul class='blocks'>
-        <li>
-          <div class='headline'>{{ t('slide_02.block_1.headline') }}</div>
-          <div class='note'>{{ t('slide_02.block_1.note') }}</div>
-        </li>
-        <li>
-          <div class='headline'>{{ t('slide_02.block_2.headline') }}</div>
-          <div class='note'>{{ t('slide_02.block_2.note') }}</div>
-        </li>
-        <li>
-          <div class='headline'>{{ t('slide_02.block_3.headline') }}</div>
-          <div class='note'>{{ t('slide_02.block_3.note') }}</div>
+        <li
+          v-for='(block, blockIndex) in blocks'
+          :key='blockIndex'
+        >
+          <div class='headline'>{{ block.headline }}</div>
+          <div class='note'>{{ block.note }}</div>
         </li>
       </ul>
 
@@ -62,9 +58,11 @@ Swiper.use([Pagination]);
 
 export default {
   name: 'Slide2',
+  data: () => ({
+    blocks: t('slide_02.blocks')
+  }),
   mounted() {
-    // new Swiper(this.$refs.swiper, {
-    new Swiper('.swiper', {
+    new Swiper(this.$refs.swiper, {
       wrapperClass: 'slides',
       slideClass: 'slide',
       grabCursor: true,
