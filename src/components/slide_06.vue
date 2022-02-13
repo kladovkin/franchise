@@ -117,7 +117,25 @@ export default {
 <style scoped lang='sass'>
 article
   +slide_offset_default
+  +gte_laptop
+    &:before
+      background-image: url(../assets/slide_06/circles_background-desktop.svg)
+      background-repeat: no-repeat
+      background-size: contain
+      content: ''
+      height: 109px
+      pointer-events: none
+      position: absolute
+      bottom: 480px
+      width: 144px
 
+  +laptop
+    &:before
+      right: scale-laptop(-84px, -24px)
+
+  +gte_desktop
+    &:before
+      right: -24px
 h2
   text-align: center
 
