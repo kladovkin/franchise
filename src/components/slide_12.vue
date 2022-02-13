@@ -133,19 +133,20 @@ article
     background-size: contain
     content: ''
     position: absolute
-    top: 0
     z-index: -1
 
     +lte_ipad
       background-image: url(../assets/slide_12/circles-mobile.svg)
       height: rem(207px)
       left: 0
+      top: 0
       width: rem(127px)
 
     +gte_laptop
       background-image: url(../assets/slide_12/circles-desktop.svg)
       height: 239px
       width: 622px
+      top: 80px
 
     +laptop
       left: scale-laptop(305px, 405px)
@@ -216,15 +217,19 @@ h2
       align-items: center
 
     .button
+      flex-shrink: 0
+
       +lte_ipad
         margin-bottom: rem(24px)
 
       +gte_laptop
         width: 350px
+        max-width: 350px
         margin-right: 29px
 
     .privacy
       letter-spacing: -0.01em
+      font-weight: 300
 
       +lte_ipad
         color: #6c6c6c

@@ -294,7 +294,7 @@ export default createStore({
           button: 'Все вопросы'
         },
         slide_12: {
-          h2: 'Остались вопросы?',
+          h2: 'Хотите стать партнером?',
           note: 'Оставьте свои контакты и мы с вами свяжемся',
           thanks: 'Спасибо!',
           success: 'Мы получили вашу заявку',
@@ -302,10 +302,8 @@ export default createStore({
           client: 'Имя и Фамилия',
           phone: 'Мобильный телефон',
           message: 'Сообщение',
-          submit: 'Отправить запрос',
-          privacy_note: 'Нажимая «Отправить запрос», вы подтверждаете свое ' +
-            'согласие на обработку и хранение ваших персональных данных' +
-            'в соответствии с',
+          submit: 'Получить консультацию',
+          privacy_note: 'Нажимая «Получить консультацию», вы подтверждаете свое согласие на обработку и хранение ваших персональных данных в соответствии с политикой обработки персональных данных',
           privacy_link: 'политикой обработки персональных данных',
           error: '*Обязательное поле для заполения'
         },
@@ -621,7 +619,7 @@ export default createStore({
           button: 'Все вопросы'
         },
         slide_12: {
-          h2: 'Still have questions?',
+          h2: 'Хотите стать партнером?',
           note: 'Fill in your details and we will contact you shortly',
           thanks: 'Thank you!',
           success: 'Your request has been received',
@@ -629,10 +627,8 @@ export default createStore({
           client: 'Name and Surname',
           phone: 'Phone number',
           message: 'Message',
-          submit: 'Send the request',
-          privacy_note: 'By clicking “Send the request” button you are providing ' +
-            'your consent for processing and further storage of your personal data ' +
-            'in accordance with personal data processing',
+          submit: 'Получить консультацию',
+          privacy_note: 'Нажимая «Получить консультацию», вы подтверждаете свое согласие на обработку и хранение ваших персональных данных в соответствии с политикой обработки персональных данных',
           privacy_link: 'policy',
           error: '*This field is required'
         },
