@@ -15,7 +15,11 @@ module.exports = {
   devServer: {
     host: 'localhost',
     allowedHosts: ['localhost'],
-    port: 8090
+    port: 8090,
+    overlay: {
+      warnings: false,
+      errors: false
+    }
   },
   transpileDependencies: [
     'vue',
