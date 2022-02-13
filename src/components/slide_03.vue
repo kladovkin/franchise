@@ -213,15 +213,19 @@ h2
 
   // cp src/assets/slide_03/original/* src/assets/slide_03/; for image in src/assets/slide_03/*@2x.png; do; echo $image; convert -resize 50% $image ${image/@2x/}; convert -quality 95% $image ${image/\.png/.webp}; convert -resize 50% ${image/\.png/.webp} ${${image/\.png/.webp}/@2x/}; tinypng $image; tinypng ${image/@2x/}; done;
   picture
-    width: 1100px
     height: 248px
     left: 0
+    max-width: 100%
     position: absolute
     top: 0
+    width: 1100px
     z-index: -1
 
     img
       overflow: hidden
+
+      +lte_ipad
+        width: 100%
 
 ul.blocks
   +lte_ipad
