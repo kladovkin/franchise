@@ -255,15 +255,7 @@ export default createStore({
           button: 'Стать партнером Кладовкин'
         },
         slide_10: {
-          h2: 'Кейсы',
-          list_1: '<b>Площадь:</b> 165 м²',
-          list_2: '<b>Расположение:</b> ул. Маршала Жукова, 76-2',
-          list_3: '<b>Дата запуска проекта:</b> май 2019 г.',
-          list_4: '<b>Инвестиции в переоборудование помещения:</b>' +
-            '&nbsp;1&nbsp;710&nbsp;000&nbsp;руб.',
-          list_5: '<b>Средняя арендная ставка:</b> 1 800 руб./м²',
-          list_6: '<b>Заполняемость:</b> 99%',
-          list_7: '<b>Срок окупаемости:</b> 17 месяцев'
+          h2: 'Склады наших партнеров'
         },
         slide_11: {
           h2: 'Остались вопросы?',
@@ -554,14 +546,7 @@ export default createStore({
           button: 'Стать партнером Кладовкин'
         },
         slide_10: {
-          h2: 'Cases ',
-          list_1: '<b>Total area:</b> 165 m²',
-          list_2: '<b>Location:</b> Moscow, Marshala Zhukova st. 76-2',
-          list_3: '<b>Project start date:</b> May 2019',
-          list_4: '<b>Premise outfitting investments:</b> 1,710,000&nbsp;RUB',
-          list_5: '<b>Average rent price:</b> 1,800&nbsp;RUB/m²',
-          list_6: '<b>Occupancy:</b> 99%',
-          list_7: '<b>Recoupment period:</b> 17 months'
+          h2: 'Склады наших партнеров'
         },
         slide_11: {
           h2: 'Still have questions?',
