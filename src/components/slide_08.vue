@@ -92,7 +92,7 @@ h2
     margin-bottom: 188px
     text-align: center
 
-$laptop-scale-factor: 964 / 1096
+$laptop-scale-factor: math.div(964, 1096)
 $circle-laptop-size: 160px
 
 .zigzag-container
@@ -255,7 +255,7 @@ picture
         right: scale-laptop($laptop-scale-factor*(-370px), -370px)
 
       .block-4 &
-        left: scale-laptop(-207px / $laptop-scale-factor, -207px)
+        left: scale-laptop(math.div(-207px, $laptop-scale-factor), -207px)
         margin-top: scale-laptop(-60px, 0)
         transform: scale(0.8) translateY(-50%)
 

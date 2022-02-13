@@ -5,7 +5,10 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        additionalData: '@import "@/stylesheets/globals.sass";'
+        additionalData: `
+          @use "sass:math"
+          @import "@/stylesheets/globals.sass"
+        `
       }
     }
   },
