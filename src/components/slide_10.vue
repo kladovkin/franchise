@@ -2,51 +2,62 @@
   <article id='slide_10'>
     <h2>{{ t('slide_10.h2') }}</h2>
 
-    <!-- <Swiper                              -->
-    <!--   :slides-per-view='4'               -->
-    <!--   :space-between='50'                -->
-    <!-- >                                    -->
-    <!--   <SwiperSlide>Slide 1</SwiperSlide> -->
-    <!--   <SwiperSlide>Slide 2</SwiperSlide> -->
-    <!--   <SwiperSlide>Slide 3</SwiperSlide> -->
-    <!-- </swiper>                            -->
-    <!-- <div ref='swiper' class='swiper'> -->
-    <!--   <swiper-slide>                  -->
-    <!--   <div class='slides'>            -->
-    <!--   </div>                          -->
-    <!--   <div class='navigation'>        -->
-    <!--     <button class='prev' />       -->
-    <!--     <button class='next' />       -->
-    <!--   </div>                          -->
-    <!-- </div>                            -->
+    <div ref='swiper' class='swiper'>
+      <div class='slides'>
+        <div
+          v-for='imageIndex in images'
+          :key='imageIndex'
+        >
+          <picture>
+            <source
+              :srcset='`/slide_10/slide_image-${blockIndex}.webp, /slide_10/slide_image-${blockIndex}@2x.webp 2x`'
+              type='image/webp'
+            >
+            <img
+              class='laptop'
+              :src='`/slide_08/slide_image-${blockIndex}.png`'
+              :srcset='`/slide_08/slide_image-${blockIndex}@2x.png 2x`'
+              @click='enlarge(blockIndex)'
+            >
+          </picture>
+
+      </div>
+      <div class='navigation'>
+        <button class='prev' />
+        <button class='next' />
+      </div>
+    </div>
   </article>
 </template>
 
 <script>
 import t from '@/utils/locale';
-// import { Swiper, SwiperSlide } from 'swiper/vue';
-// import isMobile from '@/utils/is_mobile';
+import isMobile from '@/utils/is_mobile';
 
 export default {
   name: 'Slide8',
   // components: {
   //   Swiper,
-  //   SwiperSlide
+  //   SwiperSlidp
   // },
-  // async mounted() {
-  //   const { default: Swiper } = await import('swiper');
-  //
-  //   this.swiper = new Swiper(this.$refs.swiper, {
-  //     wrapperClass: 'slides',
-  //     slideClass: 'slide',
-  //     slidesPerView: isMobile() ? 'auto' : 4,
-  //     spaceBetween: 0,
-  //     navigation: {
-  //       nextEl: '.next',
-  //       prevEl: '.prev'
-  //     }
-  //   });
-  // },
+  data: () => ({
+    images: [0, 1, 2, 3]
+  }),
+  async mounted() {
+    const { Swiper, Navigation } = await import('swiper');
+
+    this.swiper = new Swiper(this.$refs.swiper, {
+      wrapperClass: 'slides',
+      slideClass: 'slide',
+      slidesPerView: isMobile() ? 'auto' : 4,
+      spaceBetween: 0,
+      navigation: {
+        nextEl: '.next',
+        prevEl: '.prev'
+      },
+      modules: [Navigation]
+    });
+  },
   methods: {
     t
   }
@@ -69,4 +80,8 @@ h2
 
 .slide
   border-radius: rem(12px)
+
+// cp public/slide_10/original/* public/slide_10/; for image in public/slide_10/*@2x.png; do; echo $image; convert -resize 50% $image ${image/@2x/}; convert -quality 95% $image ${image/\.png/.webp}; convert -resize 50% ${image/\.png/.webp} ${${image/\.png/.webp}/@2x/}; tinypng $image; tinypng ${image/@2x/}; done;
+picture
+  align-self: center
 </style>
