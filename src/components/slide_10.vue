@@ -21,6 +21,23 @@
             >
           </picture>
         </div>
+        <div
+          v-for='imageIndex in images'
+          :key='imageIndex + 5'
+          class='slide'
+        >
+          <picture>
+            <source
+              :srcset='`/slide_10/slide_image-${imageIndex}.webp, /slide_10/slide_image-${imageIndex}@2x.webp 2x`'
+              type='image/webp'
+            >
+            <img
+              class='laptop'
+              :src='`/slide_10/slide_image-${imageIndex}.png`'
+              :srcset='`/slide_10/slide_image-${imageIndex}@2x.png 2x`'
+            >
+          </picture>
+        </div>
       </div>
       <div class='navigation'>
         <button class='swiper-button-prev' />
@@ -45,11 +62,9 @@ export default {
       wrapperClass: 'slides',
       slideClass: 'slide',
       loop: false,
-
       slidesPerView: 'auto',
       spaceBetween: 0,
       initialSlide: 0,
-
       breakpoints: {
         320: {
           slidesPerView: 'auto',
@@ -64,10 +79,10 @@ export default {
           spaceBetween: 28
         }
       },
-
       navigation: {
         nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
+        prevEl: '.swiper-button-prev',
+        disabledClass: 'is-disabled'
       },
       modules: [Navigation]
     });
@@ -138,4 +153,63 @@ h2
 
       +gte_desktop
         width: 265px
+
+  .navigation
+    display: flex
+    padding-bottom: rem(10px)
+    justify-content: center
+
+    +lte_ipad
+      margin-top: rem(24px)
+
+    +gte_laptop
+      margin-top: 34px
+
+    .swiper-button-prev,
+    .swiper-button-next
+      -webkit-appearance: none
+      -webkit-tap-highlight-color: transparent
+      align-items: center
+      background: $primary
+      border-radius: rem(67px)
+      border: rem(3.5px) solid #fff
+      color: $primary
+      cursor: pointer
+      display: flex
+      height: rem(67px)
+      justify-content: center
+      transition: color 0.25s, border-color 0.25s, background-color 0.25s, box-shadow 0.25s
+      width: rem(67px)
+
+      +gte_laptop
+        &:hover
+          box-shadow: 0px 3px 10px rgb(244 79 12 / 35%)
+          color: #333
+
+      &:active
+        color: $primary
+        box-shadow: none
+
+      &:before
+        content: ''
+        background-repeat: no-repeat
+        background-size: contain
+        background: url('../assets/slide_10/navigation.svg')
+        width: rem(16px)
+        height: rem(25px)
+
+      &.is-disabled
+        background-color: #939393
+        box-shadow: none
+        cursor: default
+
+    .swiper-button-prev
+      +lte_ipad
+        margin-right: rem(9px)
+
+      +gte_laptop
+        margin-right: 26px
+
+      &:before
+        transform: scale(-1)
 </style>
