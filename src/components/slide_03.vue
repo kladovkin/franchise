@@ -99,9 +99,16 @@ export default {
 </script>
 
 <style scoped lang='sass'>
-article
+$offset: 40px
+.background-cutter
   +slide_offset_default
   +gte_laptop
+    margin-top: -$offset
+
+article
+  +gte_laptop
+    padding-top: $offset
+
     &:before
       background-image: url(../assets/slide_03/circles_background-desktop.svg)
       background-repeat: no-repeat
@@ -111,7 +118,7 @@ article
       left: -10px
       pointer-events: none
       position: absolute
-      top: -52px
+      top: -219px + $offset
       width: 1685px
 
 h2
