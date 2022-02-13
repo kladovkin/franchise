@@ -2,40 +2,51 @@
   <article id='slide_10'>
     <h2>{{ t('slide_10.h2') }}</h2>
 
-    <div class='swiper'>
-      <div class='slides'>
-      </div>
-      <div class='slider-navigation'>
-        <button class='slider-prev' />
-        <button class='slider-next' />
-      </div>
-    </div>
+    <Swiper
+      :slides-per-view='4'
+      :space-between='50'
+    >
+      <SwiperSlide>Slide 1</SwiperSlide>
+      <SwiperSlide>Slide 2</SwiperSlide>
+      <SwiperSlide>Slide 3</SwiperSlide>
+    </swiper>
+    <!-- <div ref='swiper' class='swiper'> -->
+    <!--   <swiper-slide>                  -->
+    <!--   <div class='slides'>            -->
+    <!--   </div>                          -->
+    <!--   <div class='navigation'>        -->
+    <!--     <button class='prev' />       -->
+    <!--     <button class='next' />       -->
+    <!--   </div>                          -->
+    <!-- </div>                            -->
   </article>
 </template>
 
 <script>
 import t from '@/utils/locale';
-import swiper from '@/utils/swiper'
+import { Swiper, SwiperSlide } from 'swiper/vue';
+// import isMobile from '@/utils/is_mobile';
 
 export default {
   name: 'Slide8',
-  mounted() {
-    const { default: Swiper } = await import(
-      /* webpackChunkName: "swiper" */
-      '@/utils/swiper'
-    );
-
-    this.swiper = new Swiper(this.$refs.navigationList, {
-      grabCursor: true,
-      slidesPerView: 'auto',
-      spaceBetween: 0,
-      wrapperClass: 'links',
-      slideClass: 'link',
-      navigation: false,
-      speed: 500
-    });
-
+  components: {
+    Swiper,
+    SwiperSlide
   },
+  // async mounted() {
+  //   const { default: Swiper } = await import('swiper');
+  //
+  //   this.swiper = new Swiper(this.$refs.swiper, {
+  //     wrapperClass: 'slides',
+  //     slideClass: 'slide',
+  //     slidesPerView: isMobile() ? 'auto' : 4,
+  //     spaceBetween: 0,
+  //     navigation: {
+  //       nextEl: '.next',
+  //       prevEl: '.prev'
+  //     }
+  //   });
+  // },
   methods: {
     t
   }
