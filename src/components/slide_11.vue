@@ -32,6 +32,14 @@
           </div>
         </div>
       </div>
+      <div class='container'>
+        <a :href='faqUrl'>
+          <Button
+            type='red'
+            :text='t("slide_11.button")'
+          />
+        </a>
+      </div>
     </article>
   </div>
 </template>
@@ -40,10 +48,11 @@
 import t from '@/utils/locale';
 import chunk from 'lodash/chunk';
 import TransitionHeight from '@/components/transition_height';
+import Button from '@/components/button';
 
 export default {
   name: 'Slide11',
-  components: { TransitionHeight },
+  components: { TransitionHeight, Button },
   data() {
     const faqs = t('slide_11.faqs');
     const faqChunks = chunk(faqs, Math.ceil(faqs.length / 2));
@@ -93,7 +102,8 @@ h2
   text-align: center
   margin-bottom: rem(58px)
 
-$blue-circle-size: 457px
+$circle-size: 457px
+$circle-offset: 24px
 $box-shadow-mobile: 26px
 $box-shadow-desktop: 15px
 .items-container
@@ -101,26 +111,28 @@ $box-shadow-desktop: 15px
 
   +lte_ipad
     padding-bottom: rem($box-shadow-mobile) // compensates box-shadow
-    min-height: rem($blue-circle-size + $box-shadow-mobile)
+    min-height: rem($circle-size + $box-shadow-mobile - $circle-offset)
+    margin-bottom: rem(32px - $box-shadow-mobile)
 
   +gte_laptop
     display: grid
     grid-template-columns: repeat(2, 1fr)
     grid-column-gap: 30px
     padding-bottom: $box-shadow-desktop // compensates box-shadow
-    min-height: rem($blue-circle-size + $box-shadow-desktop)
+    min-height: $circle-size + $box-shadow-desktop - $circle-offset
+    margin-bottom: 42px - $box-shadow-desktop
 
   &:before
     background: #5096ff
-    border-radius: $blue-circle-size
+    border-radius: $circle-size
     content: ''
-    height: $blue-circle-size
+    height: $circle-size
     left: 50%
     pointer-events: none
     position: absolute
-    top: -24px
+    top: rem(-$circle-offset)
     transform: translateX(-50%)
-    width: $blue-circle-size
+    width: $circle-size
     z-index: -1
 
   .items-column
@@ -214,4 +226,18 @@ $box-shadow-desktop: 15px
 
         +gte_laptop
           padding-top: 12px
+
+.container
+  display: flex
+  justify-content: center
+  padding: 0
+
+  a
+    display: flex
+    text-decoration: none
+    width: rem(212px)
+
+    button
+      height: rem(40px)
+      font-size: rem(12px)
 </style>
