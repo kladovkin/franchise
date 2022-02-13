@@ -182,9 +182,9 @@ h2
 
       +lte_ipad
         background-image: url(../assets/slide_06/line_top-mobile.svg)
-        background-size: cover
         height: rem(18px)
         margin-bottom: rem(9px)
+        width: rem(288px)
 
       +gte_laptop
         background-image: url(../assets/slide_06/line_left-desktop.svg)
@@ -196,6 +196,7 @@ h2
       display: flex
       flex-shrink: 0
       overflow: hidden
+      width: rem(288px)
 
       +lte_ipad
         border-radius: rem(10px)
@@ -232,7 +233,7 @@ h2
         box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2)
 
         +lte_ipad
-          width: 85%
+          width: rem(233px)
 
         +gte_laptop
           height: 645px
