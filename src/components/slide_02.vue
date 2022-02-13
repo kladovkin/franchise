@@ -21,7 +21,7 @@
       </ul>
 
       <div ref='swiper' class='swiper'>
-        <div class='slides'>
+        <div class='swiper-wrapper'>
           <div class='slide slide_1'>
             <img
               loading='lazy'
@@ -62,7 +62,7 @@ export default {
     const { Swiper, Pagination } = await import('swiper');
 
     new Swiper(this.$refs.swiper, {
-      wrapperClass: 'slides',
+      wrapperClass: 'swiper-wrapper',
       slideClass: 'slide',
       grabCursor: true,
       allowTouchMove: true,
@@ -249,7 +249,7 @@ ul.blocks
   overflow: hidden
   width: 100%
 
-  .slides
+  .swiper-wrapper
     display: flex
 
     +lte_ipad

@@ -3,7 +3,7 @@
     <h2>{{ t('slide_10.h2') }}</h2>
 
     <div ref='swiper' class='swiper'>
-      <div class='slides'>
+      <div class='swiper-wrapper'>
         <div
           v-for='imageIndex in images'
           :key='imageIndex'
@@ -59,7 +59,7 @@ export default {
     const { Swiper, Navigation } = await import('swiper');
 
     this.swiper = new Swiper(this.$refs.swiper, {
-      wrapperClass: 'slides',
+      wrapperClass: 'swiper-wrapper',
       slideClass: 'slide',
       loop: false,
       slidesPerView: 'auto',
@@ -129,7 +129,7 @@ h2
   &-pointer-events
     touch-action: pan-y
 
-  .slides
+  .swiper-wrapper
     box-sizing: content-box
     display: flex
     position: relative
