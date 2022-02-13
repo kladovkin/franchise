@@ -255,7 +255,7 @@ export default createStore({
         slide_10: {
           h2: 'Склады наших партнеров'
         },
-        slide_11: {
+        slide_12: {
           h2: 'Остались вопросы?',
           note: 'Оставьте свои контакты и мы с вами свяжемся',
           thanks: 'Спасибо!',
@@ -271,7 +271,7 @@ export default createStore({
           privacy_link: 'политикой обработки персональных данных',
           error: '*Обязательное поле для заполения'
         },
-        slide_12: {
+        slide_13: {
           h2: 'Контакты',
           founder: 'Основатель',
           founder_name: 'Карпушин Михаил',
@@ -544,7 +544,7 @@ export default createStore({
         slide_10: {
           h2: 'Склады наших партнеров'
         },
-        slide_11: {
+        slide_12: {
           h2: 'Still have questions?',
           note: 'Fill in your details and we will contact you shortly',
           thanks: 'Thank you!',
@@ -560,7 +560,7 @@ export default createStore({
           privacy_link: 'policy',
           error: '*This field is required'
         },
-        slide_12: {
+        slide_13: {
           h2: 'Contacts',
           founder: 'Founder and CEO',
           founder_name: 'Mikhail Karpushin',

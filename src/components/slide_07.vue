@@ -50,7 +50,7 @@ export default {
     t,
     async lead() {
       (await SweetScroll.asyncInstance()).toElement(
-        document.getElementById('slide_11'), { duration: 450 }
+        document.getElementById('slide_12'), { duration: 450 }
       );
     }
   }

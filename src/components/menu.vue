@@ -64,7 +64,7 @@ export default {
       );
     },
     async lead() {
-      this.scrollTo('slide_11');
+      this.scrollTo('slide_12');
     }
   }
 };
