@@ -16,7 +16,10 @@
           >
             <div class='question'>
               <span>{{ faq.q }}</span>
-              <div class='trigger' />
+              <div
+                class='trigger'
+                :class='{ "is-expanded": isFaqExpanded[faqChunkIndex][faqIndex] }'
+              />
             </div>
             <TransitionHeight :duration='350'>
               <div
@@ -153,10 +156,10 @@ $box-shadow-desktop: 15px
         margin-right: auto
 
       .trigger
-        background: red
-        height: rem(20px)
-        width: rem(20px)
         flex-shrink: 0
+        height: rem(20px)
+        position: relative
+        width: rem(20px)
 
         +lte_ipad
           margin-left: 40px
@@ -166,6 +169,35 @@ $box-shadow-desktop: 15px
 
         +gte_desktop
           margin-left: 47px
+
+        &:before,
+        &:after
+          background: #5f5f5f
+          bottom: 0
+          content: ''
+          display: block
+          left: 0
+          margin: auto
+          position: absolute
+          right: 0
+          top: 0
+          transition: .3s ease
+
+        &:before
+          width: rem(1px)
+          height: rem(20px)
+
+        &:after
+          width: rem(20px)
+          height: rem(1px)
+
+        &.is-expanded
+          &:before
+            transform: rotate(90deg)
+
+          &:after
+            transform: rotate(180deg)
+            opacity: 0
 
     .answer
       overflow: hidden
