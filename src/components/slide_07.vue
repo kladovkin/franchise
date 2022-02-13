@@ -58,19 +58,18 @@ export default {
 </script>
 
 <style scoped lang='sass'>
+.background-cutter
+  +gte_laptop
+    margin-bottom: -70px // negative margin added in order to compensate article padding-bottom
+
 article
-  +lte_ipad
-    padding-top: rem(72px)
+  +slide_offset_default
 
   +laptop
-    padding-top: scale-laptop(120px, 180px)
-
     &:before
       top: scale-laptop(177px, 237px)
 
   +gte_desktop
-    padding-top: 180px
-
     &:before
       top: 237px
 
