@@ -20,7 +20,15 @@
         </li>
       </ul>
 
-      <div ref='swiper' class='swiper'>
+      <div
+        ref='swiper'
+        v-waypoint='{
+          active: true,
+          callback: onWaypoint,
+          options: intersectionOptions
+        }'
+        class='swiper'
+      >
         <div class='swiper-wrapper'>
           <div class='slide slide_1'>
             <img
@@ -52,35 +60,43 @@
 
 <script>
 import t from '@/utils/locale';
+import intersectionOptions from '@/utils/intersection_options';
 
 export default {
   name: 'Slide2',
   data: () => ({
-    blocks: t('slide_02.blocks')
+    blocks: t('slide_02.blocks'),
+    isSwiperInitialized: false,
+    intersectionOptions
   }),
-  async mounted() {
-    const { Swiper, Pagination } = await import('swiper');
-
-    new Swiper(this.$refs.swiper, {
-      wrapperClass: 'swiper-wrapper',
-      slideClass: 'slide',
-      grabCursor: true,
-      allowTouchMove: true,
-      slidesPerView: 1,
-      spaceBetween: 0,
-      pagination: {
-        el: '.swiper-pagination',
-        modifierClass: 'slider-pagination-',
-        bulletClass: 'slider-pagination-bullet',
-        bulletActiveClass: 'slider-pagination-bullet-active',
-        clickable: true
-      },
-      loop: true,
-      modules: [Pagination]
-    });
-  },
   methods: {
-    t
+    t,
+    async onWaypoint({ going }) {
+      if (going !== 'in' || this.isSwiperInitialized) { return; }
+      this.isSwiperInitialized = true;
+      this.initSwiper();
+    },
+    async initSwiper() {
+      const { Swiper, Pagination } = await import('swiper');
+
+      new Swiper(this.$refs.swiper, {
+        wrapperClass: 'swiper-wrapper',
+        slideClass: 'slide',
+        grabCursor: true,
+        allowTouchMove: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        pagination: {
+          el: '.swiper-pagination',
+          modifierClass: 'slider-pagination-',
+          bulletClass: 'slider-pagination-bullet',
+          bulletActiveClass: 'slider-pagination-bullet-active',
+          clickable: true
+        },
+        loop: true,
+        modules: [Pagination]
+      });
+    }
   }
 };
 </script>

@@ -2,7 +2,15 @@
   <article id='slide_10'>
     <h2>{{ t('slide_10.h2') }}</h2>
 
-    <div ref='swiper' class='swiper'>
+    <div
+      ref='swiper'
+      v-waypoint='{
+        active: true,
+        callback: onWaypoint,
+        options: intersectionOptions
+      }'
+      class='swiper'
+    >
       <div class='swiper-wrapper'>
         <div
           v-for='imageIndex in images'
@@ -49,46 +57,54 @@
 
 <script>
 import t from '@/utils/locale';
+import intersectionOptions from '@/utils/intersection_options';
 
 export default {
   name: 'Slide8',
   data: () => ({
-    images: [0, 1, 2, 3]
+    images: [0, 1, 2, 3],
+    isSwiperInitialized: false,
+    intersectionOptions
   }),
-  async mounted() {
-    const { Swiper, Navigation } = await import('swiper');
-
-    this.swiper = new Swiper(this.$refs.swiper, {
-      wrapperClass: 'swiper-wrapper',
-      slideClass: 'slide',
-      loop: false,
-      slidesPerView: 'auto',
-      spaceBetween: 0,
-      initialSlide: 0,
-      breakpoints: {
-        320: {
-          slidesPerView: 'auto',
-          spaceBetween: 16
-        },
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 23
-        },
-        1200: {
-          slidesPerView: 4,
-          spaceBetween: 28
-        }
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-        disabledClass: 'is-disabled'
-      },
-      modules: [Navigation]
-    });
-  },
   methods: {
-    t
+    t,
+    async onWaypoint({ going }) {
+      if (going !== 'in' || this.isSwiperInitialized) { return; }
+      this.isSwiperInitialized = true;
+      this.initSwiper();
+    },
+    async initSwiper() {
+      const { Swiper, Navigation } = await import('swiper');
+
+      this.swiper = new Swiper(this.$refs.swiper, {
+        wrapperClass: 'swiper-wrapper',
+        slideClass: 'slide',
+        loop: false,
+        slidesPerView: 'auto',
+        spaceBetween: 0,
+        initialSlide: 0,
+        breakpoints: {
+          320: {
+            slidesPerView: 'auto',
+            spaceBetween: 16
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 23
+          },
+          1200: {
+            slidesPerView: 4,
+            spaceBetween: 28
+          }
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+          disabledClass: 'is-disabled'
+        },
+        modules: [Navigation]
+      });
+    }
   }
 };
 </script>
