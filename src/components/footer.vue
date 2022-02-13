@@ -145,4 +145,7 @@ ul
     line-height: 23px
     width: 253px
     margin-top: 95px
+
+  b
+    color: #333
 </style>
