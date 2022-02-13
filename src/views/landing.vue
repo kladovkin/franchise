@@ -10,6 +10,7 @@
   <Slide08 />
   <Slide09 />
   <Slide10 />
+  <Slide11 />
   <Slide12 />
   <Slide13 />
   <Footer />
@@ -29,6 +30,7 @@ import Slide07 from '@/components/slide_07';
 import Slide08 from '@/components/slide_08';
 import Slide09 from '@/components/slide_09';
 import Slide10 from '@/components/slide_10';
+import Slide11 from '@/components/slide_11';
 import Slide12 from '@/components/slide_12';
 import Slide13 from '@/components/slide_13';
 import Footer from '@/components/footer';
@@ -47,6 +49,7 @@ export default {
     Slide08,
     Slide09,
     Slide10,
+    Slide11,
     Slide12,
     Slide13,
     // Slide12: defineAsyncComponent(

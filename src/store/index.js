@@ -255,6 +255,10 @@ export default createStore({
         slide_10: {
           h2: 'Склады наших партнеров'
         },
+        slide_11: {
+          h2: 'Остались вопросы?',
+          blocks: []
+        },
         slide_12: {
           h2: 'Остались вопросы?',
           note: 'Оставьте свои контакты и мы с вами свяжемся',
@@ -543,6 +547,10 @@ export default createStore({
         },
         slide_10: {
           h2: 'Склады наших партнеров'
+        },
+        slide_11: {
+          h2: 'Остались вопросы?',
+          blocks: []
         },
         slide_12: {
           h2: 'Still have questions?',
