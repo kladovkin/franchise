@@ -11,12 +11,21 @@
           <div
             v-for='(faq, faqIndex) in faqChunk'
             :key='faqIndex'
-            class='item'
+            class='faq-item'
+            @click='toggleFaq(faqChunkIndex, faqIndex)'
           >
             <div class='question'>
               <span>{{ faq.q }}</span>
               <div class='trigger' />
             </div>
+            <TransitionHeight :duration='350'>
+              <div
+                v-show='isFaqExpanded[faqChunkIndex][faqIndex]'
+                class='answer'
+              >
+                <p>{{ faq.a }}</p>
+              </div>
+            </TransitionHeight>
           </div>
         </div>
       </div>
@@ -27,19 +36,27 @@
 <script>
 import t from '@/utils/locale';
 import chunk from 'lodash/chunk';
+import TransitionHeight from '@/components/transition_height';
 
 export default {
   name: 'Slide11',
+  components: { TransitionHeight },
   data() {
     const faqs = t('slide_11.faqs');
+    const faqChunks = chunk(faqs, Math.ceil(faqs.length / 2));
 
     return {
-      faqChunks: chunk(faqs, Math.ceil(faqs.length / 2)),
-      faqUrl: 'https://kladovkin.ru/faq/'
+      faqChunks,
+      faqUrl: 'https://kladovkin.ru/faq/',
+      isFaqExpanded: faqChunks.map(chunk => chunk.map(_ => false))
     };
   },
   methods: {
-    t
+    t,
+    toggleFaq(faqChunkIndex, faqIndex) {
+      this.isFaqExpanded[faqChunkIndex][faqIndex] =
+        !this.isFaqExpanded[faqChunkIndex][faqIndex];
+    }
   }
 };
 </script>
@@ -108,10 +125,11 @@ $box-shadow-desktop: 15px
       +lte_ipad
         margin-bottom: rem(12px)
 
-  .item
+  .faq-item
     background: #ffffff
     border-radius: rem(12px)
     cursor: pointer
+    user-select: none
 
     +lte_ipad
       box-shadow: 0px 8px $box-shadow-mobile rgba(119, 128, 158, 0.25)
@@ -148,4 +166,20 @@ $box-shadow-desktop: 15px
 
         +gte_desktop
           margin-left: 47px
+
+    .answer
+      overflow: hidden
+      position: relative
+      transition: 250ms ease-out
+
+      p
+        line-height: 1.3
+
+        +lte_ipad
+          font-size: rem(14px)
+          padding-top: rem(9px)
+
+        +gte_laptop
+          font-size: 15px
+          padding-top: 12px
 </style>

@@ -37,14 +37,14 @@
           >
             <div
               class='mobile-container'
-              :class='{ "is-active": blockIsExpanded[blockIndex] }'
+              :class='{ "is-active": isBlockExpanded[blockIndex] }'
               @click='toggleBlock(blockIndex)'
             >
               <div class='icon' />
               <div class='headline'>{{ block.headline }}</div>
             </div>
             <TransitionHeight :duration='350'>
-              <div v-show='blockIsExpanded[blockIndex]' class='texts'>
+              <div v-show='isBlockExpanded[blockIndex]' class='texts'>
                 <div
                   v-for='(text, textIndex) in block.texts'
                   :key='textIndex'
@@ -87,7 +87,7 @@ export default {
 
     return {
       blocks,
-      blockIsExpanded: blocks.map(_ => !isMobile()),
+      isBlockExpanded: blocks.map(_ => !isMobile()),
       comparison: t('slide_06.comparison.blocks')
     };
   },
@@ -108,7 +108,7 @@ export default {
   methods: {
     t,
     toggleBlock(blockIndex) {
-      this.blockIsExpanded[blockIndex] = !this.blockIsExpanded[blockIndex];
+      this.isBlockExpanded[blockIndex] = !this.isBlockExpanded[blockIndex];
     }
   }
 };
@@ -419,10 +419,10 @@ h2
 
       .texts
         +lte_ipad
-          padding-left: rem(58px)
           overflow: hidden
-          transition: 250ms ease-out
+          padding-left: rem(58px)
           position: relative
+          transition: 250ms ease-out
 
           .text:first-child
             padding-top: rem(14px)
