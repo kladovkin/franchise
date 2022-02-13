@@ -55,11 +55,19 @@ article
       background-size: contain
       content: ''
       height: 671px
-      left: 0
       pointer-events: none
       position: absolute
-      top: 0
       width: 984px
+
+  +laptop
+    &:before
+      top: scale-laptop(100px, 160px)
+      left: scale-laptop(27px, 102px)
+
+  +gte_desktop
+    &:before
+      top: 160px
+      left: 102px
 
 h2
   text-align: center
@@ -103,6 +111,7 @@ $box-shadow-desktop: 15px
   .item
     background: #ffffff
     border-radius: rem(12px)
+    cursor: pointer
 
     +lte_ipad
       box-shadow: 0px 8px $box-shadow-mobile rgba(119, 128, 158, 0.25)
