@@ -112,6 +112,7 @@ export default {
 <style scoped lang='sass'>
 article
   +slide_offset_default
+  margin-bottom: rem(-14px) // compensates navigation bottom padding
 
 h2
   text-align: center
