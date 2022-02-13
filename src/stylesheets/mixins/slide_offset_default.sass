@@ -1,0 +1,9 @@
+=slide_offset_default($desktop-offset: 180px)
+  +lte_ipad
+    padding-top: rem(72px)
+
+  +laptop
+    padding-top: scale-laptop(120px, $desktop-offset)
+
+  +gte_desktop
+    padding-top: $desktop-offset

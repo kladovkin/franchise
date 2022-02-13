@@ -1,25 +1,27 @@
 <template>
-  <div id='slide_04' class='background-cutter'>
-    <picture @click='lead'>
-      <source
-        srcset='../assets/slide_04/background-mobile.webp, ../assets/slide_04/background-mobile@2x.webp 2x'
-        type='image/webp'
-        media='(max-width: 1023px)'
-      >
-      <source
-        srcset='../assets/slide_04/background-desktop.webp, ../assets/slide_04/background-desktop@2x.webp 2x'
-        type='image/webp'
-      >
-      <img
-        class='laptop'
-        loading='lazy'
-        src='../assets/slide_04/background-desktop.png'
-        srcset='../assets/slide_04/background-desktop@2x.png 2x'
-      >
-    </picture>
-    <article @click='lead'>
-      <div class='headline'>{{ t('slide_04.headline') }}</div>
-    </article>
+  <div id='slide_04' class='slide-outer'>
+    <div class='background-cutter'>
+      <picture @click='lead'>
+        <source
+          srcset='../assets/slide_04/background-mobile.webp, ../assets/slide_04/background-mobile@2x.webp 2x'
+          type='image/webp'
+          media='(max-width: 1023px)'
+        >
+        <source
+          srcset='../assets/slide_04/background-desktop.webp, ../assets/slide_04/background-desktop@2x.webp 2x'
+          type='image/webp'
+        >
+        <img
+          class='laptop'
+          loading='lazy'
+          src='../assets/slide_04/background-desktop.png'
+          srcset='../assets/slide_04/background-desktop@2x.png 2x'
+        >
+      </picture>
+      <article @click='lead'>
+        <div class='headline'>{{ t('slide_04.headline') }}</div>
+      </article>
+    </div>
   </div>
 </template>
 
@@ -38,15 +40,12 @@ export default {
 </script>
 
 <style scoped lang='sass'>
+.slide-outer
+  +slide_offset_default
+
 .background-cutter
   position: relative
   overflow: hidden
-
-  +lte_ipad
-    margin-top: rem(72px)
-
-  +gte_laptop
-    margin-top: 180px
 
 // cp src/assets/slide_04/original/* src/assets/slide_04/; for image in src/assets/slide_04/*@2x.png; do; echo $image; convert -resize 50% $image ${image/@2x/}; convert -quality 95% $image ${image/\.png/.webp}; convert -resize 50% ${image/\.png/.webp} ${${image/\.png/.webp}/@2x/}; tinypng $image; tinypng ${image/@2x/}; done;
 picture img

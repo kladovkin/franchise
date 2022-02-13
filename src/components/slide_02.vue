@@ -107,11 +107,7 @@ export default {
   overflow: hidden
 
 article
-  +lte_ipad
-    padding-top: rem(72px)
-
-  +gte_laptop
-    padding-top: 96px
+  +slide_offset_default(140px)
 
   &:before
     +gte_laptop

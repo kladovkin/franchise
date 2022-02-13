@@ -89,15 +89,7 @@ export default {
 
 <style scoped lang='sass'>
 article
-  +lte_ipad
-    padding-top: rem(72px)
-
-  +laptop
-    padding-top: scale-laptop(120px, 278px)
-
-  +gte_desktop
-    padding-top: 278px
-
+  +slide_offset_default(278px)
   +gte_laptop
     &:before
       background-image: url(../assets/slide_05/circles_background-desktop.svg)

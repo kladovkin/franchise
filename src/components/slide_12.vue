@@ -119,15 +119,14 @@ export default {
 
 <style scoped lang='sass'>
 article
+  +slide_offset_default
   +lte_ipad
     margin-bottom: 80px
     overflow: hidden
-    padding-top: rem(81px)
 
   +gte_laptop
     margin-bottom: 125px
     padding-bottom: 6px
-    padding-top: 96px
 
   &:before
     background-repeat: no-repeat

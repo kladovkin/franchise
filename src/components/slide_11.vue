@@ -19,14 +19,8 @@ export default {
 
 <style scoped lang='sass'>
 article
-  +lte_ipad
-    padding-top: rem(72px)
-
-  +laptop
-    padding-top: scale-laptop(106px, 174px)
-
-  +gte_desktop
-    padding-top: 174px
+  +slide_offset_default
+  margin-top: rem(-14px)
 
 h2
   text-align: center
