@@ -205,13 +205,13 @@ $box-shadow-desktop: 15px
       transition: 250ms ease-out
 
       p
+        font-size: rem(15px)
+        font-weight: 300
         line-height: 1.3
 
         +lte_ipad
-          font-size: rem(14px)
           padding-top: rem(9px)
 
         +gte_laptop
-          font-size: 15px
           padding-top: 12px
 </style>
