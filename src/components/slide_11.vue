@@ -74,6 +74,11 @@ export default {
 </script>
 
 <style scoped lang='sass'>
+.background-cutter
+  // added in order to avoid cutting <article> background circles
+  padding-bottom: 100px
+  margin-bottom: -100px
+
 article
   +slide_offset_default
 
