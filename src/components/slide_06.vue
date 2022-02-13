@@ -75,14 +75,12 @@
 
 <script>
 import { createPopper } from '@popperjs/core';
-
 import TransitionHeight from '@/components/transition_height';
-
 import isMobile from '@/utils/is_mobile';
 import t from '@/utils/locale';
 
 export default {
-  name: 'Slide5',
+  name: 'Slide05',
   components: { TransitionHeight },
   data() {
     const blocks = t('slide_06.blocks');

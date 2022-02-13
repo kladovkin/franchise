@@ -27,7 +27,7 @@
 import t from '@/utils/locale';
 
 export default {
-  name: 'Slide4',
+  name: 'Slide04',
   methods: {
     t,
     lead() {

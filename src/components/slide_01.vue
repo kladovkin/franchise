@@ -33,7 +33,7 @@ import SweetScroll from '@/utils/sweet_scroll';
 import t from '@/utils/locale';
 
 export default {
-  name: 'Slide1',
+  name: 'Slide01',
   components: { Button },
   data: () => ({
     isOpened: false

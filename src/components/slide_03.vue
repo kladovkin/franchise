@@ -85,7 +85,7 @@ import SweetScroll from '@/utils/sweet_scroll';
 import t from '@/utils/locale';
 
 export default {
-  name: 'Slide3',
+  name: 'Slide03',
   components: { Button },
   methods: {
     t,

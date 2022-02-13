@@ -60,7 +60,7 @@ import t from '@/utils/locale';
 import intersectionOptions from '@/utils/intersection_options';
 
 export default {
-  name: 'Slide8',
+  name: 'Slide08',
   data: () => ({
     images: [0, 1, 2, 3],
     isSwiperInitialized: false,

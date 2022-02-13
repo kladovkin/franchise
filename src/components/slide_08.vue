@@ -52,7 +52,7 @@
 import t from '@/utils/locale';
 
 export default {
-  name: 'Slide6',
+  name: 'Slide06',
   data: () => ({
     blocks: t('slide_08.blocks')
   }),

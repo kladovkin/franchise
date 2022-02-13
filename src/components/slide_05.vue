@@ -71,7 +71,7 @@ import SweetScroll from '@/utils/sweet_scroll';
 import t from '@/utils/locale';
 
 export default {
-  name: 'Slide5',
+  name: 'Slide05',
   components: {
     Button,
     ImgComparisonSlider

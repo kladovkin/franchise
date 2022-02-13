@@ -70,7 +70,7 @@ import Input from '@/components/input';
 import t from '@/utils/locale';
 
 export default {
-  name: 'Slide9',
+  name: 'Slide09',
   components: {
     Button,
     Input

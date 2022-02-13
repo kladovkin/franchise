@@ -63,7 +63,7 @@ import t from '@/utils/locale';
 import intersectionOptions from '@/utils/intersection_options';
 
 export default {
-  name: 'Slide2',
+  name: 'Slide02',
   data: () => ({
     blocks: t('slide_02.blocks'),
     isSwiperInitialized: false,
