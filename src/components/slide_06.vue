@@ -1,76 +1,76 @@
 <template>
-  <article
-    id='slide_06'
-  >
-    <h2>
-      {{ t('slide_06.h2.other') }} <span>{{ t('slide_06.h2.red') }}</span>
-    </h2>
-    <div class='group-container'>
-      <div class='revenue'>
-        <div class='graph'>
-          <div class='income' data-value='85%' />
-          <div class='commission' data-value='15%' />
-        </div>
-        <div class='texts'>
-          <div class='income'>
-            <div class='headline'>{{ t('slide_06.income.headline') }}</div>
-            <div class='note'>{{ t('slide_06.income.note') }}</div>
+  <div id='slide_06' class='background-cutter'>
+    <article>
+      <h2>
+        {{ t('slide_06.h2.other') }} <span>{{ t('slide_06.h2.red') }}</span>
+      </h2>
+      <div class='group-container'>
+        <div class='revenue'>
+          <div class='graph'>
+            <div class='income' data-value='85%' />
+            <div class='commission' data-value='15%' />
           </div>
-          <div class='commission'>
-            <div class='headline'>
-              {{ t('slide_06.commission.headline') }}
-              <span ref='commission_note_icon' class='commission-note-icon' />
-              <div ref='commission_note_tooltip' class='popper'>
-                <div ref='commission_note_tooltip_popper_arrow' class='arrow' />
-                {{ t('slide_06.commission.note') }}
-              </div>
+          <div class='texts'>
+            <div class='income'>
+              <div class='headline'>{{ t('slide_06.income.headline') }}</div>
+              <div class='note'>{{ t('slide_06.income.note') }}</div>
             </div>
-            <div class='note'>{{ t('slide_06.commission.note') }}</div>
+            <div class='commission'>
+              <div class='headline'>
+                {{ t('slide_06.commission.headline') }}
+                <span ref='commission_note_icon' class='commission-note-icon' />
+                <div ref='commission_note_tooltip' class='popper'>
+                  <div ref='commission_note_tooltip_popper_arrow' class='arrow' />
+                  {{ t('slide_06.commission.note') }}
+                </div>
+              </div>
+              <div class='note'>{{ t('slide_06.commission.note') }}</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class='details'>
-        <div class='mobile-label'>{{ t('slide_06.mobile_label') }}</div>
-        <div
-          v-for='(block, blockIndex) in blocks'
-          :key='blockIndex'
-          :class='`block block-${blockIndex}`'
-        >
+        <div class='details'>
+          <div class='mobile-label'>{{ t('slide_06.mobile_label') }}</div>
           <div
-            class='mobile-container'
-            :class='{ "is-active": blockIsExpanded[blockIndex] }'
-            @click='toggleBlock(blockIndex)'
+            v-for='(block, blockIndex) in blocks'
+            :key='blockIndex'
+            :class='`block block-${blockIndex}`'
           >
-            <div class='icon' />
-            <div class='headline'>{{ block.headline }}</div>
-          </div>
-          <TransitionHeight :duration='350'>
-            <div v-show='blockIsExpanded[blockIndex]' class='texts'>
-              <div
-                v-for='(text, textIndex) in block.texts'
-                :key='textIndex'
-                class='text'
-              >
-                {{ text }}
-              </div>
+            <div
+              class='mobile-container'
+              :class='{ "is-active": blockIsExpanded[blockIndex] }'
+              @click='toggleBlock(blockIndex)'
+            >
+              <div class='icon' />
+              <div class='headline'>{{ block.headline }}</div>
             </div>
-          </TransitionHeight>
+            <TransitionHeight :duration='350'>
+              <div v-show='blockIsExpanded[blockIndex]' class='texts'>
+                <div
+                  v-for='(text, textIndex) in block.texts'
+                  :key='textIndex'
+                  class='text'
+                >
+                  {{ text }}
+                </div>
+              </div>
+            </TransitionHeight>
+          </div>
         </div>
       </div>
-    </div>
-    <div class='comparison'>
-      <div class='headline' v-html='t("slide_06.comparison.headline")' />
-      <div
-        v-for='(block, index) in comparison'
-        :key='index'
-        :class='`block block-${index}`'
-      >
-        <div class='label'>{{ block.label }}</div>
-        <div class='icon' />
-        <div class='value'>{{ block.value }}</div>
+      <div class='comparison'>
+        <div class='headline' v-html='t("slide_06.comparison.headline")' />
+        <div
+          v-for='(block, index) in comparison'
+          :key='index'
+          :class='`block block-${index}`'
+        >
+          <div class='label'>{{ block.label }}</div>
+          <div class='icon' />
+          <div class='value'>{{ block.value }}</div>
+        </div>
       </div>
-    </div>
-  </article>
+    </article>
+  </div>
 </template>
 
 <script>
