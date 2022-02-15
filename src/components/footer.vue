@@ -16,9 +16,6 @@
         <a href='https://kladovkin.ru/selfstorage/'>{{ t('footer.units') }}</a>
       </li>
       <li>
-        <a href='https://kladovkin.ru/dostavka/'>{{ t('footer.delivery') }}</a>
-      </li>
-      <li>
         <a href='https://kladovkin.ru/kak-khranit-veshchi/'>{{ t('footer.business') }}</a>
       </li>
       <li>
@@ -26,9 +23,6 @@
       </li>
       <li>
         <a href='https://kladovkin.ru/kontakty/'>{{ t('footer.contacts') }}</a>
-      </li>
-      <li>
-        <a href='https://kladovkin.ru/sitemap/'>{{ t('footer.sitemap') }}</a>
       </li>
     </ul>
     <div class='copy-wrapper'>

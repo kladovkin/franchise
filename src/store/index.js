@@ -318,11 +318,9 @@ export default createStore({
         footer: {
           about: 'О нас',
           units: 'Боксы и цены',
-          delivery: 'Доставка',
           business: 'Бизнес-хранение',
           personal: 'Личное хранение',
           contacts: 'Контакты',
-          sitemap: 'Карта сайта',
           brand: 'ООО «Кладовкин»',
           copyright: 'все права защищены'
         }
@@ -640,11 +638,9 @@ export default createStore({
         footer: {
           about: 'About us',
           units: 'Units and prices',
-          delivery: 'Delivery',
           business: 'Storage for business',
           personal: 'Storage for life',
           contacts: 'Contacts',
-          sitemap: 'Site map',
           brand: 'LLC Kladovkin',
           copyright: 'all rights reserved'
         }
