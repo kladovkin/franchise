@@ -19,15 +19,6 @@
         <a href='https://kladovkin.ru/dostavka/'>{{ t('footer.delivery') }}</a>
       </li>
       <li>
-        <a href='https://kladovkin.ru/karyera/'>{{ t('footer.career') }}</a>
-      </li>
-      <li>
-        <a href='https://kladovkin.ru/partneram/'>{{ t('footer.partners') }}</a>
-      </li>
-      <li>
-        <a href='https://kladovkin.ru/kak-khranit-veshchi/'>{{ t('footer.how_to') }}</a>
-      </li>
-      <li>
         <a href='https://kladovkin.ru/kak-khranit-veshchi/'>{{ t('footer.business') }}</a>
       </li>
       <li>
