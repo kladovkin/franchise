@@ -3,7 +3,8 @@
     class='button'
     :class='{
       "button-white": type === "white",
-      "button-red": type === "red"
+      "button-red": type === "red",
+      "button-conversion": styling === "conversion"
     }'
   >
     {{ text }}
@@ -19,10 +20,15 @@ export default {
       type: String,
       required: true,
       validator: (value) => (
-        [
-          'red',
-          'white'
-        ].indexOf(value) !== -1
+        ['red', 'white'].indexOf(value) !== -1
+      )
+    },
+    styling: {
+      type: String,
+      required: false,
+      default: 'default',
+      validator: (value) => (
+        ['default', 'conversion'].indexOf(value) !== -1
       )
     }
   }
@@ -58,7 +64,6 @@ export default {
   &-white
     background-color: #fff
     border: 3px solid #fff
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25)
     color: #f44f0c
 
     &:active
@@ -68,7 +73,6 @@ export default {
   &-red
     background-color: #f44f0c
     border: 3px solid #f44f0c
-    box-shadow: 0px 4px 15px rgba(244, 79, 12, 0.24)
     color: #fff
 
     +gte_laptop
@@ -79,4 +83,37 @@ export default {
     &:active
       background-color: #df4c10
       border-color: #df4c10
+
+  &-white-blue
+    background-color: #f44f0c
+    border: 3px solid #f44f0c
+    color: #fff
+
+    +gte_laptop
+      &:hover
+        background-color: #fa7912
+        border-color: #fa7912
+
+    &:active
+      background-color: #df4c10
+      border-color: #df4c10
+
+  &-conversion
+    +lte_ipad
+      font-size: rem(14px)
+      height: rem(56px)
+
+    +ipad
+      max-width: none
+      padding-left: 34px
+      padding-right: 34px
+      width: auto
+
+    +gte_laptop
+      font-size: 18px
+      height: 68px
+      max-width: none
+      padding-left: 34px
+      padding-right: 34px
+      width: auto
 </style>

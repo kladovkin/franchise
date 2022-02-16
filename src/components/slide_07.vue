@@ -1,222 +1,154 @@
 <template>
-  <div class='outer' id='slide_07'>
-    <div class='container'>
+  <div id='slide_07' class='background-cutter'>
+    <article>
       <h2 v-html='t("slide_07.h2")' />
-    </div>
-    <div class='background'>
-      <article>
-        <div class='circle'>
-          <b>{{ t('slide_07.circle.title') }}</b>
-          <span v-html='t("slide_07.circle.note")' />
+      <div class='columns'>
+        <div
+          v-for='(column, columnIndex) in columns'
+          :key='columnIndex'
+          :class='`column column-${columnIndex}`'
+        >
+          <div class='headline'>{{ column.headline }}</div>
+          <ul>
+            <li
+              v-for='(line, lineIndex) in column.lines'
+              :key='lineIndex'
+              :class='`line line-${columnIndex}-${lineIndex}`'
+            >
+              {{ line }}
+            </li>
+          </ul>
         </div>
-        <ul>
-          <li>
-            <b>10 %</b>
-            <div>
-              <span>{{ t('slide_07.list_1') }}</span>
-              <span>{{ t('slide_07.list_2') }}</span>
-            </div>
-          </li>
-          <li>
-            <b>5 %</b>
-            <div>
-              <span>{{ t('slide_07.list_3') }}</span>
-              <span>{{ t('slide_07.list_4') }}</span>
-            </div>
-          </li>
-          <li>
-            <b>5 %</b>
-            <div>
-              <span>{{ t('slide_07.list_5') }}</span>
-              <span>{{ t('slide_07.list_6') }}</span>
-            </div>
-          </li>
-        </ul>
-      </article>
-    </div>
+      </div>
+      <div class='container'>
+        <Button
+          type='red'
+          styling='conversion'
+          :text='t("slide_07.button")'
+          @click='lead'
+        />
+      </div>
+    </article>
   </div>
 </template>
 
 <script>
+import Button from '@/components/button';
+
+import SweetScroll from '@/utils/sweet_scroll';
 import t from '@/utils/locale';
 
 export default {
-  name: 'Slide7',
+  name: 'Slide06',
+  components: {
+    Button
+  },
+  data: () => ({
+    columns: t('slide_07.columns')
+  }),
   methods: {
-    t
+    t,
+    async lead() {
+      (await SweetScroll.asyncInstance()).toElement(
+        document.getElementById('slide_12'), { duration: 450 }
+      );
+    }
   }
 };
 </script>
 
 <style scoped lang='sass'>
-$mobile-circle-radius: 117px
-.outer
-  +lte_ipad
-    margin-bottom: rem(26px)
-
+.background-cutter
   +gte_laptop
-    margin-bottom: 82px
-
-  +laptop
-    margin-top: scale-laptop(-167px, -23px)
-
-  +gte_desktop
-    margin-top: -23px
-
-h2
-  +lte_ipad
-    margin-bottom: rem($mobile-circle-radius + 40px)
-
-  +gte_laptop
-    margin-bottom: 45px
-    text-align: center
-    width: 500px
-
-  +laptop
-    margin-left: scale-laptop(270px, 334px)
-
-  +gte_desktop
-    margin-left: 334px
-
-.background
-  background: #5096FF
-  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.05)
+    margin-bottom: -70px // negative margin added in order to compensate article padding-bottom
 
 article
-  +ipad
-    display: flex
-    justify-content: center
-
-  +lte_ipad
-    padding-bottom: rem(40px)
-
-  +gte_laptop
-    height: 223px
-
-  ul
-    color: #fff
-    display: flex
-
-    +ipad
-      display: inline-flex
-
-    +lte_ipad
-      flex-direction: column
-      padding-top: rem($mobile-circle-radius + 8px)
-
-    +gte_laptop
-      justify-content: center
-      align-items: center
-      height: 100%
-
-    +laptop
-      margin-left: scale-laptop(270px, 334px)
-      width: scale-laptop(635px, 728px)
-
-    +gte_desktop
-      margin-left: 334px
-      width: 728px
-
-    li
-      display: flex
-      flex-shrink: 0
-
-      +lte_ipad
-        &:not(:last-child)
-          margin-bottom: rem(24px)
-
-      +gte_laptop
-        flex-direction: column
-
-      &:not(:last-child)
-        +laptop
-          margin-right: scale-laptop(41px, 86px)
-
-        +gte_desktop
-          margin-right: 86px
-
-      b
-        font-weight: bold
-
-        +lte_ipad
-          font-size: rem(30px)
-          line-height: rem(30px)
-          width: rem(85px)
-          margin-right: rem(16px)
-
-        +gte_laptop
-          font-size: 50px
-          line-height: 35px
-          margin-bottom: 11px
-
-      div
-        display: flex
-        flex-direction: column
-
-      span
-        +lte_ipad
-          font-size: rem(14px)
-          line-height: rem(18px)
-
-        +gte_laptop
-          font-size: 18px
-          line-height: 23px
-
-.circle
-  align-items: center
-  background-repeat: no-repeat
-  background-size: contain
-  display: flex
-  flex-direction: column
-  justify-content: center
-  position: absolute
-  z-index: 1
-
-  +lte_ipad
-    background-image: url(../assets/slide_07/circle-mobile.svg)
-    height: rem(218px)
-    left: 50%
-    transform: translateX(-50%)
-    width: rem(218px)
-    margin-top: rem(-$mobile-circle-radius)
-
-  +gte_laptop
-    background-image: url(../assets/slide_07/circle-desktop.svg)
+  +slide_offset_default
 
   +laptop
-    height: scale-laptop(310px, 367px)
-    margin-top: scale-laptop(-44px, -72px)
-    margin-left: scale-laptop(-92px, -100px)
-    width: scale-laptop(310px, 367px)
+    &:before
+      top: scale-laptop(177px, 237px)
 
   +gte_desktop
-    height: 367px
-    margin-left: -100px
-    margin-top: -72px
-    width: 367px
+    &:before
+      top: 237px
 
-  b
-    color: #5096ff
-    font-weight: bold
+  +gte_laptop
+    padding-bottom: 70px // padding added in order to fit left bottom blue circle
+
+    &:before
+      background-image: url(../assets/slide_07/circles_background-desktop.svg)
+      background-repeat: no-repeat
+      background-size: contain
+      content: ''
+      height: 774px
+      left: -111px
+      pointer-events: none
+      position: absolute
+      width: 1405px
+
+h2
+  text-align: center
+
+  +lte_ipad
+    margin-bottom: rem(32px)
+
+  +gte_laptop
+    margin-bottom: 72px
+
+.columns
+  +gte_laptop
+    +fcolumn(2, 29px, 0, '.column')
+    display: flex
+    margin-bottom: 56px
+
+.column
+  +lte_ipad
+    margin-bottom: rem(32px)
+
+  .headline
+    color: #333
 
     +lte_ipad
-      font-size: rem(44px)
-      line-height: rem(44px)
-      margin-bottom: rem(8px)
+      font-size: rem(16px)
+      line-height: rem(20px)
+      margin-bottom: rem(24px)
 
     +gte_laptop
-      font-size: 50px
-      line-height: 35px
-      margin-bottom: 12px
+      font-size: 20px
+      line-height: 24px
+      margin-bottom: 32px
 
-  span
-    text-align: center
-    color: #4b4b4b
-    +lte_ipad
-      font-size: rem(12px)
-      line-height: rem(14px)
+.line
+  align-items: center
+  color: #5f5f5f
+  display: flex
+  font-size: rem(16px)
+  height: rem(52px)
+  line-height: 1.3
 
-    +gte_laptop
-      font-size: 18px
-      line-height: 23px
+  &:not(:last-child)
+    margin-bottom: rem(24px)
+
+  @each $columnIndex in 0,1
+    @each $lineIndex in 0,1,2,3,4,5
+      &-#{$columnIndex}-#{$lineIndex}:before
+        background-image: url(../assets/slide_07/line_#{$columnIndex}_#{$lineIndex}_icon.svg)
+        background-repeat: no-repeat
+        background-size: contain
+        content: ''
+        flex-shrink: 0
+        height: rem(52px)
+        width: rem(52px)
+
+        +lte_ipad
+          margin-right: rem(24px)
+
+        +gte_laptop
+          margin-right: rem(43px)
+
+.container
+  display: flex
+  justify-content: center
+  padding: 0
 </style>

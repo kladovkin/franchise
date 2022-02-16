@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g filter="url(#filter0_d_2_2555)" transform="matrix(1, 0, 0, 1, -15, -10)">
+    <circle cx="41" cy="36" r="26" fill="#5096FF"/>
+  </g>
+  <g clip-path="url(#clip0_2_2555)" transform="matrix(1, 0, 0, 1, -15, -10)">
+    <path d="M29.0405 25.0426V46.9575H30.693V42.9311H31.2537V46.9333L38.111 45.4357V28.7975L31.2537 27.2999V29.8941H30.693V26.6929H51.4204V29.8941H50.8111V27.2999L43.9539 28.7975V45.4357L50.8111 46.9333V42.9311H51.4204V46.9575H53.0729V25.0426H29.0405ZM36.9615 36.0397C37.2062 36.0397 37.4047 36.2721 37.4047 36.5589C37.4047 36.8457 37.2062 37.0781 36.9615 37.0781C36.7167 37.0781 36.5181 36.8457 36.5181 36.5589C36.5181 36.2721 36.7167 36.0397 36.9615 36.0397ZM31.2537 32.1764V40.6487H30.693V32.1764H31.2537ZM45.1032 37.0782C44.8585 37.0782 44.6599 36.8457 44.6599 36.5589C44.6599 36.2721 44.8585 36.0398 45.1032 36.0398C45.348 36.0398 45.5466 36.2721 45.5466 36.5589C45.5466 36.8457 45.348 37.0782 45.1032 37.0782ZM51.4203 40.6487H50.811V32.1764H51.4203V40.6487Z" fill="white"/>
+  </g>
+  <defs>
+    <filter id="filter0_d_2_2555" x="0" y="0" width="82" height="82" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_2555" result="shape"/>
+    </filter>
+    <clipPath id="clip0_2_2555">
+      <rect width="24.0323" height="24" fill="white" transform="translate(29.0405 24)"/>
+    </clipPath>
+  </defs>
+</svg>

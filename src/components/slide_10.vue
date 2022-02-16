@@ -1,132 +1,109 @@
 <template>
-  <article
-    id='slide_10'
-    v-waypoint='{
-      active: true,
-      callback: onWaypoint,
-      options: intersectionOptions
-    }'
-  >
+  <article id='slide_10'>
     <h2>{{ t('slide_10.h2') }}</h2>
-    <div class='popup'>
-      <div class='person'>
-        <img
-          loading='lazy'
-          src='../assets/slide_10/person_1.png'
-        />
 
-        <div class='info'>
-          <div class='name'>
-            <div>{{ t('slide_10.founder') }}</div>
-            <div><b>{{ t('slide_10.founder_name') }}</b></div>
-          </div>
-
-          <div class='contacts'>
-            <div>
-              <a href='mailto:m.karpushin@kladovkin.ru'>
-                m.karpushin@kladovkin.ru
-              </a>
-            </div>
-            <div>
-              <a href='tel:+7-916-305-22-05'>+7-916-305-22-05</a>
-            </div>
-          </div>
+    <div
+      ref='swiper'
+      v-waypoint='{
+        active: true,
+        callback: onWaypoint,
+        options: intersectionOptions
+      }'
+      class='swiper'
+    >
+      <div class='swiper-wrapper'>
+        <div
+          v-for='imageIndex in images'
+          :key='imageIndex'
+          class='slide'
+        >
+          <picture>
+            <source
+              :srcset='`/slide_10/slide_image-${imageIndex}.webp, /slide_10/slide_image-${imageIndex}@2x.webp 2x`'
+              type='image/webp'
+            >
+            <img
+              class='laptop'
+              :src='`/slide_10/slide_image-${imageIndex}.png`'
+              :srcset='`/slide_10/slide_image-${imageIndex}@2x.png 2x`'
+            >
+          </picture>
+        </div>
+        <div
+          v-for='imageIndex in images'
+          :key='imageIndex + 5'
+          class='slide'
+        >
+          <picture>
+            <source
+              :srcset='`/slide_10/slide_image-${imageIndex}.webp, /slide_10/slide_image-${imageIndex}@2x.webp 2x`'
+              type='image/webp'
+            >
+            <img
+              class='laptop'
+              :src='`/slide_10/slide_image-${imageIndex}.png`'
+              :srcset='`/slide_10/slide_image-${imageIndex}@2x.png 2x`'
+            >
+          </picture>
         </div>
       </div>
-
-      <div class='person'>
-        <img
-          loading='lazy'
-          src='../assets/slide_10/person_2.png'
-        />
-
-        <div class='info'>
-          <div class='name'>
-            <div>{{ t('slide_10.staff') }}</div>
-            <div><b>{{ t('slide_10.staff_name') }}</b></div>
-          </div>
-
-          <div class='contacts'>
-            <div>
-              <a href='mailto:n.nikitina@kladovkin.ru'>
-                n.nikitina@kladovkin.ru
-              </a>
-            </div>
-            <div>
-              <a href='tel:+7-495-181-55-45'>+7-495-181-55-45</a>
-            </div>
-          </div>
-        </div>
+      <div class='navigation'>
+        <button class='swiper-button-prev' />
+        <button class='swiper-button-next' />
       </div>
-
-      <div class='address' v-html='t("slide_10.address")' />
     </div>
   </article>
-  <div ref='map' class='map' />
 </template>
 
 <script>
-import isMobile from '@/utils/is_mobile';
 import t from '@/utils/locale';
+import intersectionOptions from '@/utils/intersection_options';
 
 export default {
-  name: 'Slide10',
+  name: 'Slide08',
   data: () => ({
-    isMapInitialized: false,
-    intersectionOptions: {
-      root: null,
-      rootMargin: '0px 0px 0px 0px',
-      threshold: [0, 1] // [0.25, 0.75] if you want a 25% offset!
-    } // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+    images: [0, 1, 2, 3],
+    isSwiperInitialized: false,
+    intersectionOptions
   }),
-  computed: {
-    mapCenter() {
-      return isMobile() ? [55.85, 37.57] : [55.754, 37.27];
-    },
-    iconOptions() {
-      return isMobile() ?
-        { iconImageSize: [35, 43], iconImageOffset: [-17, -43] } :
-        { iconImageSize: [74, 95], iconImageOffset: [-37, -95] };
-    }
-  },
   methods: {
     t,
     async onWaypoint({ going }) {
-      if (going !== 'in') { return; }
-      if (this.isMapInitialized) { return; }
-      this.isMapInitialized = true;
+      if (going !== 'in' || this.isSwiperInitialized) { return; }
+      this.isSwiperInitialized = true;
+      this.initSwiper();
+    },
+    async initSwiper() {
+      const { Swiper, Navigation } = await import('swiper');
 
-      const { default: ymaps } = await import(
-        /* webpackChunkName: "ymaps" */
-        'ymaps'
-      );
-      ymaps
-        .load('https://api-maps.yandex.ru/2.1/?lang=ru_RU')
-        .then(maps => {
-          const map = new maps.Map(this.$refs.map, {
-            center: this.mapCenter,
-            zoom: 10,
-            controls: [
-              'geolocationControl',
-              'typeSelector',
-              'fullscreenControl',
-              'zoomControl',
-              'rulerControl'
-            ]
-          });
-          map.behaviors.disable('scrollZoom');
-
-          const marker = new window.ymaps.Placemark(
-            [55.866516, 37.480508],
-            { },
-            {
-              iconLayout: 'default#imageWithContent',
-              iconImageHref: '/marker.svg',
-              ...this.iconOptions
-            }
-          );
-          map.geoObjects.add(marker);
-        });
+      this.swiper = new Swiper(this.$refs.swiper, {
+        wrapperClass: 'swiper-wrapper',
+        slideClass: 'slide',
+        loop: false,
+        slidesPerView: 'auto',
+        spaceBetween: 0,
+        initialSlide: 0,
+        breakpoints: {
+          320: {
+            slidesPerView: 'auto',
+            spaceBetween: 16
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 23
+          },
+          1200: {
+            slidesPerView: 4,
+            spaceBetween: 28
+          }
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+          disabledClass: 'is-disabled'
+        },
+        modules: [Navigation]
+      });
     }
   }
 };
@@ -134,159 +111,117 @@ export default {
 
 <style scoped lang='sass'>
 article
-  padding: 0
-
-.map
-  background: #f7f7f7
+  +slide_offset_default
+  margin-bottom: rem(-14px) // compensates navigation bottom padding
 
 h2
-  +default_padding_left
-  +default_padding_right
+  text-align: center
 
   +lte_ipad
-    text-align: left
-    margin-bottom: rem(40px)
-
-  +gte_laptop
-    margin-bottom: 45px
-
-.popup
-  background: #fff
-  box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.25)
-  +default_margin_left
-
-  +lte_ipad
-    padding: rem(24px) rem(24px) rem(24px) rem(16px)
-    margin: 0
-
-  +gte_laptop
-    border-radius: 25px
-    padding: 45px 49px 37px 46px
-    margin-top: 77px
-    position: absolute
-    z-index: 1
+    margin-bottom: rem(24px)
 
   +laptop
-    width: scale-laptop(538px, 636px)
+    margin-bottom: scale-laptop(36px, 58px)
 
   +gte_desktop
-    width: 636px
+    margin-bottom: 58px
 
-  .person
+.swiper
+  list-style: none
+  margin-left: auto
+  margin-right: auto
+  overflow: hidden
+  padding: 0
+  position: relative
+  width: 100%
+  z-index: 1
+
+  &-pointer-events
+    touch-action: pan-y
+
+  .swiper-wrapper
+    box-sizing: content-box
     display: flex
-    align-items: center
+    position: relative
+    transform: translate3d(0px, 0, 0)
+    transition-property: transform
+    z-index: 1
 
-    &:first-child
+  .slide
+    overflow: hidden
+    flex-shrink: 0
+
+    // cp public/slide_10/original/* public/slide_10/; for image in public/slide_10/*@2x.png; do; echo $image; convert -resize 50% $image ${image/@2x/}; convert -quality 95% $image ${image/\.png/.webp}; convert -resize 50% ${image/\.png/.webp} ${${image/\.png/.webp}/@2x/}; tinypng $image; tinypng ${image/@2x/}; done;
+    picture img
+      border-radius: rem(12px)
+
       +lte_ipad
-        margin-bottom: rem(28px)
-
-      +gte_laptop
-        margin-bottom: 23px
-
-    &:not(:first-child)
-      +lte_ipad
-        margin-bottom: rem(23px)
-
-      +gte_laptop
-        margin-bottom: 33px
-
-    img
-      +lte_ipad
-        width: rem(85px)
-        height: rem(85px)
-        margin-right: rem(16px)
-
-      +gte_laptop
-        width: 120px
-        height: 120px
+        width: rem(187px)
 
       +laptop
-        margin-right: scale-laptop(59px, 70px)
+        width: scale-laptop(222px, 265px)
 
       +gte_desktop
-        margin-right: 70px
+        width: 265px
 
-    .info
-      display: flex
-      flex-direction: column
-      letter-spacing: -0.01em
-
-      +lte_ipad
-        color: #4b4b4b
-        font-size: rem(14px)
-        line-height: rem(20px)
-
-      +gte_laptop
-        color: #6c6c6c
-        font-size: 16px
-        font-weight: 300
-        height: 100px
-        line-height: 20px
-
-      b
-        +lte_ipad
-          font-weight: bold
-          font-size: 16px
-          line-height: 20px
-          letter-spacing: -0.01em
-          color: #4b4b4b
-
-        +gte_laptop
-          color: #333
-
-      a
-        color: inherit
-        text-decoration: none
-
-        +lte_ipad
-          &:active
-            text-decoration: underline
-
-        +gte_laptop
-          &:hover
-            text-decoration: underline
-
-      .name
-        +lte_ipad
-          margin-bottom: rem(8px)
-
-        +gte_laptop
-          margin-bottom: auto
-
-        & > div:first-child
-          +lte_ipad
-            color: #6c6c6c
-            font-size: rem(10px)
-            line-height: rem(16px)
-
-  .address
-    font-weight: 300
-    letter-spacing: -0.01em
+  .navigation
+    display: flex
+    padding-bottom: rem(10px)
+    justify-content: center
 
     +lte_ipad
-      color: #4B4B4B
-      font-size: rem(14px)
-      line-height: rem(24px)
+      margin-top: rem(24px)
 
     +gte_laptop
-      color: #333
-      font-size: 18px
-      line-height: 23px
+      margin-top: 34px
 
-    b
-      +lte_ipad
-        display: block
+    .swiper-button-prev,
+    .swiper-button-next
+      -webkit-appearance: none
+      -webkit-tap-highlight-color: transparent
+      align-items: center
+      background: $primary
+      border-radius: rem(67px)
+      border: rem(3.5px) solid #fff
+      color: $primary
+      cursor: pointer
+      display: flex
+      height: rem(67px)
+      justify-content: center
+      transition: color 0.25s, border-color 0.25s, background-color 0.25s, box-shadow 0.25s
+      width: rem(67px)
 
       +gte_laptop
-        margin-right: 10px
+        &:hover
+          box-shadow: 0px 3px 10px rgba(#cf4c17, 0.35)
+          color: #333
 
-.map
-  +iphone
-    height: rem(195px)
+      &:active
+        background: #cf4c17
+        box-shadow: none
 
-  +ipad
-    height: rem(350px)
+      &:before
+        content: ''
+        background-repeat: no-repeat
+        background-size: contain
+        background: url('../assets/slide_10/navigation.svg')
+        margin-left: rem(2px)
+        width: rem(16px)
+        height: rem(25px)
 
-  +gte_laptop
-    height: 550px
+      &.is-disabled
+        background-color: #939393
+        box-shadow: none
+        cursor: default
+
+    .swiper-button-prev
+      +lte_ipad
+        margin-right: rem(9px)
+
+      +gte_laptop
+        margin-right: 26px
+
+      &:before
+        margin-left: rem(-2px)
+        transform: rotate(180deg)
 </style>

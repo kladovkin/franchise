@@ -1,341 +1,331 @@
 <template>
-  <article id='slide_02'>
-    <h2>
-      <span>Self Storage</span> &mdash; {{ t('slide_02.h2') }}
-    </h2>
-    <div class='note'>
-      {{ t('slide_02.note') }}
-    </div>
-    <div class='list-wrapper'>
-      <ul>
-        <li>{{ t('slide_02.list_1') }}</li>
-        <li>{{ t('slide_02.list_2') }}</li>
-        <li>{{ t('slide_02.list_3') }}</li>
-        <li>{{ t('slide_02.list_4') }}</li>
+  <div id='slide_02' class='background-cutter'>
+    <article id='slide_02'>
+      <div class='header'>
+        <h2>
+          <span>{{ t('slide_02.h2.red') }}</span> {{ t('slide_02.h2.other') }}
+        </h2>
+        <div class='note'>
+          <span>{{ t('slide_02.note.red') }}</span> {{ t('slide_02.note.other') }}
+        </div>
+      </div>
+
+      <ul class='blocks'>
+        <li
+          v-for='(block, blockIndex) in blocks'
+          :key='blockIndex'
+        >
+          <div class='headline'>{{ block.headline }}</div>
+          <div class='note'>{{ block.note }}</div>
+        </li>
       </ul>
-    </div>
 
-    <div class='graph'>
-      <div class='column column-1'>
-        <div class='percent'>4%</div>
-        <div class='bar' />
-        <div class='label'>{{ t('slide_02.graph.residential') }}</div>
+      <div
+        ref='swiper'
+        v-waypoint='{
+          active: true,
+          callback: onWaypoint,
+          options: intersectionOptions
+        }'
+        class='swiper'
+      >
+        <div class='swiper-wrapper'>
+          <div class='slide slide_1'>
+            <img
+              loading='lazy'
+              src='../assets/slide_02/swiper_slide_1@2x.png'
+            >
+            <div class='note'>{{ t('slide_02.slide_1.note') }}</div>
+          </div>
+          <div class='slide slide_2'>
+            <img
+              loading='lazy'
+              src='../assets/slide_02/swiper_slide_1@2x.png'
+            >
+            <div class='note'>{{ t('slide_02.slide_2.note') }}</div>
+          </div>
+          <div class='slide slide_3'>
+            <img
+              loading='lazy'
+              src='../assets/slide_02/swiper_slide_1@2x.png'
+            >
+            <div class='note'>{{ t('slide_02.slide_3.note') }}</div>
+          </div>
+        </div>
+        <div class='swiper-pagination' />
       </div>
-      <div class='column column-2'>
-        <div class='percent'>8%</div>
-        <div class='bar' />
-        <div class='label'>{{ t('slide_02.graph.offices') }}</div>
-      </div>
-      <div class='column column-3'>
-        <div class='percent'>11%</div>
-        <div class='bar' />
-        <div class='label' v-html='t("slide_02.graph.street_retail")' />
-      </div>
-      <div class='column column-4'>
-        <div class='percent'>12%</div>
-        <div class='bar' />
-        <div class='label'>{{ t('slide_02.graph.warehouses') }}</div>
-      </div>
-      <div class='column column-5'>
-        <img
-          class='crown'
-          loading='lazy'
-          src='../assets/slide_02/crown.png'
-        />
-        <div class='percent'>18%</div>
-        <div class='bar' />
-        <div class='label'>Self&nbsp;Storage</div>
-      </div>
-    </div>
-
-    <div class='finale'>
-      <strong>{{ t('slide_02.finale.strong') }}</strong>
-      {{ t('slide_02.finale.description') }}
-    </div>
-
-    <picture class='girl'>
-      <source srcset='../assets/slide_02/girl.webp' type='image/webp'>
-      <img loading='lazy' src='../assets/slide_02/girl.png' />
-    </picture>
-  </article>
+    </article>
+  </div>
 </template>
 
 <script>
 import t from '@/utils/locale';
+import intersectionOptions from '@/utils/intersection_options';
 
 export default {
-  name: 'Slide2',
+  name: 'Slide02',
+  data: () => ({
+    blocks: t('slide_02.blocks'),
+    isSwiperInitialized: false,
+    intersectionOptions
+  }),
   methods: {
-    t
+    t,
+    async onWaypoint({ going }) {
+      if (going !== 'in' || this.isSwiperInitialized) { return; }
+      this.isSwiperInitialized = true;
+      this.initSwiper();
+    },
+    async initSwiper() {
+      const { Swiper, Pagination } = await import('swiper');
+
+      new Swiper(this.$refs.swiper, {
+        wrapperClass: 'swiper-wrapper',
+        slideClass: 'slide',
+        grabCursor: true,
+        allowTouchMove: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        pagination: {
+          el: '.swiper-pagination',
+          modifierClass: 'slider-pagination-',
+          bulletClass: 'slider-pagination-bullet',
+          bulletActiveClass: 'slider-pagination-bullet-active',
+          clickable: true
+        },
+        loop: true,
+        modules: [Pagination]
+      });
+    }
   }
 };
 </script>
 
 <style scoped lang='sass'>
-article
-  +lte_ipad
-    padding-top: rem(25px)
-    padding-bottom: rem(80px)
+.background-cutter
+  max-width: 100%
+  overflow: hidden
 
-  +gte_laptop
-    padding: 0
-    height: 983px
+article
+  +slide_offset_default(140px)
 
   &:before
-    +laptop
-      // 82.5%
-      width: scale-laptop(550px, 645px)
-      height: scale-laptop(550px, 645px)
-
     +gte_laptop
-      background-image: url(../assets/slide_02/background-desktop.svg)
+      background-image: url(../assets/slide_02/circles_left-desktop.svg)
       background-repeat: no-repeat
       background-size: contain
       content: ''
-      position: absolute
       z-index: -1
-      top: 214px
-      left: -287px
+      position: absolute
+      transform: translateX(-100%)
 
-    +gte_desktop
-      width: 645px
-      height: 645px
+    +laptop_hd
+      height: scale-between(232px, 346px, 1024px, 1920px)
+      left: 144px
+      top: 191px
+      width: scale-between(198px, 296px, 1024px, 1920px)
 
-h2
-  +lte_ipad
-    margin-bottom: rem(12px)
+    +hd
+      left: scale-between(144px, 0px, 1440px, 1920px)
+      top: scale-between(191px, 161px, 1440px, 1920px)
 
-  +gte_laptop
-    margin: 0 auto 22px
-    max-width: 540px
-    padding-top: 118px
+    +uhd
+      height: 346px
+      left: 0
+      top: 161px
+      width: 296px
+
+  &:after
+    +gte_laptop
+      background-image: url(../assets/slide_02/circles_right-desktop.svg)
+      background-repeat: no-repeat
+      background-size: contain
+      content: ''
+      z-index: -1
+      position: absolute
+
+    +laptop_hd
+      height: scale-between(77px, 109px, 1024px, 1920px)
+      right: -7px
+      top: 125px
+      width: scale-between(102px, 144px, 1024px, 1920px)
+
+    +hd
+      right: scale-between(-7px, -187px, 1440px, 1920px)
+      top: scale-between(125px, 178px, 1440px, 1920px)
+
+    +uhd
+      height: 109px
+      right: -187px
+      top: 178px
+      width: 144px
+
+.header
+  h2
+    +lte_ipad
+      margin-bottom: rem(24px)
+
+    +gte_laptop
+      margin: 0 auto 35px
+      max-width: 610px
+      text-align: center
+
+  .note
+    font-weight: 300
+    letter-spacing: -0.01em
     text-align: center
 
-.note
-  color: #6c6c6c
-  letter-spacing: -0.01em
-  text-align: center
+    +lte_ipad
+      font-size: rem(14px)
+      line-height: rem(20px)
+      margin-bottom: rem(37px)
 
+    +gte_laptop
+      font-size: 16px
+      line-height: 23px
+      margin: 0 auto 72px
+      max-width: 640px
+
+    span
+      color: #f2642b
+      font-weight: bold
+
+ul.blocks
   +lte_ipad
-    font-size: rem(14px)
-    line-height: rem(18px)
-    margin-bottom: rem(42px)
+    margin-bottom: rem(72px)
 
   +gte_laptop
-    font-size: 18px
-    font-weight: 300
-    line-height: 23px
-    max-width: 406px
-    margin: 0 auto 68px
-
-.list-wrapper
-  display: flex
-
-  +iphone
-    justify-content: center
-
-  +ipad
-    margin-left: rem(22px)
-
-  +gte_laptop
-    justify-content: center
-
-ul
-  color: #4b4b4b
-
-  +ipad
-    margin-top: rem(20px)
-
-  +lte_ipad
-    font-size: rem(14px)
-    line-height: rem(18px)
-
-  +gte_laptop
-    font-size: 16px
-    line-height: 30px
+    +fcolumn(3, 30px, 0, 'li')
+    margin-bottom: 72px
 
   li
-    display: flex
-    align-items: center
+    background: #eef5ff
+    border-radius: rem(12px)
+    padding: rem(20px)
 
     +lte_ipad
-      margin-bottom: rem(8px)
+      font-size: rem(44px)
+      height: rem(180px)
+
+      &:not(:last-child)
+        margin-bottom: 12px
+
+    +laptop
+      height: scale-laptop(247px, 260px)
+
+    +gte_desktop
+      height: 260px
+
+    &:nth-child(2),
+    &:nth-child(3)
+      position: relative
+      overflow: hidden
+
+      &:before
+        background-position: bottom
+        background-repeat: no-repeat
+        background-size: contain
+        bottom: 0
+        content: ''
+        height: 100%
+        left: 0
+        pointer-events: none
+        position: absolute
+        width: 100%
+
+    &:nth-child(2):before
+      background-image: url(../assets/slide_02/block_2_background.svg)
+
+    &:nth-child(3):before
+      background-image: url(../assets/slide_02/block_3_background.svg)
+
+    .headline
+      color: #5096ff
+      font-weight: bold
+      line-height: 1.2
+
+      +lte_ipad
+        font-size: rem(44px)
+        margin-bottom: rem(12px)
+
+      +gte_laptop
+        font-size: 72px
+        margin-bottom: 8px
+
+    .note
+      color: #5f5f5f
+      font-size: rem(14px)
+      line-height: 1.4
+
+.swiper
+  overflow: hidden
+  width: 100%
+
+  .swiper-wrapper
+    display: flex
+
+    +lte_ipad
+      margin-bottom: rem(32px)
 
     +gte_laptop
-      margin-bottom: 21px
+      margin-bottom: 24px
 
-    &:before
-      background-image: url(../assets/checkmark.svg)
-      background-repeat: no-repeat
-      background-size: contain
-      content: ''
+    img
+      width: rem(207px)
+
+      +lte_ipad
+        align-self: center
+        margin-bottom: rem(32px)
+
+      +gte_laptop
+        margin-right: 78px
+
+    .note
+      color: #333333
+
+      +lte_ipad
+        font-size: rem(16px)
+        line-height: rem(19px)
+
+      +gte_laptop
+        font-size: 20px
+        line-height: 23px
+
+    .slide
       flex-shrink: 0
+      width: 100%
+      display: flex
 
       +lte_ipad
-        height: rem(24px)
-        margin-right: rem(27px)
-        width: rem(24px)
+        flex-direction: column
 
-      +gte_laptop
-        height: 40px
-        margin-right: 54px
-        width: 40px
-
-.graph
-  display: flex
-
-  +iphone
-    justify-content: center
-    margin-bottom: rem(28px)
-    margin-top: rem(-22px)
-
-  +ipad
-    justify-content: flex-end
-    margin-bottom: rem(48px)
-    margin-top: rem(-95px)
-
-  +lte_ipad
-
-  +laptop
-    margin-right: scale-laptop(32px, 45px)
-
-  +desktop
-    margin-right: scale-between(45px, 0px, 1200px, 1440px)
-
-  +gte_laptop
-    justify-content: flex-end
-    margin-bottom: 55px
-    margin-top: -228px
-
-  .column
-    align-items: center
+  .swiper-pagination
     display: flex
-    flex-direction: column
-    justify-content: flex-end
+    justify-content: center
+</style>
 
-    &:not(:last-child)
-      +lte_ipad
-        margin-right: rem(9px)
+<style lang='sass'>
+.slider-pagination-bullet
+  -webkit-tap-highlight-color: transparent
+  -webkit-appearance: none
+  background: $secondary
+  border-radius: 12px
+  cursor: pointer
+  flex-shrink: 0
+  height: 12px
+  transition: background 0.25s
+  width: 12px
 
-      +gte_laptop
-        margin-right: 16px
+  &-active
+    background: $primary
 
-    +lte_ipad
-      width: rem(51px)
-
-    +gte_laptop
-      width: 95px
-
-  .crown
-    +lte_ipad
-      margin-bottom: rem(10px)
-      max-width: rem(46px)
-
-    +gte_laptop
-      margin-bottom: 21px
-
-  .percent
-    color: #5096ff
-    font-weight: bold
-    line-height: 1
-    text-align: center
-
-    +lte_ipad
-      font-size: rem(10px)
-      margin-bottom: rem(5px)
-
-    +gte_laptop
-      font-size: 20px
-      margin-bottom: 7px
-
-  .bar
-    background: #5096ff
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2)
-    width: 100%
-
-    +lte_ipad
-      border-radius: 10px 10px 0px 0px
-      margin-bottom: rem(9px)
-
-    +gte_laptop
-      border-radius: 20px 20px 0px 0px
-      margin-bottom: 21px
-
-  .column-1 .bar
-    +lte_ipad
-      height: rem(23px)
-    +gte_laptop
-      height: 43px
-
-  .column-2 .bar
-    +lte_ipad
-      height: rem(44px)
-    +gte_laptop
-      height: 82px
-
-  .column-3 .bar
-    +lte_ipad
-      height: rem(70px)
-    +gte_laptop
-      height: 130px
-
-  .column-4 .bar
-    +lte_ipad
-      height: rem(83px)
-    +gte_laptop
-      height: 155px
-
-  .column-5 .bar
-    background: #f44f0c
-    +lte_ipad
-      height: rem(128px)
-    +gte_laptop
-      height: 241px
-
-  .label
-    color: #6c6c6c
-    font-weight: bold
-    line-height: 1
-
-    +lte_ipad
-      font-size: rem(9px)
-
-    +gte_laptop
-      font-size: 13px
-
-.finale
-  font-weight: 300
-  letter-spacing: -0.01em
-
-  +lte_ipad
-    color: #6c6c6c
-    font-size: rem(14px)
-    line-height: rem(18px)
+  &:not(:last-child)
+    margin-right: 11px
 
   +gte_laptop
-    color: #a5a5a5
-    font-size: 16px
-    line-height: 21px
-    margin: 0 auto
-    max-width: 341px
+    &:hover
+      background: $primary-hover
 
-  strong
-    font-weight: bold
-
-.girl
-  position: absolute
-  bottom: 0
-
-  img
-    margin-bottom: -2px
-
-  +lte_ipad
-    display: none
-
-  +laptop
-    width: scale-laptop(390px, 516px)
-    left: scale-laptop(-85px, -185px)
-
-  +gte_desktop
-    left: -185px
+  &:active
+    background: $primary-active
 </style>

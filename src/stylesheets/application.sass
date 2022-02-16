@@ -4,9 +4,13 @@
 
 // 'Lato:300,400,500,700,900'
 @import ./mixins/font_face.scss
-+font-face('lato', '../assets/fonts/lato/Lato-Light', 300, $exts: eot woff woff2 ttf);
-+font-face('lato', '../assets/fonts/lato/Lato-Regular', 400, $exts: eot woff woff2 ttf);
-+font-face('lato', '../assets/fonts/lato/Lato-Heavy', 800, $exts: eot woff woff2 ttf);
++font-face('lato', '../assets/fonts/lato/latolight', 300, $exts: woff woff2 ttf)
++font-face('lato', '../assets/fonts/lato/latoregular', 400, $exts: woff woff2 ttf)
+// +font-face('lato', '../assets/fonts/lato/latomedium', 500, $exts: woff woff2 ttf)
+// +font-face('lato', '../assets/fonts/lato/latosemibold', 600, $exts: woff woff2 ttf)
++font-face('lato', '../assets/fonts/lato/latobold', 700, $exts: woff woff2 ttf)
+// +font-face('lato', '../assets/fonts/lato/latoheavy', 800, $exts: woff woff2 ttf)
+// +font-face('lato', '../assets/fonts/lato/latoblack', 900, $exts: woff woff2 ttf)
 
 *,
 *:before,
@@ -30,8 +34,6 @@ html
   @media screen and (min-width: 768px) and (max-width: 1023px)
     font-size: 22px
 
-section
-
 article,
 .container
   +default_padding_right
@@ -44,27 +46,31 @@ article,
     margin: 0 auto
 
 h1
-  font-weight: bold
+  font-weight: 700
 
   +lte_ipad
     font-size: rem(24px)
     line-height: 1.33
 
   +gte_laptop
-    font-size: 44px
-    line-height: 52px
+    font-size: 39px
+    line-height: 49px
 
 h2
   font-weight: bold
 
   +lte_ipad
     font-size: rem(24px)
-    line-height: rem(28px)
+    line-height: rem(35px)
     text-align: center
 
-  +gte_laptop
+  +laptop
     font-size: 30px
     line-height: 35px
+
+  +gte_desktop
+    font-size: 32px
+    line-height: 36px
 
   span
     color: #f2642b
@@ -73,5 +79,13 @@ strong,
 b
   font-weight: bold
 
-picture img
+picture
+  line-height: 0
+
+  img
+    max-width: 100%
+    line-height: 0
+
+.background-cutter
   max-width: 100%
+  overflow: hidden

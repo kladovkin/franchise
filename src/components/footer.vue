@@ -4,7 +4,7 @@
       class='logo'
       loading='lazy'
       src='../assets/logo.svg'
-    />
+    >
     <ul>
       <li>
         <a href='https://kladovkin.ru/o-minisklade/'>{{ t('footer.about') }}</a>
@@ -16,18 +16,6 @@
         <a href='https://kladovkin.ru/selfstorage/'>{{ t('footer.units') }}</a>
       </li>
       <li>
-        <a href='https://kladovkin.ru/dostavka/'>{{ t('footer.delivery') }}</a>
-      </li>
-      <li>
-        <a href='https://kladovkin.ru/karyera/'>{{ t('footer.career') }}</a>
-      </li>
-      <li>
-        <a href='https://kladovkin.ru/partneram/'>{{ t('footer.partners') }}</a>
-      </li>
-      <li>
-        <a href='https://kladovkin.ru/kak-khranit-veshchi/'>{{ t('footer.how_to') }}</a>
-      </li>
-      <li>
         <a href='https://kladovkin.ru/kak-khranit-veshchi/'>{{ t('footer.business') }}</a>
       </li>
       <li>
@@ -35,9 +23,6 @@
       </li>
       <li>
         <a href='https://kladovkin.ru/kontakty/'>{{ t('footer.contacts') }}</a>
-      </li>
-      <li>
-        <a href='https://kladovkin.ru/sitemap/'>{{ t('footer.sitemap') }}</a>
       </li>
     </ul>
     <div class='copy-wrapper'>
@@ -145,4 +130,7 @@ ul
     line-height: 23px
     width: 253px
     margin-top: 95px
+
+  b
+    color: #333
 </style>

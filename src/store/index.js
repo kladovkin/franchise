@@ -1,3 +1,4 @@
+/* eslint max-len: 0 */
 import { createStore } from 'vuex';
 
 export default createStore({
@@ -14,171 +15,286 @@ export default createStore({
           button: 'Оставить заявку'
         },
         slide_01: {
-          h1: 'Технологичный бизнес на&nbsp;вашей&nbsp;территории',
-          h2: 'Станьте партнером и зарабатывайте на&nbsp;своей&nbsp;недвижимости',
-          lock: {
-            first: 'Включи',
-            second: 'свой бизнес'
-          },
-          collapsed: 'Ставка доходности с Кладовкин',
-          button: 'Узнать больше'
+          h1: 'Станьте партнером Кладовкин и начните получать доход с первого дня работы склада',
+          h2: 'Мы построим технологичный бизнес на основе вашего помещения и возьмем управление на себя.',
+          yield: 'годовых — доходность вложений<br>в переоборудование помещения',
+          button: 'Стать партнером Кладовкин',
+          learn_more: 'Узнать больше'
         },
         slide_02: {
-          h2: 'новый подход к бизнесу в сфере недвижимости',
-          note: 'Ставки доходности основных сегментов арендной недвижимости в России:',
-          list_1: 'Большее количество арендаторов',
-          list_2: 'Повышенная арендная ставка',
-          list_3: 'Постоянная заполненность склада',
-          list_4: 'Растущий рынок',
-          graph: {
-            residential: 'Жильё',
-            offices: 'Офисы',
-            street_retail: 'Стрит&nbsp;ритейл',
-            warehouses: 'Склады'
+          h2: {
+            red: 'Рынок self storage в России',
+            other: 'находится на стадии активного роста'
           },
-          finale: {
-            strong: 'Self Storage — это склады, оборудованные боксами',
-            description: 'для хранения вещей или товаров физическими или юридическими лицами'
+          note: {
+            red: 'Self storage',
+            other: '– это сдача в аренду помещений для хранения личных вещей, товаров или документов для бизнеса в индивидуальных кладовках'
+          },
+          blocks: [{
+            headline: '2 750 ₽',
+            note: 'достигает арендная ставка за 1 м2 в месяц в сегменте Self storage'
+          }, {
+            headline: '5-10%',
+            note: 'годовой прирост площадей Self storage в Москве'
+          }, {
+            headline: '95%',
+            note: 'средняя наполняемость складов Self storage в Москве '
+          }],
+          slide_1: {
+            note: '"Спрос на склады в России достиг максимального уровня за 10 лет. Для развития интернет-торговли в регионах потребуется 1,5 млн кв. м складских площадей в ближайшие три года"'
+          },
+          slide_2: {
+            note: '"Спрос на склады в России достиг максимального уровня за 10 лет. Для развития интернет-торговли в регионах потребуется 1,5 млн кв. м складских площадей в ближайшие три года"'
+          },
+          slide_3: {
+            note: '"Спрос на склады в России достиг максимального уровня за 10 лет. Для развития интернет-торговли в регионах потребуется 1,5 млн кв. м складских площадей в ближайшие три года"'
           }
         },
         slide_03: {
-          h2: 'Кладовкин &mdash; технологический лидер российского рынка Self&nbsp;Storage',
-          entries: {
-            age: 'Года&nbsp;на&nbsp;рынке',
-            customers: 'Благодарных арендаторов',
-            storages: 'Складов в&nbsp;Москве',
-            square: 'Площадь&nbsp;складов'
-          }
+          h2: {
+            red: 'Кладовкин',
+            other: '– единственная компания в России, обладающая тремя ключевыми компетенциями в self storage'
+          },
+          h2_note: 'Мы независимая компания, которая все умеет сама',
+          picture_block_1: {
+            headline: '4+',
+            note: 'Года на рынке'
+          },
+          picture_block_2: {
+            headline: '3 500+',
+            note: 'Благодарных арендаторов'
+          },
+          picture_block_3: {
+            headline: '10',
+            note: 'Складов в Москве'
+          },
+          picture_block_4: {
+            headline: '20 000 м²',
+            note: 'Площадь складов'
+          },
+          block_1: {
+            headline: 'Управляющая компания',
+            note: 'Мы знаем, как управлять складами, чтобы они приносили прибль.'
+          },
+          block_2: {
+            headline: 'IT компания',
+            note: 'Организуем эффективный бизнес Self Storage с помощью собственных IT-технологий'
+          },
+          block_3: {
+            headline: 'Производитель оборудования',
+            note: 'С 2011 года производим поставляем оборудование для крупнейших операторов Self Storage в России'
+          },
+          details: 'Подробнее',
+          block_note: {
+            text: 'Больше информации вы можете узнать из ',
+            link: 'нашей презентации'
+          },
+          button: 'Стать партнером Кладовкин'
         },
         slide_04: {
-          switcher: {
-            owner: 'Владельцам',
-            tenant: 'Арендаторам'
-          },
-          owner: {
-            h2: 'Организуем эффективный бизнес Self Storage с помощью IT-технологий',
-            note: 'Полная автоматизация бизнес-процессов для собственника',
-            list_1: {
-              title: 'Автоматизированные процессы управления',
-              body: 'Склад может полноценно функционировать без постоянного ' +
-                'присутствия персонала: охраны, менеджеров и администраторов'
-            },
-            list_2: {
-              title: 'Личный кабинет собственника',
-              body: 'С доступом к ежедневным аналитическим отчетам ' +
-                '(количество клиентов, количество арендованных м², выручка и&nbsp;др.) ' +
-                'и ключевым показателям эффективности (<span>OBITDA</span>, ' +
-                '<span>IRR</span> и др.)'
-            },
-            list_3: {
-              title: 'Личный кабинет сотрудника',
-              body: 'С системой функциональных обязанностей ' +
-                'и должностных инструкций, способной подсказать сотруднику ' +
-                'его следующий шаг'
-            },
-            list_4: {
-              title: 'Сквозная веб-аналитика'
-            }
-          },
-          tenant: {
-            h2: '<span>Кладовкин</span> &mdash; технологический лидер ' +
-              'российского рынка Self Storage',
-            note: 'Лучший клиентский опыт для арендатора',
-            list_1: 'Поиск ближайшего склада на карте',
-            list_2: 'Выбор бокса нужного размера',
-            list_3: 'Заключение и расторжение договора аренды онлайн',
-            list_4: 'Оплата счета наиболее удобным&nbsp;способом',
-            list_5: 'Доступ к складу и парковке по приложению или пин-коду',
-            list_6: 'Отслеживание баланса и&nbsp;контроль&nbsp;задолженности',
-            list_7: 'Вызов грузового такси при необходимости'
-          }
+          headline: 'Посмотрите видео об услугах компании Кладовкин'
         },
         slide_05: {
-          h2: 'Мы работаем с юридическими лицами и ИП &mdash; собственниками ' +
-            'помещений от 100 м²',
-          list_1: 'Отдельно стоящее<br>складское помещение',
-          list_2: 'Складское помещение<br>в жилом доме',
-          list_3: 'Здания<br>бывших АТС',
-          list_4: 'Подвальные<br>помещения',
-          list_5: 'Подземный паркинг<br>торгового центра',
-          list_6: 'Другие<br>помещения',
-          button: 'Узнать больше'
+          h2: {
+            red: 'Получайте доход от переоборудования',
+            other: 'помещения в склад с Кладовкин'
+          },
+          h2_note: 'Пример экономических и операционных показателей проекта, реализованного в отапливаемом помещении производственного или складского назначения',
+          block_1: {
+            headline: '165 м²',
+            note: 'Площадь помещения'
+          },
+          block_2: {
+            headline: '1 710 000 ₽',
+            note: 'Стоимость переоборудования'
+          },
+          block_3: {
+            headline: '2 мес.',
+            note: 'Минимальный срок запуска проекта'
+          },
+          block_4: {
+            headline: 'Х ХХХ ХХХ ₽',
+            note: 'Выручка в месяц'
+          },
+          block_5: {
+            headline: 'Х ХХХ ХХХ ₽',
+            note: 'Прибыль в месяц'
+          },
+          block_6: {
+            headline: '17 мес.',
+            note: 'Окупаемость'
+          },
+          block_summary: {
+            headline: {
+              number: '40%',
+              text: 'годовых'
+            },
+            note: 'доходность вложений в переоборудование помещения'
+          },
+          button: 'Стать партнером Кладовкин'
         },
         slide_06: {
-          h2: 'Станьте партнером и откройте автоматизированный бизнес под ключ' +
-            '<br><span>за&nbsp;2&nbsp;месяца</span>',
-          days: 'дня',
-          days_2: 'дней',
-          info_1: {
-            title: 'Сбор предварительной информации о&nbsp;помещении',
-            body: 'и расчет технико-экономических показателей&nbsp;склада'
+          h2: {
+            red: 'комфортное и эффективное управление бизнесом',
+            other: 'Взимаем фиксированную комиссию, чтобы обеспечить'
           },
-          info_2: {
-            title: 'Подготовка документов',
-            body: 'и заключение договора',
-            note: {
-              price: '0 рублей',
-              description: 'концессионный взнос'
-            }
+          income: {
+            headline: 'Ваш доход',
+            note: 'От вас нужно только помещение и инвестиции для оборудования склада'
           },
-          info_3: {
-            title: 'Разработка и согласование дизайн-проекта',
-            body: 'Сбор предварительной информации о помещениии, расчет ' +
-              'технико-экономических показателей склада'
+          commission: {
+            headline: 'Комиссия',
+            note: 'Размер комиссии варьируется в пределах 15-20% и зависит от площади вашего помещения'
           },
-          info_4: {
-            title: 'Изготовление, поставка и&nbsp;монтаж оборудования',
-            body: 'Изготовим и произведем поставку оборудования собственной '+
-              'разработки с гарантией качества и сроков оснащения',
-            note: {
-              price: '8000 - 12000 руб./м²',
-              description: 'переоборудование помещения'
-            }
-          },
-          info_5: {
-            title: 'Пуско-наладочные работы охранной системы, интеграция с IT-платформой',
-            body: 'Служба монтажа быстро и качественно установит и настроит ' +
-              'оборудование, систему контроля и управления доступом и ' +
-              'обеспечит интеграцию склада с сайтом'
-          },
-          info_6: {
-            title: 'Открытие склада и поддержание бизнеса',
-            body: 'Возьмем все управление на себя:',
-            list: '&ndash; маркетинг и рекламу<br>' +
-              '&ndash; службу заботы о клиентах 24/7<br>' +
-              '&ndash; техническое обслуживание<br>' +
-              '&ndash; управление персоналом<br>' +
-              '&ndash; круглосуточное<br>&nbsp;&nbsp;&nbsp;видеонаблюдение<br>'
+          mobile_label: 'В нашу комиссию входит:',
+          blocks: [{
+            headline: 'Управление сетью Кладовкин',
+            texts: [
+              'прием звонков от потенциальных клиентов',
+              'заключение договоров',
+              'проведение и прием оплат',
+              'поддержка текущих клиентов',
+              'работа с должниками',
+              'ведение финансовой отчетности (выручка, сданные кв метры, закрытые договоры, расходы, уровень заполненности склада)'
+            ]
+          }, {
+            headline: 'ИТ-инфраструктура',
+            texts: [
+              'сайт и мобильное приложение',
+              'личный кабинет для партенеров и арендаторов',
+              'охранная система',
+              'прием платежей',
+              'работа с ошибками клиентов и администраторов'
+            ]
+          }, {
+            headline: 'Маркетинг',
+            texts: [
+              'SEO',
+              'PPC',
+              'SMM',
+              'продвижение на картах'
+            ]
+          }],
+          comparison: {
+            headline: 'Сравните разные платформы и&nbsp;их&nbsp;комиссии',
+            blocks: [{
+              label: 'Квартиры',
+              value: '14-20%'
+            }, {
+              label: 'Автомобили',
+              value: '18-24%'
+            }, {
+              label: 'Помещения',
+              value: '15-20%'
+            }]
           }
         },
         slide_07: {
-          h2: 'Комиссия&nbsp;управляющей компании',
-          circle: {
-            title: '24 мес.',
-            note: 'срок окупаемости<br>' +
-              'первоначальных<br>' +
-              'инвестиций (РР)<br>'
-          },
-          list_1: 'валовой выручки',
-          list_2: 'на управление складом',
-          list_3: 'валовой выручки',
-          list_4: 'на маркетинговые услуги',
-          list_5: 'валовой выручки',
-          list_6: 'на услуги IT'
+          h2: 'Вы собственник помещения?',
+          columns: [{
+            headline: 'У нас есть требования к помещению, которым должны соответствовать все наши парнеры.',
+            lines: [
+              'От 100 м2 в вашей собственности',
+              'Система отопления в помещении',
+              'Электроснабжение с мощностью от Х кВт',
+              'Соблюдение правил пожарной безопасности',
+              'Устойчивый интернет на территории помещения',
+              'Парковка перед входом в помещение'
+            ]
+          }, {
+            headline: 'Дополнительным преимушеством для ваших будущих арендаторов будет:',
+            lines: [
+              'Расположение в впервой линии домов вблизи от дороги',
+              'Большая высота потолков  в помещении',
+              'Расположение вблизи жилой застройки',
+              'Наличие рядом точек притяжения (магазины, МФЦ, др.)',
+              'Широкий дверной проем',
+              'Доступ в помещение 24/7'
+            ]
+          }],
+          button: 'Я готов стать партнером Кладовкин'
         },
         slide_08: {
-          h2: 'Кейсы',
-          list_1: '<b>Площадь:</b> 165 м²',
-          list_2: '<b>Расположение:</b> ул. Маршала Жукова, 76-2',
-          list_3: '<b>Дата запуска проекта:</b> май 2019 г.',
-          list_4: '<b>Инвестиции в переоборудование помещения:</b>' +
-            '&nbsp;1&nbsp;710&nbsp;000&nbsp;руб.',
-          list_5: '<b>Средняя арендная ставка:</b> 1 800 руб./м²',
-          list_6: '<b>Заполняемость:</b> 99%',
-          list_7: '<b>Срок окупаемости:</b> 17 месяцев'
+          h2: 'Откройте технологичный бизнес' +
+            '<br><span>в сфере недвижимости за 2 месяца</span>',
+          blocks: [{
+            headline: 'Консультация, сбор предварительной информации о партнере и помещении',
+            days: '2 дня'
+          }, {
+            headline: 'Технико-экономическое обоснование&nbsp;проекта склада',
+            note: 'Разработаем дизайн-проект, составим смету на оборудование, подготовим финансовую модель',
+            days: '7 дней',
+            price: 'от 50 000 до 100 000 руб.'
+          }, {
+            headline: 'Подготовка документов и&nbsp;заключение&nbsp;договора франшизы',
+            days: '2 дня',
+            price: '0 рублей',
+            price_note: 'концессионный взнос'
+          }, {
+            headline: 'Изготовление и поставка оборудования',
+            note: 'Изготовим и произведем поставку оборудования собственной разработки с&nbsp;гарантией качества и сроков',
+            days: '30 дней',
+            price: '10 000 руб./м²',
+            price_note: 'переоборудование помещения'
+          }, {
+            headline: 'Пуско-наладочные работы охранной системы, интеграция с IT-платформой',
+            note: 'Сервисная служба установит оборудование, систему контроля и управления доступом, обеспечит интеграцию склада с сайтом',
+            days: '20 дней'
+          }, {
+            headline: 'Открытие склада,<br>начало&nbsp;продаж'
+          }]
         },
         slide_09: {
+          circle: {
+            title: '40%',
+            subtitle: 'годовых'
+          },
+          headline: 'доходность вложений в&nbsp;переоборудование помещения',
+          button: 'Стать партнером Кладовкин'
+        },
+        slide_10: {
+          h2: 'Склады наших партнеров'
+        },
+        slide_11: {
           h2: 'Остались вопросы?',
+          faqs: [{
+            q: 'Какие требования к помещению партнера выдвигает Кладовкин',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }, {
+            q: 'Какая должна быть высота потолков в помещении?',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }, {
+            q: 'Возможно ли в рамках партнерства открыть склад в другом городе?',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }, {
+            q: 'Может ли партнер устанавливать цены на боксы в своем складском комплексе?',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }, {
+            q: 'Какая средняя стоимость аренды бокса в регионах?',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }, {
+            q: 'Взимает ли Кладовкин паушальный взнос?',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }, {
+            q: 'Какой процент от выручки склада взимает Кладовкин в качестве комиссии?',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }, {
+            q: 'Какой средний срок окупаемости вложений в переоборудование?',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }, {
+            q: 'Может ли партнер оборудовать помещение своими силами, а управление складским комплексом передать сети Кладовкин?',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }, {
+            q: 'Что входит ежемесячные затраты со стороны партнера?',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }, {
+            q: 'Сколько составляет средний темп заполняемости складского центра?',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }],
+          button: 'Все вопросы'
+        },
+        slide_12: {
+          h2: 'Хотите стать партнером?',
           note: 'Оставьте свои контакты и мы с вами свяжемся',
           thanks: 'Спасибо!',
           success: 'Мы получили вашу заявку',
@@ -186,14 +302,12 @@ export default createStore({
           client: 'Имя и Фамилия',
           phone: 'Мобильный телефон',
           message: 'Сообщение',
-          submit: 'Отправить запрос',
-          privacy_note: 'Нажимая «Отправить запрос», вы подтверждаете свое ' +
-            'согласие на обработку и хранение ваших персональных данных' +
-            'в соответствии с',
+          submit: 'Получить консультацию',
+          privacy_note: 'Нажимая «Получить консультацию», вы подтверждаете свое согласие на обработку и хранение ваших персональных данных в соответствии с политикой обработки персональных данных',
           privacy_link: 'политикой обработки персональных данных',
           error: '*Обязательное поле для заполения'
         },
-        slide_10: {
+        slide_13: {
           h2: 'Контакты',
           founder: 'Основатель',
           founder_name: 'Карпушин Михаил',
@@ -204,14 +318,9 @@ export default createStore({
         footer: {
           about: 'О нас',
           units: 'Боксы и цены',
-          delivery: 'Доставка',
-          career: 'Карьера',
-          partners: 'Партнёры',
-          how_to: 'Как хранить вещи',
           business: 'Бизнес-хранение',
           personal: 'Личное хранение',
           contacts: 'Контакты',
-          sitemap: 'Карта сайта',
           brand: 'ООО «Кладовкин»',
           copyright: 'все права защищены'
         }
@@ -226,167 +335,286 @@ export default createStore({
           button: 'Submit an enuiry'
         },
         slide_01: {
-          h1: 'Hi-Tech business in your&nbsp;premises',
-          h2: 'Become a partner and make money on your real estate',
-          lock: {
-            first: 'Turn on',
-            second: 'your business'
-          },
-          collapsed: 'yield rate together with Kladovkin',
-          button: 'Learn more'
+          h1: 'Станьте партнером Кладовкин и начните получать доход с первого дня работы склада',
+          h2: 'Мы построим технологичный бизнес на основе вашего помещения и возьмем управление на себя.',
+          yield: 'годовых — доходность вложений<br>в переоборудование помещения',
+          button: 'Стать партнером Кладовкин',
+          learn_more: 'Learn more'
         },
         slide_02: {
-          h2: 'new approach in real estate business',
-          note: 'Yield rates for main segments of commercial real estate in Russia',
-          list_1: 'Big amount of small tenants',
-          list_2: 'High rental rates',
-          list_3: 'Constant occupancy of sites',
-          list_4: 'Steadily growing market',
-          graph: {
-            residential: 'Residential',
-            offices: 'Offices',
-            street_retail: 'Street&nbsp;retail',
-            warehouses: 'Warehouses'
+          h2: {
+            red: 'Рынок self storage в России',
+            other: 'находится на стадии активного роста'
           },
-          finale: {
-            strong: 'Self Storage is warehouses equiped with many boxes',
-            description: 'for storage of personal belongings and\\or goods, ' +
-              'available for private individuals and companies'
+          note: {
+            red: 'Self storage',
+            other: '– это сдача в аренду помещений для хранения личных вещей, товаров или документов для бизнеса в индивидуальных кладовках'
+          },
+          blocks: [{
+            headline: '2 750 ₽',
+            note: 'достигает арендная ставка за 1 м2 в месяц в сегменте Self storage'
+          }, {
+            headline: '5-10%',
+            note: 'годовой прирост площадей Self storage в Москве'
+          }, {
+            headline: '95%',
+            note: 'средняя наполняемость складов Self storage в Москве '
+          }],
+          slide_1: {
+            note: '"Спрос на склады в России достиг максимального уровня за 10 лет. Для развития интернет-торговли в регионах потребуется 1,5 млн кв. м складских площадей в ближайшие три года"'
+          },
+          slide_2: {
+            note: 'Спрос на склады в России достиг максимального уровня за 10 лет. Для развития интернет-торговли в регионах потребуется 1,5 млн кв. м складских площадей в ближайшие три года"'
+          },
+          slide_3: {
+            note: '"Спрос на склады в России достиг максимального уровня за 10 лет. Для развития интернет-торговли в регионах потребуется 1,5 млн кв. м складских площадей в ближайшие три года"'
           }
         },
         slide_03: {
-          h2: 'Kladovkin — technological leader of Russian&nbsp;Self Storage market',
-          entries: {
-            age: 'Years&nbsp;on&nbsp;the&nbsp;market',
-            customers: 'Grateful customers',
-            storages: 'Stores&nbsp;in&nbsp;Moscow',
-            square: 'Overall&nbsp;usable&nbsp;space '
-          }
+          h2: {
+            red: 'Кладовкин',
+            other: '– единственная компания в России, обладающая тремя ключевыми компетенциями в self storage'
+          },
+          h2_note: 'Мы независимая компания, которая все умеет сама',
+          picture_block_1: {
+            headline: '4+',
+            note: 'Года на рынке'
+          },
+          picture_block_2: {
+            headline: '3 500+',
+            note: 'Благодарных арендаторов'
+          },
+          picture_block_3: {
+            headline: '10',
+            note: 'Складов в Москве'
+          },
+          picture_block_4: {
+            headline: '20 000 м²',
+            note: 'Площадь складов'
+          },
+          block_1: {
+            headline: 'Управляющая компания',
+            note: 'Мы знаем, как управлять складами, чтобы они приносили прибль.'
+          },
+          block_2: {
+            headline: 'IT компания',
+            note: 'Организуем эффективный бизнес Self Storage с помощью собственных IT-технологий'
+          },
+          block_3: {
+            headline: 'Производитель оборудования',
+            note: 'С 2011 года производим поставляем оборудование для крупнейших операторов Self Storage в России'
+          },
+          details: 'Подробнее',
+          block_note: {
+            text: 'Больше информации вы можете узнать из ',
+            link: 'нашей презентации'
+          },
+          button: 'Стать партнером Кладовкин'
         },
         slide_04: {
-          switcher: {
-            owner: 'For owners',
-            tenant: 'For tenants'
-          },
-          owner: {
-            h2: 'Establishing highly efficient business with helping hand of IT-technologies ',
-            note: 'Complete automatization of business processes for a partner',
-            list_1: {
-              title: 'Automated management routines',
-              body: 'Your store can function without constant staff presence: ' +
-                'no managers, administrators and security needed.'
-            },
-            list_2: {
-              title: 'Partner’s personal account',
-              body: 'It provides access to various daily reports and other key ' +
-                'performance indicators like OBITDA, IRR and so on.'
-            },
-            list_3: {
-              title: 'Employee’s personal account',
-              body: 'With functional duty and instruction system, ' +
-                'that is capable to advise a next step to an employee'
-            },
-            list_4: {
-              title: 'End-to-end web analytics'
-            }
-          },
-          tenant: {
-            h2: '<span>Kladovkin</span> &mdash; technological leader ' +
-              'of Russian Self Storage market',
-            note: 'The best client-side expirience for a tenant',
-            list_1: 'Search for the nearest storage site on the map',
-            list_2: 'Choose the box size you need',
-            list_3: 'Conclude and terminate your rental contract online',
-            list_4: 'Pay for storage the way you like it',
-            list_5: 'Access your box and parking space through the App or a pin-code',
-            list_6: 'Monitor your account balance and control indebtedness',
-            list_7: 'Call a cargo taxi if needed'
-          }
+          headline: 'Посмотрите видео об услугах компании Кладовкин'
         },
         slide_05: {
-          h2: 'We work with legal entities and individual entrepreneurs who ' +
-            'are the own or rent premises of 100 m² and more',
-          list_1: 'Dedicated warehouse premises',
-          list_2: 'Storage and commercial areas in<br>living blocks',
-          list_3: 'Ex-PBX<br>buildings',
-          list_4: 'Basement<br>floors',
-          list_5: 'Underground or<br>mall parkings',
-          list_6: 'Other premises',
-          button: 'Learn more'
+          h2: {
+            red: 'Получайте доход от переоборудования',
+            other: 'помещения в склад с Кладовкин'
+          },
+          h2_note: 'Пример экономических и операционных показателей проекта, реализованного в отапливаемом помещении производственного или складского назначения',
+          block_1: {
+            headline: '165 м²',
+            note: 'Площадь помещения'
+          },
+          block_2: {
+            headline: '1 710 000 ₽',
+            note: 'Стоимость переоборудования'
+          },
+          block_3: {
+            headline: '2 мес.',
+            note: 'Минимальный срок запуска проекта'
+          },
+          block_4: {
+            headline: 'Х ХХХ ХХХ ₽',
+            note: 'Выручка в месяц'
+          },
+          block_5: {
+            headline: 'Х ХХХ ХХХ ₽',
+            note: 'Прибыль в месяц'
+          },
+          block_6: {
+            headline: '17 мес.',
+            note: 'Окупаемость'
+          },
+          block_summary: {
+            headline: {
+              number: '40%',
+              text: 'годовых'
+            },
+            note: 'доходность вложений в переоборудование помещения'
+          },
+          button: 'Стать партнером Кладовкин'
         },
         slide_06: {
-          h2: 'Become a partner and open fully automatic turnkey business ' +
-            '<span>in 2 months</span>',
-          days: 'days',
-          days_2: 'days',
-          info_1: {
-            title: 'Gathering preliminary information on potential premise',
-            body: 'and calculation of techical and financial indicators for the store'
+          h2: {
+            red: 'комфортное и эффективное управление бизнесом',
+            other: 'Взимаем фиксированную комиссию, чтобы обеспечить'
           },
-          info_2: {
-            title: 'Documents preparing',
-            body: 'and contract concluding',
-            note: {
-              price: '0 RUB',
-              description: 'concession fee'
-            }
+          income: {
+            headline: 'Ваш доход',
+            note: 'От вас нужно только помещение и инвестиции для оборудования склада'
           },
-          info_3: {
-            title: 'Design-project: developing and approval',
-            body: 'Gathering preliminary information on potential premise, ' +
-              'calculation of techical and financial indicators for the store'
+          commission: {
+            headline: 'Комиссия',
+            note: 'Размер комиссии варьируется в пределах 15-20% и зависит от площади вашего помещения'
           },
-          info_4: {
-            title: 'Producing, delivery and installation of the equipment',
-            body: 'We will produce and deliver our self storage equipment with ' +
-              'quality and installation terms guarantee',
-            note: {
-              price: 'from 8,000 RUB/м²',
-              description: 'premises outfitting'
-            }
-          },
-          info_5: {
-            title: 'Commissioning works on security system, IT-platfom integration',
-            body: 'Our assembling team will install and rig up the hardware ' +
-              'for access control quickly and qualitatively. They will also ' +
-              'set up its integration with the website'
-          },
-          info_6: {
-            title: 'Store grand opening and business support',
-            body: 'We will take over the control of:',
-            list: '&ndash; marketing and ads<br>' +
-              '&ndash; clients care service 24/7<br>' +
-              '&ndash; maintanance services<br>' +
-              '&ndash; staff management<br>' +
-              '&ndash; around the clock video surveillance<br>'
+          mobile_label: 'В нашу комиссию входит:',
+          blocks: [{
+            headline: 'Управление сетью Кладовкин',
+            texts: [
+              'прием звонков от потенциальных клиентов',
+              'заключение договоров',
+              'проведение и прием оплат',
+              'поддержка текущих клиентов',
+              'работа с должниками',
+              'ведение финансовой отчетности (выручка, сданные кв метры, закрытые договоры, расходы, уровень заполненности склада)'
+            ]
+          }, {
+            headline: 'ИТ-инфраструктура',
+            texts: [
+              'сайт и мобильное приложение',
+              'личный кабинет для партенеров и арендаторов',
+              'охранная система',
+              'прием платежей',
+              'работа с ошибками клиентов и администраторов'
+            ]
+          }, {
+            headline: 'Маркетинг',
+            texts: [
+              'SEO',
+              'PPC',
+              'SMM',
+              'продвижение на картах'
+            ]
+          }],
+          comparison: {
+            headline: 'Сравните разные платформы и&nbsp;их&nbsp;комиссии',
+            blocks: [{
+              text: 'Квартиры',
+              value: '14-20%'
+            }, {
+              text: 'Автомобили',
+              value: '18-24%'
+            }, {
+              text: 'Помещения',
+              value: '15-20%'
+            }]
           }
         },
         slide_07: {
-          h2: 'Managing company fee',
-          circle: {
-            title: '2 years',
-            note: 'Initial investments<br>' +
-              'payback period (РР)'
-          },
-          list_1: 'out of gross revenue',
-          list_2: 'for the store management',
-          list_3: 'out of gross revenue',
-          list_4: 'for the marketing purposes',
-          list_5: 'out of gross revenue',
-          list_6: 'for IT services'
+          h2: 'Вы собственник помещения?',
+          columns: [{
+            headline: 'У нас есть требования к помещению, которым должны соответствовать все наши парнеры.',
+            lines: [
+              'От 100 м2 в вашей собственности',
+              'Система отопления в помещении',
+              'Электроснабжение с мощностью от Х кВт',
+              'Соблюдение правил пожарной безопасности',
+              'Устойчивый интернет на территории помещения',
+              'Парковка перед входом в помещение'
+            ]
+          }, {
+            headline: 'Дополнительным преимушеством для ваших будущих арендаторов будет:',
+            lines: [
+              'Расположение в впервой линии домов вблизи от дороги',
+              'Большая высота потолков  в помещении',
+              'Расположение вблизи жилой застройки',
+              'Наличие рядом точек притяжения (магазины, МФЦ, др.)',
+              'Широкий дверной проем',
+              'Доступ в помещение 24/7'
+            ]
+          }],
+          button: 'Я готов стать партнером Кладовкин'
         },
         slide_08: {
-          h2: 'Cases ',
-          list_1: '<b>Total area:</b> 165 m²',
-          list_2: '<b>Location:</b> Moscow, Marshala Zhukova st. 76-2',
-          list_3: '<b>Project start date:</b> May 2019',
-          list_4: '<b>Premise outfitting investments:</b> 1,710,000&nbsp;RUB',
-          list_5: '<b>Average rent price:</b> 1,800&nbsp;RUB/m²',
-          list_6: '<b>Occupancy:</b> 99%',
-          list_7: '<b>Recoupment period:</b> 17 months'
+          h2: 'Откройте технологичный бизнес' +
+            '<br><span>в сфере недвижимости за 2 месяца</span>',
+          blocks: [{
+            headline: 'Консультация, сбор предварительной информации о партнере и помещении',
+            days: '2 дня'
+          }, {
+            headline: 'Технико-экономическое обоснование&nbsp;проекта склада',
+            note: 'Разработаем дизайн-проект, составим смету на оборудование, подготовим финансовую модель',
+            days: '7 дней',
+            price: 'от 50 000 до 100 000 руб.'
+          }, {
+            headline: 'Подготовка документов и&nbsp;заключение&nbsp;договора франшизы',
+            days: '2 дня',
+            price: '0 рублей',
+            price_note: 'концессионный взнос'
+          }, {
+            headline: 'Изготовление и поставка оборудования',
+            note: 'Изготовим и произведем поставку оборудования собственной разработки с&nbsp;гарантией качества и сроков',
+            days: '30 дней',
+            price: '10 000 руб./м²',
+            price_note: 'переоборудование помещения'
+          }, {
+            headline: 'Пуско-наладочные работы охранной системы, интеграция с IT-платформой',
+            note: 'Сервисная служба установит оборудование, систему контроля и управления доступом, обеспечит интеграцию склада с сайтом',
+            days: '20 дней'
+          }, {
+            headline: 'Открытие склада,<br>начало&nbsp;продаж'
+          }]
         },
         slide_09: {
-          h2: 'Still have questions?',
+          circle: {
+            title: '40%',
+            subtitle: 'годовых'
+          },
+          headline: 'доходность вложений в&nbsp;переоборудование помещения',
+          button: 'Стать партнером Кладовкин'
+        },
+        slide_10: {
+          h2: 'Склады наших партнеров'
+        },
+        slide_11: {
+          h2: 'Остались вопросы?',
+          faqs: [{
+            q: 'Какие требования к помещению партнера выдвигает Кладовкин',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }, {
+            q: 'Какая должна быть высота потолков в помещении?',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }, {
+            q: 'Возможно ли в рамках партнерства открыть склад в другом городе?',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }, {
+            q: 'Может ли партнер устанавливать цены на боксы в своем складском комплексе?',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }, {
+            q: 'Какая средняя стоимость аренды бокса в регионах?',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }, {
+            q: 'Взимает ли Кладовкин паушальный взнос?',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }, {
+            q: 'Какой процент от выручки склада взимает Кладовкин в качестве комиссии?',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }, {
+            q: 'Какой средний срок окупаемости вложений в переоборудование?',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }, {
+            q: 'Может ли партнер оборудовать помещение своими силами, а управление складским комплексом передать сети Кладовкин?',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }, {
+            q: 'Что входит ежемесячные затраты со стороны партнера?',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }, {
+            q: 'Сколько составляет средний темп заполняемости складского центра?',
+            a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          }],
+          button: 'Все вопросы'
+        },
+        slide_12: {
+          h2: 'Хотите стать партнером?',
           note: 'Fill in your details and we will contact you shortly',
           thanks: 'Thank you!',
           success: 'Your request has been received',
@@ -394,14 +622,12 @@ export default createStore({
           client: 'Name and Surname',
           phone: 'Phone number',
           message: 'Message',
-          submit: 'Send the request',
-          privacy_note: 'By clicking “Send the request” button you are providing ' +
-            'your consent for processing and further storage of your personal data ' +
-            'in accordance with personal data processing',
+          submit: 'Получить консультацию',
+          privacy_note: 'Нажимая «Получить консультацию», вы подтверждаете свое согласие на обработку и хранение ваших персональных данных в соответствии с политикой обработки персональных данных',
           privacy_link: 'policy',
           error: '*This field is required'
         },
-        slide_10: {
+        slide_13: {
           h2: 'Contacts',
           founder: 'Founder and CEO',
           founder_name: 'Mikhail Karpushin',
@@ -412,14 +638,9 @@ export default createStore({
         footer: {
           about: 'About us',
           units: 'Units and prices',
-          delivery: 'Delivery',
-          career: 'Career',
-          partners: 'Partners',
-          how_to: 'How to store stuff',
           business: 'Storage for business',
           personal: 'Storage for life',
           contacts: 'Contacts',
-          sitemap: 'Site map',
           brand: 'LLC Kladovkin',
           copyright: 'all rights reserved'
         }
@@ -437,7 +658,5 @@ export default createStore({
       const normalized_locale = locale == 'en' ? 'en' : 'ru';
       commit('SET_LOCALE', normalized_locale);
     }
-  },
-  modules: {
   }
 });

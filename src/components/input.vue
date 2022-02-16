@@ -57,6 +57,7 @@ export default {
     isError: { type: Boolean, required: false, default: false },
     debounce: { type: Number, required: false, default: undefined }
   },
+  emits: ['update:modelValue', 'cancel'],
   data: () => ({
     debouncedEmitChange: undefined,
     tmpValue: null,

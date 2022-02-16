@@ -5,14 +5,21 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        additionalData: '@import "@/stylesheets/globals.sass";'
+        additionalData: `
+          @use "sass:math"
+          @import "@/stylesheets/globals.sass"
+        `
       }
     }
   },
   devServer: {
     host: 'localhost',
     allowedHosts: ['localhost'],
-    port: 8090
+    port: 8090,
+    overlay: {
+      warnings: false,
+      errors: false
+    }
   },
   transpileDependencies: [
     'vue',

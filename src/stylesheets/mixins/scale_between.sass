@@ -1,7 +1,7 @@
 // @return calc(#{$from_px} + #{($to_px - $from_px) / #{strip-unit($resolution_to) - strip-unit($resolution_from)}} * (100vw - #{$resolution_from}))
 
 @function scale-between($from_px, $to_px, $resolution_from, $resolution_to)
-  @return calc(#{$from_px} + #{($to_px - $from_px) / #{$resolution_to - $resolution_from}} * (100vw - #{$resolution_from}))
+  @return calc(#{$from_px} + #{math.div($to_px - $from_px, $resolution_to - $resolution_from)} * (100vw - #{$resolution_from}))
 
 @function scale-laptop($from_px, $to_px)
-  @return calc(#{$from_px} + #{($to_px - $from_px) / #{1200px - 1024px}} * (100vw - #{1024px}))
+  @return calc(#{$from_px} + #{math.div($to_px - $from_px, 1200px - 1024px)} * (100vw - #{1024px}))

@@ -10,11 +10,14 @@ parser: vue-eslint-parser
 parserOptions:
   ecmaVersion: 2018
   sourceType: module
-  parser: babel-eslint
+  parser: '@babel/eslint-parser'
 
 extends:
-  - plugin:vue/vue3-essential
+  - plugin:vue/vue3-recommended
   - eslint:recommended
+  # TODO: enable when eslint-import-resolver-webpack is fixed
+  # - plugin:import/errors
+  # - plugin:import/warnings
 
 plugins:
   - vue
@@ -42,8 +45,8 @@ rules:
   arrow-parens:
     - 0
     - as-needed
-  no-alert: 0
   no-console: 1
+  no-alert: 0
   no-debugger: 1
   no-trailing-spaces:
     - error
@@ -53,13 +56,16 @@ rules:
     - props: false
   no-underscore-dangle: 0
   no-unused-vars:
-    - warn
+    - error
     - argsIgnorePattern: ^_
       varsIgnorePattern: ^_
   no-use-before-define: 0
   no-mixed-operators: 0
   no-new: 0
   function-paren-newline: 0
+  dot-location:
+    - warn
+    - property
   comma-dangle:
     - warn
     - never
@@ -99,9 +105,9 @@ rules:
         max: 1
         allowFirstLine: false
   vue/singleline-html-element-content-newline: 0
-  vue/html-quotes: 0
-    # - 1
-    # - single
+  vue/html-quotes:
+    - 1
+    - single
   vue/component-name-in-template-casing:
     - 2
     - PascalCase
@@ -109,6 +115,7 @@ rules:
       - router-view
       - router-link
   vue/no-v-html: 0
+  vue/no-lone-template: 0
   # TODO: enable when eslint-import-resolver-webpack is fixed
   # import/no-extraneous-dependencies: 0
   # import/no-unresolved: 2
