@@ -5,21 +5,21 @@
       <div class='details'>
         <div class='line'>
           <div class='entry'>
-            <div class='value'>4+</div>
+            <div class='value'>7+</div>
             <div class='label' v-html='t("slide_03.entries.age")' />
           </div>
           <div class='entry'>
-            <div class='value'>3 500+</div>
+            <div class='value'>7 000+</div>
             <div class='label' v-html='t("slide_03.entries.customers")' />
           </div>
         </div>
         <div class='line'>
           <div class='entry'>
-            <div class='value'>7</div>
+            <div class='value'>33</div>
             <div class='label' v-html='t("slide_03.entries.storages")' />
           </div>
           <div class='entry'>
-            <div class='value'>20&nbsp;000&nbsp;м²</div>
+            <div class='value'>24&nbsp;000+&nbsp;м²</div>
             <div class='label final' v-html='t("slide_03.entries.square")' />
           </div>
         </div>
