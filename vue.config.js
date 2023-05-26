@@ -5,7 +5,7 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        additionalData: '@import "@/stylesheets/globals.sass";'
+        additionalData: '@import "@/stylesheets/globals.sass"'
       }
     }
   },
