@@ -298,7 +298,7 @@ h2
 
     +lte_ipad
       margin-bottom: rem(26px)
-      height: rem(130px / 1.0306748466)
+      height: rem(126.1309523841px) // 130px / 1.0306748466
       width: rem(130px)
 
     +gte_laptop

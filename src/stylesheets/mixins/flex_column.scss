@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @mixin fcolumn($columns, $gutter, $offset, $selector) {
   display: flex;
   flex-wrap: wrap;
@@ -7,7 +9,7 @@
   & > #{$selector} {
     margin-bottom: $offset;
     margin-left: $gutter;
-    @include fcolumn-size(1 / $columns, $gutter);
+    @include fcolumn-size(math.div(1, $columns), $gutter);
   }
 }
 
