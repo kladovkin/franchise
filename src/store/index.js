@@ -44,9 +44,9 @@ export default createStore({
         slide_03: {
           h2: 'Кладовкин &mdash; технологический лидер российского рынка Self&nbsp;Storage',
           entries: {
-            age: 'Года&nbsp;на&nbsp;рынке',
+            age: 'Лет&nbsp;на&nbsp;рынке',
             customers: 'Благодарных арендаторов',
-            storages: 'Складов в&nbsp;Москве',
+            storages: 'Склада в&nbsp;Москве',
             square: 'Площадь&nbsp;складов'
           }
         },

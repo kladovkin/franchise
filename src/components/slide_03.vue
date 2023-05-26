@@ -19,7 +19,7 @@
             <div class='label' v-html='t("slide_03.entries.storages")' />
           </div>
           <div class='entry'>
-            <div class='value'>24&nbsp;000+&nbsp;м²</div>
+            <div class='value'>24&nbsp;000+</div>
             <div class='label final' v-html='t("slide_03.entries.square")' />
           </div>
         </div>
