@@ -72,7 +72,7 @@ function createObserver(callback, options) {
 
 function mapEntry(entry) {
   const { boundingClientRect, isIntersecting, target } = entry;
-  const oldBoundingClientRect = target._waypointData ?? boundingClientRect;
+  const oldBoundingClientRect = target._waypointData || boundingClientRect;
 
   // save current rect
   target._waypointData = boundingClientRect;
