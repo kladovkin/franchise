@@ -28,7 +28,7 @@
               </a>
             </div>
             <div>
-              <a href='tel:+7-916-305-22-05'>+7-916-305-22-05</a>
+              <a href='https://t.me/Karpushin_Mikhail'>@Karpushin_Mikhail</a>
             </div>
           </div>
         </div>
@@ -53,7 +53,7 @@
               </a>
             </div>
             <div>
-              <a href='tel:+7-495-181-55-45'>+7-495-181-55-45</a>
+              <a href='tel:+7-926-257-93-61'>+7-926-257-93-61</a>
             </div>
           </div>
         </div>
